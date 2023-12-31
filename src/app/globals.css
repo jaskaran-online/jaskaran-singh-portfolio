@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -24,4 +25,79 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+.glow-effect {
+  -webkit-text-stroke: 1px black;
+  text-shadow: 0 0 4px #e600738c, 0 0 12px #892be274;
+}
+
+.heroText{
+  font-family: 'JetBrains Mono', monospace; /* JetBrains Mono font */
+  font-feature-settings: 'liga' on, 'calt' on; /* Enable ligatures */
+}
+
+.to-indigo-900 {
+  --tw-gradient-to: #060838 var(--tw-gradient-to-position) !important;
+  backdrop-filter: blur(1px);
+}
+
+.from-blue-750 {
+  --tw-gradient-from: #040821be var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(17,21,44,0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to) !important;
+}
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right,var(--tw-gradient-stops));
+}
+.border-blue-850 {
+  --tw-border-opacity: 1;
+  border-color: rgb(31 34 60/var(--tw-border-opacity));
+}
+.border {
+  border-width: 1px;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.relative {
+  position: relative;
+}
+
+@keyframes blinkAndScale {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1.5);
+  }
+  50% {
+    opacity: 0;
+    transform: scaleY(1.2);
+  }
+}
+
+.cursor {
+  position: relative;
+  bottom: -5px;
+  animation: blinkAndScale 1s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: bottom;
+  margin-left: 2px;
+}
+
+.navbar-blur {
+  background-color: rgba(0, 0, 0, 0.2 ) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.code-one-dark {
+  background-color: #282c34; /* One Dark background */
+  color: #abb2bf; /* One Dark default text color */
+  font-family: 'JetBrains Mono', monospace; /* JetBrains Mono font */
+  font-feature-settings: 'liga' on, 'calt' on; /* Enable ligatures */
+  /* ... other styling as needed ... */
 }
