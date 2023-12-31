@@ -38,7 +38,7 @@ body {
 
 .to-indigo-900 {
   --tw-gradient-to: #060838 var(--tw-gradient-to-position) !important;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(10px);
 }
 
 .from-blue-750 {
@@ -132,6 +132,7 @@ body {
 
 .animate-float {
   animation: floatAnimation 3s ease-in-out infinite;
+  backdrop-filter: blur(10px) !important;
 }
 
 .gradient-background {
@@ -154,4 +155,25 @@ body {
   color: white;
   text-align: center;
   padding: 10px;
+}
+
+.heading-hero{
+  font-size: 2.75rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.heading-hero strong {
+  background-image: linear-gradient(to right,var(--tw-gradient-stops));
+  --tw-gradient-from: #06b6d4;
+  --tw-gradient-to: rgba(6,182,212,0);
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+  --tw-gradient-to: rgba(14,165,233,0);
+  --tw-gradient-stops: var(--tw-gradient-from),#0ea5e9,var(--tw-gradient-to);
+  --tw-gradient-to: #3b82f6;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 800;
+  color: transparent;
 }
