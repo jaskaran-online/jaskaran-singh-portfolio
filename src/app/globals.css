@@ -101,3 +101,57 @@ body {
   font-feature-settings: 'liga' on, 'calt' on; /* Enable ligatures */
   /* ... other styling as needed ... */
 }
+
+.dark .d\:bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--color-gray-800)/var(--tw-bg-opacity));
+}
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.gradient-background {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background-size: 400% 400%; */
+  animation: gradientAnimation 15s ease infinite;
+}
+
+.glassmorphism {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  /* padding: 20px; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Optionally: Add some inner padding and text styling for better readability */
+.glassmorphism{
+  color: white;
+  text-align: center;
+  padding: 10px;
+}

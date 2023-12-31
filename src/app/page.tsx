@@ -141,48 +141,113 @@ const CodeBlock = () => {
 
 function CodeEditor() {
   return (
-    <div className="ml-4 bg-gradient-to-r from-blue-750 to-indigo-900 rounded-lg select-none border border-blue-850 relative">
-      <div className="flex flex-row">
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-pink-500 to-violet-600 w-full"></div>
-        <div className="h-[1px] bg-gradient-to-r from-violet-600 to-transparent w-full"></div>
+    <div className="flex flex-col gap-2">
+      <div className="relative z-20 flex justify-end gap-1.5">
+        <span className="heroText inline-flex select-none items-center whitespace-nowrap rounded-md border-2 font-medium transition-all px-2.5 py-0.5 text-[13px] cursor-pointer border-cyan-700/20 bg-cyan-100 text-cyan-900 hfa:bg-cyan-200/90 d:border-cyan-400/30 d:bg-gradient-to-b d:from-cyan-900/90 d:to-cyan-900/90 d:text-cyan-100 d:hfa:from-cyan-900/70 d:hfa:to-cyan-900/70">
+          Programmer
+        </span>
+        <span className="heroText inline-flex select-none items-center whitespace-nowrap rounded-md border-2 font-medium transition-all px-2.5 py-0.5 text-[13px] cursor-pointer border-green-700/20 bg-green-100 text-green-900 hfa:bg-green-200/90 d:border-green-400/30 d:bg-gradient-to-b d:from-green-900/90 d:to-green-900/90 d:text-green-100 d:hfa:from-green-900/70 d:hfa:to-green-900/70">
+          Problem Solver
+        </span>
+        <span className="heroText inline-flex select-none items-center whitespace-nowrap rounded-md border-2 font-medium transition-all px-2.5 py-0.5 text-[13px] cursor-pointer border-orange-700/20 bg-orange-100 text-orange-900 hfa:bg-orange-200/90 d:border-orange-400/30 d:bg-gradient-to-b d:from-orange-900/90 d:to-orange-900/90 d:text-orange-100 d:hfa:from-orange-900/70 d:hfa:to-orange-900/70">
+          Hard Worker
+        </span>
+        <span className="heroText inline-flex select-none items-center whitespace-nowrap rounded-md border-2 font-medium transition-all px-2.5 py-0.5 text-[13px] cursor-pointer border-pink-700/20 bg-pink-100 text-pink-900 hfa:bg-pink-200/90 d:border-pink-400/30 d:bg-gradient-to-b d:from-pink-900/90 d:to-pink-900/90 d:text-pink-100 d:hfa:from-pink-900/70 d:hfa:to-pink-900/70">
+          Web Developer
+        </span>
       </div>
-      <div className="px-8 py-2">
-        <header className="mb-2 flex justify-between items-center border-b border-b-gray-800 py-2 pb-3">
-          <div className="flex flex-row space-x-2">
-            <div className="rounded-full bg-red-400 cursor-pointer hover:bg-red-500 w-3 h-3"></div>
-            <div className="rounded-full bg-orange-400 cursor-pointer hover:bg-orange-500 w-3 h-3"></div>
-            <div className="rounded-full bg-green-400 cursor-pointer hover:bg-green-500 w-3 h-3"></div>
-          </div>
-          <div className="color select-none text-center text-[13px] leading-none tracking-wide text-gray-500">
-            /index.tsx
-          </div>
-          <div className="flex justify-end">
-            <button
-              className="text-gray-500 hf:text-white h-5 w-5 transition-colors"
-              type="button"
-            >
-              <span className="sr-only">Copy code</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-                className="h-5 w-5"
+      <div className="ml-4 bg-gradient-to-r from-blue-750 to-indigo-900 rounded-lg select-none border border-blue-850 relative">
+        <div className="flex flex-row">
+          <div className="h-[1px] bg-gradient-to-r from-transparent via-pink-500 to-violet-600 w-full"></div>
+          <div className="h-[1px] bg-gradient-to-r from-violet-600 to-transparent w-full"></div>
+        </div>
+        <div className="px-8 py-2">
+          <header className="mb-2 flex justify-between items-center border-b border-b-gray-800 py-2 pb-3">
+            <div className="flex flex-row space-x-2">
+              <div className="rounded-full bg-red-400 cursor-pointer hover:bg-red-500 w-3 h-3"></div>
+              <div className="rounded-full bg-orange-400 cursor-pointer hover:bg-orange-500 w-3 h-3"></div>
+              <div className="rounded-full bg-green-400 cursor-pointer hover:bg-green-500 w-3 h-3"></div>
+            </div>
+            <div className="color select-none text-center text-[13px] leading-none tracking-wide text-gray-500">
+              /index.tsx
+            </div>
+            <div className="flex justify-end">
+              <button
+                className="text-gray-500 hf:text-white h-5 w-5 transition-colors"
+                type="button"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M17.663 3.118c.225.015.45.032.673.05C19.876 3.298 21 4.604 21 6.109v9.642a3 3 0 01-3 3V16.5c0-5.922-4.576-10.775-10.384-11.217.324-1.132 1.3-2.01 2.548-2.114.224-.019.448-.036.673-.051A3 3 0 0113.5 1.5H15a3 3 0 012.663 1.618zM12 4.5A1.5 1.5 0 0113.5 3H15a1.5 1.5 0 011.5 1.5H12z"
-                  clip-rule="evenodd"
-                ></path>
-                <path d="M3 8.625c0-1.036.84-1.875 1.875-1.875h.375A3.75 3.75 0 019 10.5v1.875c0 1.036.84 1.875 1.875 1.875h1.875A3.75 3.75 0 0116.5 18v2.625c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625v-12z"></path>
-                <path d="M10.5 10.5a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963 5.23 5.23 0 00-3.434-1.279h-1.875a.375.375 0 01-.375-.375V10.5z"></path>
-              </svg>
-            </button>
+                <span className="sr-only">Copy code</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M17.663 3.118c.225.015.45.032.673.05C19.876 3.298 21 4.604 21 6.109v9.642a3 3 0 01-3 3V16.5c0-5.922-4.576-10.775-10.384-11.217.324-1.132 1.3-2.01 2.548-2.114.224-.019.448-.036.673-.051A3 3 0 0113.5 1.5H15a3 3 0 012.663 1.618zM12 4.5A1.5 1.5 0 0113.5 3H15a1.5 1.5 0 011.5 1.5H12z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path d="M3 8.625c0-1.036.84-1.875 1.875-1.875h.375A3.75 3.75 0 019 10.5v1.875c0 1.036.84 1.875 1.875 1.875h1.875A3.75 3.75 0 0116.5 18v2.625c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625v-12z"></path>
+                  <path d="M10.5 10.5a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963 5.23 5.23 0 00-3.434-1.279h-1.875a.375.375 0 01-.375-.375V10.5z"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+        </div>
+        <div className="px-8 py-8 overflow-hidden">
+          <CodeBlock />
+          <div className="absolute hidden sm:top-24 sm:-right-5 sm:block lg:top-[53%] lg:-right-20">
+            <section className="max-w-xs animate-float rounded-lg border-2 border-gray-400/30  p-4 backdrop-blur-md will-change-transform spacing-2 d:bg-black-400 lg:bg-black/80 ">
+              <header className="flex gap-4">
+                <figure className="overflow-hidden rounded-full border-2 border-gray-400/50">
+                  <Image
+                    width={40}
+                    height={40}
+                    alt="Jaskaran Singh"
+                    src={"https://avatars.githubusercontent.com/u/42887065?v=4"}
+                  />{" "}
+                </figure>
+                <div className="flex flex-col justify-center">
+                  <h2 className="text-sm heroText font-semibold tracking-wide">
+                    Jaskaran Singh
+                  </h2>
+                  <h3 className="text-sm tracking-tight text-gray-500 d:text-gray-300/90">
+                    @jaskaran.singh
+                  </h3>
+                </div>
+                <a
+                  href="https://twitter.com/FelixTellmann"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="butter-border my-auto ml-auto flex items-center justify-center rounded-full bg-sky-500/90 py-1.5 px-4 text-xs text-white transition-colors hfa:bg-sky-600/80 d:bg-sky-600/90 d:hfa:bg-sky-500/80"
+                >
+                  Follow
+                </a>
+              </header>
+              <main>
+                <p className=" pr-2 text-[13px] tracking-tight text-slate-300 mt-2 line-clamp-3 d:text-gray-300/90">
+                  Hey, I'm new to twitter and not really a social media person
+                  🙃 I'm looking to connect with fellow developers and to learn
+                  about the latest in web dev 🤗
+                </p>
+              </main>
+              <footer className="mt-2">
+                <p className="text-[13px] text-gray-500 d:text-gray-300/90">
+                  <span className="heroText font-semibold text-slate-200 d:text-gray-200">
+                    136
+                  </span>{" "}
+                  Following
+                  <span className="ml-2 heroText font-semibold text-slate-200 d:text-gray-200">
+                    8
+                  </span>{" "}
+                  Followers
+                </p>
+              </footer>
+            </section>
           </div>
-        </header>
-      </div>
-      <div className="px-8 py-8 overflow-hidden">
-        <CodeBlock />
+        </div>
       </div>
     </div>
   );
