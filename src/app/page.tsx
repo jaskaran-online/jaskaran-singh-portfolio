@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeroAnimation from "../components/HeroAnimation";
 
-export function Header() {
+function Header() {
   return (
     <nav className="sticky top-0 z-50 backdrop-filter backdrop-blur-lg border-b border-transparent">
       <div className="max-w-5xl mx-auto px-4">
