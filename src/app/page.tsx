@@ -92,7 +92,7 @@ function TwitterCard() {
                         </h3>
                     </div>
                     <a
-                        href="https://twitter.com/FelixTellmann"
+                        href="https://twitter.com/jaskaran_5ingh"
                         rel="noopener noreferrer"
                         target="_blank"
                         className="butter-border my-auto ml-auto flex items-center justify-center rounded-full bg-sky-500/90 py-1.5 px-4 text-xs text-white transition-colors hfa:bg-sky-600/80 d:bg-sky-600/90 d:hfa:bg-sky-500/80"
@@ -227,9 +227,8 @@ export default function Home() {
                                 className="lg:px-12 lg:pb-20 sm:px-2 md:pb-10 flex flex-col justify-center items-start lg:pt-10 xl:max-w-xl">
                                 <section className="col-span-2">
                                     <header>
-                                        <div className="heading-pre">Welcome to my site.</div>
+                                        <div className="heading-pre">Hey there!, I'm -</div>
                                         <h1 className="sm:text-1xl heading-hero">
-                                            I'm{" "}
                                             <span className="inline-grid">
                         <strong
                             className="pointer-events-none col-start-1 row-start-1 bg-clip-text text-transparent"
@@ -269,9 +268,8 @@ export default function Home() {
                                                     Fullstack developer
                                                 </strong>
                                             </strong>
-                                            .
                                         </h1>
-                                        <ul className="sm:scrollbar-none mb-2 flex items-center gap-6 overflow-x-auto px-4 pb-2 text-[15px] font-medium flex flex-wrap">
+                                        <ul className="flex flex-wrap sm:scrollbar-none mb-2 flex items-center justify-start gap-3 overflow-x-auto px-4 pb-2 text-[15px] font-medium ">
                                             <li className="flex items-center gap-2 text-gray-500 d:text-gray-400">
                                                 <svg
                                                     fill="dodgerblue"
@@ -395,33 +393,33 @@ export default function Home() {
                                     </header>
                                     <main>
                                         <p className="mb-3 max-w-prose font-normal text-gray-500 d:text-gray-400 md:text-lg md:tracking-tight">
-                                            I love writing code that takes things next level creating
+                                            <span className={"text-white"}>I 💓 writing code</span> that takes things next level creating
                                             highly performant websites, automated API integrations,
                                             building my own dev-tools, and creating stunning
                                             user-experiences that makes you feel{" "}
-                                            <em className="relative cursor-pointer before:absolute b:bottom-0 b:-z-10 b:h-3 b:w-full b:-rotate-2 b:animate-hint-hint b:bg-pink-400/70 b:blur-sm d:b:bg-pink-600">
+                                            <em className="text-white relative cursor-pointer before:absolute b:bottom-0 b:-z-10 b:h-3 b:w-full b:-rotate-2 b:animate-hint-hint b:bg-pink-400/70 b:blur-sm d:b:bg-pink-600">
                                                 WOW!
                                             </em>
                                             .<span className="mt-4 block"></span>I am always keen to
                                             learn and explore new technologies, frameworks and
                                             programming languages. Currently, I'm learning about{" "}
-                                            <a
+                                            🦜 <Link
                                                 href="https://www.langchain.com/"
                                                 rel="noopener noreferrer"
                                                 target="_blank"
-                                                className="underline hfa:text-sky-500"
+                                                className="underline text-slate-300"
                                             >
-                                                LangChain
-                                            </a>{" "}
+                                               LangChain
+                                            </Link>{" "}
                                             and{" "}
-                                            <a
+                                            📦 <Link
                                                 href="https://monorepo.tools/"
                                                 rel="noopener noreferrer"
                                                 target="_blank"
-                                                className="underline hfa:text-sky-500"
+                                                className="underline text-slate-300"
                                             >
-                                                MonoRepo Tools
-                                            </a>
+                                                MonoRepo
+                                            </Link>
                                             .
                                         </p>
                                         <p className="mb-3 max-w-xl font-normal text-gray-500 md:text-lg md:tracking-tight"></p>
@@ -434,10 +432,17 @@ export default function Home() {
                                             Let's Work
                                         </a>
                                         <Link
-                                            className="button-border inline-flex whitespace-nowrap bg-white/20 hover:bg-white/50 px-10 py-2.5 text-sm font-medium tracking-tight text-gray-500 transition-all hfa:border-gray-900/70 hfa:bg-white/90 hfa:text-gray-900 d:border-gray-700/80 d:bg-transparent d:text-gray-300 d:hfa:border-gray-200/30 d:hfa:bg-gray-900/80 d:hfa:text-gray-50 md:px-12"
+                                            className="hover:text-white text-[#d3d3d3] button-border inline-flex whitespace-nowrap bg-white/20 hover:bg-white/50 px-10 py-2.5 text-sm font-medium tracking-tight text-gray-500 transition-all hfa:border-gray-900/70 hfa:bg-white/90 hfa:text-gray-900 d:border-gray-700/80 d:bg-transparent d:text-gray-300 d:hfa:border-gray-200/30 d:hfa:bg-gray-900/80 d:hfa:text-gray-50 md:px-12"
                                             href="/resume"
                                         >
-                                            Resume
+                                                <svg className="h-6 w-6 mr-2 text-white" fill="#d3d3d3" xmlns="http://www.w3.org/2000/svg"
+                                                     viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.44-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.66-.89-3.66-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.88 3.75-3.68 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z"/>
+                                                </svg>
+
+                                                GitHub
+
                                         </Link>
                                     </footer>
                                 </section>
@@ -486,7 +491,7 @@ export default function Home() {
                     </span>
                   </span>
                                     :<br className="lg:hidden block"/> Your Vision,<br className="hidden lg:block"/>
-                                    Our
+                                    My
                                     <span className="inline-grid">
                     <span
                         className="pointer-events-none col-start-1 row-start-1 bg-clip-text text-transparent"

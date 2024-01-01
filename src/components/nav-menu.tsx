@@ -33,8 +33,9 @@ export default function NavMenu() {
                     className="sm:hidden"
                 />
                 <NavbarBrand>
-                    {/*<AcmeLogo />*/}
-                    <p className="font-bold text-inherit">JAS</p>
+                    <p className="font-bold text-inherit heroText text-3xl">{'{'}
+                        <span className=" text-2xl">JAS</span>
+                        {'}'}</p>
                 </NavbarBrand>
             </NavbarContent>
 
