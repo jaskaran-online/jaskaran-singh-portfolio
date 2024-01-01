@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import Link from "next/link";
-import HeroAnimation from "../components/HeroAnimation";
+import HeroAnimation from "@/components/HeroAnimation";
 import NavMenu from "@/components/nav-menu";
 
 function Header() {
@@ -210,7 +210,7 @@ function CodeEditor() {
 export default function Home() {
     return (
         <>
-            <main className={"dark"}>
+            <main className={"dark overflow-hidden"}>
                 <Image
                     alt="background"
                     src="https://codewithmosh.com/_next/static/media/bg-grid-lighter.4c1e8196.svg" // Replace with your image path
@@ -220,7 +220,7 @@ export default function Home() {
                     priority // This is optional, use it for high-priority images
                 />
                 <Header/>
-                <section className="pt-10 pb-12 relative">
+                <section className="pt-4 px-2 pb-12 relative">
                     <div className="mx-auto px-2 md:px-5 lg:px-8 2xl:max-w-7xl">
                         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 items-start">
                             <div
@@ -271,7 +271,7 @@ export default function Home() {
                                             </strong>
                                             .
                                         </h1>
-                                        <ul className="sm:scrollbar-none -mx-4 mb-2 flex items-center gap-6 overflow-x-auto px-4 pb-2 text-[15px] font-medium flex flex-wrap">
+                                        <ul className="sm:scrollbar-none mb-2 flex items-center gap-6 overflow-x-auto px-4 pb-2 text-[15px] font-medium flex flex-wrap">
                                             <li className="flex items-center gap-2 text-gray-500 d:text-gray-400">
                                                 <svg
                                                     fill="dodgerblue"
@@ -371,7 +371,7 @@ export default function Home() {
                                                     width="1em"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                 >
-                                                    <title></title>
+                                                    <title>Tailwind</title>
                                                     <path
                                                         d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"></path>
                                                 </svg>
@@ -429,7 +429,7 @@ export default function Home() {
                                     <footer className="mt-6 flex flex-wrap gap-4 md:gap-8">
                                         <a
                                             className="button-rainbow inline-flex whitespace-nowrap bg-gray-800 px-10 py-2.5 text-sm font-medium tracking-tight text-gray-50 hfa:border-gray-300/90 hfa:bg-gray-900 hfa:text-white d:hfa:border-gray-700/30 md:px-12"
-                                            href="mailto:hello@flext.dev"
+                                            href="mailto:jaskaransingh4704@gmail.com"
                                         >
                                             Let's Work
                                         </a>
@@ -452,7 +452,7 @@ export default function Home() {
                 <div className="container mx-auto lg:px-28 px-8 pt-16 lg:pt-2">
                     <div className="flex flex-wrap">
                         <div className="w-full lg:w-1/2">
-                            <div className={"sm:relative sm:bottom-[150px]"}>
+                            <div className={"sm:relative lg:bottom-[150px]"}>
                                 <HeroAnimation/>
                             </div>
                         </div>
