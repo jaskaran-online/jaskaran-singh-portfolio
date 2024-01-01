@@ -8,7 +8,6 @@ const inter = Inter({subsets: ['latin']})
 export const metadata: Metadata = {
     title: 'Jaskaran Singh',
     description: ' I am a full stack developer with an experience of over 4 years. I have hands on experience working with frameworks and backend technologies.',
-    mainImage: 'https://avatars.githubusercontent.com/u/42887065?v=4',
     keywords: 'Jaskaran Singh, Jaskaran, Jaskaran Singh, Amritsar, Punjab, India, 143601, 143606, Laravel, PHP, ReactJS, NEXTJS, HTML, CSS, Javascript, javascript, Html, Webcooks, CoreSolutions, best ',
 }
 
