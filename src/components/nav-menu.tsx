@@ -33,7 +33,7 @@ export default function NavMenu() {
                     className="sm:hidden"
                 />
                 <NavbarBrand>
-                    <p className="font-bold text-inherit heroText text-3xl">{'{'}
+                    <p className="text-white font-bold text-inherit heroText text-3xl">{'{'}
                         <span className=" text-2xl">JAS</span>
                         {'}'}</p>
                 </NavbarBrand>

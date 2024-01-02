@@ -221,13 +221,13 @@ export default function Home() {
                 />
                 <Header/>
                 <section className="pt-4 px-2 pb-12 relative">
-                    <div className="mx-auto px-2 md:px-5 lg:px-8 2xl:max-w-7xl">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 items-start">
+                    <div className="mx-auto px-2 md:px-5 lg:px-6 2xl:max-w-7xl">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8 items-start">
                             <div
-                                className="lg:px-12 lg:pb-20 sm:px-2 md:pb-10 flex flex-col justify-center items-start lg:pt-10 xl:max-w-xl">
+                                className="lg:px-10 lg:pb-20 sm:px-2 md:pb-10 flex flex-col justify-center items-start lg:pt-10 xl:max-w-xl">
                                 <section className="col-span-2">
                                     <header>
-                                        <div className="heading-pre">Hey there!, I'm -</div>
+                                        <div className="heading-pre heroText text-white">Hey there!, I'm -</div>
                                         <h1 className="sm:text-1xl heading-hero">
                                             <span className="inline-grid">
                         <strong
@@ -454,7 +454,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <div className="container mx-auto lg:px-28 px-8 pt-16 lg:pt-2">
+                <div className="container mx-auto lg:px-28 px-8 pt-16 lg:pt-2 text-white">
                     <div className="flex flex-wrap">
                         <div className="w-full lg:w-1/2">
                             <div className={"sm:relative lg:bottom-[150px]"}>
