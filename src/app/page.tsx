@@ -393,7 +393,7 @@ export default function Home() {
                                     </header>
                                     <main>
                                         <p className="mb-3 max-w-prose font-normal text-gray-500 d:text-gray-400 md:text-lg md:tracking-tight">
-                                            <span className={"text-white"}>I 💓 writing code</span> that takes things next level creating
+                                            <span className={"text-white"}>I love writing code</span> that takes things next level creating
                                             highly performant websites, automated API integrations,
                                             building my own dev-tools, and creating stunning
                                             user-experiences that makes you feel{" "}
