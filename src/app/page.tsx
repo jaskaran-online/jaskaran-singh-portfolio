@@ -72,7 +72,7 @@ const CodeBlock = () => {
 function TwitterCard() {
   return (
     <div
-      style={{ top: "85%", right: "3%" }}
+      style={{ top: "88%", right: "3%" }}
       className="shadow-cyan-900/30 shadow-sm rounded-lg bg-slate-950/90 backdrop-filter backdrop-blur-2xl absolute lg:top-[53%] lg:-right-20 animate-float"
     >
       <section className="max-w-xs rounded-lg border-2 border-gray-400/10 p-4 will-change-transform spacing-2">
@@ -89,7 +89,7 @@ function TwitterCard() {
             <h2 className="text-sm heroText font-semibold tracking-wide">
               Jaskaran Singh
             </h2>
-            <h3 className="text-sm tracking-tight text-gray-500 d:text-gray-300/90">
+            <h3 className="text-sm tracking-tight text-gray-200 d:text-gray-300/90">
               @jaskaran.singh
             </h3>
           </div>
@@ -110,7 +110,7 @@ function TwitterCard() {
           </p>
         </main>
         <footer className="mt-2">
-          <p className="text-[13px] text-gray-500 d:text-gray-300/90">
+          <p className="text-[13px] text-gray-200 d:text-gray-300/90">
             <span className="heroText font-semibold text-slate-200 d:text-gray-200">
               136
             </span>{" "}
@@ -149,7 +149,10 @@ function CodeEditor() {
         </div>
       </div>
 
-      <div className="ml-4 bg-gradient-to-r from-blue-750 to-indigo-900 rounded-lg select-none border border-blue-850 relative">
+      <div style={{
+        backdropFilter: "blur(4px)",
+        zIndex: 20
+      }} className="ml-4 bg-gradient-to-r from-blue-750 to-indigo-900 rounded-lg select-none border border-blue-850 relative">
         <div className="flex flex-row">
           <div className="h-[1px] bg-gradient-to-r from-transparent via-pink-500 to-violet-600 w-full"></div>
           <div className="h-[1px] bg-gradient-to-r from-violet-600 to-transparent w-full"></div>
@@ -161,12 +164,12 @@ function CodeEditor() {
               <div className="rounded-full bg-orange-400 cursor-pointer hover:bg-orange-500 w-3 h-3"></div>
               <div className="rounded-full bg-green-400 cursor-pointer hover:bg-green-500 w-3 h-3"></div>
             </div>
-            <div className="color select-none text-center text-[13px] leading-none tracking-wide text-gray-500">
+            <div className="color select-none text-center text-[13px] leading-none tracking-wide text-gray-200">
               /index.tsx
             </div>
             <div className="flex justify-end">
               <button
-                className="text-gray-500 hf:text-white h-5 w-5 transition-colors"
+                className="text-gray-200 hf:text-white h-5 w-5 transition-colors"
                 type="button"
               >
                 <span className="sr-only">Copy code</span>
@@ -252,7 +255,7 @@ export default function Home() {
                       </strong>
                     </h1>
                     <ul className="flex flex-wrap sm:scrollbar-none mb-2 flex items-center justify-start gap-3 overflow-x-auto px-4 pb-2 text-[15px] font-medium ">
-                      <li className="flex items-center gap-2 text-gray-500 d:text-gray-400">
+                      <li className="flex items-center gap-2 text-gray-200 d:text-gray-400">
                         <svg
                           fill="dodgerblue"
                           width="1.4rem"
@@ -266,7 +269,7 @@ export default function Home() {
                         </svg>
                         React Native
                       </li>
-                      <li className="flex items-center gap-2 text-gray-500 d:text-gray-400">
+                      <li className="flex items-center gap-2 text-gray-200 d:text-gray-400">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 180 180"
@@ -337,7 +340,7 @@ export default function Home() {
                         </svg>
                         Next.js
                       </li>
-                      <li className="flex items-center gap-2 text-gray-500 d:text-gray-400">
+                      <li className="flex items-center gap-2 text-gray-200 d:text-gray-400">
                         <svg
                           stroke="currentColor"
                           fill="currentColor"
@@ -354,7 +357,7 @@ export default function Home() {
                         </svg>
                         Tailwind
                       </li>
-                      <li className="flex items-center gap-2 text-gray-500 d:text-gray-400">
+                      <li className="flex items-center gap-2 text-gray-200 d:text-gray-400">
                         <svg
                           height="1.6rem"
                           viewBox="0 -.11376601 49.74245785 51.31690859"
@@ -371,13 +374,13 @@ export default function Home() {
                     </ul>
                   </header>
                   <main>
-                    <p className="mb-3 max-w-prose font-normal text-gray-500 d:text-gray-400 md:text-lg md:tracking-tight">
-                      <span className={"text-white"}>I love writing code</span>{" "}
+                    <p className="mb-3 max-w-prose font-normal text-gray-200 d:text-gray-400 md:text-lg md:tracking-tight">
+                      <span className={"font-bold"}>I love writing code</span>{" "}
                       that takes things next level creating highly performant
                       websites, automated API integrations, building my own
                       dev-tools, and creating stunning user-experiences that
                       makes you feel{" "}
-                      <em className="text-white relative cursor-pointer before:absolute b:bottom-0 b:-z-10 b:h-3 b:w-full b:-rotate-2 b:animate-hint-hint b:bg-pink-400/70 b:blur-sm d:b:bg-pink-600">
+                      <em className="font-bold cursor-pointer before:absolute b:bottom-0 b:-z-10 b:h-3 b:w-full b:-rotate-2 b:animate-hint-hint b:bg-pink-400/70 b:blur-sm d:b:bg-pink-600">
                         WOW!
                       </em>
                       .<span className="mt-4 block"></span>I am always keen to
@@ -402,7 +405,7 @@ export default function Home() {
                       </Link>
                       .
                     </p>
-                    <p className="mb-3 max-w-xl font-normal text-gray-500 md:text-lg md:tracking-tight"></p>
+                    <p className="mb-3 max-w-xl font-normal text-gray-200 md:text-lg md:tracking-tight"></p>
                   </main>
                   <footer className="mt-6 flex flex-wrap gap-4 md:gap-8">
                     <a
@@ -412,7 +415,7 @@ export default function Home() {
                       Let's Work
                     </a>
                     <Link
-                      className="hover:text-white text-[#bbbaba] button-border inline-flex whitespace-nowrap bg-white/20 hover:bg-white/50 px-10 py-2.5 text-sm font-medium tracking-tight text-gray-500 transition-all hfa:border-gray-900/70 hfa:bg-white/90 hfa:text-gray-900 d:border-gray-700/80 d:bg-transparent d:text-gray-300 d:hfa:border-gray-200/30 d:hfa:bg-gray-900/80 d:hfa:text-gray-50 md:px-12"
+                      className="hover:text-white text-[#bbbaba] button-border inline-flex whitespace-nowrap bg-white/20 hover:bg-white/50 px-10 py-2.5 text-sm font-medium tracking-tight text-gray-200 transition-all hfa:border-gray-900/70 hfa:bg-white/90 hfa:text-gray-900 d:border-gray-700/80 d:bg-transparent d:text-gray-300 d:hfa:border-gray-200/30 d:hfa:bg-gray-900/80 d:hfa:text-gray-50 md:px-12"
                       href="https://www.github.com/jaskaran-5ingh/"
                     >
                       <svg

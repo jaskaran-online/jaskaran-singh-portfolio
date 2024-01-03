@@ -35,7 +35,7 @@ const HeroAnimation = () => {
       return cleanUpAnimation;
     }, []);
 
-    return <div ref={container} style={{ width: '100%', height: 'auto' }} />;
+    return <div ref={container} style={{ width: '100%', height: 'auto', zIndex: 20 }} />;
 };
 
 export default HeroAnimation;

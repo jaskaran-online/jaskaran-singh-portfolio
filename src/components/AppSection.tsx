@@ -6,7 +6,9 @@ export default function AppSection() {
     <div className="container mx-auto lg:px-28 px-8 lg:pt-2 text-white">
       <div className="flex flex-wrap items-center">
         <div className="w-full lg:w-1/2">
-          <div className={"sm:relative"}>
+          <div className={"sm:relative"} style={{
+            zIndex: 20
+          }}>
             <HeroAnimation />
           </div>
         </div>
@@ -69,7 +71,7 @@ export default function AppSection() {
               </span>
               Expertise.
             </h1>
-            <p className="mt-6 max-w-xl font-normal text-gray-500 md:text-lg md:tracking-tight">
+            <p className="mt-6 max-w-xl font-normal text-gray-200 md:text-lg md:tracking-tight">
               Discover the power of custom mobile app development with React
               Native. As a skilled developer, I specialize in creating
               responsive, visually appealing apps optimized for both iOS and

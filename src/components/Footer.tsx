@@ -17,7 +17,7 @@ export default function Footer() {
                     </a>
                     <p className="mt-2 text-sm text-white">Design, Code and Ship!</p>
                     <div className="mt-4">
-                        <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
+                        <span className="inline-flex gap-4 justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                             <a className="text-white cursor-pointer hover:text-white">
                                 <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     className="w-5 h-5" viewBox="0 0 24 24">
@@ -105,7 +105,7 @@ export default function Footer() {
                                 <a className="text-white cursor-pointer hover:text-gray-900">Request a Quote</a>
                             </li>
                             <li className="mt-3">
-                                <a className="text-white cursor-pointer hover:text-gray-900">+123-456-7890</a>
+                                <a className="text-white cursor-pointer hover:text-gray-900">jaskaransingh4704@gmail.com</a>
                             </li>
                         </nav>
                     </div>
@@ -113,7 +113,7 @@ export default function Footer() {
             </div>
             <div className="bg-blue-950/30">
                 <div className="container px-5 py-4 mx-auto">
-                    <p className="text-sm text-white capitalize xl:text-center">© 2022 All rights reserved </p>
+                    <p className="text-sm text-white capitalize xl:text-center">© {new Date().getFullYear()} All rights reserved </p>
                 </div>
             </div>
         </footer>
