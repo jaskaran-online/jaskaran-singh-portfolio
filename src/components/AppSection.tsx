@@ -75,7 +75,7 @@ export default function AppSection() {
               responsive, visually appealing apps optimized for both iOS and
               Android. My focus is on delivering seamless functionality and an
               engaging user experience, tailored to your unique business needs.
-              Let's transform your vision into a reality with cutting-edge
+              Let{"'"}s transform your vision into a reality with cutting-edge
               mobile solutions.
             </p>
           </div>
