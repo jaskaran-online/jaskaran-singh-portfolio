@@ -6,7 +6,7 @@ import Image from "next/image";
 import Header from "@/components/nav-menu";
 import StartBackground from "@/components/StarBackground";
 import Footer from "@/components/Footer";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -88,6 +88,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer/>
+          <SpeedInsights/>
         </Providers>
       </body>
     </html>

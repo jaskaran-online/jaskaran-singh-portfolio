@@ -13,6 +13,7 @@
     "@react-three/drei": "^9.92.7",
     "@react-three/fiber": "^8.15.13",
     "@types/three": "^0.160.0",
+    "@vercel/speed-insights": "^1.0.10",
     "framer-motion": "^10.17.0",
     "lottie-web": "^5.12.2",
     "next": "14.0.4",
