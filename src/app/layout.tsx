@@ -4,7 +4,7 @@ import "./globals.css";
 import { Providers } from "./../providers/next-ui-provider";
 import Image from "next/image";
 import Header from "@/components/nav-menu";
-import StartBackground from "@/components/StarBackground";
+// import StartBackground from "@/components/StarBackground";
 import Footer from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
@@ -76,10 +76,10 @@ export default function RootLayout({
       <meta name="twitter:url" content="https://jaskaransingh.info" />
       <body className={inter.className}>
         <Providers>
-        <StartBackground />
+        {/* <StartBackground /> */}
           <Image
             alt="background"
-            src="https://codewithmosh.com/_next/static/media/bg-grid-lighter.4c1e8196.svg" // Replace with your image path
+            src="/bg-grid-lighter.4c1e8196.svg" // Replace with your image path
             layout="fill"
             objectFit="cover"
             quality={100}
