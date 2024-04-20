@@ -78,8 +78,8 @@ export default function RootLayout({
           content="https://avatars.githubusercontent.com/u/42887065?v=4"
         />
         <meta name="twitter:url" content="https://jaskaransingh.info" />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-KGEBTE2XRW"></Script>
-        <Script>
+        <Script id="script" async src="https://www.googletagmanager.com/gtag/js?id=G-KGEBTE2XRW"></Script>
+        <Script id="G-KGEBTE2XRW">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
