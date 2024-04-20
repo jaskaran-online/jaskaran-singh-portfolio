@@ -8,6 +8,7 @@ import Header from "@/components/nav-menu";
 import Footer from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react"
+import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -77,8 +78,8 @@ export default function RootLayout({
           content="https://avatars.githubusercontent.com/u/42887065?v=4"
         />
         <meta name="twitter:url" content="https://jaskaransingh.info" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGEBTE2XRW"></script>
-        <script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-KGEBTE2XRW"></Script>
+        <Script>
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -86,11 +87,11 @@ export default function RootLayout({
           
             gtag('config', 'G-KGEBTE2XRW');
           `}
-        </script>
+        </Script>
       </head>
       <body className={inter.className}>
         <Providers>
-        {/* <StartBackground /> */}
+          {/* <StartBackground /> */}
           <Image
             alt="background"
             src="/bg-grid-lighter.4c1e8196.svg" // Replace with your image path
@@ -101,9 +102,9 @@ export default function RootLayout({
           />
           <Header />
           {children}
-          <Footer/>
-          <SpeedInsights/>
-          <Analytics/>
+          <Footer />
+          <SpeedInsights />
+          <Analytics />
         </Providers>
       </body>
     </html>
