@@ -75,7 +75,7 @@ function TwitterCard() {
   return (
     <div
       style={{ top: "88%", right: "3%" }}
-      className="animate-float absolute rounded-lg border border-gray-300/40 bg-white shadow-lg backdrop-blur-2xl backdrop-filter dark:bg-slate-950/90 dark:shadow-cyan-900/30 lg:-right-20 lg:top-[53%]"
+      className="animate-float absolute rounded-lg border border-gray-300/40 bg-white shadow-lg backdrop-blur-2xl backdrop-filter dark:bg-slate-950/90 lg:-right-20 lg:top-[53%]"
     >
       <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform">
         <header className="flex gap-4">
@@ -91,7 +91,7 @@ function TwitterCard() {
             <h2 className="heroText text-sm font-semibold tracking-wide">
               Jaskaran Singh
             </h2>
-            <h3 className="text-sm tracking-tight text-blue-500 dark:text-gray-100">
+            <h3 className="text-sm tracking-tight text-blue-500 dark:text-white/70">
               @jaskaran.singh
             </h3>
           </div>
@@ -105,19 +105,19 @@ function TwitterCard() {
           </a>
         </header>
         <main>
-          <p className="text-gra-500 mt-2 line-clamp-3 pr-2 text-[13px] tracking-tight dark:text-gray-200">
+          <p className="text-gra-500 mt-2 line-clamp-3 pr-2 text-[13px] tracking-tight dark:text-white/70">
             Hey, I'm new to twitter and not really a social media person 🙃 I'm
             looking to connect with fellow developers and to learn about the
             latest in web dev 🤗
           </p>
         </main>
         <footer className="mt-2">
-          <p className="text-[13px] text-gray-500 dark:text-gray-200">
-            <span className="heroText d:text-gray-800 font-semibold dark:text-slate-100">
+          <p className="text-[13px] text-gray-500 dark:text-white/70">
+            <span className="heroText d:text-gray-800 font-semibold dark:text-white/70">
               136
             </span>{" "}
             Following
-            <span className="heroText ml-2 font-semibold text-gray-800 dark:text-slate-100">
+            <span className="heroText ml-2 font-semibold text-gray-800 dark:text-white/70">
               8
             </span>{" "}
             Followers
@@ -347,7 +347,7 @@ const HeaderSkills = () => {
 const HeroSection = () => {
   return (
     <Container id="hero">
-      <div className="flex flex-col gap-12 md:flex-row">
+      <div className="flex flex-col gap-48 sm:flex-col md:flex-row md:gap-8">
         {/* Image */}
         <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
           <CodeEditor />
@@ -358,14 +358,14 @@ const HeroSection = () => {
           <div className="flex flex-col gap-2">
             Hey there!, I'm -
             <Typography variant="h1">
-              <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent dark:from-pink-300 dark:to-purple-300">
+              <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent ">
                 Jaskaran Singh
               </span>{" "}
               <span className="inline-block animate-waving-hand">👋</span>
             </Typography>
             <Typography>
               I&apos;m a{" "}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent dark:from-pink-300 dark:to-purple-300">
+              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent ">
                 FullStack Developer
               </span>{" "}
               with a focus on creating (and occasionally designing) exceptional
