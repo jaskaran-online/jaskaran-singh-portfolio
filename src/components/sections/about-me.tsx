@@ -4,12 +4,10 @@ import jaskaransingh from "/public/jas.jpg";
 import Tag from "@/components/data-display/tag";
 import Container from "@/components/layout/container";
 import Typography from "@/components/general/typography";
-import Link from "@/components/navigation/link";
-import { EXTERNAL_LINKS } from "@/lib/data";
 
 const AboutMeSection = () => {
   return (
-    <Container className="bg-gray-50" id="about">
+    <Container className="bg-gray-50/50  md:mt-24" id="about">
       <div className="self-center">
         <Tag label="About me" />
       </div>
