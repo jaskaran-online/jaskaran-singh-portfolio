@@ -17,11 +17,12 @@ import LogoAWS from "/public/images/logos/aws-svgrepo-com.svg";
 import ReactNativeLogo from "/public/images/logos/reactjs-svgrepo-com.svg";
 import LogoExpo from "/public/images/logos/expo-svgrepo-com.svg";
 import LogoCoreSolutions from "/public/images/core-solution-amritsar-website-development.png";
-import ProjectFiskil from "/public/images/project-fiskil.png";
-import ProjectWingie from "/public/images/project-wingie.png";
-import ProjectPepehousing from "/public/images/project-pepehousing.png";
-import iVALTLogo from "/public/images/logo-ivalt.png";
 
+import PerfectAir from "/public/perfectair.jpeg";
+import GameHub from "/public/gamehub.jpeg";
+import iVALTLogo from "/public/images/logo-ivalt.png";
+import cleanfoldframs from "/public/CleanFold/cleanfoldframs.png";
+import MyCreditBook from "/public/myCreditBook/frame.png";
 import AvatarDummy from "/public/images/avatar-dummy.svg";
 import {
   ExperienceDetails,
@@ -190,58 +191,80 @@ export const EXPERIENCES: ExperienceDetails[] = [
 
 export const PROJECTS: ProjectDetails[] = [
   {
-    name: "Wingie",
+    name: "Cleanfold iOS and Android Mobile App",
     description:
-      "A platform for comparing and finding affordable flights, as well as booking and purchasing tickets safely and easily in a few simple clicks.",
-    url: "https://www.wingie.com",
-    previewImage: ProjectWingie,
+      "A mobile app for a cleaning company that allows company employees to see assigned jobs and track their progress.",
+    url: '/project/cleanfold',
+    projectDetails: '/project/cleanfold',
+    previewImage: cleanfoldframs,
     technologies: [
-      "React",
-      "Typescript",
-      "React Bootstrap",
-      "Firebase",
-      "Express.js",
-      "PostgreSQL",
-      "Styled Components",
-      "Redux",
+      "Expo",
+      "React Native",
+      "React Query",
+      "Firebase Push Notifications",
+      "React Navigation",
+      "Laravel",
+      "MySQL",
     ],
   },
   {
-    name: "Fiskil",
+    name: "MyCreditBook iOS and Android Mobile App",
     description:
-      "A platform for accessing real-time open banking and energy data to help you grow your business, backed with scalable back-end infrastructure.",
-    url: "https://fiskil.com.au",
-    previewImage: ProjectFiskil,
+      "A mobile app for a credit book that allows users to track their credit history and manage their debts.",
+    url: '/project/mycreditbook',
+    projectDetails: '/project/mycreditbook',
+    previewImage: MyCreditBook,
+    technologies: [
+      "React Native",
+      "React Navigation",
+      "Typescript",
+      "NativeWind",
+      "Expo",
+      "Laravel",
+      "MySQL",
+      "React Query",
+      "Camera Module",
+      "Firebase",
+      "Firebase Push Notifications",
+      "Native Share",
+      "PDF Print",
+    ],
+  },
+  {
+    name: "Perfect Air Instruments",
+    description:
+      "Portfolio website for gas alarm detection company.",
+    url: "https://perfectair.com.au/",
+    projectDetails: '/project/perfectair',
+    previewImage: PerfectAir,
     technologies: [
       "React",
       "Next.js",
       "Typescript",
       "Tailwindcss",
-      "Material UI",
-      "Redux Toolkit",
-      "React Query",
-      "Express.js",
-      "PostgreSQL",
-      "Firebase",
-      "AWS Amplify",
-      "Cypress",
-      "Storybook",
+      "React Email",
+      "SEO",
+      "Google Bot Verification",
+      "Laravel",
+      "MySQL",
+      "Filament"
     ],
   },
-  {
-    name: "Pepehousing",
+    {
+    name: "Game Hub",
     description:
-      "A platform for renting a flat or room in Poland. You may browse hundreds of verified deals, contact the vendor, and pay online in a simple and secure manner.",
-    url: "https://pepehousing.com",
-    previewImage: ProjectPepehousing,
+      "Portfolio website for a game preview platform.",
+    url: "https://gamehub.jaskaransingh.info/",
+    projectDetails: '/project/gamehub',
+    previewImage: GameHub,
     technologies: [
-      "React",
-      "Next.js",
+      "React JS",
       "Typescript",
       "Tailwindcss",
-      "Redux Toolkit",
       "React Query",
-      "Storybook",
+      "Rawg API",
+      "DaisyUI",
+      "React Router",
     ],
   },
 ];
@@ -264,10 +287,10 @@ export const TESTIMONIALS: TestimonialDetails[] = [
       "Jaskaran is a fantastic person to work with, and is not only a multi-skilled and insightful colleague, but also an inspiring strategist. Very good and hard working person. Great employee with a very strong problem solving skills. jaskaran is an asset to any company.",
   },
   {
-    personName: "Joe Matkin",
+    personName: "Sagar Patil",
     personAvatar: AvatarDummy,
     title: "Freelancer",
     testimonial:
-      "Jaskaran was extremely easy and pleasant to work with and he truly cares about the project being a success. Sagar has a high level of knowledge and was able to work on my MERN stack application without any issues.",
+      "Jaskaran was extremely easy and pleasant to work with and he truly cares about the project being a success. Jaskaran has a high level of knowledge and was able to work on my MERN stack application without any issues.",
   },
 ];
