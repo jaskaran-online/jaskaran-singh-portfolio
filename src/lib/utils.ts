@@ -12,3 +12,7 @@ export const copyTextToClipboard = async (text: string) => {
     return document.execCommand('copy', true, text);
   }
 };
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
