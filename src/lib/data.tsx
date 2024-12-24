@@ -256,7 +256,7 @@ export const PROJECTS: ProjectDetails[] = [
     name: "Game Hub",
     description:
       "Portfolio website for a game preview platform.",
-    url: "https://gamehub.jaskaransingh.info/",
+    url: "https://gamehub.jaskaran.in/",
     projectDetails: '/project/gamehub',
     previewImage: GameHub,
     technologies: [
