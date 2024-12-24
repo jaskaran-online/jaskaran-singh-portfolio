@@ -1,21 +1,55 @@
-import HeroSection from '@/components/sections/hero';
-import ContactSection from '@/components/sections/contact';
-import AboutMeSection from '@/components/sections/about-me';
-import SkillsSection from '@/components/sections/skills';
-import ExperienceSection from '@/components/sections/experiences';
-import TestimonialsSection from '@/components/sections/testimonials';
-import WorkSection from '@/components/sections/work';
+import { Suspense } from 'react';
+import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+import Loading from '@/components/loading';
+
+// Dynamic imports for better code splitting
+const HeroSection = dynamic(() => import('@/components/sections/hero'), {
+  loading: () => <Loading />
+});
+const AboutMeSection = dynamic(() => import('@/components/sections/about-me'), {
+  loading: () => <Loading />
+});
+const SkillsSection = dynamic(() => import('@/components/sections/skills'), {
+  loading: () => <Loading />
+});
+const WorkSection = dynamic(() => import('@/components/sections/work'), {
+  loading: () => <Loading />
+});
+const TestimonialsSection = dynamic(() => import('@/components/sections/testimonials'), {
+  loading: () => <Loading />
+});
+const ContactSection = dynamic(() => import('@/components/sections/contact'), {
+  loading: () => <Loading />
+});
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <AboutMeSection />
-      <SkillsSection />
-      {/* <ExperienceSection /> */}
-      <WorkSection />
-      <TestimonialsSection />
-      <ContactSection />
+      <Suspense fallback={<Loading />}>
+        <HeroSection />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <AboutMeSection />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <SkillsSection />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <WorkSection />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <TestimonialsSection />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <ContactSection />
+      </Suspense>
     </>
   );
 }
