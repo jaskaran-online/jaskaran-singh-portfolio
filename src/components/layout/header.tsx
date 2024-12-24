@@ -46,7 +46,10 @@ const Header = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      {
+        threshold: 0.3,
+        rootMargin: '-80px 0px -50% 0px'
+      }
     );
 
     sections.forEach((section) => {
@@ -55,6 +58,14 @@ const Header = () => {
         observer.observe(element);
       }
     });
+
+    // Set initial active section based on URL hash
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      setActiveSection(hash);
+    } else {
+      setActiveSection('/'); // Default section
+    }
 
     return () => {
       sections.forEach((section) => {
