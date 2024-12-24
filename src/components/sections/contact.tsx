@@ -66,12 +66,6 @@ const ContactSection = () => {
             </IconButton>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-2">
-          <Typography className="text-center">
-            You may also find me on these platforms!
-          </Typography>
-          <SocialIcons />
-        </div>
       </div>
     </Container>
   );
