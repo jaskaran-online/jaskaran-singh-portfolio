@@ -1,15 +1,16 @@
 import Image from "next/image";
 
 import jaskaransingh from "/public/jas.jpg";
-import Tag from "@/components/data-display/tag";
 import Container from "@/components/layout/container";
 import Typography from "@/components/general/typography";
-
+import SparklesText from "@/components/ui/sparkles-text";
 const AboutMeSection = () => {
   return (
     <Container className="bg-gray-50/50  md:mt-24" id="about">
       <div className="self-center">
-        <Tag label="About me" />
+        <Typography variant="h2" className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+          <SparklesText text="About me" className="text-4xl font-bold text-gray-900 dark:text-white mb-2" sparklesCount={4} />
+        </Typography>
       </div>
 
       <div className="flex w-full flex-col justify-center gap-12 md:flex-row">

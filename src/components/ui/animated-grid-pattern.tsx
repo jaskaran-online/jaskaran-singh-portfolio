@@ -30,7 +30,7 @@ export default function AnimatedGridPattern({
   maxOpacity = 0.5,
   duration = 4,
   repeatDelay = 0.5,
-  color = "#1E90FF", // dodger blue
+  color = "#1E90FF", // Use theme color instead of hardcoded
   ...props
 }: AnimatedGridPatternProps) {
   const id = useId();
