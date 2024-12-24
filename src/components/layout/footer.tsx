@@ -8,7 +8,7 @@ import SocialIcons from "@/components/data-display/social-icons";
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-gray-100 bg-white py-8 dark:border-gray-800 dark:bg-gray-950">
+    <footer className="w-full border-t border-gray-100 bg-[#111] py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-8">
           {/* Navigation */}

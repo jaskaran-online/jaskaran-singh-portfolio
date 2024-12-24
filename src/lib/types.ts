@@ -31,4 +31,5 @@ export type TestimonialDetails = {
   personAvatar: StaticImageData;
   title: string;
   testimonial: string;
+  source: 'twitter' | 'linkedin' | 'student' | 'personal';
 };

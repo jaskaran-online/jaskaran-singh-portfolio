@@ -143,7 +143,7 @@ const ContactSection = () => {
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
         {/* Contact Information */}
         <div className="flex flex-col justify-center space-y-8">
-          <div className="rounded-2xl bg-white/80 p-8 pt-0 backdrop-blur-sm dark:bg-gray-800/80">
+          <div className="rounded-2xl bg-[transparent] p-8 pt-0">
             <Typography variant="h3" className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
               Contact Information
             </Typography>
@@ -231,7 +231,7 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-6 bg-white/80 p-8 backdrop-blur-sm dark:bg-gray-800/80 hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700"
+          className="space-y-6 bg-[transparent] p-8 backdrop-blur-sm hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700"
           onSubmit={handleSubmit}
         >
           {/* <Typography variant="h3" className="mb-3 text-xl font-semibold text-gray-900 dark:text-white text-center mb-10">
