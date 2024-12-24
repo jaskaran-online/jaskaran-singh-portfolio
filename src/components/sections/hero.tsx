@@ -84,12 +84,16 @@ const CodeBlock = () => {
 function TwitterCard() {
   return (
     <div
-      style={{ top: "88%", right: "3%" }}
-      className="animate-float absolute rounded-lg border border-gray-300/40 bg-white shadow-lg backdrop-blur-2xl backdrop-filter d:bg-slate-950/90 lg:-right-20 lg:top-[53%]"
+      style={{
+        top: "88%", right: "3%",
+        backdropFilter: "blur(14px)",
+        zIndex: 20,
+      }}
+      className="animate-float absolute rounded-lg border border-gray-300/40 shadow-sm dark:border-gray-700/40 lg:-right-20 lg:top-[53%]"
     >
-      <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform">
+      <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform" >
         <header className="flex gap-4">
-          <figure className="overflow-hidden rounded-full border-2 border-gray-400/50">
+          <figure className="overflow-hidden rounded-full border-2 border-gray-400/50 dark:border-gray-600/50">
             <Image
               width={40}
               height={40}
@@ -98,10 +102,10 @@ function TwitterCard() {
             />{" "}
           </figure>
           <div className="flex flex-col justify-center">
-            <h2 className="heroText text-sm font-semibold tracking-wide">
+            <h2 className="text-sm font-semibold tracking-wide text-gray-900 dark:text-gray-100">
               Jaskaran Singh
             </h2>
-            <h3 className="text-sm tracking-tight text-blue-500 d:text-white/70">
+            <h3 className="text-sm tracking-tight text-blue-500 dark:text-blue-400">
               @jaskaran.singh
             </h3>
           </div>
@@ -109,25 +113,25 @@ function TwitterCard() {
             href="https://twitter.com/jaskaran_5ingh"
             rel="noopener noreferrer"
             target="_blank"
-            className="butter-border hfa:bg-sky-600/80 d:bg-sky-600/90 d:hfa:bg-sky-500/80 my-auto ml-auto flex items-center justify-center rounded-full bg-sky-500/90 px-4 py-1.5 text-xs text-white transition-colors"
+            className="my-auto ml-auto flex items-center justify-center rounded-full bg-sky-500 px-4 py-1.5 text-xs text-white transition-colors hover:bg-sky-600 dark:bg-sky-600 dark:hover:bg-sky-500"
           >
             Follow
           </a>
         </header>
         <main>
-          <p className="text-gra-500 mt-2 line-clamp-3 pr-2 text-[13px] tracking-tight d:text-white/70">
+          <p className="mt-2 line-clamp-3 pr-2 text-[13px] tracking-tight text-gray-600 dark:text-gray-300">
             Hey, I'm new to twitter and not really a social media person 🙃 I'm
             looking to connect with fellow developers and to learn about the
             latest in web dev 🤗
           </p>
         </main>
         <footer className="mt-2">
-          <p className="text-[13px] text-gray-500 d:text-white/70">
-            <span className="heroText d:text-gray-800 font-semibold d:text-white/70">
+          <p className="text-[13px] text-gray-500 dark:text-gray-400">
+            <span className="font-semibold text-gray-800 dark:text-gray-200">
               136
             </span>{" "}
             Following
-            <span className="heroText ml-2 font-semibold text-gray-800 d:text-white/70">
+            <span className="ml-2 font-semibold text-gray-800 dark:text-gray-200">
               8
             </span>{" "}
             Followers

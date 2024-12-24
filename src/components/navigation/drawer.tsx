@@ -20,7 +20,7 @@ const DrawerOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Overlay
     className={mergeClasses(
-      "fixed inset-0 z-50 bg-gray-900/10 opacity-100 backdrop-blur-sm",
+      "fixed inset-0 z-50 bg-gray-900/10 dark:bg-gray-950/30 opacity-100 backdrop-blur-sm",
       className
     )}
     {...props}
@@ -30,7 +30,7 @@ const DrawerOverlay = React.forwardRef<
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
 const drawerVariants = cva(
-  "fixed z-50 shadow-2xl bg-gray ring-1 ring-black/10 transition-all ease-in-out duration-100",
+  "fixed z-50 shadow-2xl bg-background ring-1 ring-black/10 dark:ring-white/10 transition-all ease-in-out duration-100",
   {
     variants: {
       side: {
@@ -44,9 +44,9 @@ const drawerVariants = cva(
   }
 );
 
-interface DrawerContentProps
+export interface DrawerContentProps
   extends React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>,
-    VariantProps<typeof drawerVariants> {}
+  VariantProps<typeof drawerVariants> { }
 
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
