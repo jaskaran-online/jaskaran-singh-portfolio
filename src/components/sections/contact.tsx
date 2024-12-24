@@ -12,14 +12,9 @@ import PulsatingButton from "../ui/pulsating-button";
 const FloatingIcons = () => {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
-      {/* Gradient Orbs */}
-      <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-purple-200/30 blur-3xl dark:bg-purple-900/20" />
-      <div className="absolute -right-20 top-40 h-72 w-72 rounded-full bg-primary-200/30 blur-3xl dark:bg-primary-900/20" />
-      <div className="absolute bottom-20 left-40 h-72 w-72 rounded-full bg-pink-200/30 blur-3xl dark:bg-pink-900/20" />
-
       {/* Code bracket */}
       <motion.svg
-        className="absolute left-1/4 top-48 h-8 w-8 text-purple-500/40 dark:text-purple-400/40"
+        className="absolute left-1/4 top-48 h-8 w-8 text-purple-500/40 dark:text-purple-400"
         animate={{
           y: [0, -10, 0],
           rotate: [0, 5, 0],
@@ -38,7 +33,7 @@ const FloatingIcons = () => {
 
       {/* Terminal */}
       <motion.svg
-        className="absolute right-1/4 top-48 h-12 w-12 text-purple-500/80 dark:text-purple-400/60"
+        className="absolute right-1/4 top-48 h-12 w-12 text-purple-500/80 dark:text-blue-400"
         animate={{
           y: [0, 10, 0],
           x: [0, -5, 0],
@@ -57,7 +52,7 @@ const FloatingIcons = () => {
 
       {/* Code Block */}
       <motion.svg
-        className="absolute bottom-20 left-1/4 h-10 w-10 text-pink-500/40 dark:text-pink-400/40"
+        className="absolute bottom-20 left-1/4 h-10 w-10 text-pink-500/40 dark:text-pink-400"
         animate={{
           scale: [1, 1.1, 1],
           rotate: [0, -5, 0],
@@ -248,7 +243,11 @@ const ContactSection = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-primary-400"
+              style={{
+                backgroundColor: 'transparent',
+                border: '1px solid #d1d5db',
+              }}
+              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-primary-400 dark:placeholder-gray-400"
               placeholder="Your name"
             />
           </div>
@@ -264,7 +263,11 @@ const ContactSection = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-primary-400"
+              style={{
+                backgroundColor: 'transparent',
+                border: '1px solid #d1d5db',
+              }}
+              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-primary-400 dark:placeholder-gray-400"
               placeholder="your.email@example.com"
             />
           </div>
@@ -280,12 +283,16 @@ const ContactSection = () => {
               value={formData.message}
               onChange={handleChange}
               rows={5}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-primary-400"
+              style={{
+                backgroundColor: 'transparent',
+                border: '1px solid #d1d5db',
+              }}
+              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-primary-400 dark:placeholder-gray-400"
               placeholder="Your message..."
             />
           </div>
 
-          <PulsatingButton className="w-full bg-blue-500">
+          <PulsatingButton className="w-full bg-blue-500 hover:bg-blue-600 dark:bg-purple-500 dark:hover:bg-purple-600">
             {isSubmitting ? (
               'Sending...'
             ) : (
