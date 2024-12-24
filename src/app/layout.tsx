@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 const title = "Jaskaran Singh | Full Stack Developer From Amritsar, India.";
 const description =
   "Jaskaran Singh is a software engineer with a passion for building web and mobile applications. He is a full stack developer and has a knack for creating user-friendly and efficient web applications.";
-const url = "https://jaskaransingh.info";
+const url = "https://jaskaran.in";
 
 export const viewport: Viewport = {
   themeColor: [
