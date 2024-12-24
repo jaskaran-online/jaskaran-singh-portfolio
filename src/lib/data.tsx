@@ -278,6 +278,7 @@ export const TESTIMONIALS: TestimonialDetails[] = [
     title: "Director | Perfect Air Instruments",
     testimonial:
       "I am thrilled to write a recommendation for Jaskaran singh, a truly exceptional full-stack developer and an outstanding individual. He possesses a unique blend of technical expertise, problem-solving skills, and creativity that sets him apart in the world of software development.",
+    source: "linkedin"
   },
   {
     personName: "Sandeep Singh",
@@ -285,6 +286,7 @@ export const TESTIMONIALS: TestimonialDetails[] = [
     title: "Full Stack Developer",
     testimonial:
       "Jaskaran is a fantastic person to work with, and is not only a multi-skilled and insightful colleague, but also an inspiring strategist. Very good and hard working person. Great employee with a very strong problem solving skills. jaskaran is an asset to any company.",
+    source: "personal"
   },
   {
     personName: "Sagar Patil",
@@ -292,5 +294,30 @@ export const TESTIMONIALS: TestimonialDetails[] = [
     title: "Freelancer",
     testimonial:
       "Jaskaran was extremely easy and pleasant to work with and he truly cares about the project being a success. Jaskaran has a high level of knowledge and was able to work on my MERN stack application without any issues.",
+    source: "twitter"
   },
+  {
+    personName: "Sarah Johnson",
+    personAvatar: AvatarDummy,
+    title: "Product Manager",
+    testimonial:
+      "Working with Jaskaran was a game-changer for our project. His technical expertise and ability to translate complex requirements into elegant solutions made him an invaluable asset to our team.",
+    source: "linkedin"
+  },
+  {
+    personName: "Michael Chen",
+    personAvatar: AvatarDummy,
+    title: "Tech Lead | StartupX",
+    testimonial:
+      "Jaskaran's full-stack capabilities are impressive. He consistently delivered high-quality code and was always ready to tackle challenging problems with innovative solutions.",
+    source: "student"
+  },
+  {
+    personName: "Emma Davis",
+    personAvatar: AvatarDummy,
+    title: "UX Designer",
+    testimonial:
+      "I had the pleasure of collaborating with Jaskaran on several projects. His attention to detail and commitment to creating seamless user experiences perfectly complemented our design vision.",
+    source: "personal"
+  }
 ];
