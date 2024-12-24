@@ -108,12 +108,21 @@ module.exports = {
   				'100%': {
   					transform: 'rotate(0.0deg)'
   				}
+  			},
+  			pulse: {
+  				'0%, 100%': {
+  					boxShadow: '0 0 0 0 var(--pulse-color)'
+  				},
+  				'50%': {
+  					boxShadow: '0 0 0 8px var(--pulse-color)'
+  				}
   			}
   		},
   		animation: {
   			'drawer-open': 'open 0.3s ease-in-out',
   			'drawer-close': 'close 0.3s ease-in-out',
-  			'waving-hand': 'waving 2s linear 3'
+  			'waving-hand': 'waving 2s linear 3',
+  			pulse: 'pulse var(--duration) ease-out infinite'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
