@@ -17,7 +17,7 @@ const SourceIcon = ({ source }: { source: TestimonialDetailsProps['source'] }) =
     case 'student':
       return <GraduationCap className="h-5 w-5 text-orange-400" />;
     case 'personal':
-      return <User className="h-5 w-5 text-gray-400" />;
+      return <User className="h-5 w-5 text-gray-400 dark:text-gray-500" />;
     default:
       return null;
   }
@@ -31,10 +31,10 @@ const TestimonialDetails = ({
   source,
 }: TestimonialDetailsProps) => {
   return (
-    <Card className="group relative h-full bg-white p-6 shadow-sm transition-all hover:shadow-md dark:bg-gray-800/50">
+    <Card className="group relative h-full bg-white/80 p-6 shadow-sm backdrop-blur-sm transition-all hover:bg-white/95 dark:bg-gray-800/80 dark:hover:bg-gray-800/95">
       <div className="flex items-start justify-between">
         <div className="flex gap-3">
-          <div className="relative h-12 w-12 overflow-hidden rounded-full ring-1 ring-gray-200 dark:ring-gray-700">
+          <div className="relative h-12 w-12 overflow-hidden rounded-full ring-1 ring-gray-200/50 dark:ring-gray-700/50">
             <Image
               src={personAvatar}
               alt={`${personName} avatar`}
