@@ -310,7 +310,7 @@ const HeaderSkills = () => {
           <svg
             stroke="currentColor"
             fill="currentColor"
-            stroke-width="0"
+            strokeWidth="0"
             role="img"
             viewBox="0 0 24 24"
             className="d:text-gray-300/80 h-7 w-7 text-blue-400"

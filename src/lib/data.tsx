@@ -24,6 +24,8 @@ import iVALTLogo from "/public/images/logo-ivalt.png";
 import cleanfoldframs from "/public/CleanFold/cleanfoldframs.png";
 import MyCreditBook from "/public/myCreditBook/frame.png";
 import AvatarDummy from "/public/images/avatar-dummy.svg";
+import BikramjitAvatar from "/public/images/bikramjeetsingh.jpeg";
+import SandeepAvatar from "/public/images/sandeep.png";
 import {
   ExperienceDetails,
   ProjectDetails,
@@ -250,7 +252,7 @@ export const PROJECTS: ProjectDetails[] = [
       "Filament"
     ],
   },
-    {
+  {
     name: "Game Hub",
     description:
       "Portfolio website for a game preview platform.",
@@ -272,16 +274,14 @@ export const PROJECTS: ProjectDetails[] = [
 export const TESTIMONIALS: TestimonialDetails[] = [
   {
     personName: "Bikramjit Singh",
-    personAvatar:
-      "https://media.licdn.com/dms/image/C5603AQHtcq_RtqI1PA/profile-displayphoto-shrink_200_200/0/1619476033899?e=1725494400&v=beta&t=we18vPXvgkmQH-IwjS2mUaNBGyqPl8jxV9TJ-rgTQEM",
+    personAvatar: BikramjitAvatar,
     title: "Director | Perfect Air Instruments",
     testimonial:
       "I am thrilled to write a recommendation for Jaskaran singh, a truly exceptional full-stack developer and an outstanding individual. He possesses a unique blend of technical expertise, problem-solving skills, and creativity that sets him apart in the world of software development.",
   },
   {
     personName: "Sandeep Singh",
-    personAvatar:
-      "https://media.licdn.com/dms/image/C5603AQFizKGOjP02Mg/profile-displayphoto-shrink_200_200/0/1625713207871?e=1725494400&v=beta&t=cvqHHziR5mjKZ1YhUtNvLBonZrNEpCml2gSygGGNIBw",
+    personAvatar: SandeepAvatar,
     title: "Full Stack Developer",
     testimonial:
       "Jaskaran is a fantastic person to work with, and is not only a multi-skilled and insightful colleague, but also an inspiring strategist. Very good and hard working person. Great employee with a very strong problem solving skills. jaskaran is an asset to any company.",
