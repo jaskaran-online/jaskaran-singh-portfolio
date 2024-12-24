@@ -22,6 +22,9 @@ export const viewport: Viewport = {
   ],
 };
 
+import { cn } from "@/lib/utils";
+import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
+
 export const metadata: Metadata = {
   metadataBase: new URL(url),
   title,
@@ -118,21 +121,18 @@ export default function RootLayout({
           </Script>
         </head>
       ) : null}
-      <body className={`${inter.className} bg-gray text-gray-600 antialiased`} suppressHydrationWarning>
+      <body
+        className={`${inter.className} bg-background text-foreground antialiased transition-colors duration-300`}
+        suppressHydrationWarning
+      >
         <Providers>
-          <Header />
-          <Image
-            alt="background grid"
-            src="/bg-grid-lighter.4c1e8196.svg"
-            fill
-            priority
-            quality={90}
-            sizes="100vw"
-            className="object-cover pointer-events-none"
-            aria-hidden="true"
-          />
-          <main className="flex min-h-screen w-full flex-col relative">{children}</main>
-          <Footer />
+          <div className="relative min-h-screen bg-background">
+            <Header />
+            <main className="relative flex min-h-screen w-full flex-col">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
