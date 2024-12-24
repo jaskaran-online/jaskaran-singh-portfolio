@@ -1,6 +1,6 @@
 import Script from "next/script";
 import { Inter } from "next/font/google";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 import "./globals.css";
 import Header from "@/components/layout/header";
@@ -14,6 +14,13 @@ const title = "Jaskaran Singh | Full Stack Developer From Amritsar, India.";
 const description =
   "Jaskaran Singh is a software engineer with a passion for building web and mobile applications. He is a full stack developer and has a knack for creating user-friendly and efficient web applications.";
 const url = "https://jaskaransingh.info";
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -30,22 +37,41 @@ export const metadata: Metadata = {
     "India",
     "Software Engineer",
     "Software Developer",
-    "Software Engineer",
+    "Web Developer",
+    "JavaScript Developer",
+    "TypeScript Developer",
   ],
   creator: "Jaskaran Singh",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
+  alternates: {
+    canonical: url,
+  },
   openGraph: {
     type: "website",
     url,
     title,
     description,
     siteName: title,
+    locale: 'en_US',
     images: [
       {
         url: "/images/jas.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Jaskaran Singh - Full Stack Developer",
       },
     ],
   },
@@ -54,7 +80,10 @@ export const metadata: Metadata = {
     title,
     description,
     creator: "@jaskaran_singh",
-    images: "/images/jas.jpg",
+    images: {
+      url: "/images/jas.jpg",
+      alt: "Jaskaran Singh - Full Stack Developer",
+    },
   },
   icons: {
     icon: "/favicon.ico",
@@ -89,18 +118,20 @@ export default function RootLayout({
           </Script>
         </head>
       ) : null}
-      <body className={`${inter.className} bg-gray text-gray-600 antialiased`}>
+      <body className={`${inter.className} bg-gray text-gray-600 antialiased`} suppressHydrationWarning>
         <Providers>
           <Header />
           <Image
-            alt="background"
-            src="/bg-grid-lighter.4c1e8196.svg" // Replace with your image path
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-            priority // This is optional, use it for high-priority images
+            alt="background grid"
+            src="/bg-grid-lighter.4c1e8196.svg"
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover pointer-events-none"
+            aria-hidden="true"
           />
-          <main className="flex min-h-screen w-full flex-col">{children}</main>
+          <main className="flex min-h-screen w-full flex-col relative">{children}</main>
           <Footer />
         </Providers>
       </body>
