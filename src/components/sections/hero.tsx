@@ -4,6 +4,8 @@ import SocialIcons from "@/components/data-display/social-icons";
 import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import AnimatedGridPattern from "../ui/animated-grid-pattern";
 
 const CodeBlock = () => {
   return (
@@ -43,17 +45,25 @@ const CodeBlock = () => {
         <span className="text-green-600 dark:text-[#56b6c2]">true</span>,
       </div>
       <div className="pl-4">
-        <span className="text-[#d19a66]">"hireable"</span>:
-        <span className="ml-2 text-[#c678dd]">{"() =>"}</span>
-        <span className="ml-2 text-[#e06c75]">{"{"}</span>
+        <span className="text-[#d19a66]">"isAvailable"</span>:{" "}
+        <span className="text-[#c678dd]">()</span>{" "}
+        <span className="text-[#56b6c2]">{"{"}</span>
         <div className="pl-4">
-          <span className="text-[#c678dd]">{"return ("}</span>{" "}
+          <span className="text-[#c678dd]">return </span>(
           <div className="pl-4">
-            <span className="text-[#e06c75]">this.</span>hardWorker{" "}
+            <span className="text-[#56b6c2]">this.</span>
+            <span className="text-[#98c379]">traits.includes</span>
+            <span className="text-[#e5c07b]">(</span>
+            <span className="text-[#98c379]">"Hard Worker"</span>
+            <span className="text-[#e5c07b]">)</span>{" "}
             <span className="text-[#d19a66]">&amp;&amp;</span>{" "}
           </div>
           <div className="pl-4">
-            <span className="text-[#e06c75]">this.</span>problemSolver{" "}
+            <span className="text-[#56b6c2]">this.</span>
+            <span className="text-[#98c379]">traits.includes</span>
+            <span className="text-[#e5c07b]">(</span>
+            <span className="text-[#98c379]">"Problem Solver"</span>
+            <span className="text-[#e5c07b]">)</span>{" "}
             <span className="text-[#d19a66]">&amp;&amp;</span>{" "}
           </div>
           <div className="pl-4">
@@ -346,61 +356,78 @@ const HeaderSkills = () => {
 
 const HeroSection = () => {
   return (
-    <Container id="hero">
-      <div className="flex flex-col gap-48 sm:flex-col md:flex-row md:gap-8">
-        {/* Image */}
-        <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
-          <CodeEditor />
-        </div>
+    <Container id="hero" className="relative flex w-full items-center justify-center overflow-hidden rounded-lg">
 
-        {/* Content */}
-        <div className="flex max-w-2xl flex-grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-8">
-          <div className="flex flex-col gap-2">
-            Hey there!, I'm -
-            <Typography variant="h1">
-              <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent ">
-                Jaskaran Singh
-              </span>{" "}
-              <span className="inline-block animate-waving-hand">👋</span>
-            </Typography>
-            <Typography>
-              I&apos;m a{" "}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent ">
-                FullStack Developer
-              </span>{" "}
-              with a focus on creating (and occasionally designing) exceptional
-              digital experiences web and mobile that are fast, accessible,
-              visually appealing, and responsive. Even though I have been
-              creating web applications for over 5 years, I still love it as if
-              it was something new.
-            </Typography>
-            <div className="border-1 border-gray-200 pt-4">
-              <HeaderSkills />
-            </div>
+      <div className="z-10">
+        <div className="flex flex-col gap-48 sm:flex-col md:flex-row md:gap-8">
+          {/* Image */}
+          <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
+            <CodeEditor />
           </div>
 
-          <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
-              <MapPin className="stroke-gray-600" />
-              <Typography>Amritsar, Punjab, India</Typography>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <div className="flex h-6 w-6 items-center justify-center">
-                <span className="relative flex h-3 w-3">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
-                </span>
+          {/* Content */}
+          <div className="flex max-w-2xl flex-grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-8">
+            <div className="flex flex-col gap-2">
+              Hey there!, I'm -
+              <Typography variant="h1">
+                <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent ">
+                  Jaskaran Singh
+                </span>{" "}
+                <span className="inline-block animate-waving-hand">👋</span>
+              </Typography>
+              <Typography>
+                I&apos;m a{" "}
+                <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent ">
+                  FullStack Developer
+                </span>{" "}
+                with a focus on creating (and occasionally designing) exceptional
+                digital experiences web and mobile that are fast, accessible,
+                visually appealing, and responsive. Even though I have been
+                creating web applications for over 5 years, I still love it as if
+                it was something new.
+              </Typography>
+              <div className="border-1 border-gray-200 pt-4">
+                <HeaderSkills />
               </div>
-              <Typography>Available for new projects</Typography>
             </div>
-          </div>
 
-          <SocialIcons />
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-2">
+                <MapPin className="stroke-gray-600" />
+                <Typography>Amritsar, Punjab, India</Typography>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <div className="flex h-6 w-6 items-center justify-center">
+                  <span className="relative flex h-3 w-3">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
+                  </span>
+                </div>
+                <Typography>Available for new projects</Typography>
+              </div>
+            </div>
+
+            <SocialIcons />
+            <SocialIcons />
+            <SocialIcons />
+          </div>
         </div>
       </div>
+
+      <AnimatedGridPattern
+        numSquares={70}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 z-0 text-[#1E90FF] ",
+        )}
+      />
     </Container>
   );
 };
 
 export default HeroSection;
+
