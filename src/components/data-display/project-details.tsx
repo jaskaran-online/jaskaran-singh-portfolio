@@ -10,13 +10,14 @@ import Card from '@/components/layout/card';
 
 type ProjectDetailsProps = ProjectDetailsType & {
   layoutType: 'default' | 'reverse';
+  url?: string;
 };
 
 const ProjectDetails = ({
   name,
   description,
   technologies,
-  url,
+  url = '/',
   previewImage,
   layoutType = 'default',
 }: ProjectDetailsProps) => {
@@ -58,7 +59,7 @@ const ProjectDetails = ({
           ))}
         </div>
         <Link
-          href={url}
+          href={url || '/'}
           noCustomization
           className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500"
           externalLink
