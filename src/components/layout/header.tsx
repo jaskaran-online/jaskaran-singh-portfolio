@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 import {
   Drawer,
@@ -28,7 +30,41 @@ const Logo = () => (
 const Header = () => {
   const scrolled = useScroll(40);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const size = useWindowSize();
+  const pathname = usePathname();
+
+  // Handle scroll and intersection observer for sections
+  useEffect(() => {
+    const sections = NAV_LINKS.map(link => link.href.replace('#', ''));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
 
   // close sidebar if open in screen size < 768px
   useEffect(() => {
@@ -40,72 +76,127 @@ const Header = () => {
   return (
     <header
       className={mergeClasses(
-        'sticky top-0 z-30 w-full border-b border-transparent bg-gray max-md:border-gray-100',
-        scrolled ? 'bg-gray/50 backdrop-blur-xl md:border-gray-100' : ''
+        'sticky top-0 z-30 w-full bg-background/80 backdrop-blur-xl',
+        scrolled ? 'border-b border-gray-100/50 dark:border-gray-800/50' : ''
       )}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-8">
-        <Link href="/" noCustomization>
-          <Logo />
-        </Link>
-        <div className="hidden items-center gap-6 md:flex">
-          <ul className="flex list-none items-center gap-6">
-            {NAV_LINKS.map((link, index) => (
-              <li key={index}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-          <div className="h-6 w-0.5 bg-gray-100"></div>
-          <div className="flex items-center gap-4">
-            <ThemeSwitcher />
-            <DownloadCV />
-          </div>
+      <div className="relative">
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 grid grid-cols-[1fr,auto,1fr] grid-rows-[1fr,auto,1fr] [&>div]:border-gray-200/30 dark:[&>div]:border-gray-800/30">
+          <div className="border-b"></div>
+          <div className="border-b border-l border-r"></div>
+          <div className="border-b"></div>
+          <div className="border-r"></div>
+          <div></div>
+          <div className="border-l"></div>
+          <div className="border-t"></div>
+          <div className="border-l border-r border-t"></div>
+          <div className="border-t"></div>
         </div>
 
-        <Drawer open={isOpen} onOpenChange={setIsOpen}>
-          <DrawerTrigger asChild className="flex md:hidden">
-            <IconButton>
-              <Menu />
-            </IconButton>
-          </DrawerTrigger>
-          <DrawerContent>
-            <div className="flex items-center justify-between border-b border-gray-100 p-4">
-              <Logo />
-              <DrawerClose asChild>
-                <IconButton>
-                  <X />
-                </IconButton>
-              </DrawerClose>
-            </div>
-            <div className="border-b border-gray-100 p-4">
-              <ul className="flex list-none flex-col gap-4">
-                {NAV_LINKS.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link.href}
-                      onClick={() => {
-                        const timeoutId = setTimeout(() => {
-                          setIsOpen(false);
-                          clearTimeout(timeoutId);
-                        }, 500);
-                      }}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col gap-4 p-4">
-              <div className="flex items-center justify-between">
-                <Typography>Switch Theme</Typography>
-                <ThemeSwitcher />
-              </div>
+        <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-8">
+          <Link href="/" noCustomization>
+            <Logo />
+          </Link>
+          <div className="hidden items-center gap-6 md:flex">
+            <nav className="flex list-none items-center relative">
+              {NAV_LINKS.map((link, index) => {
+                const isActive = link.href.includes('#')
+                  ? activeSection === link.href.replace('#', '')
+                  : pathname === link.href;
+                return (
+                  <Link
+                    key={index}
+                    href={link.href}
+                    className={mergeClasses(
+                      "relative px-4 py-2 text-sm font-medium transition-colors",
+                      isActive
+                        ? "text-white dark:text-gray-50"
+                        : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
+                    )}
+                  >
+                    {isActive && (
+                      <motion.div
+                        layoutId="active-nav"
+                        className="absolute inset-0 bg-[#1e90ff] dark:bg-gray-800/50 rounded-md"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                          duration: 0.1,
+                          ease: "easeInOut"
+                        }}
+                      />
+                    )}
+                    <span className="relative z-10">{link.label}</span>
+                    {index < NAV_LINKS.length - 1 && (
+                      <div className="absolute right-0 top-1/2 h-4 w-[1px] -translate-y-1/2 bg-gray-200/50 dark:bg-gray-800/50" />
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
+            <div className="h-6 w-[1px] bg-gray-200/50 dark:bg-gray-800/50"></div>
+            <div className="flex items-center gap-4">
+              <ThemeSwitcher />
               <DownloadCV />
             </div>
-          </DrawerContent>
-        </Drawer>
+          </div>
+
+          <Drawer open={isOpen} onOpenChange={setIsOpen}>
+            <DrawerTrigger asChild className="flex md:hidden">
+              <IconButton>
+                <Menu />
+              </IconButton>
+            </DrawerTrigger>
+            <DrawerContent>
+              <div className="flex items-center justify-between border-b border-gray-100 p-4 dark:border-gray-800">
+                <Logo />
+                <DrawerClose asChild>
+                  <IconButton>
+                    <X />
+                  </IconButton>
+                </DrawerClose>
+              </div>
+              <div className="border-b border-gray-100 p-4 dark:border-gray-800">
+                <ul className="flex list-none flex-col gap-4">
+                  {NAV_LINKS.map((link, index) => {
+                    const isActive = link.href.includes('#')
+                      ? activeSection === link.href.replace('#', '')
+                      : pathname === link.href;
+                    return (
+                      <li key={index}>
+                        <Link
+                          href={link.href}
+                          className={mergeClasses(
+                            "relative block px-4 py-2 text-sm font-medium transition-colors rounded-md",
+                            isActive
+                              ? "text-gray-900 bg-gray-100/50 dark:text-gray-50 dark:bg-gray-800/50"
+                              : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
+                          )}
+                          onClick={() => {
+                            const timeoutId = setTimeout(() => {
+                              setIsOpen(false);
+                              clearTimeout(timeoutId);
+                            }, 500);
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+              <div className="flex flex-col gap-4 p-4">
+                <div className="flex items-center justify-between">
+                  <Typography>Switch Theme</Typography>
+                  <ThemeSwitcher />
+                </div>
+                <DownloadCV />
+              </div>
+            </DrawerContent>
+          </Drawer>
+        </div>
       </div>
     </header>
   );
