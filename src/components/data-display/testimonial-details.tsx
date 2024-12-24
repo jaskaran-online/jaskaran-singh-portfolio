@@ -1,39 +1,70 @@
+'use client';
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { Twitter, Linkedin, User, GraduationCap } from "lucide-react";
 
 import { TestimonialDetails as TestimonialDetailsProps } from "@/lib/types";
 import Typography from "@/components/general/typography";
 import Card from "@/components/layout/card";
+
+const SourceIcon = ({ source }: { source: TestimonialDetailsProps['source'] }) => {
+  switch (source) {
+    case 'twitter':
+      return <Twitter className="h-5 w-5 text-[#1DA1F2]" />;
+    case 'linkedin':
+      return <Linkedin className="h-5 w-5 text-[#0A66C2]" />;
+    case 'student':
+      return <GraduationCap className="h-5 w-5 text-orange-400" />;
+    case 'personal':
+      return <User className="h-5 w-5 text-gray-400" />;
+    default:
+      return null;
+  }
+};
 
 const TestimonialDetails = ({
   personName,
   personAvatar,
   testimonial,
   title,
+  source,
 }: TestimonialDetailsProps) => {
   return (
-    <Card className="mx-auto flex flex-col items-center gap-6 p-8 md:w-2/3 md:p-12 lg:w-1/3">
-      <div className="relative h-[100px] w-[100px] overflow-hidden rounded-full">
-        <Image
-          src={personAvatar}
-          alt={`${personName} avatar`}
-          fill
-          className="object-cover"
-          sizes="100px"
-          priority
-        />
+    <Card className="group relative h-full bg-white p-6 shadow-sm transition-all hover:shadow-md dark:bg-gray-800/50">
+      <div className="flex items-start justify-between">
+        <div className="flex gap-3">
+          <div className="relative h-12 w-12 overflow-hidden rounded-full ring-1 ring-gray-200 dark:ring-gray-700">
+            <Image
+              src={personAvatar}
+              alt={`${personName} avatar`}
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority
+            />
+          </div>
+          <div className="flex flex-col">
+            <Typography
+              variant="body2"
+              className="font-semibold text-gray-900 dark:text-white"
+            >
+              {personName}
+            </Typography>
+            <Typography
+              variant="body3"
+              className="text-gray-500 dark:text-gray-400"
+            >
+              {title}
+            </Typography>
+          </div>
+        </div>
+        <SourceIcon source={source} />
       </div>
-      <Typography>&quot;{testimonial}&quot;</Typography>
-      <div className="flex w-full flex-col gap-1">
-        <Typography
-          variant="subtitle"
-          className="w-full text-center font-semibold text-gray-900 dark:text-white"
-        >
-          {personName}
-        </Typography>
-        <Typography variant="body3" className="w-full text-center">
-          {title}
-        </Typography>
-      </div>
+
+      <Typography className="mt-4 text-gray-600 dark:text-gray-300">
+        {testimonial}
+      </Typography>
     </Card>
   );
 };
