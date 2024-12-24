@@ -1,7 +1,6 @@
 'use client';
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Twitter, Linkedin, User, GraduationCap } from "lucide-react";
 
 import { TestimonialDetails as TestimonialDetailsProps } from "@/lib/types";
@@ -31,7 +30,7 @@ const TestimonialDetails = ({
   source,
 }: TestimonialDetailsProps) => {
   return (
-    <Card className="group relative h-full bg-white/80 p-6 shadow-sm backdrop-blur-sm transition-all hover:bg-white/95 dark:bg-gray-800/80 dark:hover:bg-gray-800/95">
+    <Card className="group relative h-full bg-[transparent] p-6 shadow-sm backdrop-blur-sm transition-all dark:bg-gray-800/80 dark:hover:bg-slate-800/95">
       <div className="flex items-start justify-between">
         <div className="flex gap-3">
           <div className="relative h-12 w-12 overflow-hidden rounded-full ring-1 ring-gray-200/50 dark:ring-gray-700/50">

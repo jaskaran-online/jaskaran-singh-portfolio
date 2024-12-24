@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
           <SparklesText text="What People Are Saying" className="text-4xl font-bold text-gray-900 dark:text-white mb-2" sparklesCount={4} />
         </Typography>
         <Typography variant="subtitle" className="max-w-2xl text-center text-gray-600 dark:text-gray-400">
-          Don't just take our word for it. Here's what real people are saying about my work.
+          Don't just take my word for it. Here's what real people are saying about my work.
         </Typography>
       </div>
 
@@ -28,9 +28,9 @@ const TestimonialsSection = () => {
           {/* First row - scrolling right */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[250px] bg-gradient-to-r from-white via-white to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
             {/* Right gradient overlay */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[150px] bg-gradient-to-l from-white via-white to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[150px] bg-gradient-to-l from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
 
             <motion.div
               animate={{
@@ -58,9 +58,9 @@ const TestimonialsSection = () => {
           {/* Second row - scrolling left */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[150px] bg-gradient-to-r from-gray-50/50 via-gray-50/50 to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
             {/* Right gradient overlay */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[150px] bg-gradient-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[250px] bg-gradient-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
 
             <motion.div
               animate={{
