@@ -29,6 +29,7 @@ export const viewport: Viewport = {
 
 import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
+import ScrollProgress from "@/components/ui/scroll-progress";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -147,6 +148,7 @@ export default function RootLayout({
       >
         <Providers>
           <div className="relative min-h-screen bg-background">
+            <ScrollProgress className="top-[65px]" />
             <Header />
             <main className="relative flex min-h-screen w-full flex-col">
               {children}
