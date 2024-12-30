@@ -59,6 +59,9 @@ const DrawerContent = React.forwardRef<
       className={mergeClasses(drawerVariants({ side }), className)}
       {...props}
     >
+      <DrawerPrimitive.Title className="sr-only">
+        Navigation Menu
+      </DrawerPrimitive.Title>
       {children}
     </DrawerPrimitive.Content>
   </DrawerPortal>
