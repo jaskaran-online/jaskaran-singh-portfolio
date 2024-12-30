@@ -28,9 +28,9 @@ const TestimonialsSection = () => {
           {/* First row - scrolling right */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
+            <div className="hidden lg:block pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
             {/* Right gradient overlay */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[150px] bg-gradient-to-l from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
+            <div className="hidden lg:block pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[150px] bg-gradient-to-l from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
 
             <motion.div
               animate={{
@@ -58,9 +58,9 @@ const TestimonialsSection = () => {
           {/* Second row - scrolling left */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
+            <div className="hidden lg:block pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
             {/* Right gradient overlay */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
+            <div className="hidden lg:block pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
 
             <motion.div
               animate={{
