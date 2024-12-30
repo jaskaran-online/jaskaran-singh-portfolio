@@ -7,6 +7,7 @@ import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
 import AnimatedGridPattern from "../ui/animated-grid-pattern";
 import LaravelLogo from '@/public/images/laravel-svgrepo-com.svg'
+import { BorderBeam } from "../ui/border-beam";
 
 // Configuration object for easy content updates
 const HERO_CONFIG = {
@@ -169,6 +170,7 @@ const CodeBlock = () => {
 
   return (
     <code className="code-one-dark">
+      <BorderBeam />
       <div>
         <span className="mr-2 text-[#e06c75]">{"const"}</span>
         <span className="mr-2 dark:text-white">{"coder"}</span>
@@ -206,7 +208,7 @@ const CodeBlock = () => {
 };
 
 const TwitterCard = () => (
-  <div className="animate-float absolute right-[3%] top-[88%] rounded-lg border border-gray-300/40 bg-white/80 backdrop-blur-[14px] shadow-sm dark:border-gray-700/40 dark:bg-gray-900/80 lg:right-[-5%] lg:top-[85%]">
+  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white backdrop-blur-[14px] shadow-sm dark:border-gray-700 dark:bg-gray-900/80 lg:right-[-5%] lg:top-[85%]">
     <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform">
       <header className="flex gap-4">
         <figure className="overflow-hidden rounded-full border-2 border-gray-400/50 dark:border-gray-600/50">
@@ -290,8 +292,8 @@ const CodeEditor = () => (
         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
         <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
       </div>
-      <div className="px-8 py-2">
-        <header className="mb-2 flex items-center justify-between border-b border-b-gray-800 py-2 pb-3">
+      <div className="py-2">
+        <header className="mb-2 flex items-center justify-between border-b border-b-gray-200 py-2 pb-3 px-8 ">
           <div className="flex flex-row space-x-2">
             <div className="h-3 w-3 cursor-pointer rounded-full bg-red-400 hover:bg-red-500"></div>
             <div className="h-3 w-3 cursor-pointer rounded-full bg-orange-400 hover:bg-orange-500"></div>
@@ -302,7 +304,7 @@ const CodeEditor = () => (
           </div>
         </header>
       </div>
-      <div className="overflow-hidden px-8 py-8">
+      <div className="overflow-hidden px-8 pb-8">
         <CodeBlock />
         <TwitterCard />
       </div>
