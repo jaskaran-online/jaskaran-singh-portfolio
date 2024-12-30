@@ -403,7 +403,7 @@ const HeroSection = () => {
         className={cn(
           "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
           "absolute inset-0 z-[1]",
-          "text-[#1E90FF] dark:text-[#1E90FF]"
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 text-[#1E90FF] dark:text-[#1E90FF]"
         )}
       />
     </Container>

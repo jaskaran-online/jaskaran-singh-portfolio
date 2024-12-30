@@ -22,6 +22,9 @@ const TestimonialsSection = dynamic(() => import('@/components/sections/testimon
 const ContactSection = dynamic(() => import('@/components/sections/contact'), {
   loading: () => <Loading />
 });
+const ServicesSection = dynamic(() => import('@/components/sections/services'), {
+  loading: () => <Loading />
+});
 
 export const metadata: Metadata = {
   alternates: {
@@ -40,6 +43,9 @@ export default function Home() {
       </Suspense>
       <Suspense fallback={<Loading />}>
         <SkillsSection />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <ServicesSection />
       </Suspense>
       <Suspense fallback={<Loading />}>
         <WorkSection />
