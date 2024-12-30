@@ -6,9 +6,35 @@ import Image from "next/image";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { motion } from "framer-motion";
 import LogoLaravel from "/public/images/logos/laravel-svgrepo-com.svg";
-
 import ReactNativeLogo from "/public/images/logos/reactjs-svgrepo-com.svg";
 import LogoExpo from "/public/images/logos/expo-svgrepo-com.svg";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CleanFold - Mobile App for Laundry Management | Jaskaran Singh",
+  description: "A mobile app for a cleaning company that allows company employees to see assigned jobs and track their progress. Built with React Native, Expo, Laravel, and more.",
+  openGraph: {
+    title: "CleanFold - Mobile App for Laundry Management | Jaskaran Singh",
+    description: "A mobile app for a cleaning company that allows company employees to see assigned jobs and track their progress. Built with React Native, Expo, Laravel, and more.",
+    images: [
+      {
+        url: "/CleanFold/cleanfoldframs.png",
+        width: 1200,
+        height: 630,
+        alt: "CleanFold App Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CleanFold - Mobile App for Laundry Management | Jaskaran Singh",
+    description: "A mobile app for a cleaning company that allows company employees to see assigned jobs and track their progress. Built with React Native, Expo, Laravel, and more.",
+    images: {
+      url: "/CleanFold/cleanfoldframs.png",
+      alt: "CleanFold App Preview",
+    },
+  },
+};
 
 const content = [
   {

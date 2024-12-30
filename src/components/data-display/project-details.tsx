@@ -35,7 +35,7 @@ const ProjectDetails = ({
         <Link noCustomization href={url} externalLink>
           <Image
             src={previewImage}
-            alt={`${name} preview`}
+            alt={`${name} - Project Preview - Built by Jaskaran Singh`}
             className="rounded-xl transition-transform duration-500 md:hover:scale-105"
             style={{ objectFit: 'cover' }}
           />
