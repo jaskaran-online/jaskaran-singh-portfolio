@@ -9,6 +9,7 @@ import Container from "@/components/layout/container";
 import SparklesText from "@/components/ui/sparkles-text";
 import PulsatingButton from "../ui/pulsating-button";
 import { BorderBeam } from "../ui/border-beam";
+import Ripple from "../ui/ripple";
 
 const FloatingIcons = () => {
   return (
@@ -222,74 +223,77 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-6 bg-white dark:bg-slate-900 pb-8 pt-3 px-8 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-slate-800"
-          onSubmit={handleSubmit}
-        >
-          <BorderBeam />
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="mt-1 block w-full rounded-lg border-0 bg-transparent py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:text-white dark:ring-slate-800 dark:focus:ring-blue-400 dark:placeholder-slate-500"
-              placeholder="Your name"
-            />
-          </div>
+        <div>
+          <motion.form
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6 bg-white dark:bg-[#334155]/30 pb-8 pt-3 px-8 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-slate-800"
+            onSubmit={handleSubmit}
+          >
+            <BorderBeam />
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="mt-1 block w-full rounded-lg dark:border-[0.5px] dark:border-cyan-500/20 bg-transparent py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:text-white dark:ring-slate-800 dark:focus:ring-blue-400 dark:placeholder-slate-500"
+                placeholder="Your name"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="mt-1 block w-full rounded-lg border-0 bg-transparent py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:text-white dark:ring-slate-800 dark:focus:ring-blue-400 dark:placeholder-slate-500"
-              placeholder="your.email@example.com"
-            />
-          </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 block w-full rounded-lg dark:border-[0.5px] dark:border-cyan-500/20 bg-transparent py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:text-white dark:ring-slate-800 dark:focus:ring-blue-400 dark:placeholder-slate-500"
+                placeholder="your.email@example.com"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              value={formData.message}
-              onChange={handleChange}
-              rows={5}
-              className="mt-1 block w-full rounded-lg border-0 bg-transparent py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:text-white dark:ring-slate-800 dark:focus:ring-blue-400 dark:placeholder-slate-500"
-              placeholder="Your message..."
-            />
-          </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                value={formData.message}
+                onChange={handleChange}
+                rows={5}
+                className="mt-1 block w-full rounded-lg dark:border-[0.5px] dark:border-cyan-500/20 bg-transparent py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:text-white dark:ring-slate-800 dark:focus:ring-blue-400 dark:placeholder-slate-500"
+                placeholder="Your message..."
+              />
+            </div>
 
-          <PulsatingButton className="w-full bg-blue-500 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600">
-            {isSubmitting ? (
-              'Sending...'
-            ) : (
-              <>
-                Send Message
-                <Send className="h-4 w-4" />
-              </>
-            )}
-          </PulsatingButton>
-        </motion.form>
+            <PulsatingButton className="w-full bg-blue-500 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600">
+              {isSubmitting ? (
+                'Sending...'
+              ) : (
+                <>
+                  Send Message
+                  <Send className="h-4 w-4" />
+                </>
+              )}
+            </PulsatingButton>
+          </motion.form>
+        </div>
+
+
       </div>
     </Container>
   );
