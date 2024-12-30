@@ -129,9 +129,9 @@ const ContactSection = () => {
 
       <div className="mb-12 text-center">
         <Typography variant="h2" className="mb-4">
-          <SparklesText text="Get in Touch" className="text-4xl font-bold text-gray-900 dark:text-white" sparklesCount={3} />
+          <SparklesText text="Get in Touch" className="text-4xl font-bold text-slate-900 dark:text-white" sparklesCount={3} />
         </Typography>
-        <Typography variant="subtitle" className="text-gray-600 dark:text-gray-400">
+        <Typography variant="subtitle" className="text-slate-600 dark:text-slate-400">
           Have a question or want to work together? Drop me a message!
         </Typography>
       </div>
@@ -140,10 +140,10 @@ const ContactSection = () => {
         {/* Contact Information */}
         <div className="flex flex-col justify-center space-y-8">
           <div className="rounded-2xl bg-[transparent] p-8 pt-0">
-            <Typography variant="h3" className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+            <Typography variant="h3" className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">
               Contact Information
             </Typography>
-            <Typography variant="body2" className="text-gray-600 dark:text-gray-400">
+            <Typography variant="body2" className="text-slate-600 dark:text-slate-400">
               You can reach me through the following channels.
             </Typography>
             <br /> <br />
@@ -227,15 +227,12 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-6 bg-[transparent] pb-8 pt-3 px-8 backdrop-blur-sm hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700"
+          className="space-y-6 bg-white dark:bg-slate-900 pb-8 pt-3 px-8 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-slate-800"
           onSubmit={handleSubmit}
         >
-          <BorderBeam borderSize={14} borderRadius={4} borderColor="#9E7AFF" />
-          {/* <Typography variant="h3" className="mb-3 text-xl font-semibold text-gray-900 dark:text-white text-center mb-10">
-            Send me a message!
-          </Typography> */}
+          <BorderBeam />
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
               Name
             </label>
             <input
@@ -245,17 +242,13 @@ const ContactSection = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid #d1d5db',
-              }}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-primary-400 dark:placeholder-gray-400"
+              className="mt-1 block w-full rounded-lg border-0 bg-transparent py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:text-white dark:ring-slate-800 dark:focus:ring-blue-400 dark:placeholder-slate-500"
               placeholder="Your name"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
               Email
             </label>
             <input
@@ -265,17 +258,13 @@ const ContactSection = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid #d1d5db',
-              }}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-primary-400 dark:placeholder-gray-400"
+              className="mt-1 block w-full rounded-lg border-0 bg-transparent py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:text-white dark:ring-slate-800 dark:focus:ring-blue-400 dark:placeholder-slate-500"
               placeholder="your.email@example.com"
             />
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
               Message
             </label>
             <textarea
@@ -285,16 +274,12 @@ const ContactSection = () => {
               value={formData.message}
               onChange={handleChange}
               rows={5}
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid #d1d5db',
-              }}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-primary-400 dark:placeholder-gray-400"
+              className="mt-1 block w-full rounded-lg border-0 bg-transparent py-2 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:text-white dark:ring-slate-800 dark:focus:ring-blue-400 dark:placeholder-slate-500"
               placeholder="Your message..."
             />
           </div>
 
-          <PulsatingButton className="w-full bg-blue-500 hover:bg-blue-600 dark:bg-purple-500 dark:hover:bg-purple-600">
+          <PulsatingButton className="w-full bg-blue-500 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600">
             {isSubmitting ? (
               'Sending...'
             ) : (
@@ -302,8 +287,8 @@ const ContactSection = () => {
                 Send Message
                 <Send className="h-4 w-4" />
               </>
-            )}</PulsatingButton>
-
+            )}
+          </PulsatingButton>
         </motion.form>
       </div>
     </Container>
