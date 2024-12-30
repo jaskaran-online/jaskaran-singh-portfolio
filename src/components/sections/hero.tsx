@@ -6,14 +6,13 @@ import SocialIcons from "@/components/data-display/social-icons";
 import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
 import AnimatedGridPattern from "../ui/animated-grid-pattern";
-import LaravelLogo from '@/public/images/laravel-svgrepo-com.svg'
 import { BorderBeam } from "../ui/border-beam";
 
 // Configuration object for easy content updates
 const HERO_CONFIG = {
   name: "Jaskaran Singh",
   title: "FullStack Developer",
-  description: `I'm a FullStack Developer with a focus on creating (and occasionally designing) exceptional digital experiences web and mobile that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications for over 5 years, I still love it as if it was something new.`,
+  description: `with a focus on creating (and occasionally designing) exceptional digital experiences web and mobile that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications for over 5 years, I still love it as if it was something new.`,
   location: "Amritsar, Punjab, India",
   availability: "Available for new projects",
   codeProfile: {
@@ -315,7 +314,7 @@ const CodeEditor = () => (
 const HeaderSkills = () => (
   <ul className="mt-2 flex flex-wrap items-center justify-start gap-3 overflow-x-auto px-4 pb-2 text-[15px] font-medium sm:scrollbar-none">
     {HERO_CONFIG.skills.map((skill, index) => (
-      <Link key={index} href={skill.url} target="_blank">
+      <Link key={index} href={skill.url} target="_blank" className="bg-gradient-to-r from-blue-750 to-indigo-900 backdrop-blur-[4px]">
         <li className="flex items-center gap-2 text-gray-200 dark:text-white">
           {skill.icon}
           <span className="text-[#000000] dark:text-[#ffffff]">{skill.name}</span>
@@ -345,14 +344,14 @@ const HeroSection = () => {
                 </span>{" "}
                 <span className="inline-block animate-waving-hand">👋</span>
               </Typography>
-              <Typography className="bg-blur-lg">
+              <Typography className="bg-gradient-to-r from-blue-750 to-indigo-900 backdrop-blur-[4px]">
                 I'm a{" "}
                 <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent text-blur-lg text-xl font-bold">
                   {HERO_CONFIG.title}
                 </span>{" "}
                 {HERO_CONFIG.description}
               </Typography>
-              <div className="border-1 border-gray-200 pt-4">
+              <div className="border-1 border-gray-200">
                 <HeaderSkills />
               </div>
             </div>

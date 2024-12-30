@@ -8,6 +8,7 @@ import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
 import SparklesText from "@/components/ui/sparkles-text";
 import PulsatingButton from "../ui/pulsating-button";
+import { BorderBeam } from "../ui/border-beam";
 
 const FloatingIcons = () => {
   return (
@@ -226,9 +227,10 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-6 bg-[transparent] p-8 backdrop-blur-sm hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700"
+          className="space-y-6 bg-[transparent] pb-8 pt-3 px-8 backdrop-blur-sm hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700"
           onSubmit={handleSubmit}
         >
+          <BorderBeam borderSize={14} borderRadius={4} borderColor="#9E7AFF" />
           {/* <Typography variant="h3" className="mb-3 text-xl font-semibold text-gray-900 dark:text-white text-center mb-10">
             Send me a message!
           </Typography> */}
