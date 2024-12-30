@@ -255,7 +255,7 @@ export const PROJECTS: ProjectDetails[] = [
   {
     name: "Game Hub",
     description:
-      "Portfolio website for a game preview platform.",
+      "A dynamic portfolio website designed for showcasing game previews, featuring an intuitive user interface and seamless navigation. This static website serves as a comprehensive platform for gamers to explore upcoming titles, read reviews, and access detailed information about each game.",
     url: "https://gamehub.jaskaran.in/",
     projectDetails: '/project/gamehub',
     previewImage: GameHub,

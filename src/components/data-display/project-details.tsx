@@ -7,6 +7,7 @@ import Typography from '@/components/general/typography';
 import Link from '@/components/navigation/link';
 import Tag from '@/components/data-display/tag';
 import Card from '@/components/layout/card';
+import Button from '../general/button';
 
 type ProjectDetailsProps = ProjectDetailsType & {
   layoutType: 'default' | 'reverse';
@@ -61,10 +62,10 @@ const ProjectDetails = ({
         <Link
           href={url || '/'}
           noCustomization
-          className="self-start rounded-lg p-1.5 hover:bg-gray-50 dark:hover:bg-gray-800 [&_svg]:stroke-gray-500 dark:[&_svg]:stroke-gray-400"
+          className="self-start rounded-lg p-1.5 hover:bg-gray-50 dark:hover:bg-gray-800 [&_svg]:stroke-gray-500 dark:[&_svg]:stroke-gray-400 flex items-center gap-2 bg-gray-50 dark:bg-gray-800 px-4 py-2 hover:bg-gray-300 dark:hover:bg-gray-800 border mt-2"
           externalLink
         >
-          <ExternalLink />
+          View Project <ExternalLink />
         </Link>
       </div>
     </Card>
