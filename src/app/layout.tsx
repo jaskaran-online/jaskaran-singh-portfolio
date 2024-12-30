@@ -124,7 +124,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn(inter.variable, poppins.variable)} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       {googleAnalyticsId ? (
         <head>
           <Script
@@ -144,7 +144,10 @@ export default function RootLayout({
       ) : null}
       <body
         className={cn(
-          "bg-background text-foreground antialiased transition-colors duration-300 font-inter"
+          "min-h-screen bg-background font-inter antialiased",
+          "transition-colors duration-300",
+          inter.variable,
+          poppins.variable
         )}
         suppressHydrationWarning
       >
