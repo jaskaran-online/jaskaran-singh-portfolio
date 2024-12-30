@@ -13,24 +13,24 @@ const TestimonialsSection = () => {
   const secondRow = TESTIMONIALS.slice(3);
 
   return (
-    <section id="testimonials" className="bg-gray-50 py-20 dark:bg-gray-950">
-      <div className="mb-16 flex flex-col items-center gap-4">
-        <Typography variant="h2" className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          <SparklesText text="What People Are Saying" className="text-4xl font-bold text-gray-900 dark:text-white mb-2" sparklesCount={4} />
+    <section id="testimonials" className="bg-gray-50 py-12 sm:py-20 dark:bg-gray-950">
+      <div className="mb-8 sm:mb-16 flex flex-col items-center gap-4 px-4">
+        <Typography variant="h2" className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+          <SparklesText text="What People Are Saying" className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2" sparklesCount={4} />
         </Typography>
-        <Typography variant="subtitle" className="max-w-2xl text-center text-gray-600 dark:text-gray-400">
+        <Typography variant="subtitle" className="max-w-2xl text-center text-sm sm:text-base text-gray-600 dark:text-gray-400">
           Don't just take my word for it. Here's what real people are saying about my work.
         </Typography>
       </div>
 
-      <div className="relative overflow-hidden bg-gray-50 py-8 dark:bg-gray-900">
-        <div className="flex flex-col gap-8">
+      <div className="relative overflow-hidden bg-gray-50 py-4 sm:py-8 dark:bg-gray-900">
+        <div className="flex flex-col gap-4 sm:gap-8">
           {/* First row - scrolling right */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
             {/* Right gradient overlay */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[150px] bg-gradient-to-l from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[150px] bg-gradient-to-l from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
 
             <motion.div
               animate={{
@@ -44,11 +44,11 @@ const TestimonialsSection = () => {
                   ease: "linear",
                 },
               }}
-              className="flex gap-4 px-[50px]"
+              className="flex gap-4 px-4 sm:px-[50px]"
             >
               {/* Double the items to create seamless loop */}
               {[...firstRow, ...firstRow].map((testimonial, index) => (
-                <div key={index} className="w-[400px] flex-shrink-0">
+                <div key={index} className="w-[300px] sm:w-[400px] flex-shrink-0">
                   <TestimonialDetails {...testimonial} />
                 </div>
               ))}
@@ -58,9 +58,9 @@ const TestimonialsSection = () => {
           {/* Second row - scrolling left */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
             {/* Right gradient overlay */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[250px] bg-gradient-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
 
             <motion.div
               animate={{
@@ -74,11 +74,11 @@ const TestimonialsSection = () => {
                   ease: "linear",
                 },
               }}
-              className="flex gap-4 px-[50px]"
+              className="flex gap-4 px-4 sm:px-[50px]"
             >
               {/* Double the items to create seamless loop */}
               {[...secondRow, ...secondRow].map((testimonial, index) => (
-                <div key={index} className="w-[400px] flex-shrink-0">
+                <div key={index} className="w-[300px] sm:w-[400px] flex-shrink-0">
                   <TestimonialDetails {...testimonial} />
                 </div>
               ))}
