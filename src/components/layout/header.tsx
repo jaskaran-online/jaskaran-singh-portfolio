@@ -116,7 +116,7 @@ const Header = () => {
                     {isActive && (
                       <motion.div
                         layoutId="active-nav"
-                        className="absolute inset-0 bg-[#1e90ff] dark:bg-gray-800/50 rounded-md"
+                        className="absolute inset-0 bg-[#1e90ff] dark:bg-gray-600/50 rounded-md"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{
