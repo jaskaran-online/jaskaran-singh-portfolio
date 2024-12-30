@@ -31,17 +31,17 @@ const AboutMeSection = () => {
 
           {/* Content */}
           <div className="flex flex-col gap-6 justify-center items-center">
-            <Typography variant="h3" className="text-center">
+            <Typography variant="h3" className="text-center text-xl font-semibold text-gray-900 dark:text-white">
               Curious about me? Here you have it:
             </Typography>
-            <Typography>
+            <Typography className="text-gray-900 dark:text-white">
               I&apos;m, Jaskaran who specializes in full stack development
               (React.js & Laravel). I am enthusiastic about bringing the technical
               and visual aspects of digital products to life. User experience,
               pixel perfect design, and writing clear, readable, highly performant
               code matters to me.
             </Typography>
-            <Typography>
+            <Typography className="text-gray-900 dark:text-white">
               I began my journey as a web developer in 2020, and since then,
               I&apos;ve continued to grow and evolve as a developer, taking on new
               challenges and learning the latest technologies along the way. After
@@ -49,25 +49,25 @@ const AboutMeSection = () => {
               web applications using modern technologies such as Next.js,
               TypeScript, Laravel, TailwindCSS, Superbase and much more.
             </Typography>
-            <Typography>
+            <Typography className="text-gray-900 dark:text-white">
               I am very much a progressive thinker and enjoy working on products
               end to end, from ideation all the way to development.
             </Typography>
-            <Typography>Finally, some quick bits about me.</Typography>
+            <Typography className="text-gray-900 dark:text-white">Finally, some quick bits about me.</Typography>
             <div className="flex flex-col gap-2 md:flex-row md:gap-6">
               <ul className="flex list-inside list-disc flex-col gap-2">
-                <Typography component="li">
+                <Typography component="li" className="text-gray-900 dark:text-white">
                   Bachelor of Computer Applications
                 </Typography>
-                <Typography component="li">Full time Developer</Typography>
+                <Typography component="li" className="text-gray-900 dark:text-white">Full time Developer</Typography>
               </ul>
               <ul className="flex list-inside list-disc flex-col gap-2">
-                <Typography component="li">
+                <Typography component="li" className="text-gray-900 dark:text-white">
                   Avid learner and problem solver
                 </Typography>
               </ul>
             </div>
-            <Typography>
+            <Typography className="text-gray-900 dark:text-white">
               One last thing, I&apos;m available for freelance work, so feel free
               to reach out and say hello! I promise I don&apos;t bite 😉
             </Typography>
