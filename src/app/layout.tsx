@@ -124,7 +124,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`!scroll-smooth ${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
+    <html lang="en" className={cn(inter.variable, poppins.variable)} suppressHydrationWarning>
       {googleAnalyticsId ? (
         <head>
           <Script
@@ -143,7 +143,9 @@ export default function RootLayout({
         </head>
       ) : null}
       <body
-        className="bg-background text-foreground antialiased transition-colors duration-300 font-inter"
+        className={cn(
+          "bg-background text-foreground antialiased transition-colors duration-300 font-inter"
+        )}
         suppressHydrationWarning
       >
         <Providers>

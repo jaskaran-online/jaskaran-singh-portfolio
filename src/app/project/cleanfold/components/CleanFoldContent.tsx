@@ -9,7 +9,13 @@ const content = [
     description:
       "Secure access for authorized personnel. Employees can easily log in using the credentials provided by the admin. This ensures that only verified staff members can access the system, maintaining data security and operational integrity. The login process is straightforward, allowing quick and efficient entry to start managing laundry orders and customer information.",
     content: (
-      <Image src="/CleanFold/Login.png" alt="alt" width={900} height={500} />
+      <Image
+        src="/CleanFold/Login.png"
+        alt="alt"
+        width={900}
+        height={500}
+        priority
+      />
     ),
   },
   {
@@ -22,6 +28,7 @@ const content = [
         alt="alt"
         width={900}
         height={500}
+        priority
       />
     ),
   },
