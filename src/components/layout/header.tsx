@@ -92,19 +92,6 @@ const Header = () => {
       )}
     >
       <div className="relative">
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 grid grid-cols-[1fr,auto,1fr] grid-rows-[1fr,auto,1fr] [&>div]:border-gray-200/30 dark:[&>div]:border-gray-800/30">
-          <div className="border-b"></div>
-          <div className="border-b border-l border-r"></div>
-          <div className="border-b"></div>
-          <div className="border-r"></div>
-          <div></div>
-          <div className="border-l"></div>
-          <div className="border-t"></div>
-          <div className="border-l border-r border-t"></div>
-          <div className="border-t"></div>
-        </div>
-
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-8">
           <Link href="/" noCustomization>
             <Logo />
