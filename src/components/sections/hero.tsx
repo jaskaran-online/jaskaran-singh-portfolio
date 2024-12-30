@@ -326,7 +326,7 @@ const HeaderSkills = () => (
 
 const HeroSection = () => {
   return (
-    <Container id="hero" className="relative flex w-full items-center justify-center overflow-hidden rounded-lg h-[80vh]">
+    <Container id="hero" className="relative flex w-full items-center justify-center overflow-hidden rounded-lg h-[90vh]">
       <div className="z-10">
         <div className="flex flex-col gap-48 flex-col md:flex-row md:gap-8 pb-10">
           {/* Code Editor */}
@@ -384,13 +384,13 @@ const HeroSection = () => {
         <img
           src="https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"
           alt=""
-          className="hidden dark:block absolute inset-0 w-full h-full object-cover opacity-40"
+          className="hidden dark:block absolute inset-0 w-full h-full object-cover opacity-80"
         />
         {/* Light theme background */}
         <img
           src="https://tailwindui.com/plus/img/beams-home@95.jpg"
           alt=""
-          className="block dark:hidden absolute inset-0 w-full h-full object-cover opacity-30"
+          className="block dark:hidden absolute inset-0 w-full h-full object-cover opacity-60"
         />
       </div>
 

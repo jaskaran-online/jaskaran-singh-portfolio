@@ -7,7 +7,7 @@ import SparklesText from "@/components/ui/sparkles-text";
 const AboutMeSection = () => {
   return (
     <>
-      <Container className="bg-gray-50/50 z-10 relative" id="about">
+      <Container className="bg-transparent" id="about">
 
         <div className="self-center">
           <Typography variant="h2" className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
