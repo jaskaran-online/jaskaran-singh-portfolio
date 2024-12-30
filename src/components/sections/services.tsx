@@ -43,7 +43,7 @@ interface ServiceCardProps extends Service { }
 const ServiceCard = ({ title, description, icon: Icon }: ServiceCardProps) => {
     return (
         <MagicCard
-            className="h-full border border-gray-200 dark:border-gray-800 rounded-3xl bg-white dark:bg-[#0f192d]"
+            className="h-full border border-gray-200 dark:border-gray-800 rounded-3xl bg-white dark:bg-[#0f192d] z-10"
             gradientSize={300}
             gradientColor="rgba(59, 130, 246, 0.1)"
             gradientOpacity={1}
