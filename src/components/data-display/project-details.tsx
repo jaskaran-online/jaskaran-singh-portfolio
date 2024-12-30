@@ -23,11 +23,11 @@ const ProjectDetails = ({
   layoutType = 'default',
 }: ProjectDetailsProps) => {
   return (
-    <Card className="mx-auto flex w-full max-w-6xl flex-col md:flex-row">
+    <Card className="mx-auto flex w-full max-w-6xl flex-col md:flex-row bg-white dark:bg-[#1e293b]">
       {/* Image */}
       <div
         className={mergeClasses(
-          'flex items-center justify-center border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-8 max-md:rounded-t-xl md:w-1/2 lg:p-12',
+          'flex items-center justify-center border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#334155] p-8 max-md:rounded-t-xl md:w-1/2 lg:p-12',
           layoutType === 'default'
             ? 'md:rounded-l-xl md:border-r'
             : 'md:order-last md:rounded-r-xl md:border-l'
@@ -62,7 +62,7 @@ const ProjectDetails = ({
         <Link
           href={url || '/'}
           noCustomization
-          className="self-start rounded-lg p-1.5 hover:bg-gray-50 dark:hover:bg-gray-800 [&_svg]:stroke-gray-500 dark:[&_svg]:stroke-gray-400 flex items-center gap-2 bg-gray-50 dark:bg-gray-800 px-4 py-2 hover:bg-gray-300 dark:hover:bg-gray-800 border mt-2"
+          className="self-start rounded-lg p-1.5 hover:bg-gray-50 dark:hover:bg-[#334155] [&_svg]:stroke-gray-500 dark:[&_svg]:stroke-gray-400 flex items-center gap-2 bg-gray-50 dark:bg-[#334155] px-4 py-2 hover:bg-gray-300 dark:hover:bg-gray-800 border mt-2"
           externalLink
         >
           View Project <ExternalLink />

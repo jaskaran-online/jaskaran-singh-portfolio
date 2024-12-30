@@ -21,7 +21,7 @@ const ZigzagUnderline = ({ isActive }: { isActive: boolean }) => (
         hidden: { pathLength: 0, opacity: 0 },
         visible: { pathLength: 1, opacity: 1 },
       }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.1 }}
     />
   </motion.svg>
 );
@@ -83,82 +83,82 @@ export const StickyScroll = ({
 
   return (
     <>
-    <motion.h2
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="text-5xl font-bold text-center mt-12 mb-12"
-    >
-      App Screen Views
-    </motion.h2>
-  
-    <motion.div
-      // animate={{
+      <motion.h2
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-5xl font-bold text-center mt-12 mb-12"
+      >
+        App Screen Views
+      </motion.h2>
+
+      <motion.div
+        // animate={{
         // backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-      // }}
-      className="h-[48rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10 no-scrollbar lg:gap-8"
-      ref={ref}
-    >
-      <div className="div relative flex items-start px-4 gap-10" >
-        <div className="m">
-          {content.map((item, index) => (
-            <div key={item.title + index} className="my-20 relative">
-              <motion.h2
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
-                }}
-                className="text-2xl font-bold text-sky-600 relative"
-              >
-                {item.title}
-                <ZigzagUnderline isActive={activeCard === index} />
-              </motion.h2>
-              <motion.p
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
-                }}
-                className="text-kg text-slate-800 max-w-sm mt-10"
-              >
-                {item.description}
-              </motion.p>
-            </div>
-          ))}
+        // }}
+        className="h-[48rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10 no-scrollbar lg:gap-8"
+        ref={ref}
+      >
+        <div className="div relative flex items-start px-4 gap-10" >
+          <div className="m">
+            {content.map((item, index) => (
+              <div key={item.title + index} className="my-20 relative">
+                <motion.h2
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: activeCard === index ? 1 : 0.3,
+                  }}
+                  className="text-2xl font-bold text-sky-600 relative"
+                >
+                  {item.title}
+                  <ZigzagUnderline isActive={activeCard === index} />
+                </motion.h2>
+                <motion.p
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: activeCard === index ? 1 : 0.3,
+                  }}
+                  className="text-kg text-slate-800 max-w-sm mt-10"
+                >
+                  {item.description}
+                </motion.p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeCard}
-          initial={{
-            x: 100,
-            opacity: 0,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
-          exit={{
-            x: -100,
-            opacity: 0,
-          }}
-          transition={{
-            duration: 0.5,
-            ease: "easeInOut",
-          }}
-          // style={{ background: backgroundGradient }}
-          className={cn(
-            "hidden lg:block h-auto w-80 sticky top-4",
-            contentClassName
-          )}
-        >
-          {content[activeCard].content ?? null}
-        </motion.div>
-      </AnimatePresence>
-    </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCard}
+            initial={{
+              x: 100,
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            exit={{
+              x: -100,
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+            // style={{ background: backgroundGradient }}
+            className={cn(
+              "hidden lg:block h-auto w-80 sticky top-4",
+              contentClassName
+            )}
+          >
+            {content[activeCard].content ?? null}
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
     </>
   );
 };

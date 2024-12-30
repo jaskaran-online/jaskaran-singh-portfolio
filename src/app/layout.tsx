@@ -155,7 +155,7 @@ export default function RootLayout({
           <div className="relative min-h-screen bg-background">
             <ScrollProgress className="top-[65px]" />
             <Header />
-            <main className="relative flex min-h-screen w-full flex-col">
+            <main className="relative flex min-h-screen w-full flex-col bg-background dark:bg-[#0f192d]">
               {children}
             </main>
             <Footer />

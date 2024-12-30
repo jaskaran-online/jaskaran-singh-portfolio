@@ -37,7 +37,13 @@ const content = [
     description:
       "The cart page allows admin to view and manage the items in the shopping cart. This includes adding or removing items, updating quantities, and calculating the total price. Admin can also view the order history, track status updates, and make necessary adjustments to the order.",
     content: (
-      <Image src="/CleanFold/Cart.png" alt="alt" width={900} height={500} />
+      <Image
+        src="/CleanFold/Cart.png"
+        alt="alt"
+        width={900}
+        height={500}
+        priority
+      />
     ),
   },
   {
@@ -50,6 +56,7 @@ const content = [
         alt="alt"
         width={900}
         height={500}
+        priority
       />
     ),
   },
@@ -63,6 +70,7 @@ const content = [
         alt="alt"
         width={900}
         height={500}
+        priority
       />
     ),
   },
@@ -76,6 +84,7 @@ const content = [
         alt="alt"
         width={900}
         height={500}
+        priority
       />
     ),
   },
