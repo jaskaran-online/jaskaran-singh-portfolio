@@ -1,14 +1,13 @@
-"use client";
 import React from "react";
 import Container from "@/components/layout/container";
 import cleanfoldframs from "/public/CleanFold/cleanfoldframs.png";
 import Image from "next/image";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { motion } from "framer-motion";
 import LogoLaravel from "/public/images/logos/laravel-svgrepo-com.svg";
 import ReactNativeLogo from "/public/images/logos/reactjs-svgrepo-com.svg";
 import LogoExpo from "/public/images/logos/expo-svgrepo-com.svg";
 import { Metadata } from "next";
+import { CleanFoldContent } from "./components/CleanFoldContent";
 
 export const metadata: Metadata = {
   title: "CleanFold - Mobile App for Laundry Management | Jaskaran Singh",
@@ -149,196 +148,56 @@ const content = [
 
 export default function Cleanfold() {
   return (
-    <>
-      <Container>
-        <div className="flex flex-col items-center justify-center">
-          <div>
-            <h1 className="mb-8 text-4xl font-bold lg:text-8xl">CleanFold</h1>
-            <div className="mb-4 flex justify-center space-x-4">
-              <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                alt="Apple Logo"
-                width={40}
-                height={40}
-              />
+    <Container>
+      <div className="flex flex-col gap-8 pb-[20px]">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-3xl font-bold">CleanFold</h1>
+          <p className="text-muted-foreground">
+            A mobile app for a cleaning company that allows company employees to see
+            assigned jobs and track their progress.
+          </p>
+        </div>
 
-              <div className="h-12 w-[2px] animate-ping animate-pulse bg-black"></div>
+        <div className="relative h-[400px] w-full">
+          <Image
+            src={cleanfoldframs}
+            alt="CleanFold App Preview"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
 
+        <div className="flex flex-col gap-4">
+          <h2 className="text-2xl font-bold">Tech Stack</h2>
+          <div className="flex flex-wrap gap-6">
+            <div className="flex items-center gap-2">
               <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg"
-                alt="Android Logo"
-                width={40}
-                height={40}
+                src={ReactNativeLogo}
+                alt="React Native Logo"
+                width={24}
+                height={24}
               />
+              <span>React Native</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Image src={LogoExpo} alt="Expo Logo" width={24} height={24} />
+              <span>Expo</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src={LogoLaravel}
+                alt="Laravel Logo"
+                width={24}
+                height={24}
+              />
+              <span>Laravel</span>
             </div>
           </div>
-          <motion.p
-            className="my-4 text-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Cleanfold is a comprehensive laundry management platform designed to
-            streamline operations for laundry businesses. It offers features for
-            order tracking, customer management, and service categorization,
-            enabling efficient handling of laundry services from start to
-            finish.
-          </motion.p>
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <div className="z-50 flex h-full w-full items-center justify-center">
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Image
-                src={cleanfoldframs}
-                alt="Cleanfold"
-                width={900}
-                height={500}
-                className="w-full/2 z-50 h-full"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </Container>
-      <div className="mb-5 flex flex-col items-center justify-center bg-gray-100 py-5">
-        <div className="flex flex-wrap justify-center space-x-12">
-          <div className="flex flex-col items-center">
-            <Image
-              src={ReactNativeLogo}
-              alt="React Native Logo"
-              width={40}
-              height={40}
-            />
-          </div>
-          <div className="flex flex-col items-center">
-            <Image src={LogoExpo} alt="Expo Logo" width={100} height={100} />
-          </div>
-          <div className="flex flex-col items-center">
-            <Image
-              src={LogoLaravel}
-              alt="Laravel Logo"
-              width={40}
-              height={40}
-            />
-          </div>
-          <div className="flex flex-col items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              width="50"
-              height="50"
-              preserveAspectRatio="xMidYMid"
-              viewBox="0 0 256 351"
-              id="firebase"
-            >
-              <defs>
-                <filter
-                  id="b"
-                  width="200%"
-                  height="200%"
-                  x="-50%"
-                  y="-50%"
-                  filterUnits="objectBoundingBox"
-                >
-                  <feGaussianBlur
-                    in="SourceAlpha"
-                    result="shadowBlurInner1"
-                    stdDeviation="17.5"
-                  ></feGaussianBlur>
-                  <feOffset
-                    in="shadowBlurInner1"
-                    result="shadowOffsetInner1"
-                  ></feOffset>
-                  <feComposite
-                    in="shadowOffsetInner1"
-                    in2="SourceAlpha"
-                    k2="-1"
-                    k3="1"
-                    operator="arithmetic"
-                    result="shadowInnerInner1"
-                  ></feComposite>
-                  <feColorMatrix
-                    in="shadowInnerInner1"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
-                  ></feColorMatrix>
-                </filter>
-                <filter
-                  id="d"
-                  width="200%"
-                  height="200%"
-                  x="-50%"
-                  y="-50%"
-                  filterUnits="objectBoundingBox"
-                >
-                  <feGaussianBlur
-                    in="SourceAlpha"
-                    result="shadowBlurInner1"
-                    stdDeviation="3.5"
-                  ></feGaussianBlur>
-                  <feOffset
-                    dx="1"
-                    dy="-9"
-                    in="shadowBlurInner1"
-                    result="shadowOffsetInner1"
-                  ></feOffset>
-                  <feComposite
-                    in="shadowOffsetInner1"
-                    in2="SourceAlpha"
-                    k2="-1"
-                    k3="1"
-                    operator="arithmetic"
-                    result="shadowInnerInner1"
-                  ></feComposite>
-                  <feColorMatrix
-                    in="shadowInnerInner1"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"
-                  ></feColorMatrix>
-                </filter>
-                <path
-                  id="a"
-                  d="M1.253 280.732l1.605-3.131 99.353-188.518-44.15-83.475C54.392-1.283 45.074.474 43.87 8.188L1.253 280.732z"
-                ></path>
-                <path
-                  id="c"
-                  d="M134.417 148.974l32.039-32.812-32.039-61.007c-3.042-5.791-10.433-6.398-13.443-.59l-17.705 34.109-.53 1.744 31.678 58.556z"
-                ></path>
-              </defs>
-              <path
-                fill="#FFC24A"
-                d="M0 282.998l2.123-2.972L102.527 89.512l.212-2.017L58.48 4.358C54.77-2.606 44.33-.845 43.114 6.951L0 282.998z"
-              ></path>
-              <use fill="#FFA712" fillRule="evenodd" xlinkHref="#a"></use>
-              <use filter="url(#b)" xlinkHref="#a"></use>
-              <path
-                fill="#F4BD62"
-                d="M135.005 150.38l32.955-33.75-32.965-62.93c-3.129-5.957-11.866-5.975-14.962 0L102.42 87.287v2.86l32.584 60.233z"
-              ></path>
-              <use fill="#FFA50E" fillRule="evenodd" xlinkHref="#c"></use>
-              <use filter="url(#d)" xlinkHref="#c"></use>
-              <path
-                fill="#F6820C"
-                d="M0 282.998l.962-.968 3.496-1.42 128.477-128 1.628-4.431-32.05-61.074z"
-              ></path>
-              <path
-                fill="#FDE068"
-                d="M139.121 347.551l116.275-64.847-33.204-204.495c-1.039-6.398-8.888-8.927-13.468-4.34L0 282.998l115.608 64.548a24.126 24.126 0 0 0 23.513.005"
-              ></path>
-              <path
-                fill="#FCCA3F"
-                d="M254.354 282.16L221.402 79.218c-1.03-6.35-7.558-8.977-12.103-4.424L1.29 282.6l114.339 63.908a23.943 23.943 0 0 0 23.334.006l115.392-64.355z"
-              ></path>
-              <path
-                fill="#EEAB37"
-                d="M139.12 345.64a24.126 24.126 0 0 1-23.512-.005L.931 282.015l-.93.983 115.607 64.548a24.126 24.126 0 0 0 23.513.005l116.275-64.847-.285-1.752-115.99 64.689z"
-              ></path>
-            </svg>
-          </div>
-        </div>
+
+        <CleanFoldContent />
       </div>
-      <StickyScroll content={content} />
-    </>
+    </Container>
   );
 }
