@@ -41,21 +41,21 @@ const SERVICES: Service[] = [
         title: 'Full Stack Development',
         description: `🚀 Expert in modern web development with React, Next.js, and TypeScript:
 
-• 💻 Frontend Development: Crafting responsive UIs with modern frameworks
+    💻 Frontend Development: Crafting responsive UIs with modern frameworks
 
-• 🔄 State Management: Redux, Context API, Zustand for scalable state
+    🔄 State Management: Redux, Context API, Zustand for scalable state
 
-• 🎨 UI/UX: Tailwind CSS, Framer Motion for stunning animations
+    🎨 UI/UX: Tailwind CSS, Framer Motion for stunning animations
 
-• 🛠️ Backend Integration: RESTful APIs.
+    🛠️ Backend Integration: RESTful APIs.
 
-• 🔍 SEO Optimization: Best practices for search engine visibility
+    🔍 SEO Optimization: Best practices for search engine visibility
 
-• 📱 Responsive Design: Mobile-first approach for all screen sizes
+    📱 Responsive Design: Mobile-first approach for all screen sizes
 
-• ⚡ Performance: Code splitting, lazy loading, and optimization
+    ⚡ Performance: Code splitting, lazy loading, and optimization
 
-• 🔒 Security: Implementation of authentication and authorization
+    🔒 Security: Implementation of authentication and authorization
 `,
         icon: Code2,
     },
