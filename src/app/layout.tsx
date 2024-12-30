@@ -1,5 +1,5 @@
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import { Metadata, Viewport } from "next";
 
 import "./globals.css";
@@ -8,7 +8,12 @@ import { Providers } from "@/lib/providers";
 import Footer from "@/components/layout/footer";
 import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
+  subsets: ["latin"],
+  variable: '--font-poppins'
+});
 
 const title = "Jaskaran Singh | Full Stack Developer From Amritsar, India.";
 const description =
@@ -118,7 +123,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className={`!scroll-smooth ${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
       {googleAnalyticsId ? (
         <head>
           <Script
@@ -137,7 +142,7 @@ export default function RootLayout({
         </head>
       ) : null}
       <body
-        className={`${inter.className} bg-background text-foreground antialiased transition-colors duration-300`}
+        className="bg-background text-foreground antialiased transition-colors duration-300 font-inter"
         suppressHydrationWarning
       >
         <Providers>

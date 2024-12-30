@@ -16,6 +16,8 @@
   --app-gray-800: 32 42 56;
   --app-gray-900: 18 25 40;
   --app-gray-950: 4 8 19;
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
 }
 
 .dark {
@@ -80,6 +82,14 @@
     scrollbar-width: none;
     /* Firefox */
   }
+
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
 }
 
 @layer base {
@@ -137,15 +147,29 @@
     --chart-4: 47.9 95.8% 53.1%;
     --chart-5: 172.5 66.7% 50.4%;
   }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply text-base leading-relaxed;
+  }
+
+  h1 {
+    @apply font-poppins text-4xl font-bold leading-tight md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply font-poppins text-3xl font-bold leading-tight md:text-4xl;
+  }
+
+  h3 {
+    @apply font-poppins text-2xl font-semibold leading-tight md:text-3xl;
+  }
+
+  h4 {
+    @apply font-poppins text-xl font-semibold leading-snug md:text-2xl;
+  }
+
+  p {
+    @apply text-base md:text-lg;
   }
 }
 
@@ -154,4 +178,10 @@
   transition: background-color 0.3s ease-in-out,
     color 0.3s ease-in-out,
     border-color 0.3s ease-in-out;
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#1e90ff] to-[#70a1ff] bg-clip-text text-transparent;
+  }
 }
