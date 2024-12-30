@@ -207,7 +207,7 @@ const CodeBlock = () => {
 };
 
 const TwitterCard = () => (
-  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white backdrop-blur-[14px] shadow-sm dark:border-gray-700 dark:bg-gray-900/80 lg:right-[-5%] lg:top-[85%]">
+  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white backdrop-blur-[14px] shadow-sm dark:border-gray-700 dark:bg-gray-900/90 lg:right-[-5%] lg:top-[85%]">
     <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform">
       <header className="flex gap-4">
         <figure className="overflow-hidden rounded-full border-2 border-gray-400/50 dark:border-gray-600/50">
@@ -286,13 +286,13 @@ const CodeEditor = () => (
       </div>
     </div>
 
-    <div className="relative ml-4 select-none rounded-lg border bg-gradient-to-r from-blue-750 to-indigo-900 backdrop-blur-[4px]">
+    <div className="relative ml-4 select-none rounded-lg border bg-gradient-to-r from-blue-750 to-indigo-900 backdrop-blur-[3px] dark:bg-gradient-to-r dark:from-blue-750 dark:to-indigo-900">
       <div className="flex flex-row">
         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
         <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
       </div>
       <div className="py-2">
-        <header className="mb-2 flex items-center justify-between border-b border-b-gray-200 py-2 pb-3 px-8 ">
+        <header className="mb-2 flex items-center justify-between border-b border-b-gray-200 py-2 pb-3 px-8 dark:border-b-gray-700 ">
           <div className="flex flex-row space-x-2">
             <div className="h-3 w-3 cursor-pointer rounded-full bg-red-400 hover:bg-red-500"></div>
             <div className="h-3 w-3 cursor-pointer rounded-full bg-orange-400 hover:bg-orange-500"></div>
@@ -326,7 +326,7 @@ const HeaderSkills = () => (
 
 const HeroSection = () => {
   return (
-    <Container id="hero" className="relative flex w-full items-center justify-center overflow-hidden rounded-lg">
+    <Container id="hero" className="relative flex w-full items-center justify-center overflow-hidden rounded-lg h-[80vh]">
       <div className="z-10">
         <div className="flex flex-col gap-48 flex-col md:flex-row md:gap-8 pb-10">
           {/* Code Editor */}
@@ -378,18 +378,34 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Background Images */}
+      <div className="absolute inset-0 z-0">
+        {/* Dark theme background */}
+        <img
+          src="https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"
+          alt=""
+          className="hidden dark:block absolute inset-0 w-full h-full object-cover opacity-40"
+        />
+        {/* Light theme background */}
+        <img
+          src="https://tailwindui.com/plus/img/beams-home@95.jpg"
+          alt=""
+          className="block dark:hidden absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+      </div>
+
+      {/* Animated Grid Pattern Overlay */}
       <AnimatedGridPattern
         numSquares={70}
         maxOpacity={0.1}
         duration={3}
         repeatDelay={1}
         className={cn(
-          "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)] mt-[100px]",
-          "inset-x-0 inset-y-[-30%] h-[100%] z-0 text-[#1E90FF] dark:text-[#1E90FF]",
+          "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
+          "absolute inset-0 z-[1]",
+          "text-[#1E90FF] dark:text-[#1E90FF]"
         )}
       />
-
-      <img src="https://tailwindui.com/plus/img/beams-home@95.jpg" alt="" className="absolute -top-[1rem] left-1/2 -ml-[40rem] w-[163.125rem] max-w-none sm:-ml-[67.5rem] z-0 opacity-20" />
     </Container>
   );
 };
