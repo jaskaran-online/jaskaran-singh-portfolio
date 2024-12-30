@@ -87,7 +87,7 @@ const Header = () => {
   return (
     <header
       className={mergeClasses(
-        'sticky top-0 z-30 w-full border-b bg-background/80 backdrop-blur-xl transition-colors duration-200',
+        'sticky top-0 z-30 w-full border-b bg-background/80 dark:bg-[#0f192d]/80 backdrop-blur-xl transition-colors duration-200',
         scrolled ? 'border-border/40' : 'border-transparent'
       )}
     >
@@ -116,7 +116,7 @@ const Header = () => {
                     {isActive && (
                       <motion.div
                         layoutId="active-nav"
-                        className="absolute inset-0 bg-[#1e90ff] dark:bg-gray-600/50 rounded-md"
+                        className="absolute inset-0 bg-[#1e90ff] dark:bg-[#1e293b] rounded-md"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{

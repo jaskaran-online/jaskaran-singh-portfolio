@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
   const secondRow = TESTIMONIALS.slice(3);
 
   return (
-    <section id="testimonials" className="bg-gray-50 py-12 sm:py-20 dark:bg-gray-950">
+    <section id="testimonials" className="bg-gray-50 py-12 sm:py-20 dark:bg-[#0f192d]">
       <div className="mb-8 sm:mb-16 flex flex-col items-center gap-4 px-4">
         <Typography variant="h2" className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
           <SparklesText text="What People Are Saying" className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2" sparklesCount={4} />
@@ -23,14 +23,14 @@ const TestimonialsSection = () => {
         </Typography>
       </div>
 
-      <div className="relative overflow-hidden bg-gray-50 py-4 sm:py-8 dark:bg-gray-900">
+      <div className="relative overflow-hidden bg-gray-50 py-4 sm:py-8 dark:bg-[#0f192d]">
         <div className="flex flex-col gap-4 sm:gap-8">
           {/* First row - scrolling right */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="hidden lg:block pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
+            <div className="hidden lg:block pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent" />
             {/* Right gradient overlay */}
-            <div className="hidden lg:block pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[150px] bg-gradient-to-l from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
+            <div className="hidden lg:block pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[150px] bg-gradient-to-l from-gray-50 via-gray-50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent" />
 
             <motion.div
               animate={{
@@ -58,9 +58,9 @@ const TestimonialsSection = () => {
           {/* Second row - scrolling left */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="hidden lg:block pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent" />
+            <div className="hidden lg:block pointer-events-none absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent" />
             {/* Right gradient overlay */}
-            <div className="hidden lg:block pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-gray-900/50 dark:via-gray-900/50" />
+            <div className="hidden lg:block pointer-events-none absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[250px] bg-gradient-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent" />
 
             <motion.div
               animate={{

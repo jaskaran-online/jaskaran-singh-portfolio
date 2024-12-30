@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full border-t border-gray-200/30 dark:border-gray-800/30 bg-background/80 backdrop-blur-xl py-8">
+    <footer className="relative w-full border-t border-gray-200/30 dark:border-gray-800/30 dark:bg-[#0f192d]/80 backdrop-blur-xl py-8">
       {/* Grid Pattern */}
       {/* <div className="absolute inset-0 grid grid-cols-[1fr,auto,1fr] grid-rows-[1fr,auto,1fr] [&>div]:border-gray-200/30 dark:[&>div]:border-gray-800/30">
         <div className="border-b"></div>

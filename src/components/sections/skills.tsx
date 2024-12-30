@@ -6,7 +6,7 @@ import Container from '@/components/layout/container';
 import SparklesText from "@/components/ui/sparkles-text";
 const SkillsSection = () => {
   return (
-    <Container>
+    <Container id="skills">
       <div className="flex flex-col items-center gap-4">
         <div className="self-center">
           <Typography variant="h2" className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
