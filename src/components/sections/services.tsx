@@ -40,23 +40,23 @@ const SERVICES: Service[] = [
     {
         title: 'Full Stack Development',
         description: `🚀 Expert in modern web development with React, Next.js, and TypeScript:
+        
 
-    💻 Frontend Development: Crafting responsive UIs with modern frameworks
+💻 Frontend Development: Crafting responsive UIs with modern frameworks
 
-    🔄 State Management: Redux, Context API, Zustand for scalable state
+🔄 State Management: Redux, Context API, Zustand for scalable state
 
-    🎨 UI/UX: Tailwind CSS, Framer Motion for stunning animations
+🎨 UI/UX: Tailwind CSS, Framer Motion for stunning animations
 
-    🛠️ Backend Integration: RESTful APIs.
+🛠️ Backend Integration: RESTful APIs, GraphQL implementation
 
-    🔍 SEO Optimization: Best practices for search engine visibility
+🔍 SEO Optimization: Best practices for search engine visibility
 
-    📱 Responsive Design: Mobile-first approach for all screen sizes
+📱 Responsive Design: Mobile-first approach for all screen sizes
 
-    ⚡ Performance: Code splitting, lazy loading, and optimization
+⚡ Performance: Code splitting, lazy loading, and optimization
 
-    🔒 Security: Implementation of authentication and authorization
-`,
+🔒 Security: Implementation of authentication and authorization`,
         icon: Code2,
     },
     {
@@ -86,7 +86,7 @@ interface ServiceCardProps extends Service { }
 const ServiceCard = ({ title, description, icon: Icon }: ServiceCardProps) => {
     return (
         <MagicCard
-            className="h-full rounded-3xl bg-[#0A101F]/80 backdrop-blur border border-[#1a1f2e] hover:border-[#1f2937] transition-colors"
+            className="h-full rounded-3xl bg-white/90 dark:bg-[#0A101F]/80 backdrop-blur border border-slate-200 dark:border-[#1a1f2e] hover:border-slate-300 dark:hover:border-[#1f2937] transition-colors"
             gradientSize={250}
             gradientColor="#0ea5e9"
             gradientOpacity={0.15}
@@ -95,10 +95,10 @@ const ServiceCard = ({ title, description, icon: Icon }: ServiceCardProps) => {
                 <div className="mb-6 rounded-full bg-blue-500/10 p-3 w-fit">
                     <AnimatedIcon icon={Icon} />
                 </div>
-                <Typography variant="h3" className="mb-4 text-2xl font-semibold text-white">
+                <Typography variant="h3" className="mb-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     {title}
                 </Typography>
-                <Typography className="text-gray-400 text-md leading-relaxed whitespace-pre-line">
+                <Typography className="text-slate-600 dark:text-gray-400 text-md leading-relaxed whitespace-pre-line">
                     {description}
                 </Typography>
             </div>
@@ -112,14 +112,14 @@ const ServicesSection = () => {
             <Container>
                 <div className="mb-12 text-center">
                     <Typography variant="h2" className="mb-4">
-                        <SparklesText text="Services I Offer" className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white" sparklesCount={4} />
+                        <SparklesText text="Services I Offer" className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white" sparklesCount={4} />
                     </Typography>
-                    <Typography variant="subtitle" className="text-gray-600 dark:text-gray-400">
+                    <Typography variant="subtitle" className="text-slate-600 dark:text-gray-400">
                         Comprehensive solutions for your digital needs
                     </Typography>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[350px]">
+                <div className="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[400px]">
                     {SERVICES.map((service, index) => (
                         <div key={index} className={cn(
                             'transition-transform hover:scale-[1.02]',
