@@ -34,7 +34,7 @@ export const BlogFilters = ({
           <SelectValue placeholder="Select category" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="">All Categories</SelectItem>
+          <SelectItem value="all">All Categories</SelectItem>
           {categories.map((category) => (
             <SelectItem key={category} value={category}>
               {category}
@@ -51,7 +51,7 @@ export const BlogFilters = ({
           <SelectValue placeholder="Select tag" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="">All Tags</SelectItem>
+          <SelectItem value="all">All Tags</SelectItem>
           {tags.map((tag) => (
             <SelectItem key={tag} value={tag}>
               {tag}
