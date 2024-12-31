@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { Input } from '@/components/ui/input'
@@ -14,53 +14,28 @@ export default function AdminLoginPage() {
     const router = useRouter()
     const supabase = createClientComponentClient()
 
-    useEffect(() => {
-        // Check if user is already logged in
-        const checkSession = async () => {
-            const { data: { session } } = await supabase.auth.getSession()
-            if (session) {
-                router.replace('/admin/dashboard')
-            }
-        }
-        checkSession()
-    }, [router, supabase])
-
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault()
         setLoading(true)
 
-        if (!email || !password) {
-            toast.error('Please enter both email and password')
-            setLoading(false)
-            return
-        }
-
         try {
-            const { data, error } = await supabase.auth.signInWithPassword({
+            const { error } = await supabase.auth.signInWithPassword({
                 email,
                 password,
             })
 
             if (error) {
-                console.error('Sign in error:', error)
-                toast.error(error.message || 'Invalid email or password')
-                setLoading(false)
+                toast.error(error.message)
                 return
             }
 
-            if (!data?.session) {
-                console.error('No session returned after sign in')
-                toast.error('Authentication failed')
-                setLoading(false)
-                return
-            }
-
-            toast.success('Successfully signed in')
-            // Use router.replace instead of push to prevent back navigation
-            router.replace('/admin/dashboard')
+            toast.success('Logged in successfully')
+            router.refresh()
+            router.push('/admin/dashboard')
         } catch (error) {
-            console.error('Unexpected error during sign in:', error)
-            toast.error('An unexpected error occurred')
+            console.error('Error:', error)
+            toast.error('An error occurred during login')
+        } finally {
             setLoading(false)
         }
     }
