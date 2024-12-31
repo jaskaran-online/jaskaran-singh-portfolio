@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { blogService } from '@/lib/supabase/blog-service'
 
-const BASE_URL = 'https://yourblog.com' // TODO: Replace with your domain
+const BASE_URL = 'https://jaskaran.in' // TODO: Replace with your domain
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { posts } = await blogService.getPosts({ page: 1 })
