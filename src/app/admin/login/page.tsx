@@ -19,7 +19,7 @@ export default function AdminLoginPage() {
         const checkSession = async () => {
             const { data: { session } } = await supabase.auth.getSession()
             if (session) {
-                router.push('/admin/dashboard')
+                router.replace('/admin/dashboard')
             }
         }
         checkSession()
@@ -44,22 +44,23 @@ export default function AdminLoginPage() {
             if (error) {
                 console.error('Sign in error:', error)
                 toast.error(error.message || 'Invalid email or password')
+                setLoading(false)
                 return
             }
 
             if (!data?.session) {
                 console.error('No session returned after sign in')
                 toast.error('Authentication failed')
+                setLoading(false)
                 return
             }
 
             toast.success('Successfully signed in')
-            router.push('/admin/dashboard')
-            router.refresh()
+            // Use router.replace instead of push to prevent back navigation
+            router.replace('/admin/dashboard')
         } catch (error) {
             console.error('Unexpected error during sign in:', error)
             toast.error('An unexpected error occurred')
-        } finally {
             setLoading(false)
         }
     }
