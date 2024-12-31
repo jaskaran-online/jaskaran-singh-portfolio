@@ -19,7 +19,7 @@ export default function AdminLoginPage() {
         const checkSession = async () => {
             const { data: { session } } = await supabase.auth.getSession()
             if (session) {
-                router.push('/admin')
+                router.push('/admin/dashboard')
             }
         }
         checkSession()
@@ -36,31 +36,10 @@ export default function AdminLoginPage() {
         }
 
         try {
-            console.log('Attempting to sign in with:', { email })
-
-            // First, check if the user exists
-            const { data: { users }, error: getUserError } = await supabase.auth.admin.listUsers()
-
-            if (getUserError) {
-                console.error('Error checking user:', getUserError)
-                toast.error('Authentication error')
-                return
-            }
-
-            const userExists = users?.some(user => user.email === email)
-            if (!userExists) {
-                console.error('User not found')
-                toast.error('Invalid email or password')
-                return
-            }
-
-            // Attempt to sign in
             const { data, error } = await supabase.auth.signInWithPassword({
                 email,
                 password,
             })
-
-            console.log('Sign in response:', { data, error })
 
             if (error) {
                 console.error('Sign in error:', error)
@@ -74,20 +53,8 @@ export default function AdminLoginPage() {
                 return
             }
 
-            // Check if user has admin role (you'll need to set this up in your Supabase dashboard)
-            const { data: { user } } = await supabase.auth.getUser()
-            const isAdmin = user?.app_metadata?.role === 'admin'
-
-            if (!isAdmin) {
-                console.error('User is not an admin')
-                await supabase.auth.signOut()
-                toast.error('Unauthorized access')
-                return
-            }
-
-            console.log('Successfully signed in as admin, redirecting...')
             toast.success('Successfully signed in')
-            router.push('/admin')
+            router.push('/admin/dashboard')
             router.refresh()
         } catch (error) {
             console.error('Unexpected error during sign in:', error)
