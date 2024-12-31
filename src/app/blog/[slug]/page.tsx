@@ -5,6 +5,7 @@ import { blogService } from '@/lib/supabase/blog-service'
 import { generateBlogPostMetadata } from '@/components/blog/blog-seo'
 import { Analytics } from '@/lib/analytics'
 import { Comments } from './comments'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 
 type BlogPostPageProps = {
   params: {
@@ -47,41 +48,34 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         )}
 
         <header className="mb-8 text-center">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight">
-            {post.title}
-          </h1>
-          <div className="flex items-center justify-center gap-4 text-muted-foreground">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight">{post.title}</h1>
+          <div className="text-gray-600">
             <time dateTime={post.published_date}>{formattedDate}</time>
-            <div className="flex gap-2">
-              {post.categories.map((category: any) => (
-                <span
-                  key={category}
-                  className="rounded-full bg-secondary px-3 py-1 text-sm"
-                >
-                  {category}
-                </span>
-              ))}
-            </div>
+            {post.categories?.length > 0 && (
+              <>
+                <span className="mx-2">•</span>
+                <span>{post.categories.join(', ')}</span>
+              </>
+            )}
           </div>
         </header>
 
-        <div
-          className="prose prose-lg prose-blue mx-auto"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <div className="markdown-content">
+          <MarkdownRenderer content={post.content} />
+        </div>
 
-        <footer className="mt-8 border-t pt-8">
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map((tag : any) => (
+        {post.tags?.length > 0 && (
+          <div className="mt-8 flex flex-wrap gap-2">
+            {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-secondary px-2 py-1 text-sm text-secondary-foreground"
+                className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700"
               >
                 #{tag}
               </span>
             ))}
           </div>
-        </footer>
+        )}
       </article>
 
       <div className="mx-auto max-w-4xl px-4 py-8">
@@ -93,7 +87,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
 export async function generateStaticParams() {
   const { posts } = await blogService.getPosts({ page: 1 })
-  return posts.map((post : any) => ({
+  return posts.map((post) => ({
     slug: post.slug,
   }))
 }
