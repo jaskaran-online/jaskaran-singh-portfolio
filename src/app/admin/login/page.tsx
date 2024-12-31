@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { Input } from '@/components/ui/input'
@@ -14,12 +14,47 @@ export default function AdminLoginPage() {
     const router = useRouter()
     const supabase = createClientComponentClient()
 
+    useEffect(() => {
+        // Check if user is already logged in
+        const checkSession = async () => {
+            const { data: { session } } = await supabase.auth.getSession()
+            if (session) {
+                router.push('/admin')
+            }
+        }
+        checkSession()
+    }, [router, supabase])
+
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault()
         setLoading(true)
 
+        if (!email || !password) {
+            toast.error('Please enter both email and password')
+            setLoading(false)
+            return
+        }
+
         try {
             console.log('Attempting to sign in with:', { email })
+
+            // First, check if the user exists
+            const { data: { users }, error: getUserError } = await supabase.auth.admin.listUsers()
+
+            if (getUserError) {
+                console.error('Error checking user:', getUserError)
+                toast.error('Authentication error')
+                return
+            }
+
+            const userExists = users?.some(user => user.email === email)
+            if (!userExists) {
+                console.error('User not found')
+                toast.error('Invalid email or password')
+                return
+            }
+
+            // Attempt to sign in
             const { data, error } = await supabase.auth.signInWithPassword({
                 email,
                 password,
@@ -29,7 +64,7 @@ export default function AdminLoginPage() {
 
             if (error) {
                 console.error('Sign in error:', error)
-                toast.error(error.message || 'Failed to sign in')
+                toast.error(error.message || 'Invalid email or password')
                 return
             }
 
@@ -39,7 +74,18 @@ export default function AdminLoginPage() {
                 return
             }
 
-            console.log('Successfully signed in, redirecting...')
+            // Check if user has admin role (you'll need to set this up in your Supabase dashboard)
+            const { data: { user } } = await supabase.auth.getUser()
+            const isAdmin = user?.app_metadata?.role === 'admin'
+
+            if (!isAdmin) {
+                console.error('User is not an admin')
+                await supabase.auth.signOut()
+                toast.error('Unauthorized access')
+                return
+            }
+
+            console.log('Successfully signed in as admin, redirecting...')
             toast.success('Successfully signed in')
             router.push('/admin')
             router.refresh()
