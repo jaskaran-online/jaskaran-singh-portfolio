@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import {
@@ -22,9 +23,7 @@ import DownloadCV from '@/components/general/download-cv';
 import Typography from '@/components/general/typography';
 
 const Logo = () => (
-  <Typography variant="h3" className="font-bold">
-    {'<SS />'}
-  </Typography>
+  <Image src="/logo.png" alt="Jaskaran Singh" width={60} height={60} />
 );
 
 const Header = () => {
