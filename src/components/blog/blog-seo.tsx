@@ -26,10 +26,10 @@ export const generateBlogPostMetadata = ({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Your Blog Name',
+      name: 'Jaskaran Singh',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://yourblog.com/logo.png', // TODO: Replace with actual logo URL
+        url: 'https://jaskaran.in/logo.png', // TODO: Replace with actual logo URL
       },
     },
     mainEntityOfPage: {
@@ -39,7 +39,7 @@ export const generateBlogPostMetadata = ({
   }
 
   return {
-    title: `${title} | Your Blog Name`,
+    title: `${title} | Jaskaran Singh`,
     description: meta_description,
     openGraph: {
       title,

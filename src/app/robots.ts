@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/api/'],
     },
-    sitemap: 'https://yourblog.com/sitemap.xml', // TODO: Replace with your domain
+    sitemap: 'https://jaskaran.in/sitemap.xml', // TODO: Replace with your domain
   }
 }
