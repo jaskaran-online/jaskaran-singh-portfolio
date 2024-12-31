@@ -30,6 +30,8 @@ export const viewport: Viewport = {
 import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import ScrollProgress from "@/components/ui/scroll-progress";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -151,16 +153,25 @@ export default function RootLayout({
         )}
         suppressHydrationWarning
       >
-        <Providers>
-          <div className="relative min-h-screen bg-background">
-            <ScrollProgress className="top-[65px]" />
-            <Header />
-            <main className="relative flex min-h-screen w-full flex-col bg-background dark:bg-[#0f192d]">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </Providers>
+        <Toaster richColors position="top-right" />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Providers>
+            <div className="relative min-h-screen bg-background">
+              <ScrollProgress className="top-[65px]" />
+              <Header />
+              <main className="relative flex min-h-screen w-full flex-col bg-background dark:bg-[#0f192d]">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </Providers>
+          <Toaster richColors position="top-right" />
+        </ThemeProvider>
       </body>
     </html>
   );
