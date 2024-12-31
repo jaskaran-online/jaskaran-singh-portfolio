@@ -7,6 +7,8 @@ import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { ImagePlus, Loader2 } from 'lucide-react'
+import Image from 'next/image'
 
 interface Post {
   id: string
@@ -17,6 +19,7 @@ interface Post {
   created_at: string
   updated_at: string
   author_id: string
+  featured_image?: string
 }
 
 export default function EditPostPage({
@@ -29,32 +32,21 @@ export default function EditPostPage({
   const [post, setPost] = useState<Post | null>(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
+  const [uploading, setUploading] = useState(false)
 
   useEffect(() => {
     const fetchPost = async () => {
       try {
         console.log('Fetching post with ID:', params.id)
 
-        // First try with UUID
         let { data, error } = await supabase
-          .from('posts')
+          .from('blog_posts')
           .select('*')
           .eq('id', params.id)
           .single()
 
         if (error) {
-          console.log('Error fetching by id:', error)
-          // If not found by ID, try with slug
-          const slugResult = await supabase
-            .from('blog_posts')
-            .select('*')
-            .eq('id', params.id)
-            .single()
-
-          if (slugResult.error) {
-            throw error
-          }
-          data = slugResult.data
+          throw error
         }
 
         if (!data) {
@@ -77,6 +69,56 @@ export default function EditPostPage({
     fetchPost()
   }, [params.id, router, supabase])
 
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || !e.target.files[0]) return
+
+    const file = e.target.files[0]
+    const fileExt = file.name.split('.').pop()
+    const fileName = `${params.id}.${fileExt}`
+    const filePath = `${fileName}`
+
+    setUploading(true)
+
+    try {
+      // Upload image to Supabase Storage
+      const { error: uploadError } = await supabase.storage
+        .from('blogs')
+        .upload(filePath, file, { upsert: true })
+
+      if (uploadError) {
+        throw uploadError
+      }
+
+      // Get public URL
+      const { data: publicURL } = supabase.storage
+        .from('blogs')
+        .getPublicUrl(filePath)
+
+      if (!publicURL) {
+        throw new Error('Failed to get public URL')
+      }
+
+      // Update post with new image URL
+      const { error: updateError } = await supabase
+        .from('blog_posts')
+        .update({ featured_image: publicURL.publicUrl })
+        .eq('id', params.id)
+
+      if (updateError) {
+        throw updateError
+      }
+
+      // Update local state
+      setPost(post => post ? { ...post, featured_image: publicURL.publicUrl } : null)
+      toast.success('Image uploaded successfully')
+    } catch (error) {
+      console.error('Error uploading image:', error)
+      toast.error('Failed to upload image')
+    } finally {
+      setUploading(false)
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!post) return
@@ -84,7 +126,7 @@ export default function EditPostPage({
     setSaving(true)
     try {
       const { error } = await supabase
-        .from('posts')
+        .from('blog_posts')
         .update({
           title: post.title,
           content: post.content,
@@ -136,6 +178,44 @@ export default function EditPostPage({
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-2">
+          <label className="text-sm font-medium block">Featured Image</label>
+          <div className="flex flex-col items-center gap-4 p-4 border-2 border-dashed rounded-lg">
+            {post.featured_image ? (
+              <div className="relative w-full aspect-video">
+                <Image
+                  src={post.featured_image}
+                  alt="Featured image"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            ) : null}
+            <div className="flex items-center gap-2">
+              <Input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                disabled={uploading}
+                className="hidden"
+                id="image-upload"
+              />
+              <label
+                htmlFor="image-upload"
+                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer ${uploading ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
+              >
+                {uploading ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  <ImagePlus className="w-5 h-5" />
+                )}
+                {uploading ? 'Uploading...' : 'Upload Image'}
+              </label>
+            </div>
+          </div>
+        </div>
+
         <div className="space-y-2">
           <label htmlFor="title" className="text-sm font-medium">
             Title

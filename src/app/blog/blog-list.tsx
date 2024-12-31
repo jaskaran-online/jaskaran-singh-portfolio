@@ -1,143 +1,108 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
-import { BlogCard } from '@/components/blog/blog-card'
-import { BlogSearch } from '@/components/blog/blog-search'
-import { BlogFilters } from '@/components/blog/blog-filters'
-import { BlogPagination } from '@/components/blog/blog-pagination'
-import { blogService } from '@/lib/supabase/blog-service'
-import type { BlogPost } from '@/lib/supabase/types'
+import { useEffect, useState } from 'react'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import Link from 'next/link'
+import Image from 'next/image'
+import { formatDistanceToNow } from 'date-fns'
+import { Pencil } from 'lucide-react'
 
-export const BlogList = () => {
-  const router = useRouter()
-  const searchParams = useSearchParams()
+interface BlogPost {
+  id: string
+  title: string
+  content: string
+  slug: string
+  featured_image?: string
+  created_at: string
+  published: boolean
+}
+
+export function BlogList() {
   const [posts, setPosts] = useState<BlogPost[]>([])
-  const [totalPages, setTotalPages] = useState(1)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  const currentPage = Number(searchParams.get('page')) || 1
-  const search = searchParams.get('search') || ''
-  const category = searchParams.get('category') || ''
-  const tag = searchParams.get('tag') || ''
-  const sortBy = (searchParams.get('sort') as keyof BlogPost) || 'published_date'
-
-  const updateQueryParams = useCallback(
-    (params: Record<string, string>) => {
-      const newSearchParams = new URLSearchParams(searchParams)
-      Object.entries(params).forEach(([key, value]) => {
-        if (value) {
-          newSearchParams.set(key, value)
-        } else {
-          newSearchParams.delete(key)
-        }
-      })
-      router.push(`/blog?${newSearchParams.toString()}`)
-    },
-    [router, searchParams]
-  )
-
-  const handleSearch = useCallback(
-    (query: string) => {
-      updateQueryParams({ search: query, page: '1' })
-    },
-    [updateQueryParams]
-  )
-
-  const handleFilterChange = useCallback(
-    (type: 'category' | 'tag' | 'sort', value: string) => {
-      updateQueryParams({ [type]: value, page: '1' })
-    },
-    [updateQueryParams]
-  )
-
-  const handlePageChange = useCallback(
-    (page: number) => {
-      updateQueryParams({ page: page.toString() })
-    },
-    [updateQueryParams]
-  )
+  const supabase = createClientComponentClient()
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        setLoading(true)
-        const result = await blogService.getPosts({
-          page: currentPage,
-          search,
-          category,
-          tag,
-          sortBy,
-        })
-        setPosts(result.posts)
-        setTotalPages(result.totalPages)
-        setError(null)
-      } catch (err) {
-        setError('Failed to load blog posts')
-        console.error(err)
+        const { data, error } = await supabase
+          .from('blog_posts')
+          .select('*')
+          .eq('status', 'published')
+          .order('created_at', { ascending: false })
+
+        if (error) {
+          throw error
+        }
+
+        setPosts(data || [])
+      } catch (error) {
+        console.error('Error fetching posts:', error)
       } finally {
         setLoading(false)
       }
     }
 
     fetchPosts()
-  }, [currentPage, search, category, tag, sortBy])
+  }, [supabase])
 
-  if (error) {
+  if (loading) {
     return (
-      <div className="text-center text-red-500">
-        <p>{error}</p>
+      <div className="flex justify-center items-center min-h-[400px]">
+        <div className="text-lg">Loading posts...</div>
+      </div>
+    )
+  }
+
+  if (posts.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] px-4">
+        <div className="text-center space-y-6 max-w-2xl mx-auto">
+          <div className="w-20 h-20 bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-2">
+            <Pencil className="w-10 h-10 text-blue-500 dark:text-blue-400" />
+          </div>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+            Blog Coming Soon
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-lg mx-auto">
+            I'm currently working on some interesting articles. Stay tuned for insightful content about web development, technology, and more.
+          </p>
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <BlogSearch onSearch={handleSearch} />
-        <BlogFilters
-          categories={[]} // TODO: Fetch categories from API
-          tags={[]} // TODO: Fetch tags from API
-          onFilterChange={handleFilterChange}
-          selectedCategory={category}
-          selectedTag={tag}
-          sortBy={sortBy}
-        />
-      </div>
-
-      {loading ? (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className="h-[300px] animate-pulse rounded-lg bg-muted"
-            />
-          ))}
-        </div>
-      ) : (
-        <>
-          {posts.length === 0 ? (
-            <p className="text-center text-muted-foreground">
-              No blog posts found.
-            </p>
-          ) : (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <Link
+          key={post.id}
+          href={`/blog/${post.slug}`}
+          className="group block overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800 transition-all hover:shadow-lg"
+        >
+          {post.featured_image && (
+            <div className="relative aspect-video overflow-hidden">
+              <Image
+                src={post.featured_image}
+                alt={post.title}
+                fill
+                className="object-cover transition-transform group-hover:scale-105"
+              />
             </div>
           )}
-        </>
-      )}
-
-      {totalPages > 1 && (
-        <BlogPagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
-      )}
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">
+              {post.title}
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-400 line-clamp-2">
+              {post.content}
+            </p>
+            <div className="mt-4 text-sm text-gray-500 dark:text-gray-500">
+              {formatDistanceToNow(new Date(post.created_at), { addSuffix: true })}
+            </div>
+          </div>
+        </Link>
+      ))}
     </div>
   )
 }
