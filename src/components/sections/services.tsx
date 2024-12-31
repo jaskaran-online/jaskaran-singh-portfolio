@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Typography from '@/components/general/typography';
@@ -108,34 +107,32 @@ const ServiceCard = ({ title, description, icon: Icon }: ServiceCardProps) => {
 
 const ServicesSection = () => {
     return (
-        <section id="services" className="relative py-20">
-            <Container>
-                <div className="mb-12 text-center">
-                    <Typography variant="h2" className="mb-4">
-                        <SparklesText text="Services I Offer" className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white" sparklesCount={4} />
-                    </Typography>
-                    <Typography variant="subtitle" className="text-slate-600 dark:text-gray-400">
-                        Comprehensive solutions for your digital needs
-                    </Typography>
-                </div>
+        <Container id="services" className="relative py-20">
+            <div className="mb-12 text-center">
+                <Typography variant="h2" className="mb-4">
+                    <SparklesText text="Services I Offer" className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white" sparklesCount={4} />
+                </Typography>
+                <Typography variant="subtitle" className="text-slate-600 dark:text-gray-400">
+                    Comprehensive solutions for your digital needs
+                </Typography>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[400px]">
-                    {SERVICES.map((service, index) => (
-                        <div key={index} className={cn(
-                            'transition-transform hover:scale-[1.02]',
-                            index === 0 ? 'md:col-span-4 md:row-span-2' : // First card larger
-                                index === 1 ? 'md:col-span-2' : // Second card
-                                    index === 2 ? 'md:col-span-2' : // Third card
-                                        index === 3 ? 'md:col-span-3' : // Fourth card
-                                            index === 4 ? 'md:col-span-3' : // Fifth card
-                                                'md:col-span-2' // Default size
-                        )}>
-                            <ServiceCard {...service} />
-                        </div>
-                    ))}
-                </div>
-            </Container>
-        </section>
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[400px]">
+                {SERVICES.map((service, index) => (
+                    <div key={index} className={cn(
+                        'transition-transform hover:scale-[1.02] overflow-hidden',
+                        index === 0 ? 'md:col-span-4 md:row-span-2' : // First card larger
+                            index === 1 ? 'md:col-span-2' : // Second card
+                                index === 2 ? 'md:col-span-2' : // Third card
+                                    index === 3 ? 'md:col-span-3' : // Fourth card
+                                        index === 4 ? 'md:col-span-3' : // Fifth card
+                                            'md:col-span-2' // Default size
+                    )}>
+                        <ServiceCard {...service} />
+                    </div>
+                ))}
+            </div>
+        </Container>
     );
 };
 
