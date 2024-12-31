@@ -19,20 +19,33 @@ export default function AdminLoginPage() {
         setLoading(true)
 
         try {
-            const { error } = await supabase.auth.signInWithPassword({
+            console.log('Attempting to sign in with:', { email })
+            const { data, error } = await supabase.auth.signInWithPassword({
                 email,
                 password,
             })
 
+            console.log('Sign in response:', { data, error })
+
             if (error) {
-                throw error
+                console.error('Sign in error:', error)
+                toast.error(error.message || 'Failed to sign in')
+                return
             }
 
+            if (!data?.session) {
+                console.error('No session returned after sign in')
+                toast.error('Authentication failed')
+                return
+            }
+
+            console.log('Successfully signed in, redirecting...')
+            toast.success('Successfully signed in')
             router.push('/admin')
             router.refresh()
         } catch (error) {
-            toast.error('Failed to sign in')
-            console.error('Error:', error)
+            console.error('Unexpected error during sign in:', error)
+            toast.error('An unexpected error occurred')
         } finally {
             setLoading(false)
         }
@@ -45,11 +58,14 @@ export default function AdminLoginPage() {
                     <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                         Admin Login
                     </h2>
+                    <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+                        Sign in to access the admin dashboard
+                    </p>
                 </div>
                 <form className="mt-8 space-y-6" onSubmit={handleLogin}>
                     <div className="space-y-4 rounded-md shadow-sm">
                         <div>
-                            <label htmlFor="email" className="sr-only">
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                 Email address
                             </label>
                             <Input
@@ -60,12 +76,12 @@ export default function AdminLoginPage() {
                                 required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                placeholder="Email address"
+                                placeholder="Enter your email"
                                 className="relative block w-full"
                             />
                         </div>
                         <div>
-                            <label htmlFor="password" className="sr-only">
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                 Password
                             </label>
                             <Input
@@ -76,7 +92,7 @@ export default function AdminLoginPage() {
                                 required
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Password"
+                                placeholder="Enter your password"
                                 className="relative block w-full"
                             />
                         </div>
