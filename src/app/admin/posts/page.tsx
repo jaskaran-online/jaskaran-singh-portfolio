@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { format } from 'date-fns'
 import {
@@ -23,6 +23,7 @@ import { blogService } from '@/lib/supabase/blog-service'
 import type { BlogPost } from '@/lib/supabase/types'
 import { MoreHorizontal, Plus } from 'lucide-react'
 import { toast } from 'sonner'
+import { cn } from '@/lib/utils'
 
 export default function AdminPostsPage() {
   const [posts, setPosts] = useState<BlogPost[]>([])
@@ -32,7 +33,7 @@ export default function AdminPostsPage() {
   const fetchPosts = async () => {
     try {
       setLoading(true)
-      const { posts } = await blogService.getPosts({ page: 1 })
+      const { posts } = await blogService.getPosts({ page: 1, showAll: true })
       setPosts(posts)
     } catch (error) {
       console.error('Error fetching posts:', error)
@@ -41,6 +42,10 @@ export default function AdminPostsPage() {
       setLoading(false)
     }
   }
+
+  useEffect(() => {
+    fetchPosts()
+  }, [])
 
   const handleSelectAll = (checked: boolean) => {
     setSelectedPosts(checked ? posts.map((post) => post.id) : [])

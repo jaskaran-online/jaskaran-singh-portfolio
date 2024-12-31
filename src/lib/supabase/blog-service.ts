@@ -11,6 +11,7 @@ export const blogService = {
     sortOrder = 'desc',
     category,
     tag,
+    showAll = false,
   }: {
     page?: number
     search?: string
@@ -18,13 +19,17 @@ export const blogService = {
     sortOrder?: 'asc' | 'desc'
     category?: string
     tag?: string
+    showAll?: boolean
   }) {
     let query = supabase
       .from('blog_posts')
       .select('*', { count: 'exact' })
-      .eq('status', 'published')
       .order(sortBy, { ascending: sortOrder === 'asc' })
       .range((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE - 1)
+
+    if (!showAll) {
+      query = query.eq('status', 'published')
+    }
 
     if (search) {
       query = query.ilike('title', `%${search}%`)
