@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, use } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { toast } from 'sonner'
@@ -13,31 +13,48 @@ interface Post {
   title: string
   content: string
   published: boolean
+  slug: string
+  created_at: string
+  updated_at: string
+  author_id: string
 }
 
 export default function EditPostPage({
   params,
 }: {
-  params: Promise<{ id: string }>
+  params: { id: string }
 }) {
   const router = useRouter()
   const supabase = createClientComponentClient()
   const [post, setPost] = useState<Post | null>(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
-  const resolvedParams = use(params)
 
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const { data, error } = await supabase
+        console.log('Fetching post with ID:', params.id)
+
+        // First try with UUID
+        let { data, error } = await supabase
           .from('posts')
           .select('*')
-          .eq('id', resolvedParams.id)
+          .eq('id', params.id)
           .single()
 
         if (error) {
-          throw error
+          console.log('Error fetching by id:', error)
+          // If not found by ID, try with slug
+          const slugResult = await supabase
+            .from('blog_posts')
+            .select('*')
+            .eq('id', params.id)
+            .single()
+
+          if (slugResult.error) {
+            throw error
+          }
+          data = slugResult.data
         }
 
         if (!data) {
@@ -46,6 +63,7 @@ export default function EditPostPage({
           return
         }
 
+        console.log('Found post:', data)
         setPost(data)
       } catch (error) {
         console.error('Error fetching post:', error)
@@ -57,7 +75,7 @@ export default function EditPostPage({
     }
 
     fetchPost()
-  }, [resolvedParams.id, router, supabase])
+  }, [params.id, router, supabase])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
