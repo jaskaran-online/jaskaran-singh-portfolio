@@ -125,6 +125,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  console.log(`${Header.length}`);
   return (
     <html lang="en" suppressHydrationWarning>
       {googleAnalyticsId ? (

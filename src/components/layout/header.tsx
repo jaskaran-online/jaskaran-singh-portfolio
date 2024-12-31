@@ -104,7 +104,7 @@ const Header = () => {
                 return (
                   <Link
                     key={index}
-                    href={link.href}
+                    href={`https://www.jaskaran.in/${link.href}`}
                     className={mergeClasses(
                       "relative px-4 py-2 text-sm font-medium transition-colors",
                       isActive
