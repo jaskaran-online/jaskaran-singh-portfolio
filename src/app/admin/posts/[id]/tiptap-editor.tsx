@@ -5,11 +5,13 @@ import StarterKit from '@tiptap/starter-kit'
 import Image from '@tiptap/extension-image'
 import Link from '@tiptap/extension-link'
 import Placeholder from '@tiptap/extension-placeholder'
+import { Markdown } from 'tiptap-markdown'
 import {
   Toggle,
   ToggleGroup,
   ToggleGroupItem,
 } from '@/components/ui/toggle-group'
+import { Button } from '@/components/ui/button'
 import {
   Bold,
   Italic,
@@ -20,9 +22,13 @@ import {
   Undo,
   Link as LinkIcon,
   Image as ImageIcon,
+  Eye,
+  Code,
 } from 'lucide-react'
 import { ImageUpload } from '@/components/blog/image-upload'
+import { MarkdownPreview } from '@/components/blog/markdown-preview'
 import { cn } from '@/lib/utils'
+import { useState } from 'react'
 
 type TipTapEditorProps = {
   content: string
@@ -30,6 +36,8 @@ type TipTapEditorProps = {
 }
 
 const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
+  const [isPreview, setIsPreview] = useState(false)
+
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -40,6 +48,11 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
       Placeholder.configure({
         placeholder: 'Write something amazing...',
       }),
+      Markdown.configure({
+        html: true,
+        transformPastedText: true,
+        transformCopiedText: true,
+      }),
     ],
     content,
     editorProps: {
@@ -49,7 +62,9 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
       },
     },
     onUpdate: ({ editor }) => {
-      onChange(editor.getHTML())
+      // Get content as markdown
+      const markdown = editor.storage.markdown.getMarkdown()
+      onChange(markdown)
     },
   })
 
@@ -71,6 +86,33 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
 
   const handleImageUpload = (url: string) => {
     editor.chain().focus().setImage({ src: url }).run()
+  }
+
+  const togglePreview = () => {
+    setIsPreview(!isPreview)
+  }
+
+  const handleCodeBlock = () => {
+    editor.chain().focus().toggleCodeBlock().run()
+  }
+
+  if (isPreview) {
+    return (
+      <div className="rounded-lg border">
+        <div className="border-b bg-muted/50 p-2">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={togglePreview}
+            className="text-muted-foreground"
+          >
+            <Code className="mr-2 h-4 w-4" />
+            Edit
+          </Button>
+        </div>
+        <MarkdownPreview content={editor.storage.markdown.getMarkdown()} />
+      </div>
+    )
   }
 
   return (
@@ -119,22 +161,70 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
               <Quote className="h-4 w-4" />
             </ToggleGroupItem>
             <ToggleGroupItem
-              value="link"
-              aria-label="Add link"
-              onClick={handleLinkAdd}
-              data-state={editor.isActive('link') ? 'on' : 'off'}
+              value="codeBlock"
+              aria-label="Toggle code block"
+              onClick={handleCodeBlock}
+              data-state={editor.isActive('codeBlock') ? 'on' : 'off'}
             >
-              <LinkIcon className="h-4 w-4" />
+              <Code className="h-4 w-4" />
             </ToggleGroupItem>
           </ToggleGroup>
-          <div className="ml-auto">
-            <ImageUpload onUpload={handleImageUpload} />
+
+          <div className="flex items-center gap-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleLinkAdd}
+              className="text-muted-foreground"
+            >
+              <LinkIcon className="h-4 w-4" />
+            </Button>
+            <ImageUpload onUpload={handleImageUpload}>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-muted-foreground"
+              >
+                <ImageIcon className="h-4 w-4" />
+              </Button>
+            </ImageUpload>
           </div>
+
+          <div className="flex items-center gap-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => editor.chain().focus().undo().run()}
+              disabled={!editor.can().undo()}
+              className="text-muted-foreground"
+            >
+              <Undo className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => editor.chain().focus().redo().run()}
+              disabled={!editor.can().redo()}
+              className="text-muted-foreground"
+            >
+              <Redo className="h-4 w-4" />
+            </Button>
+          </div>
+
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={togglePreview}
+            className="ml-auto text-muted-foreground"
+          >
+            <Eye className="mr-2 h-4 w-4" />
+            Preview
+          </Button>
         </div>
       </div>
       <EditorContent
         editor={editor}
-        className="min-h-[200px] p-4"
+        className="min-h-[500px] p-4"
       />
     </div>
   )
