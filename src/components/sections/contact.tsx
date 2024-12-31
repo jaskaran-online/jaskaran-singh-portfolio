@@ -106,14 +106,27 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Here you would typically send the form data to your backend
-      console.log('Form submitted:', formData);
-      // Reset form after successful submission
-      setFormData({ name: '', email: '', message: '' });
-      alert('Message sent successfully!');
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: formData.email,
+          name: formData.name,
+          message: formData.message
+        }),
+      });
+
+      if (response.ok) {
+        setFormData({ name: '', email: '', message: '' });
+        alert('Message sent successfully!');
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
-      console.error('Error sending message:', error);
       alert('Failed to send message. Please try again.');
+      console.error('Error:', error);
     } finally {
       setIsSubmitting(false);
     }
