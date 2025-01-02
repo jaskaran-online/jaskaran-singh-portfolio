@@ -1,17 +1,25 @@
 import { useRef, useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
+
+interface ThemeColors {
+    borderColor: string;
+    hoverFillColor: string;
+    backgroundColor: string;
+    backgroundOpacity?: number;
+    gradientStartColor: string;
+    gradientEndColor: string;
+}
 
 interface SquareProps {
     direction?: 'right' | 'left' | 'up' | 'down' | 'diagonal';
     speed?: number;
-    borderColor?: string;
-    hoverFillColor?: string;
-    backgroundColor?: string;
-    gradientStartColor?: string;
-    gradientEndColor?: string;
+    lightMode?: Partial<ThemeColors>;
+    darkMode?: Partial<ThemeColors>;
     gradientStartOpacity?: number;
     gradientEndOpacity?: number;
     borderWidth?: number;
     squareSize?: number;
+    blur?: number;
 }
 
 interface HoveredSquare {
@@ -19,19 +27,36 @@ interface HoveredSquare {
     y: number;
 }
 
+const defaultLightColors = {
+    borderColor: '#E8E8E8',
+    hoverFillColor: '#D8D8D8',
+    backgroundColor: '#fff',
+    backgroundOpacity: 0,
+    gradientStartColor: '#F8F8F8',
+    gradientEndColor: '#fff',
+};
+
+const defaultDarkColors = {
+    borderColor: '#333333',
+    hoverFillColor: '#404040',
+    backgroundColor: '#111111',
+    backgroundOpacity: 0,
+    gradientStartColor: '#1A1A1A',
+    gradientEndColor: '#111111',
+};
+
 const Squares: React.FC<SquareProps> = ({
     direction = 'right',
     speed = 1,
-    borderColor = '#999',
-    hoverFillColor = '#fff',
-    backgroundColor = '#000',
-    gradientStartColor = '#000',
-    gradientEndColor = '#000',
+    lightMode = defaultLightColors,
+    darkMode = defaultDarkColors,
     gradientStartOpacity = 0,
     gradientEndOpacity = 1,
     borderWidth = 1,
     squareSize = 50,
+    blur,
 }) => {
+    const { theme } = useTheme();
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const requestRef = useRef<number | null>(null);
     const numSquaresX = useRef<number>(10);
@@ -39,9 +64,12 @@ const Squares: React.FC<SquareProps> = ({
     const gridOffset = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
     const [hoveredSquare, setHoveredSquare] = useState<HoveredSquare | null>(null);
 
+    const themeColors = theme === 'dark' ? { ...defaultDarkColors, ...darkMode } : { ...defaultLightColors, ...lightMode };
+
+
     useEffect(() => {
         const canvas = canvasRef.current;
-        if (!canvas) return; // Early return if canvas is null
+        if (!canvas) return;
         const ctx = canvas.getContext('2d');
 
         const resizeCanvas = () => {
@@ -55,12 +83,14 @@ const Squares: React.FC<SquareProps> = ({
         resizeCanvas();
 
         const drawGrid = () => {
-            if (!ctx) return; // Early return if ctx is null
+            if (!ctx) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Set background color
-            ctx.fillStyle = backgroundColor;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // Set background color with opacity
+            if (themeColors.backgroundOpacity && themeColors.backgroundOpacity > 0) {
+                ctx.fillStyle = `rgba(${hexToRgb(themeColors.backgroundColor)}, ${themeColors.backgroundOpacity})`;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
 
             // Set line width for borders
             ctx.lineWidth = borderWidth;
@@ -71,11 +101,11 @@ const Squares: React.FC<SquareProps> = ({
                     const squareY = (y * squareSize) + (gridOffset.current.y % squareSize);
 
                     if (hoveredSquare && hoveredSquare.x === x && hoveredSquare.y === y) {
-                        ctx.fillStyle = hoverFillColor;
+                        ctx.fillStyle = themeColors.hoverFillColor;
                         ctx.fillRect(squareX, squareY, squareSize, squareSize);
                     }
 
-                    ctx.strokeStyle = borderColor;
+                    ctx.strokeStyle = themeColors.borderColor;
                     ctx.strokeRect(squareX, squareY, squareSize, squareSize);
                 }
             }
@@ -89,8 +119,8 @@ const Squares: React.FC<SquareProps> = ({
                 Math.sqrt(Math.pow(canvas.width, 2) + Math.pow(canvas.height, 2)) / 2
             );
 
-            gradient.addColorStop(0, `rgba(${hexToRgb(gradientStartColor)}, ${gradientStartOpacity})`);
-            gradient.addColorStop(1, `rgba(${hexToRgb(gradientEndColor)}, ${gradientEndOpacity})`);
+            gradient.addColorStop(0, `rgba(${hexToRgb(themeColors.gradientStartColor)}, ${gradientStartOpacity})`);
+            gradient.addColorStop(1, `rgba(${hexToRgb(themeColors.gradientEndColor)}, ${gradientEndOpacity})`);
 
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -168,9 +198,13 @@ const Squares: React.FC<SquareProps> = ({
             canvas.removeEventListener('mousemove', handleMouseMove);
             canvas.removeEventListener('mouseleave', handleMouseLeave);
         };
-    }, [direction, speed, borderColor, hoverFillColor, backgroundColor, gradientStartColor, gradientEndColor, gradientStartOpacity, gradientEndOpacity, borderWidth, squareSize, hoveredSquare]);
+    }, [direction, speed, themeColors, gradientStartOpacity, gradientEndOpacity, borderWidth, squareSize, hoveredSquare, theme]);
 
-    return <canvas ref={canvasRef} className="w-full h-full border-none block absolute top-0 left-0 z-0"></canvas>;
+    return (
+        <div className="w-full h-full absolute top-0 left-0 z-0" style={{ backdropFilter: blur ? `blur(${blur}px)` : undefined }}>
+            <canvas ref={canvasRef} className="w-full h-full border-none block"></canvas>
+        </div>
+    );
 };
 
 export default Squares;

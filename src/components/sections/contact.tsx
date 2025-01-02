@@ -141,18 +141,42 @@ const ContactSection = () => {
   return (
     <Container id="contact" className="relative overflow-hidden py-20">
       <FloatingIcons />
+      {/* Dark theme background */}
+      <img
+        src="https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"
+        alt=""
+        className="hidden dark:block absolute inset-0 w-full h-full object-cover opacity-80"
+      />
+      {/* Light theme background */}
+      <img
+        src="https://tailwindui.com/plus/img/beams-home@95.jpg"
+        alt=""
+        className="block dark:hidden absolute inset-0 w-full h-full object-cover opacity-60"
+      />
       <Squares
         speed={0.5}
         direction='diagonal' // up, down, left, right, diagonal
-        borderColor='#E8E8E8'
-        hoverFillColor='#D8D8D8'
-        backgroundColor='#fff'
-        gradientStartColor='#F8F8F8'
-        gradientEndColor='#fff'
+        lightMode={{
+          borderColor: '#E8E8E8',
+          hoverFillColor: '#D8D8D8',
+          backgroundColor: '#fff',
+          gradientStartColor: '#F8F8F8',
+          gradientEndColor: '#fff',
+          backgroundOpacity: 0,
+        }}
+        darkMode={{
+          borderColor: '#462d6dab',
+          hoverFillColor: '#404040',
+          backgroundColor: '#111111',
+          gradientStartColor: '#1A1A1A',
+          gradientEndColor: '#fff',
+          backgroundOpacity: 0,
+        }}
         gradientStartOpacity={0}
-        gradientEndOpacity={1}
+        gradientEndOpacity={0}
         borderWidth={0.4}
         squareSize={50}
+        blur={4}
       />
       <div className="mb-12 text-center relative">
         <Typography variant="h2" className="mb-4">

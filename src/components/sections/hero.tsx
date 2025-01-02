@@ -207,7 +207,7 @@ const CodeBlock = () => {
 };
 
 const TwitterCard = () => (
-  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white backdrop-blur-[14px] shadow-sm dark:border-gray-700 dark:bg-gray-900/90 lg:right-[-5%] lg:top-[85%]">
+  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white backdrop-blur-[14px] shadow-sm dark:border-[#462d6dab] dark:bg-[#0f192d]/90 lg:right-[-5%] lg:top-[85%]">
     <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform">
       <header className="flex gap-4">
         <figure className="overflow-hidden rounded-full border-2 border-gray-400/50 dark:border-gray-600/50">
