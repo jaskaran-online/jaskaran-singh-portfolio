@@ -326,16 +326,16 @@ const HeaderSkills = () => (
 
 const HeroSection = () => {
   return (
-    <Container id="hero" className="relative flex w-full items-center justify-center overflow-hidden rounded-lg h-[90vh]">
+    <Container id="hero" className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[80vh] ">
       <div className="z-10">
-        <div className="flex flex-col gap-48 flex-col md:flex-row md:gap-8 pb-10">
+        <div className="flex flex-col flex-col-reverse gap-10 lg:gap-48  lg:flex-row  md:gap-32 pb-10 px-6">
           {/* Code Editor */}
           <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
             <CodeEditor />
           </div>
 
           {/* Content */}
-          <div className="flex max-w-2xl flex-grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-8">
+          <div className="flex max-w-[550px]  flex-grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-8">
             <div className="flex flex-col gap-2">
               <div className="text-xl font-medium">Hey there!, I'm -</div>
               <Typography variant="h1">
