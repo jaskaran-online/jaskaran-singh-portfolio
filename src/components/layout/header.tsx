@@ -22,7 +22,7 @@ import IconButton from '@/components/general/icon-button';
 import DownloadCV from '@/components/general/download-cv';
 import Typography from '@/components/general/typography';
 
-const Logo = () => (
+const Logo: React.FC = () => (
   <Image src="/logo.png" alt="Jaskaran Singh" width={60} height={60} />
 );
 
