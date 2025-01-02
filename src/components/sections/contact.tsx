@@ -10,6 +10,7 @@ import SparklesText from "@/components/ui/sparkles-text";
 import PulsatingButton from "../ui/pulsating-button";
 import { BorderBeam } from "../ui/border-beam";
 import Ripple from "../ui/ripple";
+import Squares from "../ui/squares";
 
 const FloatingIcons = () => {
   return (
@@ -140,8 +141,20 @@ const ContactSection = () => {
   return (
     <Container id="contact" className="relative overflow-hidden py-20">
       <FloatingIcons />
-
-      <div className="mb-12 text-center">
+      <Squares
+        speed={0.5}
+        direction='diagonal' // up, down, left, right, diagonal
+        borderColor='#E8E8E8'
+        hoverFillColor='#D8D8D8'
+        backgroundColor='#fff'
+        gradientStartColor='#F8F8F8'
+        gradientEndColor='#fff'
+        gradientStartOpacity={0}
+        gradientEndOpacity={1}
+        borderWidth={0.4}
+        squareSize={50}
+      />
+      <div className="mb-12 text-center relative">
         <Typography variant="h2" className="mb-4">
           <SparklesText text="Get in Touch" className="text-4xl font-bold text-slate-900 dark:text-white" sparklesCount={3} />
         </Typography>
@@ -152,7 +165,7 @@ const ContactSection = () => {
 
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
         {/* Contact Information */}
-        <div className="flex flex-col justify-center space-y-8">
+        <div className="flex flex-col justify-center space-y-8 relative">
           <div className="rounded-2xl bg-[transparent] p-8 pt-0">
             <Typography variant="h3" className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">
               Contact Information
@@ -168,10 +181,10 @@ const ContactSection = () => {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div className="flex-1">
-                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400">
+                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400 bg-gradient-to-r backdrop-blur-[4px]">
                     Email
                   </Typography>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2  bg-gradient-to-r backdrop-blur-[4px]">
                     <Typography variant="body2" className="font-medium text-gray-900 dark:text-white">
                       {contactInfo.email}
                     </Typography>
@@ -185,10 +198,10 @@ const ContactSection = () => {
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400">
+                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400  bg-gradient-to-r backdrop-blur-[4px]">
                     Phone
                   </Typography>
-                  <Typography variant="body2" className="font-medium text-gray-900 dark:text-white">
+                  <Typography variant="body2" className="font-medium text-gray-900 dark:text-white  bg-gradient-to-r backdrop-blur-[4px]">
                     {contactInfo.phone}
                   </Typography>
                 </div>
@@ -200,10 +213,10 @@ const ContactSection = () => {
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400">
+                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400  bg-gradient-to-r backdrop-blur-[4px]">
                     Location
                   </Typography>
-                  <Typography variant="body2" className="font-medium text-gray-900 dark:text-white">
+                  <Typography variant="body2" className="font-medium text-gray-900 dark:text-white  bg-gradient-to-r backdrop-blur-[4px]">
                     {contactInfo.location}
                   </Typography>
                 </div>
@@ -211,7 +224,7 @@ const ContactSection = () => {
             </div>
 
             <div className="mt-8">
-              <Typography variant="body2" className="text-gray-600 dark:text-gray-400">
+              <Typography variant="body2" className="text-gray-600 dark:text-gray-400  bg-gradient-to-r backdrop-blur-[4px]">
                 You can also find me on these platforms!
               </Typography>
               <div className="flex gap-4">
@@ -241,7 +254,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 bg-white dark:bg-[#334155]/30 pb-8 pt-3 px-8 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-slate-800"
+            className="space-y-6 bg-white dark:bg-[#334155]/30 pb-8 pt-3 px-8 backdrop-blur-sm rounded-sm shadow-lg border border-slate-200 dark:border-slate-800 "
             onSubmit={handleSubmit}
           >
             <BorderBeam />
@@ -305,8 +318,6 @@ const ContactSection = () => {
             </PulsatingButton>
           </motion.form>
         </div>
-
-
       </div>
     </Container>
   );
