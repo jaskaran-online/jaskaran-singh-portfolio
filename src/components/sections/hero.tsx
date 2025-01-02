@@ -328,7 +328,7 @@ const HeroSection = () => {
   return (
     <Container id="hero" className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[80vh] ">
       <div className="z-10">
-        <div className="flex flex-col flex-col-reverse gap-10 lg:gap-48  lg:flex-row  md:gap-32 pb-10 px-6">
+        <div className="flex flex-col flex-col-reverse gap-10 lg:gap-32 lg:flex-row md:gap-32 pb-10 px-6">
           {/* Code Editor */}
           <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
             <CodeEditor />

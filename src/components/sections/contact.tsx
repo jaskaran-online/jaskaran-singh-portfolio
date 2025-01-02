@@ -177,15 +177,15 @@ const ContactSection = () => {
             <div className="space-y-6">
               {/* Email */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 text-purple-500 dark:from-purple-500/30 dark:to-pink-500/30">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 text-purple-500 dark:from-purple-500/30 dark:to-pink-500/30 backdrop-blur-[4px]">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div className="flex-1">
-                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400 bg-gradient-to-r backdrop-blur-[4px]">
+                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400 bg-gradient-to-r backdrop-blur-[4px] w-auto">
                     Email
                   </Typography>
-                  <div className="flex items-center gap-2  bg-gradient-to-r backdrop-blur-[4px]">
-                    <Typography variant="body2" className="font-medium text-gray-900 dark:text-white">
+                  <div className="flex items-center gap-2">
+                    <Typography variant="body2" className="font-medium text-gray-900 dark:text-white   bg-gradient-to-r backdrop-blur-[4px] w-auto">
                       {contactInfo.email}
                     </Typography>
                   </div>
@@ -194,11 +194,11 @@ const ContactSection = () => {
 
               {/* Phone */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/20 text-purple-500 dark:from-purple-500/30 dark:to-blue-500/30">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/20 text-purple-500 dark:from-purple-500/30 dark:to-blue-500/30 backdrop-blur-[4px]">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400  bg-gradient-to-r backdrop-blur-[4px]">
+                  <Typography variant="body3" className="text-gray-600 dark:text-gray-400  bg-gradient-to-r backdrop-blur-[4px] w-auto">
                     Phone
                   </Typography>
                   <Typography variant="body2" className="font-medium text-gray-900 dark:text-white  bg-gradient-to-r backdrop-blur-[4px]">
@@ -209,7 +209,7 @@ const ContactSection = () => {
 
               {/* Location */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 text-pink-500 dark:from-pink-500/30 dark:to-rose-500/30">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 text-pink-500 dark:from-pink-500/30 dark:to-rose-500/30 backdrop-blur-[4px]">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
@@ -237,7 +237,7 @@ const ContactSection = () => {
                   GitHub <ExternalLink className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/jaskaran-online"
+                  href="https://linkedin.com/in/jaskaran-5ingh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400"
