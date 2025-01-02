@@ -86,13 +86,13 @@ const Header = () => {
   return (
     <header
       className={mergeClasses(
-        'sticky top-0 z-30 w-full border-b bg-background/80 dark:bg-[#0f192d]/80 backdrop-blur-xl transition-colors duration-200',
+        'sticky top-0 z-30 w-full border-b bg-background/80 dark:bg-[#0f192d]/80 backdrop-blur-xl transition-colors duration-200 shadow-md',
         scrolled ? 'border-border/40' : 'border-transparent'
       )}
     >
       <div className="relative">
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-8">
-          <Link href="/" noCustomization>
+          <Link href="/" noCustomization className="absolute right-4 top-5 drop-shadow-lg md:relative md:top-0 md:right-0 md:drop-shadow-none">
             <Logo />
           </Link>
           <div className="hidden items-center gap-6 md:flex">
