@@ -158,7 +158,7 @@ const ContactSection = () => {
         direction='diagonal' // up, down, left, right, diagonal
         lightMode={{
           borderColor: '#E8E8E8',
-          hoverFillColor: '#D8D8D8',
+          hoverFillColor: '#dac3ffab',
           backgroundColor: '#fff',
           gradientStartColor: '#F8F8F8',
           gradientEndColor: '#fff',
@@ -166,7 +166,7 @@ const ContactSection = () => {
         }}
         darkMode={{
           borderColor: '#462d6dab',
-          hoverFillColor: '#404040',
+          hoverFillColor: '#462d6dab',
           backgroundColor: '#111111',
           gradientStartColor: '#1A1A1A',
           gradientEndColor: '#fff',
