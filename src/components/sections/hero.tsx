@@ -397,9 +397,9 @@ const HeroSection = () => {
       {/* Animated Grid Pattern Overlay */}
       <AnimatedGridPattern
         numSquares={70}
-        maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
+        maxOpacity={0.3}
+        duration={0.8}
+        repeatDelay={0.5}
         className={cn(
           "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
           "absolute inset-0 z-[1]",
