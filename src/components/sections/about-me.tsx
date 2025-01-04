@@ -41,14 +41,14 @@ const AboutMeSection = () => {
               pixel perfect design, and writing clear, readable, highly performant
               code matters to me.
             </Typography>
-            <Typography className="text-gray-900 dark:text-white">
+            {/* <Typography className="text-gray-900 dark:text-white">
               I began my journey as a web developer in 2020, and since then,
               I&apos;ve continued to grow and evolve as a developer, taking on new
               challenges and learning the latest technologies along the way. After
               starting my web development journey, I&apos;m building cutting-edge
               web applications using modern technologies such as Next.js,
               TypeScript, Laravel, TailwindCSS, Superbase and much more.
-            </Typography>
+            </Typography> */}
             <Typography className="text-gray-900 dark:text-white">
               I am very much a progressive thinker and enjoy working on products
               end to end, from ideation all the way to development.
@@ -67,10 +67,6 @@ const AboutMeSection = () => {
                 </Typography>
               </ul>
             </div>
-            <Typography className="text-gray-900 dark:text-white">
-              One last thing, I&apos;m available for freelance work, so feel free
-              to reach out and say hello! I promise I don&apos;t bite 😉
-            </Typography>
           </div>
         </div>
       </Container>

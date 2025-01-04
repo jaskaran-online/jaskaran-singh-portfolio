@@ -119,11 +119,6 @@ export const TECHNOLOGIES: TechDetails[] = [
     url: "https://reactnative.dev/",
   },
   {
-    label: "Expo",
-    logo: LogoExpo,
-    url: "https://expo.dev/",
-  },
-  {
     label: "PHP",
     logo: LogoPhp,
     url: "https://www.php.net/",
@@ -137,11 +132,6 @@ export const TECHNOLOGIES: TechDetails[] = [
     label: "Git",
     logo: LogoGit,
     url: "https://git-scm.com/",
-  },
-  {
-    label: "MongoDB",
-    logo: LogoMongoDB,
-    url: "https://www.mongodb.com/",
   },
   {
     label: "MySQL",
