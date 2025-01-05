@@ -1,95 +1,97 @@
 "use client";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, ease: "easeOut" }
+};
 
 const content = [
   {
-    title: "Login",
-    description:
-      "Secure access for authorized personnel. Employees can easily log in using the credentials provided by the admin. This ensures that only verified staff members can access the system, maintaining data security and operational integrity. The login process is straightforward, allowing quick and efficient entry to start managing laundry orders and customer information.",
-    content: (
-      <Image
-        src="/CleanFold/Login.png"
-        alt="alt"
-        width={900}
-        height={500}
-        priority
-      />
-    ),
+    title: "Secure Login",
+    description: "Quick and secure access with advanced authentication methods.",
+    image: "/CleanFold/Login.png",
+    alt: "CleanFold mobile login screen"
   },
   {
-    title: "Dashboard",
-    description:
-      "The dashboard provides a comprehensive overview of the system's performance, including key metrics, recent activities, and important notifications. This allows admin to monitor the status of the laundry business at a glance, making informed decisions and ensuring smooth operations.",
-    content: (
-      <Image
-        src="/CleanFold/Dashboard.png"
-        alt="alt"
-        width={900}
-        height={500}
-        priority
-      />
-    ),
+    title: "Smart Dashboard",
+    description: "Get a real-time overview of your laundry orders, track earnings, and manage deliveries all in one place.",
+    image: "/CleanFold/Dashboard.png",
+    alt: "CleanFold mobile dashboard"
   },
   {
-    title: "Cart",
-    description:
-      "The cart page allows admin to view and manage the items in the shopping cart. This includes adding or removing items, updating quantities, and calculating the total price. Admin can also view the order history, track status updates, and make necessary adjustments to the order.",
-    content: (
-      <Image
-        src="/CleanFold/Cart.png"
-        alt="alt"
-        width={900}
-        height={500}
-        priority
-      />
-    ),
+    title: "Easy Cart Management",
+    description: "Add items, specify preferences, and schedule pickups effortlessly with our smart cart system.",
+    image: "/CleanFold/Cart.png",
+    alt: "CleanFold mobile cart interface"
   },
   {
-    title: "Rate List",
-    description:
-      "The rate list page allows admin to set and manage the pricing for various services offered by the laundry business. This includes setting prices for different types of laundry services, such as dry cleaning, washing, and ironing. Admin can also add or remove services, adjust prices, and view the current rate list.",
-    content: (
-      <Image
-        src="/CleanFold/RateListOfItems.png"
-        alt="alt"
-        width={900}
-        height={500}
-        priority
-      />
-    ),
+    title: "Dynamic Pricing",
+    description: "View and manage comprehensive pricing for all laundry services with real-time updates.",
+    image: "/CleanFold/RateListOfItems.png",
+    alt: "CleanFold rate list screen"
   },
   {
-    title: "Order Details",
-    description:
-      "The order details page provides a detailed view of a specific laundry order, including all associated items, quantities, and prices. This allows admin to review and manage individual orders, ensuring accuracy and completeness. Admin can also view the order history, track status updates, and make necessary adjustments to the order.",
-    content: (
-      <Image
-        src="/CleanFold/OrderDetails.png"
-        alt="alt"
-        width={900}
-        height={500}
-        priority
-      />
-    ),
+    title: "Order Tracking",
+    description: "Track your orders in real-time and get instant updates on their status.",
+    image: "/CleanFold/OrderDetails.png",
+    alt: "CleanFold order tracking screen"
   },
   {
-    title: "Order Detail Items",
-    description:
-      "The order detail items page provides a detailed view of the items included in a specific laundry order. This allows admin to review and manage individual items, ensuring accuracy and completeness. Admin can also view the order history, track status updates, and make necessary adjustments to the order.",
-    content: (
-      <Image
-        src="/CleanFold/OrderDetailItems.png"
-        alt="alt"
-        width={900}
-        height={500}
-        priority
-      />
-    ),
-  },
+    title: "Detailed Management",
+    description: "Manage every aspect of your orders with itemized lists and special instructions.",
+    image: "/CleanFold/OrderDetailItems.png",
+    alt: "CleanFold order details screen"
+  }
 ];
 
 export function CleanFoldContent() {
-  return <StickyScroll content={content} />;
+  return (
+    <div className="min-h-screen bg-white">
+
+
+      {/* App Screenshots Grid */}
+      <div className="container mx-auto px-4 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {content.map((item, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="flex flex-col items-center"
+            >
+              <div className="relative w-full aspect-[8/16] max-w-xs mb-6">
+                <motion.div
+
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative h-full"
+                >
+                  {/* <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-purple-100 rounded-[2rem] transform rotate-2"></div>
+                  <div className="absolute inset-0 bg-white rounded-[2rem] shadow-lg overflow-hidden transform"> */}
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  {/* </div> */}
+                </motion.div>
+              </div>
+              <div className="text-center max-w-sm">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }

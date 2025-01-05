@@ -151,10 +151,9 @@ export default function Cleanfold() {
     <Container>
       <div className="flex flex-col gap-8 pb-[20px]">
         <div className="flex flex-col gap-4">
-          <h1 className="text-3xl font-bold">CleanFold</h1>
-          <p className="text-muted-foreground">
-            A mobile app for a cleaning company that allows company employees to see
-            assigned jobs and track their progress.
+          <h1 className="text-center text-6xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-transparent bg-clip-text">CleanFold</h1>
+          <p className="text-muted-foreground text-center">
+            A comprehensive mobile application tailored for a cleaning company, empowering employees to easily access their assigned jobs, track progress in real-time, and manage their daily tasks effectively. This tool enhances operational efficiency and ensures that all job details are readily available at their fingertips.
           </p>
         </div>
 
@@ -170,32 +169,45 @@ export default function Cleanfold() {
 
         <div className="flex flex-col gap-4">
           <h2 className="text-2xl font-bold">Tech Stack</h2>
-          <div className="flex flex-wrap gap-6">
-            <div className="flex items-center gap-2">
+          <p className="text-gray-600">
+            Our application is built using a modern tech stack that ensures high performance, scalability, and a seamless user experience. Below are the key technologies utilized in the development of the CleanFold app:
+          </p>
+          <div className="flex flex-wrap gap-6 mt-4 mb-12">
+            <div className="flex items-center gap-6">
               <Image
                 src={ReactNativeLogo}
                 alt="React Native Logo"
-                width={24}
+                width={80}
                 height={24}
               />
-              <span>React Native</span>
+              <span className="font-semibold">React Native</span>
+              <p className="text-gray-500 text-sm">
+                A powerful framework for building native mobile applications using React. It allows for a smooth user interface and performance comparable to native apps.
+              </p>
             </div>
-            <div className="flex items-center gap-2">
-              <Image src={LogoExpo} alt="Expo Logo" width={24} height={24} />
-              <span>Expo</span>
+            <div className="flex items-center gap-12">
+              <Image src={LogoExpo} alt="Expo Logo" width={140} height={24} />
+              <p className="text-gray-500 text-sm">
+                A framework and platform for universal React applications. Expo simplifies the development process by providing a set of tools and services for building, deploying, and iterating on mobile apps.
+              </p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-8">
               <Image
                 src={LogoLaravel}
                 alt="Laravel Logo"
-                width={24}
+                width={80}
                 height={24}
               />
-              <span>Laravel</span>
+              <span className="font-semibold">Laravel</span>
+              <p className="text-gray-500 text-sm">
+                A robust PHP framework that provides an elegant syntax and powerful tools for building web applications. Laravel is used for the backend services of the CleanFold app, ensuring secure and efficient data handling.
+              </p>
             </div>
           </div>
         </div>
 
+
+        <h1 className="text-center text-6xl font-bold mt-4 mb-8  bg-gradient-to-r from-blue-500 to-cyan-500 text-transparent bg-clip-text">Mobile App Screens</h1>
         <CleanFoldContent />
       </div>
     </Container>
