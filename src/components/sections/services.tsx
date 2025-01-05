@@ -4,102 +4,103 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
-import { Code2, Database, Smartphone, Bot, LucideIcon } from 'lucide-react';
+import { Globe, Smartphone, Brain, CheckIcon, ArrowRight, GraduationCap } from 'lucide-react';
 import SparklesText from "@/components/ui/sparkles-text";
 import { MagicCard } from "@/components/ui/magic-card";
+import Link from 'next/link';
 
 interface Service {
     title: string;
     description: string;
-    icon: LucideIcon;
+    icon: any;
+    features: string[];
 }
-
-const AnimatedIcon = ({ icon: Icon, className }: { icon: LucideIcon; className?: string }) => {
-    return (
-        <motion.div
-            initial={{ scale: 1 }}
-            animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 10, -10, 0]
-            }}
-            transition={{
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut"
-            }}
-            className={className}
-        >
-            <Icon className="h-6 w-6 text-blue-400" />
-        </motion.div>
-    );
-};
 
 const SERVICES: Service[] = [
     {
-        title: 'Full Stack Development',
-        description: `🚀 Expert in modern web development with React, Next.js, and TypeScript:
-        
-
-💻 Frontend Development: Crafting responsive UIs with modern frameworks
-
-🔄 State Management: Redux, Context API, Zustand for scalable state
-
-🎨 UI/UX: Tailwind CSS, Framer Motion for stunning animations
-
-🛠️ Backend Integration: RESTful APIs, GraphQL implementation
-
-🔍 SEO Optimization: Best practices for search engine visibility
-
-📱 Responsive Design: Mobile-first approach for all screen sizes
-
-⚡ Performance: Code splitting, lazy loading, and optimization
-
-🔒 Security: Implementation of authentication and authorization`,
-        icon: Code2,
+        title: 'Web Development',
+        description: 'Building modern, scalable web applications using cutting-edge frameworks and robust database systems.',
+        icon: Globe,
+        features: [
+            'Next.js Applications',
+            'Laravel Backend',
+            'RDBMS Integration'
+        ]
     },
     {
-        title: 'Backend Architecture',
-        description: 'Designing robust backend systems using Node.js, Express, and MongoDB. Experienced in RESTful APIs, GraphQL, and microservices architecture. Strong focus on security, performance optimization, and scalable database design.',
-        icon: Database,
-    },
-    {
-        title: 'Mobile Development',
-        description: 'Creating native-like mobile experiences using React Native and Expo. Skilled in implementing complex UI animations, offline storage, and integrating native device features. Experience with both iOS and Android platforms.',
+        title: 'Mobile App Development',
+        description: 'Cross-platform mobile applications using React Native with native performance and capabilities.',
         icon: Smartphone,
+        features: [
+            'iOS Development',
+            'Android Development',
+            'Custom Native Modules'
+        ]
     },
     {
-        title: 'AI & ChatBot Integration',
-        description: 'Implementing cutting-edge AI solutions using OpenAI, Langchain, and custom ML models. Expertise in building intelligent chatbots, content generation systems, and automated workflows that enhance user experience.',
-        icon: Bot,
+        title: 'AI Integration',
+        description: 'Development of intelligent AI solutions and chatbots integrated with modern web applications.',
+        icon: Brain,
+        features: [
+            'Custom Chatbots',
+            'AI Agents Development',
+            'MERN AI Integration'
+        ]
     },
     {
         title: 'Technical Mentorship',
-        description: 'Providing comprehensive guidance in modern web development practices, data structures, algorithms, and software architecture. Helping developers level up their skills through hands-on projects and code reviews.',
-        icon: Code2,
-    },
+        description: 'Professional web development training and mentorship for students looking to excel in modern web technologies.',
+        icon: GraduationCap,
+        features: [
+            'React.js Classes',
+            'JavaScript Fundamentals',
+            'Career Guidance'
+        ]
+    }
 ];
 
 interface ServiceCardProps extends Service { }
 
-const ServiceCard = ({ title, description, icon: Icon }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardProps) => {
     return (
         <MagicCard
-            className="h-full rounded-3xl bg-white/90 dark:bg-[#0A101F]/80 backdrop-blur border border-slate-200 dark:border-[#1a1f2e] hover:border-slate-300 dark:hover:border-[#1f2937] transition-colors"
+            className="h-full rounded-3xl bg-white/90 dark:bg-[#0A101F]/80 backdrop-blur border border-slate-200 dark:border-[#1a1f2e] hover:border-slate-300 dark:hover:border-[#1f2937] transition-all duration-300 hover:scale-[1.02]"
             gradientSize={250}
             gradientColor="#0ea5e9"
             gradientOpacity={0.15}
         >
-            <div className="relative z-10 flex h-full flex-col p-8">
+            <div className="relative z-10 flex h-full flex-col p-6 sm:p-8">
                 <div className="mb-6 rounded-full bg-blue-500/10 p-3 w-fit">
-                    <AnimatedIcon icon={Icon} />
+                    <motion.div
+                        initial={{ scale: 1 }}
+                        animate={{
+                            scale: [1, 1.2, 1],
+                            rotate: [0, 10, -10, 0]
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                            ease: "easeInOut"
+                        }}
+                    >
+                        <Icon className="h-6 w-6 text-blue-500" />
+                    </motion.div>
                 </div>
-                <Typography variant="h3" className="mb-4 text-2xl font-semibold text-slate-900 dark:text-white">
+                <Typography variant="h3" className="mb-4 text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
                     {title}
                 </Typography>
-                <Typography className="text-slate-600 dark:text-gray-400 text-md leading-relaxed whitespace-pre-line">
+                <Typography className="mb-6 text-slate-600 dark:text-gray-400 text-sm sm:text-base">
                     {description}
                 </Typography>
+                <ul className="space-y-2 mt-auto">
+                    {features.map((feature, index) => (
+                        <li key={index} className="flex items-center text-slate-600 dark:text-gray-400 text-sm sm:text-base">
+                            <CheckIcon className="w-5 h-5 mr-2 text-blue-500 flex-shrink-0" />
+                            <span>{feature}</span>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </MagicCard>
     );
@@ -107,30 +108,39 @@ const ServiceCard = ({ title, description, icon: Icon }: ServiceCardProps) => {
 
 const ServicesSection = () => {
     return (
-        <Container id="services" className="relative py-20">
-            <div className="mb-12 text-center">
+        <Container id="services" className="py-16 sm:py-20">
+            <div className="mb-12 sm:mb-16 text-center">
                 <Typography variant="h2" className="mb-4">
-                    <SparklesText text="Services I Offer" className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white" sparklesCount={4} />
+                    <SparklesText 
+                        text="Services I Offer" 
+                        className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white" 
+                        sparklesCount={4} 
+                    />
                 </Typography>
                 <Typography variant="subtitle" className="text-slate-600 dark:text-gray-400">
                     Comprehensive solutions for your digital needs
                 </Typography>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[400px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 {SERVICES.map((service, index) => (
-                    <div key={index} className={cn(
-                        'transition-transform hover:scale-[1.02] overflow-hidden',
-                        index === 0 ? 'md:col-span-4 md:row-span-2' : // First card larger
-                            index === 1 ? 'md:col-span-2' : // Second card
-                                index === 2 ? 'md:col-span-2' : // Third card
-                                    index === 3 ? 'md:col-span-3' : // Fourth card
-                                        index === 4 ? 'md:col-span-3' : // Fifth card
-                                            'md:col-span-2' // Default size
-                    )}>
+                    <div 
+                        key={index} 
+                        className="transition-all duration-300"
+                    >
                         <ServiceCard {...service} />
                     </div>
                 ))}
+            </div>
+
+            <div className="mt-12 sm:mt-16 text-center">
+                <Link
+                    href="#contact"
+                    className="inline-flex items-center px-6 py-3 text-white bg-blue-500 rounded-full hover:bg-blue-600 transition-colors group"
+                >
+                    Discuss Your Project
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
             </div>
         </Container>
     );
