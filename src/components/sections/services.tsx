@@ -68,9 +68,11 @@ const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardPr
             gradientSize={250}
             gradientColor="#0ea5e9"
             gradientOpacity={0.15}
+            gradientFrom="#3b82f6"
+            gradientTo="#06b6d4"
         >
             <div className="relative z-10 flex h-full flex-col p-6 sm:p-8">
-                <div className="mb-6 rounded-full bg-blue-500/10 p-3 w-fit">
+                <div className="mb-6 rounded-full from-blue-500 to-blue-600 bg-gradient-to-br p-3 w-fit">
                     <motion.div
                         initial={{ scale: 1 }}
                         animate={{
@@ -84,7 +86,7 @@ const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardPr
                             ease: "easeInOut"
                         }}
                     >
-                        <Icon className="h-6 w-6 text-blue-500" />
+                        <Icon className="h-6 w-6 text-white" />
                     </motion.div>
                 </div>
                 <Typography variant="h3" className="mb-4 text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
