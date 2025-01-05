@@ -35,7 +35,7 @@ const STATS: Stat[] = [
         icon: Users
     },
     {
-        value: '50+',
+        value: '5+',
         label: 'Students Mentored',
         icon: GraduationCap
     }
