@@ -6,6 +6,7 @@ import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
 import SparklesText from "@/components/ui/sparkles-text";
 import { MagicCard } from '../ui/magic-card';
+import { AnimatedSection } from '@/components/ui/animated-section';
 
 interface Stat {
     value: string;
@@ -94,16 +95,16 @@ const AboutMeSection = () => {
         <Container id="about" className="py-16 sm:py-24 my-16">
             <div className="grid gap-8 sm:gap-16 md:grid-cols-2">
                 {/* Stats Section */}
-                <div className="grid grid-cols-2 gap-4 sm:gap-8">
+                <AnimatedSection direction="left" className="grid grid-cols-2 gap-4 sm:gap-8">
                     {STATS.map((stat, index) => (
-                        <div key={index} className="w-full">
+                        <AnimatedSection key={index} delay={index * 0.1} className="w-full">
                             <StatCard {...stat} />
-                        </div>
+                        </AnimatedSection>
                     ))}
-                </div>
+                </AnimatedSection>
 
                 {/* Content Section */}
-                <div className="space-y-6">
+                <AnimatedSection direction="right" className="space-y-6">
                     <Typography variant="h2" className="mb-4">
                         <SparklesText 
                             text="About Me" 
@@ -120,45 +121,49 @@ const AboutMeSection = () => {
 
                     <div className="space-y-4">
                         {SKILLS.map((skill, index) => (
-                            <div key={index} className="flex gap-3">
-                                <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 flex-shrink-0" />
-                                <div>
-                                    <Typography className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">
-                                        {skill.title}
-                                    </Typography>
-                                    <Typography className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
-                                        {skill.description}
-                                    </Typography>
+                            <AnimatedSection key={index} delay={index * 0.1} direction="right">
+                                <div className="flex gap-3">
+                                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 flex-shrink-0" />
+                                    <div>
+                                        <Typography className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">
+                                            {skill.title}
+                                        </Typography>
+                                        <Typography className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                                            {skill.description}
+                                        </Typography>
+                                    </div>
                                 </div>
-                            </div>
+                            </AnimatedSection>
                         ))}
                     </div>
 
-                    <div className="space-y-2">
-                        <Typography className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
-                            Quick bits about me:
-                        </Typography>
-                        <ul className="list-disc list-inside space-y-1">
-                            <Typography component="li" className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
-                                Bachelor of Computer Applications
+                    <AnimatedSection delay={0.3} direction="right">
+                        <div className="space-y-2">
+                            <Typography className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                                Quick bits about me:
                             </Typography>
-                            <Typography component="li" className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
-                                Full time Developer
-                            </Typography>
-                            <Typography component="li" className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
-                                Avid learner and problem solver
-                            </Typography>
-                        </ul>
-                    </div>
+                            <ul className="list-disc list-inside space-y-1">
+                                <Typography component="li" className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                                    Bachelor of Computer Applications
+                                </Typography>
+                                <Typography component="li" className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                                    Full time Developer
+                                </Typography>
+                                <Typography component="li" className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                                    Avid learner and problem solver
+                                </Typography>
+                            </ul>
+                        </div>
 
-                    <Link
-                        href="#experience"
-                        className="inline-flex items-center text-blue-500 hover:text-blue-400 transition-colors text-sm sm:text-base group"
-                    >
-                        Learn more about my experience
-                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                </div>
+                        <Link
+                            href="#experience"
+                            className="inline-flex items-center text-blue-500 hover:text-blue-400 transition-colors text-sm sm:text-base group mt-4"
+                        >
+                            Learn more about my experience
+                            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </AnimatedSection>
+                </AnimatedSection>
             </div>
         </Container>
     );
