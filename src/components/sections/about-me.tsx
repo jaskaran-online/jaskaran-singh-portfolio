@@ -1,78 +1,167 @@
-import Image from "next/image";
+'use client';
 
-import jaskaransingh from "/public/jas.jpg";
-import Container from "@/components/layout/container";
-import Typography from "@/components/general/typography";
+import { ArrowRight, CheckCircle2, Clock, Rocket, Users, GraduationCap } from 'lucide-react';
+import Link from 'next/link';
+import Typography from '@/components/general/typography';
+import Container from '@/components/layout/container';
 import SparklesText from "@/components/ui/sparkles-text";
-const AboutMeSection = () => {
-  return (
-    <>
-      <Container className="bg-transparent" id="about">
+import { MagicCard } from '../ui/magic-card';
 
-        <div className="self-center">
-          <Typography variant="h2" className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            <SparklesText text="About me" className="text-4xl font-bold text-gray-900 dark:text-white mb-2" sparklesCount={4} />
-          </Typography>
-        </div>
+interface Stat {
+    value: string;
+    label: string;
+    icon: any;
+}
 
-        <div className="flex w-full flex-col justify-center gap-12 md:flex-row">
-          {/* Image */}
-          {/* <div className="flex justify-center md:order-first md:justify-end">
-          <div className="relative h-[380px] w-[320px] md:h-[460px] md:w-[380px] lg:h-[520px] lg:w-[440px]">
-            <Image
-              src={jaskaransingh}
-              alt="FullStack Developer Jaskaran Singh"
-              className="absolute z-10 h-[360px] w-[280px] border-8 border-gray-50 max-md:left-5 md:right-0 md:top-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px]"
-              style={{ objectFit: "cover" }}
-            ></Image>
-            <div className="absolute h-[360px] w-[320px] border-8 border-transparent bg-gray-200 max-md:top-5 md:bottom-0 md:left-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px]"></div>
-          </div>
-        </div> */}
+interface Skill {
+    title: string;
+    description: string;
+}
 
-          {/* Content */}
-          <div className="flex flex-col gap-6 justify-center items-center">
-            <Typography variant="h3" className="text-center text-xl font-semibold text-gray-900 dark:text-white">
-              Curious about me? Here you have it:
-            </Typography>
-            <Typography className="text-gray-900 dark:text-white">
-              I&apos;m, Jaskaran who specializes in full stack development
-              (React.js & Laravel). I am enthusiastic about bringing the technical
-              and visual aspects of digital products to life. User experience,
-              pixel perfect design, and writing clear, readable, highly performant
-              code matters to me.
-            </Typography>
-            {/* <Typography className="text-gray-900 dark:text-white">
-              I began my journey as a web developer in 2020, and since then,
-              I&apos;ve continued to grow and evolve as a developer, taking on new
-              challenges and learning the latest technologies along the way. After
-              starting my web development journey, I&apos;m building cutting-edge
-              web applications using modern technologies such as Next.js,
-              TypeScript, Laravel, TailwindCSS, Superbase and much more.
-            </Typography> */}
-            <Typography className="text-gray-900 dark:text-white">
-              I am very much a progressive thinker and enjoy working on products
-              end to end, from ideation all the way to development.
-            </Typography>
-            <Typography className="text-gray-900 dark:text-white">Finally, some quick bits about me.</Typography>
-            <div className="flex flex-col gap-2 md:flex-row md:gap-6">
-              <ul className="flex list-inside list-disc flex-col gap-2">
-                <Typography component="li" className="text-gray-900 dark:text-white">
-                  Bachelor of Computer Applications
+const STATS: Stat[] = [
+    {
+        value: '5+',
+        label: 'Years Experience',
+        icon: Clock
+    },
+    {
+        value: '25+',
+        label: 'Projects Completed',
+        icon: Rocket
+    },
+    {
+        value: '10+',
+        label: 'Happy Clients',
+        icon: Users
+    },
+    {
+        value: '50+',
+        label: 'Students Mentored',
+        icon: GraduationCap
+    }
+];
+
+const SKILLS: Skill[] = [
+    {
+        title: 'Full Stack Development',
+        description: 'End-to-end solutions using Next.js, Laravel, and RDBMS'
+    },
+    {
+        title: 'Mobile Development',
+        description: 'Cross-platform mobile applications using React Native'
+    },
+    {
+        title: 'Technical Mentorship',
+        description: 'Teaching web development and guiding students in their tech journey'
+    }
+];
+
+const StatCard = ({ value, label, icon: Icon }: Stat) => {
+    return (
+        <MagicCard
+            className="h-full group"
+            gradientSize={150}
+            gradientColor="#0ea5e9"
+            gradientOpacity={0.15}
+            gradientFrom="#3b82f6"
+            gradientTo="#06b6d4"
+        >
+            <div className="relative w-full mx-auto z-20 flex h-full flex-col items-center justify-center p-4 sm:p-6 text-center">
+                <div className="mb-3 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                    <div className="relative">
+                        <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-sm transform transition-all duration-300 group-hover:blur-md group-hover:scale-110" />
+                        <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-full">
+                            <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                        </div>
+                    </div>
+                </div>
+                <Typography 
+                    variant="h3" 
+                    className="mb-1 sm:mb-2 text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent transform transition-transform duration-300 group-hover:scale-110"
+                >
+                    {value}
                 </Typography>
-                <Typography component="li" className="text-gray-900 dark:text-white">Full time Developer</Typography>
-              </ul>
-              <ul className="flex list-inside list-disc flex-col gap-2">
-                <Typography component="li" className="text-gray-900 dark:text-white">
-                  Avid learner and problem solver
+                <Typography className="text-sm sm:text-base text-gray-600 dark:text-gray-400 transform transition-all duration-300 group-hover:text-blue-500">
+                    {label}
                 </Typography>
-              </ul>
             </div>
-          </div>
-        </div>
-      </Container>
-      {/* <img src="https://tailwindui.com/plus/img/beams-home@95.jpg" alt="" className="absolute -top-[1rem] left-1/2 -ml-[40rem] w-[163.125rem] max-w-none sm:-ml-[67.5rem] opacity-40 z-0" /> */}
-    </>
-  );
+        </MagicCard>
+    );
+};
+
+const AboutMeSection = () => {
+    return (
+        <Container id="about" className="py-16 sm:py-24 my-16">
+            <div className="grid gap-8 sm:gap-16 md:grid-cols-2">
+                {/* Stats Section */}
+                <div className="grid grid-cols-2 gap-4 sm:gap-8">
+                    {STATS.map((stat, index) => (
+                        <div key={index} className="w-full">
+                            <StatCard {...stat} />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Content Section */}
+                <div className="space-y-6">
+                    <Typography variant="h2" className="mb-4">
+                        <SparklesText 
+                            text="About Me" 
+                            className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white" 
+                            sparklesCount={4} 
+                        />
+                    </Typography>
+                    
+                    <Typography className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                        I'm Jaskaran, a passionate Full Stack Developer specializing in building robust and scalable web applications.
+                        I focus on creating end-to-end solutions using modern technologies like Next.js, Laravel, and React Native, while also
+                        implementing cutting-edge AI integrations.
+                    </Typography>
+
+                    <div className="space-y-4">
+                        {SKILLS.map((skill, index) => (
+                            <div key={index} className="flex gap-3">
+                                <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 flex-shrink-0" />
+                                <div>
+                                    <Typography className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">
+                                        {skill.title}
+                                    </Typography>
+                                    <Typography className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                                        {skill.description}
+                                    </Typography>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="space-y-2">
+                        <Typography className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            Quick bits about me:
+                        </Typography>
+                        <ul className="list-disc list-inside space-y-1">
+                            <Typography component="li" className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                                Bachelor of Computer Applications
+                            </Typography>
+                            <Typography component="li" className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                                Full time Developer
+                            </Typography>
+                            <Typography component="li" className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                                Avid learner and problem solver
+                            </Typography>
+                        </ul>
+                    </div>
+
+                    <Link
+                        href="#experience"
+                        className="inline-flex items-center text-blue-500 hover:text-blue-400 transition-colors text-sm sm:text-base group"
+                    >
+                        Learn more about my experience
+                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                </div>
+            </div>
+        </Container>
+    );
 };
 
 export default AboutMeSection;
