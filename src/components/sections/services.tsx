@@ -8,6 +8,7 @@ import { Globe, Smartphone, Brain, CheckIcon, ArrowRight, GraduationCap } from '
 import SparklesText from "@/components/ui/sparkles-text";
 import { MagicCard } from "@/components/ui/magic-card";
 import Link from 'next/link';
+import { AnimatedSection } from '@/components/ui/animated-section';
 
 interface Service {
     title: string;
@@ -110,8 +111,8 @@ const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardPr
 
 const ServicesSection = () => {
     return (
-        <Container id="services" className="py-16 sm:py-20">
-            <div className="mb-12 sm:mb-16 text-center">
+        <Container id="services" className="py-20">
+            <AnimatedSection direction="up" className="mb-12 sm:mb-16 text-center">
                 <Typography variant="h2" className="mb-4">
                     <SparklesText 
                         text="Services I Offer" 
@@ -122,20 +123,22 @@ const ServicesSection = () => {
                 <Typography variant="subtitle" className="text-slate-600 dark:text-gray-400">
                     Comprehensive solutions for your digital needs
                 </Typography>
-            </div>
+            </AnimatedSection>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 {SERVICES.map((service, index) => (
-                    <div 
+                    <AnimatedSection 
                         key={index} 
+                        direction="up" 
+                        delay={index * 0.1}
                         className="transition-all duration-300"
                     >
                         <ServiceCard {...service} />
-                    </div>
+                    </AnimatedSection>
                 ))}
             </div>
 
-            <div className="mt-12 sm:mt-16 text-center">
+            <AnimatedSection direction="up" delay={0.4} className="mt-12 sm:mt-16 text-center">
                 <Link
                     href="#contact"
                     className="inline-flex items-center px-6 py-3 text-white bg-blue-500 rounded-full hover:bg-blue-600 transition-colors group"
@@ -143,7 +146,7 @@ const ServicesSection = () => {
                     Discuss Your Project
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
-            </div>
+            </AnimatedSection>
         </Container>
     );
 };
