@@ -1,17 +1,13 @@
-'use client'
+'use client';
 
-import { useEditor, EditorContent } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
-import Image from '@tiptap/extension-image'
-import Link from '@tiptap/extension-link'
-import Placeholder from '@tiptap/extension-placeholder'
-import { Markdown } from 'tiptap-markdown'
-import {
-  Toggle,
-  ToggleGroup,
-  ToggleGroupItem,
-} from '@/components/ui/toggle-group'
-import { Button } from '@/components/ui/button'
+import { useEditor, EditorContent } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
+import Image from '@tiptap/extension-image';
+import Link from '@tiptap/extension-link';
+import Placeholder from '@tiptap/extension-placeholder';
+import { Markdown } from 'tiptap-markdown';
+import { Toggle, ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { Button } from '@/components/ui/button';
 import {
   Bold,
   Italic,
@@ -24,19 +20,19 @@ import {
   Image as ImageIcon,
   Eye,
   Code,
-} from 'lucide-react'
-import { ImageUpload } from '@/components/blog/image-upload'
-import { MarkdownPreview } from '@/components/blog/markdown-preview'
-import { cn } from '@/lib/utils'
-import { useState } from 'react'
+} from 'lucide-react';
+import { ImageUpload } from '@/components/blog/image-upload';
+import { MarkdownPreview } from '@/components/blog/markdown-preview';
+import { cn } from '@/lib/utils';
+import { useState } from 'react';
 
 type TipTapEditorProps = {
-  content: string
-  onChange: (content: string) => void
-}
+  content: string;
+  onChange: (content: string) => void;
+};
 
 const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
-  const [isPreview, setIsPreview] = useState(false)
+  const [isPreview, setIsPreview] = useState(false);
 
   const editor = useEditor({
     extensions: [
@@ -57,44 +53,38 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
     content,
     editorProps: {
       attributes: {
-        class:
-          'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto focus:outline-none',
+        class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto focus:outline-none',
       },
     },
     onUpdate: ({ editor }) => {
       // Get content as markdown
-      const markdown = editor.storage.markdown.getMarkdown()
-      onChange(markdown)
+      const markdown = editor.storage.markdown.getMarkdown();
+      onChange(markdown);
     },
-  })
+  });
 
   if (!editor) {
-    return null
+    return null;
   }
 
   const handleLinkAdd = () => {
-    const url = window.prompt('Enter URL')
+    const url = window.prompt('Enter URL');
     if (url) {
-      editor
-        .chain()
-        .focus()
-        .extendMarkRange('link')
-        .setLink({ href: url })
-        .run()
+      editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
     }
-  }
+  };
 
   const handleImageUpload = (url: string) => {
-    editor.chain().focus().setImage({ src: url }).run()
-  }
+    editor.chain().focus().setImage({ src: url }).run();
+  };
 
   const togglePreview = () => {
-    setIsPreview(!isPreview)
-  }
+    setIsPreview(!isPreview);
+  };
 
   const handleCodeBlock = () => {
-    editor.chain().focus().toggleCodeBlock().run()
-  }
+    editor.chain().focus().toggleCodeBlock().run();
+  };
 
   if (isPreview) {
     return (
@@ -112,7 +102,7 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
         </div>
         <MarkdownPreview content={editor.storage.markdown.getMarkdown()} />
       </div>
-    )
+    );
   }
 
   return (
@@ -180,11 +170,7 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
               <LinkIcon className="h-4 w-4" />
             </Button>
             <ImageUpload onUpload={handleImageUpload}>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-muted-foreground"
-              >
+              <Button variant="ghost" size="sm" className="text-muted-foreground">
                 <ImageIcon className="h-4 w-4" />
               </Button>
             </ImageUpload>
@@ -222,12 +208,9 @@ const TipTapEditor = ({ content, onChange }: TipTapEditorProps) => {
           </Button>
         </div>
       </div>
-      <EditorContent
-        editor={editor}
-        className="min-h-[500px] p-4"
-      />
+      <EditorContent editor={editor} className="min-h-[500px] p-4" />
     </div>
-  )
-}
+  );
+};
 
-export default TipTapEditor
+export default TipTapEditor;

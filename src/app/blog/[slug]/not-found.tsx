@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function BlogNotFound() {
   return (
@@ -12,5 +12,5 @@ export default function BlogNotFound() {
         <Link href="/blog">Back to Blog</Link>
       </Button>
     </div>
-  )
+  );
 }

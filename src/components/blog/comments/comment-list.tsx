@@ -1,30 +1,30 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { format } from 'date-fns'
-import { Comment } from '@/lib/supabase/types'
-import { CommentForm } from './comment-form'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
+import { useState } from 'react';
+import { format } from 'date-fns';
+import { Comment } from '@/lib/supabase/types';
+import { CommentForm } from './comment-form';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { MoreVertical, Reply } from 'lucide-react'
-import { commentService } from '@/lib/supabase/comment-service'
-import { toast } from 'sonner'
+} from '@/components/ui/dropdown-menu';
+import { MoreVertical, Reply } from 'lucide-react';
+import { commentService } from '@/lib/supabase/comment-service';
+import { toast } from 'sonner';
 
 type CommentItemProps = {
-  comment: Comment
-  postId: string
-  onCommentUpdate: () => void
-  currentUserId?: string
-  depth?: number
-}
+  comment: Comment;
+  postId: string;
+  onCommentUpdate: () => void;
+  currentUserId?: string;
+  depth?: number;
+};
 
-const MAX_DEPTH = 3
+const MAX_DEPTH = 3;
 
 const CommentItem = ({
   comment,
@@ -33,57 +33,50 @@ const CommentItem = ({
   currentUserId,
   depth = 0,
 }: CommentItemProps) => {
-  const [isReplying, setIsReplying] = useState(false)
-  const [isEditing, setIsEditing] = useState(false)
-  const [editContent, setEditContent] = useState(comment.content)
+  const [isReplying, setIsReplying] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editContent, setEditContent] = useState(comment.content);
 
   const handleReply = () => {
-    setIsReplying(true)
-  }
+    setIsReplying(true);
+  };
 
   const handleEdit = async () => {
     try {
-      await commentService.updateComment(comment.id, editContent)
-      setIsEditing(false)
-      onCommentUpdate()
-      toast.success('Comment updated successfully')
+      await commentService.updateComment(comment.id, editContent);
+      setIsEditing(false);
+      onCommentUpdate();
+      toast.success('Comment updated successfully');
     } catch (error) {
-      console.error('Error updating comment:', error)
-      toast.error('Failed to update comment')
+      console.error('Error updating comment:', error);
+      toast.error('Failed to update comment');
     }
-  }
+  };
 
   const handleDelete = async () => {
-    if (!window.confirm('Are you sure you want to delete this comment?')) return
+    if (!window.confirm('Are you sure you want to delete this comment?')) return;
 
     try {
-      await commentService.deleteComment(comment.id)
-      onCommentUpdate()
-      toast.success('Comment deleted successfully')
+      await commentService.deleteComment(comment.id);
+      onCommentUpdate();
+      toast.success('Comment deleted successfully');
     } catch (error) {
-      console.error('Error deleting comment:', error)
-      toast.error('Failed to delete comment')
+      console.error('Error deleting comment:', error);
+      toast.error('Failed to delete comment');
     }
-  }
+  };
 
   return (
     <div className="space-y-4">
       <div className="flex items-start gap-4">
         <Avatar>
-          <AvatarImage
-            src={comment.author?.avatar_url}
-            alt={comment.author?.full_name || 'User'}
-          />
-          <AvatarFallback>
-            {comment.author?.full_name?.charAt(0) || 'U'}
-          </AvatarFallback>
+          <AvatarImage src={comment.author?.avatar_url} alt={comment.author?.full_name || 'User'} />
+          <AvatarFallback>{comment.author?.full_name?.charAt(0) || 'U'}</AvatarFallback>
         </Avatar>
         <div className="flex-1 space-y-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="font-semibold">
-                {comment.author?.full_name || 'Anonymous'}
-              </span>
+              <span className="font-semibold">{comment.author?.full_name || 'Anonymous'}</span>
               <span className="text-sm text-muted-foreground">
                 {format(new Date(comment.created_at), 'MMM dd, yyyy')}
               </span>
@@ -91,22 +84,13 @@ const CommentItem = ({
             {currentUserId === comment.author_id && (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 w-8 p-0"
-                  >
+                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
                     <MoreVertical className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={() => setIsEditing(true)}>
-                    Edit
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    className="text-red-600"
-                    onClick={handleDelete}
-                  >
+                  <DropdownMenuItem onClick={() => setIsEditing(true)}>Edit</DropdownMenuItem>
+                  <DropdownMenuItem className="text-red-600" onClick={handleDelete}>
                     Delete
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -125,11 +109,7 @@ const CommentItem = ({
                 <Button size="sm" onClick={handleEdit}>
                   Save
                 </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => setIsEditing(false)}
-                >
+                <Button size="sm" variant="outline" onClick={() => setIsEditing(false)}>
                   Cancel
                 </Button>
               </div>
@@ -138,12 +118,7 @@ const CommentItem = ({
             <p className="text-sm">{comment.content}</p>
           )}
           {depth < MAX_DEPTH && !isReplying && (
-            <Button
-              variant="ghost"
-              size="sm"
-              className="gap-2"
-              onClick={handleReply}
-            >
+            <Button variant="ghost" size="sm" className="gap-2" onClick={handleReply}>
               <Reply className="h-4 w-4" />
               Reply
             </Button>
@@ -157,8 +132,8 @@ const CommentItem = ({
             postId={postId}
             parentId={comment.id}
             onSuccess={() => {
-              setIsReplying(false)
-              onCommentUpdate()
+              setIsReplying(false);
+              onCommentUpdate();
             }}
             onCancel={() => setIsReplying(false)}
           />
@@ -180,15 +155,15 @@ const CommentItem = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
 type CommentListProps = {
-  postId: string
-  comments: Comment[]
-  onCommentUpdate: () => void
-  currentUserId?: string
-}
+  postId: string;
+  comments: Comment[];
+  onCommentUpdate: () => void;
+  currentUserId?: string;
+};
 
 export const CommentList = ({
   postId,
@@ -208,5 +183,5 @@ export const CommentList = ({
         />
       ))}
     </div>
-  )
-}
+  );
+};

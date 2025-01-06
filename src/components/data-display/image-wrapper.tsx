@@ -8,12 +8,7 @@ type ImageWrapperProps = ImageProps & {
   srcForDarkMode?: string | StaticImageData;
 };
 
-const ImageWrapper = ({
-  srcForDarkMode,
-  src,
-  alt,
-  ...props
-}: ImageWrapperProps) => {
+const ImageWrapper = ({ srcForDarkMode, src, alt, ...props }: ImageWrapperProps) => {
   // Ref :: https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();

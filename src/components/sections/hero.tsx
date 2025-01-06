@@ -1,31 +1,31 @@
-import Image from "next/image";
-import { MapPin } from "lucide-react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import SocialIcons from "@/components/data-display/social-icons";
-import Typography from "@/components/general/typography";
-import Container from "@/components/layout/container";
-import AnimatedGridPattern from "../ui/animated-grid-pattern";
-import { BorderBeam } from "../ui/border-beam";
+import Image from 'next/image';
+import { MapPin } from 'lucide-react';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import SocialIcons from '@/components/data-display/social-icons';
+import Typography from '@/components/general/typography';
+import Container from '@/components/layout/container';
+import AnimatedGridPattern from '../ui/animated-grid-pattern';
+import { BorderBeam } from '../ui/border-beam';
 
 // Configuration object for easy content updates
 const HERO_CONFIG = {
-  name: "Jaskaran Singh",
-  title: "FullStack Developer",
+  name: 'Jaskaran Singh',
+  title: 'FullStack Developer',
   description: `with a focus on creating (and occasionally designing) exceptional digital experiences web and mobile that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications for over 5 years, I still love it as if it was something new.`,
-  location: "Amritsar, Punjab, India",
-  availability: "Available for new projects",
+  location: 'Amritsar, Punjab, India',
+  availability: 'Available for new projects',
   codeProfile: {
-    name: "Jaskaran Singh",
-    skills: ["ReactJS", "NextJS", "ReactNative", "PHP", "Laravel"],
+    name: 'Jaskaran Singh',
+    skills: ['ReactJS', 'NextJS', 'ReactNative', 'PHP', 'Laravel'],
     hardWorker: true,
     problemSolver: true,
-    traits: ["Hard Worker", "Problem Solver"],
+    traits: ['Hard Worker', 'Problem Solver'],
   },
   skills: [
     {
-      name: "React Native",
-      url: "https://expo.dev/",
+      name: 'React Native',
+      url: 'https://expo.dev/',
       icon: (
         <svg
           fill="dodgerblue"
@@ -38,11 +38,11 @@ const HERO_CONFIG = {
           <path d="M410.66,180.72h0q-7.67-2.62-15.45-4.88,1.29-5.25,2.38-10.56c11.7-56.9,4.05-102.74-22.06-117.83-25-14.48-66,.61-107.36,36.69q-6.1,5.34-11.95,11-3.9-3.76-8-7.36c-43.35-38.58-86.8-54.83-112.88-39.69-25,14.51-32.43,57.6-21.9,111.53q1.58,8,3.55,15.93c-6.15,1.75-12.09,3.62-17.77,5.6C48.46,198.9,16,226.73,16,255.59c0,29.82,34.84,59.72,87.77,77.85q6.44,2.19,13,4.07Q114.64,346,113,354.68c-10,53-2.2,95.07,22.75,109.49,25.77,14.89,69-.41,111.14-37.31q5-4.38,10-9.25,6.32,6.11,13,11.86c40.8,35.18,81.09,49.39,106,34.93,25.75-14.94,34.12-60.14,23.25-115.13q-1.25-6.3-2.88-12.86,4.56-1.35,8.93-2.79c55-18.27,90.83-47.81,90.83-78C496,226.62,462.5,198.61,410.66,180.72Zm-129-81.08c35.43-30.91,68.55-43.11,83.65-34.39h0c16.07,9.29,22.32,46.75,12.22,95.88q-1,4.8-2.16,9.57a487.83,487.83,0,0,0-64.18-10.16,481.27,481.27,0,0,0-40.57-50.75Q276,104.57,281.64,99.64ZM157.73,280.25q6.51,12.6,13.61,24.89,7.23,12.54,15.07,24.71a435.28,435.28,0,0,1-44.24-7.13C146.41,309,151.63,294.75,157.73,280.25Zm0-48.33c-6-14.19-11.08-28.15-15.25-41.63,13.7-3.07,28.3-5.58,43.52-7.48q-7.65,11.94-14.72,24.23T157.7,231.92Zm10.9,24.17q9.48-19.77,20.42-38.78h0q10.93-19,23.27-37.13c14.28-1.08,28.92-1.65,43.71-1.65s29.52.57,43.79,1.66q12.21,18.09,23.13,37t20.69,38.6Q334,275.63,323,294.73h0q-10.91,19-23,37.24c-14.25,1-29,1.55-44,1.55s-29.47-.47-43.46-1.38q-12.43-18.19-23.46-37.29T168.6,256.09ZM340.75,305q7.25-12.58,13.92-25.49h0a440.41,440.41,0,0,1,16.12,42.32A434.44,434.44,0,0,1,326,329.48Q333.62,317.39,340.75,305Zm13.72-73.07q-6.64-12.65-13.81-25h0q-7-12.18-14.59-24.06c15.31,1.94,30,4.52,43.77,7.67A439.89,439.89,0,0,1,354.47,231.93ZM256.23,124.48h0a439.75,439.75,0,0,1,28.25,34.18q-28.35-1.35-56.74,0C237.07,146.32,246.62,134.87,256.23,124.48ZM145.66,65.86c16.06-9.32,51.57,4,89,37.27,2.39,2.13,4.8,4.36,7.2,6.67A491.37,491.37,0,0,0,201,160.51a499.12,499.12,0,0,0-64.06,10q-1.83-7.36-3.3-14.82h0C124.59,109.46,130.58,74.61,145.66,65.86ZM122.25,317.71q-6-1.71-11.85-3.71c-23.4-8-42.73-18.44-56-29.81C42.52,274,36.5,263.83,36.5,255.59c0-17.51,26.06-39.85,69.52-55q8.19-2.85,16.52-5.21a493.54,493.54,0,0,0,23.4,60.75A502.46,502.46,0,0,0,122.25,317.71Zm111.13,93.67c-18.63,16.32-37.29,27.89-53.74,33.72h0c-14.78,5.23-26.55,5.38-33.66,1.27-15.14-8.75-21.44-42.54-12.85-87.86q1.53-8,3.5-16a480.85,480.85,0,0,0,64.69,9.39,501.2,501.2,0,0,0,41.2,51C239.54,405.83,236.49,408.65,233.38,411.38Zm23.42-23.22c-9.72-10.51-19.42-22.14-28.88-34.64q13.79.54,28.08.54c9.78,0,19.46-.21,29-.64A439.33,439.33,0,0,1,256.8,388.16Zm124.52,28.59c-2.86,15.44-8.61,25.74-15.72,29.86-15.13,8.78-47.48-2.63-82.36-32.72-4-3.44-8-7.13-12.07-11a484.54,484.54,0,0,0,40.23-51.2,477.84,477.84,0,0,0,65-10.05q1.47,5.94,2.6,11.64h0C383.81,377.58,384.5,399.56,381.32,416.75Zm17.4-102.64h0c-2.62.87-5.32,1.71-8.06,2.53a483.26,483.26,0,0,0-24.31-60.94,481.52,481.52,0,0,0,23.36-60.06c4.91,1.43,9.68,2.93,14.27,4.52,44.42,15.32,71.52,38,71.52,55.43C475.5,274.19,446.23,298.33,398.72,314.11Z" />
           <path d="M256,298.55a43,43,0,1,0-42.86-43A42.91,42.91,0,0,0,256,298.55Z" />
         </svg>
-      )
+      ),
     },
     {
-      name: "Next.js",
-      url: "https://nextjs.org/",
+      name: 'Next.js',
+      url: 'https://nextjs.org/',
       icon: (
         <svg
           width={30}
@@ -54,7 +54,7 @@ const HERO_CONFIG = {
           <g clipPath="url(#clip0_93_112)">
             <mask
               id="mask0_93_112"
-              style={{ maskType: "alpha" }}
+              style={{ maskType: 'alpha' }}
               maskUnits="userSpaceOnUse"
               x={0}
               y={0}
@@ -107,20 +107,15 @@ const HERO_CONFIG = {
               <stop offset={1} stopColor="white" stopOpacity={0} />
             </linearGradient>
             <clipPath id="clip0_93_112">
-              <rect
-                width={64}
-                height={64}
-                fill="white"
-                transform="translate(0.439941)"
-              />
+              <rect width={64} height={64} fill="white" transform="translate(0.439941)" />
             </clipPath>
           </defs>
         </svg>
-      )
+      ),
     },
     {
-      name: "Tailwind",
-      url: "https://tailwindcss.com/",
+      name: 'Tailwind',
+      url: 'https://tailwindcss.com/',
       icon: (
         <svg
           stroke="currentColor"
@@ -128,7 +123,7 @@ const HERO_CONFIG = {
           strokeWidth="0"
           role="img"
           viewBox="0 0 24 24"
-          className="dark:text-gray-300/80 h-7 w-7 text-blue-400"
+          className="h-7 w-7 text-blue-400 dark:text-gray-300/80"
           height="1em"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
@@ -136,11 +131,11 @@ const HERO_CONFIG = {
           <title>Tailwind</title>
           <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"></path>
         </svg>
-      )
+      ),
     },
     {
-      name: "Laravel",
-      url: "https://laravel.com/",
+      name: 'Laravel',
+      url: 'https://laravel.com/',
       icon: (
         <svg
           width="1.4rem"
@@ -158,8 +153,7 @@ const HERO_CONFIG = {
             ></path>
           </g>
         </svg>
-
-      )
+      ),
     },
   ],
 };
@@ -171,43 +165,42 @@ const CodeBlock = () => {
     <code className="code-one-dark">
       <BorderBeam />
       <div>
-        <span className="mr-2 text-[#e06c75]">{"const"}</span>
-        <span className="mr-2 dark:text-white">{"coder"}</span>
-        <span className="mr-2 text-[#e06c75]">{"="}</span>
-        <span className="text-[#e06c75]">{"{"}</span>
+        <span className="mr-2 text-[#e06c75]">{'const'}</span>
+        <span className="mr-2 dark:text-white">{'coder'}</span>
+        <span className="mr-2 text-[#e06c75]">{'='}</span>
+        <span className="text-[#e06c75]">{'{'}</span>
       </div>
       <div className="pl-4">
-        <span className="text-[#d19a66]">"name"</span>:{" "}
+        <span className="text-[#d19a66]">"name"</span>:{' '}
         <span className="text-purple-500 dark:text-[#98c379]">"{name}"</span>,
       </div>
       <div className="pl-4">
-        <span className="text-[#d19a66]">"skills"</span>:{" "}
-        <span className="text-[#e06c75]">[</span>
+        <span className="text-[#d19a66]">"skills"</span>: <span className="text-[#e06c75]">[</span>
         {skills.map((skill, index) => (
           <span key={index}>
             <span className="text-purple-500 dark:text-[#98c379]">"{skill}"</span>
-            {index < skills.length - 1 && ", "}
+            {index < skills.length - 1 && ', '}
           </span>
         ))}
         <span className="text-[#e06c75]">]</span>,
       </div>
       <div className="pl-4">
-        <span className="text-[#d19a66]">"hardWorker"</span>:{" "}
+        <span className="text-[#d19a66]">"hardWorker"</span>:{' '}
         <span className="text-green-600 dark:text-[#56b6c2]">{hardWorker.toString()}</span>,
       </div>
       <div className="pl-4">
-        <span className="text-[#d19a66]">"problemSolver"</span>:{" "}
+        <span className="text-[#d19a66]">"problemSolver"</span>:{' '}
         <span className="text-green-600 dark:text-[#56b6c2]">{problemSolver.toString()}</span>,
       </div>
       <div>
-        <span className="text-[#e06c75]">{"}"}</span>
+        <span className="text-[#e06c75]">{'}'}</span>
       </div>
     </code>
   );
 };
 
 const TwitterCard = () => (
-  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white backdrop-blur-[14px] shadow-sm dark:border-[#462d6dab] dark:bg-[#0f192d]/90 lg:right-[-5%] lg:top-[85%]">
+  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white shadow-sm backdrop-blur-[14px] dark:border-[#462d6dab] dark:bg-[#0f192d]/90 lg:right-[-5%] lg:top-[85%]">
     <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform">
       <header className="flex gap-4">
         <figure className="overflow-hidden rounded-full border-2 border-gray-400/50 dark:border-gray-600/50">
@@ -237,17 +230,14 @@ const TwitterCard = () => (
       </header>
       <main>
         <p className="mt-2 line-clamp-3 pr-2 text-[13px] tracking-tight text-gray-600 dark:text-gray-300">
-          Hey, I'm new to twitter and not really a social media person 🙃 I'm
-          looking to connect with fellow developers and to learn about the
-          latest in web dev 🤗
+          Hey, I'm new to twitter and not really a social media person 🙃 I'm looking to connect
+          with fellow developers and to learn about the latest in web dev 🤗
         </p>
       </main>
       <footer className="mt-2">
         <p className="text-[13px] text-gray-500 dark:text-gray-400">
-          <span className="font-semibold text-gray-800 dark:text-gray-200">136</span>{" "}
-          Following
-          <span className="ml-2 font-semibold text-gray-800 dark:text-gray-200">8</span>{" "}
-          Followers
+          <span className="font-semibold text-gray-800 dark:text-gray-200">136</span> Following
+          <span className="ml-2 font-semibold text-gray-800 dark:text-gray-200">8</span> Followers
         </p>
       </footer>
     </section>
@@ -255,10 +245,12 @@ const TwitterCard = () => (
 );
 
 const SkillBadge = ({ label, className }: { label: string; className: string }) => (
-  <span className={cn(
-    "heroText inline-flex cursor-pointer select-none items-center whitespace-nowrap rounded-md border-2 px-2.5 py-0.5 text-[13px] font-medium transition-all",
-    className
-  )}>
+  <span
+    className={cn(
+      'heroText inline-flex cursor-pointer select-none items-center whitespace-nowrap rounded-md border-2 px-2.5 py-0.5 text-[13px] font-medium transition-all',
+      className
+    )}
+  >
     {label}
   </span>
 );
@@ -286,13 +278,13 @@ const CodeEditor = () => (
       </div>
     </div>
 
-    <div className="relative ml-4 select-none rounded-lg border bg-gradient-to-r from-blue-750 to-indigo-900 backdrop-blur-[3px] dark:bg-gradient-to-r dark:from-blue-750 dark:to-indigo-900">
+    <div className="from-blue-750 dark:from-blue-750 relative ml-4 select-none rounded-lg border bg-gradient-to-r to-indigo-900 backdrop-blur-[3px] dark:bg-gradient-to-r dark:to-indigo-900">
       <div className="flex flex-row">
         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
         <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
       </div>
       <div className="py-2">
-        <header className="mb-2 flex items-center justify-between border-b border-b-gray-200 py-2 pb-3 px-8 dark:border-b-gray-700 ">
+        <header className="mb-2 flex items-center justify-between border-b border-b-gray-200 px-8 py-2 pb-3 dark:border-b-gray-700 ">
           <div className="flex flex-row space-x-2">
             <div className="h-3 w-3 cursor-pointer rounded-full bg-red-400 hover:bg-red-500"></div>
             <div className="h-3 w-3 cursor-pointer rounded-full bg-orange-400 hover:bg-orange-500"></div>
@@ -312,9 +304,14 @@ const CodeEditor = () => (
 );
 
 const HeaderSkills = () => (
-  <ul className="mt-2 flex flex-wrap items-center justify-start gap-3 overflow-x-auto px-4 pb-2 text-[15px] font-medium sm:scrollbar-none">
+  <ul className="sm:scrollbar-none mt-2 flex flex-wrap items-center justify-start gap-3 overflow-x-auto px-4 pb-2 text-[15px] font-medium">
     {HERO_CONFIG.skills.map((skill, index) => (
-      <Link key={index} href={skill.url} target="_blank" className="bg-gradient-to-r from-blue-750 to-indigo-900 backdrop-blur-[4px]">
+      <Link
+        key={index}
+        href={skill.url}
+        target="_blank"
+        className="from-blue-750 bg-gradient-to-r to-indigo-900 backdrop-blur-[4px]"
+      >
         <li className="flex items-center gap-2 text-gray-200 dark:text-white">
           {skill.icon}
           <span className="text-[#000000] dark:text-[#ffffff]">{skill.name}</span>
@@ -326,9 +323,12 @@ const HeaderSkills = () => (
 
 const HeroSection = () => {
   return (
-    <Container id="hero" className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[80vh] ">
+    <Container
+      id="hero"
+      className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[80vh] "
+    >
       <div className="z-10">
-        <div className="flex flex-col flex-col-reverse gap-10 lg:gap-32 lg:flex-row md:gap-32 pb-10 px-6">
+        <div className="flex flex-col flex-col-reverse gap-10 px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32">
           {/* Code Editor */}
           <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
             <CodeEditor />
@@ -339,16 +339,16 @@ const HeroSection = () => {
             <div className="flex flex-col gap-2">
               <div className="text-xl font-medium">Hey there!, I'm -</div>
               <Typography variant="h1">
-                <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent bg-blur-lg">
+                <span className="bg-blur-lg bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
                   {HERO_CONFIG.name}
-                </span>{" "}
+                </span>{' '}
                 <span className="inline-block animate-waving-hand">👋</span>
               </Typography>
-              <Typography className="bg-gradient-to-r from-blue-750 to-indigo-900 backdrop-blur-[4px]">
-                I'm a {" "}
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent text-blur-lg text-xl font-bold">
+              <Typography className="from-blue-750 bg-gradient-to-r to-indigo-900 backdrop-blur-[4px]">
+                I'm a{' '}
+                <span className="text-blur-lg bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-xl font-bold text-transparent">
                   {HERO_CONFIG.title}
-                </span>{" "}
+                </span>{' '}
                 {HERO_CONFIG.description}
               </Typography>
               <div className="border-1 border-gray-200">
@@ -384,13 +384,13 @@ const HeroSection = () => {
         <img
           src="https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"
           alt=""
-          className="hidden dark:block absolute inset-0 w-full h-full object-cover opacity-80"
+          className="absolute inset-0 hidden h-full w-full object-cover opacity-80 dark:block"
         />
         {/* Light theme background */}
         <img
           src="https://tailwindui.com/plus/img/beams-home@95.jpg"
           alt=""
-          className="block dark:hidden absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 block h-full w-full object-cover opacity-60 dark:hidden"
         />
       </div>
 
@@ -401,9 +401,9 @@ const HeroSection = () => {
         duration={0.8}
         repeatDelay={0.5}
         className={cn(
-          "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
-          "absolute inset-0 z-[1]",
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 text-[#1E90FF] dark:text-[#1E90FF]"
+          '[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]',
+          'absolute inset-0 z-[1]',
+          'inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 text-[#1E90FF] dark:text-[#1E90FF]'
         )}
       />
     </Container>
@@ -411,4 +411,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

@@ -1,16 +1,13 @@
-import { Metadata } from 'next'
-import { BlogPost } from '@/lib/supabase/types'
+import { Metadata } from 'next';
+import { BlogPost } from '@/lib/supabase/types';
 
 type BlogSeoProps = {
-  post: BlogPost
-  url: string
-}
+  post: BlogPost;
+  url: string;
+};
 
-export const generateBlogPostMetadata = ({
-  post,
-  url,
-}: BlogSeoProps): Metadata => {
-  const { title, meta_description, featured_image, published_date, author_id } = post
+export const generateBlogPostMetadata = ({ post, url }: BlogSeoProps): Metadata => {
+  const { title, meta_description, featured_image, published_date, author_id } = post;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -36,7 +33,7 @@ export const generateBlogPostMetadata = ({
       '@type': 'WebPage',
       '@id': url,
     },
-  }
+  };
 
   return {
     title: `${title} | Jaskaran Singh`,
@@ -79,5 +76,5 @@ export const generateBlogPostMetadata = ({
         name: author_id, // TODO: Replace with actual author name
       },
     ],
-  }
-}
+  };
+};

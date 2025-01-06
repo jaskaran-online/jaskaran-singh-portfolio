@@ -1,11 +1,11 @@
 'use client';
 
-import Image from "next/image";
-import { Twitter, Linkedin, User, GraduationCap } from "lucide-react";
+import Image from 'next/image';
+import { Twitter, Linkedin, User, GraduationCap } from 'lucide-react';
 
-import { TestimonialDetails as TestimonialDetailsProps } from "@/lib/types";
-import Typography from "@/components/general/typography";
-import Card from "@/components/layout/card";
+import { TestimonialDetails as TestimonialDetailsProps } from '@/lib/types';
+import Typography from '@/components/general/typography';
+import Card from '@/components/layout/card';
 
 const SourceIcon = ({ source }: { source: TestimonialDetailsProps['source'] }) => {
   switch (source) {
@@ -44,16 +44,10 @@ const TestimonialDetails = ({
             />
           </div>
           <div className="flex flex-col">
-            <Typography
-              variant="body2"
-              className="font-semibold text-gray-900 dark:text-white"
-            >
+            <Typography variant="body2" className="font-semibold text-gray-900 dark:text-white">
               {personName}
             </Typography>
-            <Typography
-              variant="body3"
-              className="text-gray-500 dark:text-gray-400"
-            >
+            <Typography variant="body3" className="text-gray-500 dark:text-gray-400">
               {title}
             </Typography>
           </div>
@@ -61,9 +55,7 @@ const TestimonialDetails = ({
         <SourceIcon source={source} />
       </div>
 
-      <Typography className="mt-4 text-gray-600 dark:text-gray-300">
-        {testimonial}
-      </Typography>
+      <Typography className="mt-4 text-gray-600 dark:text-gray-300">{testimonial}</Typography>
     </Card>
   );
 };

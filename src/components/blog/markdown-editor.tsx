@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { useEditor, EditorContent } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
-import Image from '@tiptap/extension-image'
-import Link from '@tiptap/extension-link'
-import Placeholder from '@tiptap/extension-placeholder'
-import { Button } from '@/components/ui/button'
+import { useEditor, EditorContent } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
+import Image from '@tiptap/extension-image';
+import Link from '@tiptap/extension-link';
+import Placeholder from '@tiptap/extension-placeholder';
+import { Button } from '@/components/ui/button';
 import {
   Bold,
   Italic,
@@ -17,12 +17,12 @@ import {
   Image as ImageIcon,
   Undo,
   Redo,
-} from 'lucide-react'
+} from 'lucide-react';
 
 interface MarkdownEditorProps {
-  content: string
-  onChange: (content: string) => void
-  placeholder?: string
+  content: string;
+  onChange: (content: string) => void;
+  placeholder?: string;
 }
 
 export function MarkdownEditor({
@@ -43,32 +43,27 @@ export function MarkdownEditor({
     ],
     content,
     onUpdate: ({ editor }) => {
-      onChange(editor.getHTML())
+      onChange(editor.getHTML());
     },
-  })
+  });
 
   if (!editor) {
-    return null
+    return null;
   }
 
   const addImage = () => {
-    const url = window.prompt('Enter image URL')
+    const url = window.prompt('Enter image URL');
     if (url) {
-      editor.chain().focus().setImage({ src: url }).run()
+      editor.chain().focus().setImage({ src: url }).run();
     }
-  }
+  };
 
   const addLink = () => {
-    const url = window.prompt('Enter URL')
+    const url = window.prompt('Enter URL');
     if (url) {
-      editor
-        .chain()
-        .focus()
-        .extendMarkRange('link')
-        .setLink({ href: url })
-        .run()
+      editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
     }
-  }
+  };
 
   return (
     <div className="prose prose-lg w-full max-w-none">
@@ -127,22 +122,14 @@ export function MarkdownEditor({
         <Button variant="ghost" size="sm" onClick={addImage}>
           <ImageIcon className="h-4 w-4" />
         </Button>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => editor.chain().focus().undo().run()}
-        >
+        <Button variant="ghost" size="sm" onClick={() => editor.chain().focus().undo().run()}>
           <Undo className="h-4 w-4" />
         </Button>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => editor.chain().focus().redo().run()}
-        >
+        <Button variant="ghost" size="sm" onClick={() => editor.chain().focus().redo().run()}>
           <Redo className="h-4 w-4" />
         </Button>
       </div>
       <EditorContent editor={editor} className="min-h-[500px] rounded-lg border p-4" />
     </div>
-  )
+  );
 }

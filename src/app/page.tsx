@@ -5,30 +5,31 @@ import Loading from '@/components/loading';
 
 // Dynamic imports for better code splitting
 const HeroSection = dynamic(() => import('@/components/sections/hero'), {
-  loading: () => <Loading />
+  loading: () => <Loading />,
 });
 const AboutMeSection = dynamic(() => import('@/components/sections/about-me'), {
-  loading: () => <Loading />
+  loading: () => <Loading />,
 });
 const SkillsSection = dynamic(() => import('@/components/sections/skills'), {
-  loading: () => <Loading />
+  loading: () => <Loading />,
 });
 const WorkSection = dynamic(() => import('@/components/sections/work'), {
-  loading: () => <Loading />
+  loading: () => <Loading />,
 });
 const TestimonialsSection = dynamic(() => import('@/components/sections/testimonials'), {
-  loading: () => <Loading />
+  loading: () => <Loading />,
 });
 const ContactSection = dynamic(() => import('@/components/sections/contact'), {
-  loading: () => <Loading />
+  loading: () => <Loading />,
 });
 const ServicesSection = dynamic(() => import('@/components/sections/services'), {
-  loading: () => <Loading />
+  loading: () => <Loading />,
 });
 
 export const metadata: Metadata = {
-  title: "Full Stack Developer & Mobile App Expert in India | Jaskaran Singh",
-  description: "Expert Full Stack Developer specializing in React, Next.js, and mobile app development. Building modern web applications and mobile solutions in Amritsar, India.",
+  title: 'Full Stack Developer & Mobile App Expert in India | Jaskaran Singh',
+  description:
+    'Expert Full Stack Developer specializing in React, Next.js, and mobile app development. Building modern web applications and mobile solutions in Amritsar, India.',
   alternates: {
     canonical: '/',
   },

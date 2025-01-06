@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useId, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useId, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 interface AnimatedGridPatternProps {
   width?: number;
@@ -30,7 +30,7 @@ export default function AnimatedGridPattern({
   maxOpacity = 0.5,
   duration = 4,
   repeatDelay = 0.5,
-  color = "#1E90FF", // Use theme color instead of hardcoded
+  color = '#1E90FF', // Use theme color instead of hardcoded
   ...props
 }: AnimatedGridPatternProps) {
   const id = useId();
@@ -59,11 +59,11 @@ export default function AnimatedGridPattern({
       currentSquares.map((sq) =>
         sq.id === id
           ? {
-            ...sq,
-            pos: getPos(),
-          }
-          : sq,
-      ),
+              ...sq,
+              pos: getPos(),
+            }
+          : sq
+      )
     );
   };
 
@@ -100,27 +100,13 @@ export default function AnimatedGridPattern({
     <svg
       ref={containerRef}
       aria-hidden="true"
-      className={cn(
-        "pointer-events-none absolute inset-0 h-full w-full",
-        className,
-      )}
+      className={cn('pointer-events-none absolute inset-0 h-full w-full', className)}
       style={{ fill: `${color}30`, stroke: `${color}30` }}
       {...props}
     >
       <defs>
-        <pattern
-          id={id}
-          width={width}
-          height={height}
-          patternUnits="userSpaceOnUse"
-          x={x}
-          y={y}
-        >
-          <path
-            d={`M.5 ${height}V.5H${width}`}
-            fill="none"
-            strokeDasharray={strokeDasharray}
-          />
+        <pattern id={id} width={width} height={height} patternUnits="userSpaceOnUse" x={x} y={y}>
+          <path d={`M.5 ${height}V.5H${width}`} fill="none" strokeDasharray={strokeDasharray} />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill={`url(#${id})`} />
@@ -133,7 +119,7 @@ export default function AnimatedGridPattern({
               duration,
               repeat: 1,
               delay: index * 0.1,
-              repeatType: "reverse",
+              repeatType: 'reverse',
             }}
             onAnimationComplete={() => updateSquarePosition(id)}
             key={`${x}-${y}-${index}`}

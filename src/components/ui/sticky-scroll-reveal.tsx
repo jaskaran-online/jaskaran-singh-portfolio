@@ -1,15 +1,15 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import { useMotionValueEvent, useScroll } from "framer-motion";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 const ZigzagUnderline = ({ isActive }: { isActive: boolean }) => (
   <motion.svg
     height="6"
     viewBox="0 0 100 6"
     initial="hidden"
-    animate={isActive ? "visible" : "hidden"}
+    animate={isActive ? 'visible' : 'hidden'}
     className="absolute -bottom-2 left-0"
   >
     <motion.path
@@ -43,39 +43,30 @@ export const StickyScroll = ({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
     // target: ref
     container: ref,
-    offset: ["start start", "end start"],
+    offset: ['start start', 'end start'],
   });
   const cardLength = content.length;
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
-    const closestBreakpointIndex = cardsBreakpoints.reduce(
-      (acc, breakpoint, index) => {
-        const distance = Math.abs(latest - breakpoint);
-        if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
-          return index;
-        }
-        return acc;
-      },
-      0
-    );
+    const closestBreakpointIndex = cardsBreakpoints.reduce((acc, breakpoint, index) => {
+      const distance = Math.abs(latest - breakpoint);
+      if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
+        return index;
+      }
+      return acc;
+    }, 0);
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = [
-    "var(--slate-100)",
-    "var(--slate-100)",
-    "var(--slate-100)",
-  ];
+  const backgroundColors = ['var(--slate-100)', 'var(--slate-100)', 'var(--slate-100)'];
   const linearGradients = [
-    "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
-    "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
-    "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
+    'linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))',
+    'linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))',
+    'linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))',
   ];
 
-  const [backgroundGradient, setBackgroundGradient] = useState(
-    linearGradients[0]
-  );
+  const [backgroundGradient, setBackgroundGradient] = useState(linearGradients[0]);
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
@@ -87,7 +78,7 @@ export const StickyScroll = ({
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-5xl font-bold text-center mt-12 mb-12"
+        className="mb-12 mt-12 text-center text-5xl font-bold"
       >
         App Screen Views
       </motion.h2>
@@ -96,13 +87,13 @@ export const StickyScroll = ({
         // animate={{
         // backgroundColor: backgroundColors[activeCard % backgroundColors.length],
         // }}
-        className="h-[48rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10 no-scrollbar lg:gap-8"
+        className="no-scrollbar relative flex h-[48rem] justify-center space-x-10 overflow-y-auto rounded-md p-10 lg:gap-8"
         ref={ref}
       >
-        <div className="div relative flex items-start px-4 gap-10" >
+        <div className="div relative flex items-start gap-10 px-4">
           <div className="m">
             {content.map((item, index) => (
-              <div key={item.title + index} className="my-20 relative">
+              <div key={item.title + index} className="relative my-20">
                 <motion.h2
                   initial={{
                     opacity: 0,
@@ -110,7 +101,7 @@ export const StickyScroll = ({
                   animate={{
                     opacity: activeCard === index ? 1 : 0.3,
                   }}
-                  className="text-2xl font-bold text-sky-600 relative"
+                  className="relative text-2xl font-bold text-sky-600"
                 >
                   {item.title}
                   <ZigzagUnderline isActive={activeCard === index} />
@@ -122,7 +113,7 @@ export const StickyScroll = ({
                   animate={{
                     opacity: activeCard === index ? 1 : 0.3,
                   }}
-                  className="text-kg text-slate-800 max-w-sm mt-10"
+                  className="text-kg mt-10 max-w-sm text-slate-800"
                 >
                   {item.description}
                 </motion.p>
@@ -147,13 +138,10 @@ export const StickyScroll = ({
             }}
             transition={{
               duration: 0.5,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
             // style={{ background: backgroundGradient }}
-            className={cn(
-              "hidden lg:block h-auto w-80 sticky top-4",
-              contentClassName
-            )}
+            className={cn('sticky top-4 hidden h-auto w-80 lg:block', contentClassName)}
           >
             {content[activeCard].content ?? null}
           </motion.div>

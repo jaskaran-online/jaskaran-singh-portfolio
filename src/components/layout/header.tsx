@@ -6,12 +6,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import {
-  Drawer,
-  DrawerTrigger,
-  DrawerContent,
-  DrawerClose,
-} from '@/components/navigation/drawer';
+import { Drawer, DrawerTrigger, DrawerContent, DrawerClose } from '@/components/navigation/drawer';
 import { NAV_LINKS } from '@/lib/data';
 import { mergeClasses } from '@/lib/utils';
 import useWindowSize from '@/hooks/use-window-size';
@@ -22,9 +17,7 @@ import IconButton from '@/components/general/icon-button';
 import DownloadCV from '@/components/general/download-cv';
 import Typography from '@/components/general/typography';
 
-const Logo: React.FC = () => (
-  <Image src="/logo.png" alt="Jaskaran Singh" width={60} height={60} />
-);
+const Logo: React.FC = () => <Image src="/logo.png" alt="Jaskaran Singh" width={60} height={60} />;
 
 const Header = () => {
   const scrolled = useScroll(40);
@@ -35,7 +28,7 @@ const Header = () => {
 
   // Handle scroll and intersection observer for sections
   useEffect(() => {
-    const sections = NAV_LINKS.map(link => link.href.replace('#', ''));
+    const sections = NAV_LINKS.map((link) => link.href.replace('#', ''));
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -47,7 +40,7 @@ const Header = () => {
       },
       {
         threshold: 0.3,
-        rootMargin: '-80px 0px -50% 0px'
+        rootMargin: '-80px 0px -50% 0px',
       }
     );
 
@@ -86,17 +79,21 @@ const Header = () => {
   return (
     <header
       className={mergeClasses(
-        'sticky top-0 z-30 w-full border-b bg-background/80 dark:bg-[#0f192d]/80 backdrop-blur-xl transition-colors duration-200 shadow-md',
+        'sticky top-0 z-30 w-full border-b bg-background/80 shadow-md backdrop-blur-xl transition-colors duration-200 dark:bg-[#0f192d]/80',
         scrolled ? 'border-border/40' : 'border-transparent'
       )}
     >
       <div className="relative">
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-8">
-          <Link href="/" noCustomization className="absolute right-4 top-5 drop-shadow-lg md:relative md:top-0 md:right-0 md:drop-shadow-none">
+          <Link
+            href="/"
+            noCustomization
+            className="absolute right-4 top-5 drop-shadow-lg md:relative md:right-0 md:top-0 md:drop-shadow-none"
+          >
             <Logo />
           </Link>
           <div className="hidden items-center gap-6 md:flex">
-            <nav className="flex list-none items-center relative">
+            <nav className="relative flex list-none items-center">
               {NAV_LINKS.map((link, index) => {
                 const isActive = link.href.includes('#')
                   ? activeSection === link.href.replace('#', '')
@@ -106,21 +103,21 @@ const Header = () => {
                     key={index}
                     href={`https://www.jaskaran.in/${link.href}`}
                     className={mergeClasses(
-                      "relative px-4 py-2 text-sm font-medium transition-colors",
+                      'relative px-4 py-2 text-sm font-medium transition-colors',
                       isActive
-                        ? "text-white dark:text-gray-50"
-                        : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
+                        ? 'text-white dark:text-gray-50'
+                        : 'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50'
                     )}
                   >
                     {isActive && (
                       <motion.div
                         layoutId="active-nav"
-                        className="absolute inset-0 bg-[#1e90ff] dark:bg-[#1e293b] rounded-md"
+                        className="absolute inset-0 rounded-md bg-[#1e90ff] dark:bg-[#1e293b]"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{
                           duration: 0.1,
-                          ease: "easeInOut"
+                          ease: 'easeInOut',
                         }}
                       />
                     )}
@@ -165,10 +162,10 @@ const Header = () => {
                         <Link
                           href={link.href}
                           className={mergeClasses(
-                            "relative block px-4 py-2 text-sm font-medium transition-colors rounded-md",
+                            'relative block rounded-md px-4 py-2 text-sm font-medium transition-colors',
                             isActive
-                              ? "text-gray-900 bg-gray-100/50 dark:text-gray-50 dark:bg-gray-800/50"
-                              : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
+                              ? 'bg-gray-100/50 text-gray-900 dark:bg-gray-800/50 dark:text-gray-50'
+                              : 'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50'
                           )}
                           onClick={() => {
                             const timeoutId = setTimeout(() => {

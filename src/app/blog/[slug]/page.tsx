@@ -1,39 +1,39 @@
-import { notFound } from 'next/navigation'
-import { format } from 'date-fns'
-import Image from 'next/image'
-import { blogService } from '@/lib/supabase/blog-service'
-import { generateBlogPostMetadata } from '@/components/blog/blog-seo'
-import { Analytics } from '@/lib/analytics'
-import { Comments } from './comments'
-import { MarkdownRenderer } from '@/components/markdown-renderer'
+import { notFound } from 'next/navigation';
+import { format } from 'date-fns';
+import Image from 'next/image';
+import { blogService } from '@/lib/supabase/blog-service';
+import { generateBlogPostMetadata } from '@/components/blog/blog-seo';
+import { Analytics } from '@/lib/analytics';
+import { Comments } from './comments';
+import { MarkdownRenderer } from '@/components/markdown-renderer';
 
 type BlogPostPageProps = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = await blogService.getPostBySlug(params.slug)
-  if (!post) return {}
+  const post = await blogService.getPostBySlug(params.slug);
+  if (!post) return {};
 
-  const url = `https://jaskaran.in/blog/${post.slug}`
+  const url = `https://jaskaran.in/blog/${post.slug}`;
   return {
     ...generateBlogPostMetadata({ post, url }),
     alternates: {
       canonical: url,
     },
-  }
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await blogService.getPostBySlug(params.slug)
+  const post = await blogService.getPostBySlug(params.slug);
 
   if (!post || post.status !== 'published') {
-    notFound()
+    notFound();
   }
 
-  const formattedDate = format(new Date(post.published_date), 'MMMM dd, yyyy')
+  const formattedDate = format(new Date(post.published_date), 'MMMM dd, yyyy');
 
   return (
     <>
@@ -72,10 +72,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {post.tags?.length > 0 && (
           <div className="mt-8 flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700"
-              >
+              <span key={tag} className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
                 #{tag}
               </span>
             ))}
@@ -87,12 +84,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <Comments postId={post.id} />
       </div>
     </>
-  )
+  );
 }
 
 export async function generateStaticParams() {
-  const { posts } = await blogService.getPosts({ page: 1 })
+  const { posts } = await blogService.getPosts({ page: 1 });
   return posts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }

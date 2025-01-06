@@ -1,50 +1,50 @@
-'use client'
+'use client';
 
-import { useCallback, useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { ImagePlus, Loader2 } from 'lucide-react'
-import { storageService } from '@/lib/supabase/storage-service'
-import { toast } from 'sonner'
+import { useCallback, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { ImagePlus, Loader2 } from 'lucide-react';
+import { storageService } from '@/lib/supabase/storage-service';
+import { toast } from 'sonner';
 
 type ImageUploadProps = {
-  onUpload: (url: string) => void
-}
+  onUpload: (url: string) => void;
+};
 
 export const ImageUpload = ({ onUpload }: ImageUploadProps) => {
-  const [uploading, setUploading] = useState(false)
+  const [uploading, setUploading] = useState(false);
 
   const handleUpload = useCallback(
     async (event: React.ChangeEvent<HTMLInputElement>) => {
       try {
-        const file = event.target.files?.[0]
-        if (!file) return
+        const file = event.target.files?.[0];
+        if (!file) return;
 
         // Validate file type
         if (!file.type.startsWith('image/')) {
-          toast.error('Please upload an image file')
-          return
+          toast.error('Please upload an image file');
+          return;
         }
 
         // Validate file size (max 5MB)
         if (file.size > 5 * 1024 * 1024) {
-          toast.error('Image size should be less than 5MB')
-          return
+          toast.error('Image size should be less than 5MB');
+          return;
         }
 
-        setUploading(true)
-        const url = await storageService.uploadImage(file)
-        onUpload(url)
-        toast.success('Image uploaded successfully')
+        setUploading(true);
+        const url = await storageService.uploadImage(file);
+        onUpload(url);
+        toast.success('Image uploaded successfully');
       } catch (error) {
-        console.error('Error uploading image:', error)
-        toast.error('Failed to upload image')
+        console.error('Error uploading image:', error);
+        toast.error('Failed to upload image');
       } finally {
-        setUploading(false)
+        setUploading(false);
       }
     },
     [onUpload]
-  )
+  );
 
   return (
     <div className="flex items-center gap-2">
@@ -56,11 +56,7 @@ export const ImageUpload = ({ onUpload }: ImageUploadProps) => {
         className="hidden"
         id="image-upload"
       />
-      <Button
-        variant="outline"
-        disabled={uploading}
-        asChild
-      >
+      <Button variant="outline" disabled={uploading} asChild>
         <label htmlFor="image-upload" className="cursor-pointer">
           {uploading ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -71,5 +67,5 @@ export const ImageUpload = ({ onUpload }: ImageUploadProps) => {
         </label>
       </Button>
     </div>
-  )
-}
+  );
+};

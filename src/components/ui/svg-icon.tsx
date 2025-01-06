@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { SVGProps } from 'react';
 import { cn } from '@/lib/utils';
