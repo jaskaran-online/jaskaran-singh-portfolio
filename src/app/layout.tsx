@@ -232,7 +232,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Providers>
             <div className="relative min-h-screen bg-background">
               <Header />
-              <ScrollProgress className="top-[90px]" />
               <main className="relative flex min-h-screen w-full flex-col bg-background dark:bg-[#0f192d]">
                 {children}
               </main>

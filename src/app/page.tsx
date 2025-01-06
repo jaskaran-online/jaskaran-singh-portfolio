@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Loading from '@/components/loading';
+import { TracingBeam } from '@/components/ui/tracing-beam';
 
 // Dynamic imports for better code splitting
 const HeroSection = dynamic(() => import('@/components/sections/hero'), {
@@ -41,21 +42,23 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <HeroSection />
       </Suspense>
-      <Suspense fallback={<Loading />}>
-        <AboutMeSection />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <SkillsSection />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <ServicesSection />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <WorkSection />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <TestimonialsSection />
-      </Suspense>
+      <TracingBeam>
+        <Suspense fallback={<Loading />}>
+          <AboutMeSection />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <SkillsSection />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <ServicesSection />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <WorkSection />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <TestimonialsSection />
+        </Suspense>
+      </TracingBeam>
       <Suspense fallback={<Loading />}>
         <ContactSection />
       </Suspense>

@@ -252,22 +252,19 @@ module.exports = {
 		}
 	},
 	plugins: [
-		// addVariablesForColors,
+		addVariablesForColors,
 		require("tailwindcss-animate")
 	],
 };
 
-// Ref :: https://twitter.com/steventey/status/1677339375645126659
-// Ref :: https://tailwindcss.com/docs/customizing-colors#using-css-variables
-
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
-// function addVariablesForColors({ addBase, theme }) {
-// 	let allColors = flattenColorPalette(theme("colors"));
-// 	let newVars = Object.fromEntries(
-// 		Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-// 	);
+function addVariablesForColors({ addBase, theme }: any) {
+	let allColors = flattenColorPalette(theme("colors"));
+	let newVars = Object.fromEntries(
+		Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+	);
 
-// 	addBase({
-// 		":root": newVars,
-// 	});
-// }
+	addBase({
+		":root": newVars,
+	});
+}
