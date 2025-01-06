@@ -27,6 +27,8 @@ const ServicesSection = dynamic(() => import('@/components/sections/services'), 
 });
 
 export const metadata: Metadata = {
+  title: "Full Stack Developer & Mobile App Expert in India | Jaskaran Singh",
+  description: "Expert Full Stack Developer specializing in React, Next.js, and mobile app development. Building modern web applications and mobile solutions in Amritsar, India.",
   alternates: {
     canonical: '/',
   },
