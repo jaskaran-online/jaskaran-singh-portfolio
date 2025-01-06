@@ -33,6 +33,7 @@ import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
 import ScrollProgress from '@/components/ui/scroll-progress';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from 'sonner';
+import { AnalyticsWrapper } from '@/components/Analytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -232,6 +233,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Providers>
             <div className="relative min-h-screen bg-background">
               <Header />
+              <AnalyticsWrapper />
               <main className="relative flex min-h-screen w-full flex-col bg-background dark:bg-[#0f192d]">
                 {children}
               </main>
