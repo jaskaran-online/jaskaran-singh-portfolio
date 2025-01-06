@@ -40,9 +40,6 @@ export const metadata: Metadata = {
   applicationName: "Jaskaran Singh Portfolio",
   authors: [{ name: "Jaskaran Singh", url: "https://jaskaran.in" }],
   generator: "Next.js",
-  alternates: {
-    canonical: url,
-  },
   keywords: [
     "Full Stack Developer in Amritsar",
     "React and Next.js Expert",
@@ -72,7 +69,6 @@ export const metadata: Metadata = {
     "React Native",
     "Laravel",
     "Amritsar, Punjab, India",
-
   ],
   referrer: "origin-when-cross-origin",
   creator: "Jaskaran Singh",
@@ -85,13 +81,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    nocache: false,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
   },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
