@@ -134,6 +134,9 @@ importers:
       react-intersection-observer:
         specifier: ^9.14.1
         version: 9.14.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-lens-analytics:
+        specifier: ^3.0.4
+        version: 3.0.4(react@18.2.0)
       react-markdown:
         specifier: ^9.0.1
         version: 9.0.1(@types/react@19.0.2)(react@18.2.0)
@@ -4224,6 +4227,11 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
+  react-lens-analytics@3.0.4:
+    resolution: {integrity: sha512-OIoA7AB4/5uMluGOYRoZFMmdkUp4SfuebUnnvOpyR7Rde0/y5nZ7Zmn1KwXH0vJrpWQyfOBVYffo1YrK+hWd0w==}
+    peerDependencies:
+      react: ^18.0.0
+
   react-markdown@9.0.1:
     resolution: {integrity: sha512-186Gw/vF1uRkydbsOIkcGXw7aHq0sZOCRFFjGrr7b9+nVZg4UfA4enXCaxm4fUzecU38sWfrNDitGhshuU7rdg==}
     peerDependencies:
@@ -4922,6 +4930,10 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  uuid@10.0.0:
+    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+    hasBin: true
 
   uuid@11.0.3:
     resolution: {integrity: sha512-d0z310fCWv5dJwnX1Y/MncBAqGMKEzlBb1AOf7z9K8ALnd0utBX/msg/fA0+sbyN1ihbMsLhrBlnl1ak7Wa0rg==}
@@ -9849,6 +9861,11 @@ snapshots:
 
   react-is@16.13.1: {}
 
+  react-lens-analytics@3.0.4(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+      uuid: 10.0.0
+
   react-markdown@9.0.1(@types/react@19.0.2)(react@18.2.0):
     dependencies:
       '@types/hast': 3.0.4
@@ -10763,6 +10780,8 @@ snapshots:
       react: 18.2.0
 
   util-deprecate@1.0.2: {}
+
+  uuid@10.0.0: {}
 
   uuid@11.0.3: {}
 
