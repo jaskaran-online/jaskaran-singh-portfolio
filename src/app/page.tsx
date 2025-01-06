@@ -47,13 +47,13 @@ export default function Home() {
           <AboutMeSection />
         </Suspense>
         <Suspense fallback={<Loading />}>
-          <SkillsSection />
-        </Suspense>
-        <Suspense fallback={<Loading />}>
           <ServicesSection />
         </Suspense>
         <Suspense fallback={<Loading />}>
           <WorkSection />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <SkillsSection />
         </Suspense>
         <Suspense fallback={<Loading />}>
           <TestimonialsSection />
