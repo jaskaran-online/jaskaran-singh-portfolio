@@ -14,7 +14,7 @@ const SkillsSection = () => {
     <Container id="skills" className="py-20">
       <AnimatedSection direction="up" className="flex flex-col items-center gap-4 mb-16">
         <div className="self-center relative">
-          <Typography variant="h2">
+          <Typography variant="h3">
             <SparklesText
               text="Tools I Use to Drive Your Success"
               sparklesCount={2}
