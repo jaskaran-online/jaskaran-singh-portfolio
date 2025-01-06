@@ -1,6 +1,7 @@
 import Script from 'next/script';
 import { Inter, Poppins } from 'next/font/google';
 import { Metadata, Viewport } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import './globals.css';
 import Header from '@/components/layout/header';
@@ -240,6 +241,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </Providers>
           <Toaster richColors position="top-right" />
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
