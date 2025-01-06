@@ -93,7 +93,7 @@ const StatCard = ({ value, label, icon: Icon }: Stat) => {
 const AboutMeSection = () => {
   return (
     <Container id="about" className="my-16 py-16 sm:py-24">
-      <div className="grid gap-8 sm:gap-16 md:grid-cols-2">
+      <div className="grid gap-8 sm:gap-16 lg:grid-cols-2">
         {/* Stats Section */}
         <AnimatedSection direction="left" className="grid grid-cols-2 gap-4 sm:gap-8">
           {STATS.map((stat, index) => (
