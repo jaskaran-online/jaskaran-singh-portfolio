@@ -180,7 +180,7 @@ const ContactSection = () => {
       />
       <div className="mb-12 text-center relative">
         <Typography variant="h2" className="mb-4">
-          <SparklesText text="Get in Touch" className="text-4xl font-bold text-slate-900 dark:text-white" sparklesCount={3} />
+          <SparklesText text="Let's Start Your Project | Free Consultation" className="text-4xl font-bold text-slate-900 dark:text-white" sparklesCount={3} />
         </Typography>
         <Typography variant="subtitle" className="text-slate-600 dark:text-slate-400">
           Have a question or want to work together? Drop me a message!
@@ -192,7 +192,7 @@ const ContactSection = () => {
         <div className="flex flex-col justify-center space-y-8 relative">
           <div className="rounded-2xl bg-[transparent] p-8 pt-0">
             <Typography variant="h3" className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">
-              Contact Information
+            Ready to Talk? Here's How to Reach Me
             </Typography>
             <Typography variant="body2" className="text-slate-600 dark:text-slate-400">
               You can reach me through the following channels.

@@ -345,7 +345,7 @@ const HeroSection = () => {
                 <span className="inline-block animate-waving-hand">👋</span>
               </Typography>
               <Typography className="bg-gradient-to-r from-blue-750 to-indigo-900 backdrop-blur-[4px]">
-                I'm a{" "}
+                I'm a {" "}
                 <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent text-blur-lg text-xl font-bold">
                   {HERO_CONFIG.title}
                 </span>{" "}

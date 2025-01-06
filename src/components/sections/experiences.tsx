@@ -11,7 +11,7 @@ const ExperienceSection = () => {
       <div className="flex flex-col items-center gap-4">
         <div className="self-center">
           <Typography variant="h2" className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            <SparklesText text="Projects" className="text-4xl font-bold text-gray-900 dark:text-white mb-2" sparklesCount={4} />
+            <SparklesText text="Success Stories & Results" className="text-4xl font-bold text-gray-900 dark:text-white mb-2" sparklesCount={4} />
           </Typography>
         </div>
         <Typography variant="subtitle" className="max-w-xl text-center">

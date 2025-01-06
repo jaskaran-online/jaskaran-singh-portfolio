@@ -16,7 +16,7 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="bg-gray-50 py-12 sm:py-20 dark:bg-[#0f192d]">
       <div className="mb-8 sm:mb-16 flex flex-col items-center gap-4 px-4">
         <Typography variant="h2" className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          <SparklesText text="What People Are Saying" sparklesCount={4} />
+          <SparklesText text="Client Success Stories & Impact" sparklesCount={4} />
         </Typography>
         <Typography variant="subtitle" className="max-w-2xl text-center text-sm sm:text-base text-gray-600 dark:text-gray-400">
           Don't just take my word for it. Here's what real people are saying about my work.
