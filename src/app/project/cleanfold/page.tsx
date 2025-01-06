@@ -12,6 +12,9 @@ import { CleanFoldContent } from "./components/CleanFoldContent";
 export const metadata: Metadata = {
   title: "CleanFold - Mobile App for Laundry Management | Jaskaran Singh",
   description: "A mobile app for a cleaning company that allows company employees to see assigned jobs and track their progress. Built with React Native, Expo, Laravel, and more.",
+  alternates: {
+    canonical: 'https://jaskaran.in/project/cleanfold',
+  },
   openGraph: {
     title: "CleanFold - Mobile App for Laundry Management | Jaskaran Singh",
     description: "A mobile app for a cleaning company that allows company employees to see assigned jobs and track their progress. Built with React Native, Expo, Laravel, and more.",

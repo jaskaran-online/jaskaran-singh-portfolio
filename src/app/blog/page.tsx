@@ -4,13 +4,16 @@ import { Pencil } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Blog | Your Name',
+  title: 'Blog | Jaskaran Singh',
   description: 'Read our latest articles and insights',
   openGraph: {
-    title: 'Blog | Your Name',
+    title: 'Blog | Jaskaran Singh',
     description: 'Read our latest articles and insights',
     type: 'website',
-    url: 'https://yourwebsite.com/blog',
+    url: 'https://jaskaran.in/blog',
+  },
+  alternates: {
+    canonical: 'https://jaskaran.in/blog',
   },
 }
 

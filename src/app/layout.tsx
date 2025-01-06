@@ -40,6 +40,9 @@ export const metadata: Metadata = {
   applicationName: "Jaskaran Singh Portfolio",
   authors: [{ name: "Jaskaran Singh", url: "https://jaskaran.in" }],
   generator: "Next.js",
+  alternates: {
+    canonical: url,
+  },
   keywords: [
     "Full Stack Developer in Amritsar",
     "React and Next.js Expert",
@@ -69,7 +72,7 @@ export const metadata: Metadata = {
     "React Native",
     "Laravel",
     "Amritsar, Punjab, India",
-    
+
   ],
   referrer: "origin-when-cross-origin",
   creator: "Jaskaran Singh",

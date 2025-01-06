@@ -17,8 +17,13 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   const post = await blogService.getPostBySlug(params.slug)
   if (!post) return {}
 
-  const url = `https://jaskaran.in/blog/${post.slug}` // TODO: Replace with actual domain
-  return generateBlogPostMetadata({ post, url })
+  const url = `https://jaskaran.in/blog/${post.slug}`
+  return {
+    ...generateBlogPostMetadata({ post, url }),
+    alternates: {
+      canonical: url,
+    },
+  }
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
