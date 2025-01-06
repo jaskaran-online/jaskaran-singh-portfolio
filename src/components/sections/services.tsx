@@ -90,9 +90,11 @@ const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardPr
                         <Icon className="h-6 w-6 text-white" />
                     </motion.div>
                 </div>
-                <Typography variant="h3" className="mb-4 text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
-                    {title}
-                </Typography>
+                <div className="flex flex-col gap-4">
+                    <Typography variant="h3" className="font-semibold text-lg">
+                        {title}
+                    </Typography>
+                </div>
                 <Typography className="mb-6 text-slate-600 dark:text-gray-400 text-sm sm:text-base">
                     {description}
                 </Typography>
@@ -114,10 +116,10 @@ const ServicesSection = () => {
         <Container id="services" className="py-20">
             <AnimatedSection direction="up" className="mb-12 sm:mb-16 text-center">
                 <Typography variant="h2" className="mb-4">
-                    <SparklesText 
-                        text="How I Can Help You Succeed" 
-                        className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white" 
-                        sparklesCount={4} 
+                    <SparklesText
+                        text="How I Can Help You Succeed"
+                        className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white"
+                        sparklesCount={4}
                     />
                 </Typography>
                 <Typography variant="subtitle" className="text-slate-600 dark:text-gray-400">
@@ -127,9 +129,9 @@ const ServicesSection = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 {SERVICES.map((service, index) => (
-                    <AnimatedSection 
-                        key={index} 
-                        direction="up" 
+                    <AnimatedSection
+                        key={index}
+                        direction="up"
                         delay={index * 0.1}
                         className="transition-all duration-300"
                     >
