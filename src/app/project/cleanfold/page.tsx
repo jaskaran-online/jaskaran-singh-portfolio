@@ -10,13 +10,13 @@ import { Metadata } from "next";
 import { CleanFoldContent } from "./components/CleanFoldContent";
 
 export const metadata: Metadata = {
-  title: "CleanFold - Mobile App for Laundry Management | Jaskaran Singh",
+  title: "CleanFold - React Native Mobile App Development Case Study | Jaskaran Singh",
   description: "A mobile app for a cleaning company that allows company employees to see assigned jobs and track their progress. Built with React Native, Expo, Laravel, and more.",
   alternates: {
     canonical: 'https://jaskaran.in/project/cleanfold',
   },
   openGraph: {
-    title: "CleanFold - Mobile App for Laundry Management | Jaskaran Singh",
+    title: "CleanFold - React Native Mobile App Development Case Study | Jaskaran Singh",
     description: "A mobile app for a cleaning company that allows company employees to see assigned jobs and track their progress. Built with React Native, Expo, Laravel, and more.",
     images: [
       {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CleanFold - Mobile App for Laundry Management | Jaskaran Singh",
+    title: "CleanFold - React Native Mobile App Development Case Study | Jaskaran Singh",
     description: "A mobile app for a cleaning company that allows company employees to see assigned jobs and track their progress. Built with React Native, Expo, Laravel, and more.",
     images: {
       url: "/CleanFold/cleanfoldframs.png",
@@ -154,7 +154,7 @@ export default function Cleanfold() {
     <Container>
       <div className="flex flex-col gap-8 pb-[20px]">
         <div className="flex flex-col gap-4">
-          <h1 className="text-center text-6xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-transparent bg-clip-text">CleanFold</h1>
+          <h1 className="text-center text-6xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-transparent bg-clip-text">CleanFold - Laundry Management Mobile App</h1>
           <p className="text-muted-foreground text-center">
             A comprehensive mobile application tailored for a cleaning company, empowering employees to easily access their assigned jobs, track progress in real-time, and manage their daily tasks effectively. This tool enhances operational efficiency and ensures that all job details are readily available at their fingertips.
           </p>
@@ -163,7 +163,7 @@ export default function Cleanfold() {
         <div className="relative h-[400px] w-full">
           <Image
             src={cleanfoldframs}
-            alt="CleanFold App Preview"
+            alt="CleanFold Mobile App Interface Preview"
             fill
             className="object-contain"
             priority
@@ -171,7 +171,7 @@ export default function Cleanfold() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold">Tech Stack</h2>
+          <h2 className="text-2xl font-bold">Modern Technology Stack & Architecture</h2>
           <p className="text-gray-600">
             Our application is built using a modern tech stack that ensures high performance, scalability, and a seamless user experience. Below are the key technologies utilized in the development of the CleanFold app:
           </p>
