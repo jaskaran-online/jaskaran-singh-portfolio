@@ -115,7 +115,7 @@ const ServicesSection = () => {
             <AnimatedSection direction="up" className="mb-12 sm:mb-16 text-center">
                 <Typography variant="h2" className="mb-4">
                     <SparklesText 
-                        text="Services I Offer" 
+                        text="How I Can Help You Succeed" 
                         className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white" 
                         sparklesCount={4} 
                     />

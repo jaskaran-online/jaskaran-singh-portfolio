@@ -15,9 +15,9 @@ const poppins = Poppins({
   variable: '--font-poppins'
 });
 
-const title = "Jaskaran Singh | Full Stack Developer From Amritsar, India.";
+const title = "Jaskaran Singh - Full Stack Developer & Mentor in India";
 const description =
-  "Jaskaran Singh is a software engineer with a passion for building web and mobile applications. He is a full stack developer and has a knack for creating user-friendly and efficient web applications.";
+  "Passionate Full Stack Developer specializing in web and mobile apps. Available for new projects in Amritsar, India.";
 const url = "https://jaskaran.in";
 
 export const viewport: Viewport = {
@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Jaskaran Singh", url: "https://jaskaran.in" }],
   generator: "Next.js",
   keywords: [
+    "Full Stack Developer in Amritsar",
+    "React and Next.js Expert",
+    "Mobile App Developer in India",
     "Frontend Developer",
     "Full Stack Developer",
     "React Developer",
@@ -59,6 +62,14 @@ export const metadata: Metadata = {
     "Laravel Developer",
     "Portfolio",
     "Hire Developer",
+    "Javascript",
+    "Typescript",
+    "React",
+    "Next.js",
+    "React Native",
+    "Laravel",
+    "Amritsar, Punjab, India",
+    
   ],
   referrer: "origin-when-cross-origin",
   creator: "Jaskaran Singh",

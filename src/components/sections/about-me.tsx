@@ -107,7 +107,7 @@ const AboutMeSection = () => {
                 <AnimatedSection direction="right" className="space-y-6">
                     <Typography variant="h2" className="mb-4">
                         <SparklesText 
-                            text="About Me" 
+                            text="How I Help Businesses Grow" 
                             className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white" 
                             sparklesCount={4} 
                         />

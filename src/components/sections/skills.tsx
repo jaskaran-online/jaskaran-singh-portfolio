@@ -16,7 +16,7 @@ const SkillsSection = () => {
         <div className="self-center relative">
           <Typography variant="h2">
             <SparklesText
-              text="Skills & Technologies"
+              text="Tools I Use to Drive Your Success"
               sparklesCount={2}
             />
           </Typography>
