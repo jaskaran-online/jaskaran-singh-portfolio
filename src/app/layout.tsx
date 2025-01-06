@@ -153,6 +153,75 @@ export default function RootLayout({
           </Script>
         </head>
       ) : null}
+      <head>
+        <Script
+          id="schema-person"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://jaskaran.in",
+              name: "Jaskaran Singh",
+              givenName: "Jaskaran",
+              familyName: "Singh",
+              jobTitle: "Full Stack Developer",
+              description: "Passionate Full Stack Developer specializing in web and mobile apps",
+              url: "https://jaskaran.in",
+              sameAs: [
+                "https://github.com/jaskaran-online",
+                "https://linkedin.com/in/jaskaran-5ingh",
+                "https://x.com/jaskaran_5ingh",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Amritsar",
+                addressRegion: "Punjab",
+                addressCountry: "India"
+              },
+              alumniOf: {
+                "@type": "EducationalOrganization",
+                name: "Guru Nanak Dev University"
+              },
+              knowsAbout: [
+                "Full Stack Development",
+                "React",
+                "Next.js",
+                "React Native",
+                "Laravel",
+                "JavaScript",
+                "TypeScript",
+                "Web Development",
+                "Mobile App Development"
+              ]
+            })
+          }}
+        />
+        <Script
+          id="schema-portfolio"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Collection",
+              "@id": "https://jaskaran.in",
+              name: "Jaskaran Singh's Portfolio",
+              description: "A collection of software development projects by Jaskaran Singh",
+              author: { "@id": "https://jaskaran.in" },
+              itemListElement: [
+                {
+                  "@type": "SoftwareSourceCode",
+                  name: "Portfolio Website",
+                  description: "Personal portfolio website built with Next.js and TailwindCSS",
+                  programmingLanguage: ["TypeScript", "JavaScript"],
+                  codeRepository: "https://github.com/jaskaran-online/jaskaran-singh-portfolio",
+                  url: "https://jaskaran.in"
+                }
+              ]
+            })
+          }}
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-inter antialiased",
