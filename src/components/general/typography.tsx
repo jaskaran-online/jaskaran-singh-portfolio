@@ -21,11 +21,8 @@ const typographyVariants = cva('text-foreground transition-colors duration-300',
 });
 
 interface TypographyProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLHeadingElement>,
-    HTMLHeadingElement
-  >,
-  VariantProps<typeof typographyVariants> {
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>,
+    VariantProps<typeof typographyVariants> {
   component?: React.ElementType;
 }
 
@@ -41,14 +38,8 @@ let elementMapping = {
 
 type ComponentElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
 
-const Typography = React.forwardRef<
-  HTMLHeadingElement | HTMLParagraphElement,
-  TypographyProps
->(
-  (
-    { component, className = '', variant, children, ...props }: TypographyProps,
-    ref
-  ) => {
+const Typography = React.forwardRef<HTMLHeadingElement | HTMLParagraphElement, TypographyProps>(
+  ({ component, className = '', variant, children, ...props }: TypographyProps, ref) => {
     const Comp = (
       component ? component : variant ? elementMapping[variant] : 'p'
     ) as ComponentElement;

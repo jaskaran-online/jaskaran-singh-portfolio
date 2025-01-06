@@ -42,16 +42,11 @@ const ExperienceDetails = ({
       </div>
       <div className="max-md:order-2 md:w-1/4">
         <Typography className="text-gray-700 md:text-right">
-          {new Intl.DateTimeFormat('en-US', dateFormatOptions).format(
-            startDate
-          )}{' '}
-          -{' '}
+          {new Intl.DateTimeFormat('en-US', dateFormatOptions).format(startDate)} -{' '}
           {currentlyWorkHere
             ? 'Present'
             : endDate
-            ? new Intl.DateTimeFormat('en-US', dateFormatOptions).format(
-                endDate
-              )
+            ? new Intl.DateTimeFormat('en-US', dateFormatOptions).format(endDate)
             : 'NA'}
         </Typography>
       </div>

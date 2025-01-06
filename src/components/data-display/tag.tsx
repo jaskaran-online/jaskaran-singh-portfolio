@@ -12,7 +12,7 @@ const Tag = React.forwardRef<HTMLDivElement, TagProps>(
     return (
       <div
         className={mergeClasses(
-          'flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 px-5 py-1',
+          'flex items-center justify-center rounded-xl bg-gray-100 px-5 py-1 dark:bg-gray-800',
           className
         )}
         {...props}

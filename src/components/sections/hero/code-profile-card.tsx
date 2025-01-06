@@ -18,45 +18,45 @@ const CodeProfileCard = ({ profile }: CodeProfileCardProps) => {
           <span className="text-blue-500">const</span>
           <span className="text-purple-500">developer</span>
           <span className="text-blue-500">=</span>
-          <span className="text-yellow-500">{"{"}</span>
+          <span className="text-yellow-500">{'{'}</span>
         </div>
         <div className="ml-4">
           <div>
-            <span className="text-purple-500">name:</span>{" "}
+            <span className="text-purple-500">name:</span>{' '}
             <span className="text-green-500">"{profile.name}"</span>,
           </div>
           <div>
-            <span className="text-purple-500">skills:</span>{" "}
+            <span className="text-purple-500">skills:</span>{' '}
             <span className="text-yellow-500">[</span>
             {profile.skills.map((skill, index) => (
               <span key={skill}>
                 <span className="text-green-500">"{skill}"</span>
-                {index < profile.skills.length - 1 && ", "}
+                {index < profile.skills.length - 1 && ', '}
               </span>
             ))}
             <span className="text-yellow-500">]</span>,
           </div>
           <div>
-            <span className="text-purple-500">hardWorker:</span>{" "}
+            <span className="text-purple-500">hardWorker:</span>{' '}
             <span className="text-blue-500">{profile.hardWorker.toString()}</span>,
           </div>
           <div>
-            <span className="text-purple-500">problemSolver:</span>{" "}
+            <span className="text-purple-500">problemSolver:</span>{' '}
             <span className="text-blue-500">{profile.problemSolver.toString()}</span>,
           </div>
           <div>
-            <span className="text-purple-500">traits:</span>{" "}
+            <span className="text-purple-500">traits:</span>{' '}
             <span className="text-yellow-500">[</span>
             {profile.traits.map((trait, index) => (
               <span key={trait}>
                 <span className="text-green-500">"{trait}"</span>
-                {index < profile.traits.length - 1 && ", "}
+                {index < profile.traits.length - 1 && ', '}
               </span>
             ))}
             <span className="text-yellow-500">]</span>
           </div>
         </div>
-        <span className="text-yellow-500">{"}"}</span>
+        <span className="text-yellow-500">{'}'}</span>
       </div>
     </div>
   );

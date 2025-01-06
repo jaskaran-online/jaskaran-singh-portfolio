@@ -1,5 +1,5 @@
-import { MapPin } from "lucide-react";
-import Typography from "@/components/general/typography";
+import { MapPin } from 'lucide-react';
+import Typography from '@/components/general/typography';
 
 type ProfileHeaderProps = {
   name: string;

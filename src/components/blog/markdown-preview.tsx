@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import { MarkdownRenderer } from '../markdown-renderer'
+import { MarkdownRenderer } from '../markdown-renderer';
 
 interface MarkdownPreviewProps {
-  content: string
+  content: string;
 }
 
 export function MarkdownPreview({ content }: MarkdownPreviewProps) {
@@ -11,5 +11,5 @@ export function MarkdownPreview({ content }: MarkdownPreviewProps) {
     <div className="rounded-lg border bg-background p-4">
       <MarkdownRenderer content={content} />
     </div>
-  )
+  );
 }

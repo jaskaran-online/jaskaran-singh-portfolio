@@ -1,4 +1,4 @@
-import { PostEditor } from '../[id]/post-editor'
+import { PostEditor } from '../[id]/post-editor';
 
 export default function NewPostPage() {
   return (
@@ -6,5 +6,5 @@ export default function NewPostPage() {
       <h1 className="text-2xl font-bold">New Post</h1>
       <PostEditor />
     </div>
-  )
+  );
 }

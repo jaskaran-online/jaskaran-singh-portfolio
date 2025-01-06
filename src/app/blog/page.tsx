@@ -1,21 +1,23 @@
-import { Metadata } from 'next'
-import { BlogList } from './blog-list'
-import { Pencil } from 'lucide-react'
-import Link from 'next/link'
+import { Metadata } from 'next';
+import { BlogList } from './blog-list';
+import { Pencil } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Web Development & Tech Insights Blog | Jaskaran Singh',
-  description: 'Expert insights on full-stack development, React, Next.js, and mobile app development from a professional developer in India.',
+  description:
+    'Expert insights on full-stack development, React, Next.js, and mobile app development from a professional developer in India.',
   openGraph: {
     title: 'Web Development & Tech Insights Blog | Jaskaran Singh',
-    description: 'Expert insights on full-stack development, React, Next.js, and mobile app development from a professional developer in India.',
+    description:
+      'Expert insights on full-stack development, React, Next.js, and mobile app development from a professional developer in India.',
     type: 'website',
     url: 'https://jaskaran.in/blog',
   },
   alternates: {
     canonical: 'https://jaskaran.in/blog',
   },
-}
+};
 
 export default function BlogPage() {
   return (
@@ -25,5 +27,5 @@ export default function BlogPage() {
         <BlogList />
       </div>
     </main>
-  )
+  );
 }

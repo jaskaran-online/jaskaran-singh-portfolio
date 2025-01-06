@@ -1,15 +1,15 @@
-import { Copyright } from "lucide-react";
-import Image from "next/image";
+import { Copyright } from 'lucide-react';
+import Image from 'next/image';
 
-import Typography from "@/components/general/typography";
-import Link from "@/components/navigation/link";
-import { EXTERNAL_LINKS, NAV_LINKS } from "@/lib/data";
-import SocialIcons from "@/components/data-display/social-icons";
-import { cn } from "@/lib/utils";
+import Typography from '@/components/general/typography';
+import Link from '@/components/navigation/link';
+import { EXTERNAL_LINKS, NAV_LINKS } from '@/lib/data';
+import SocialIcons from '@/components/data-display/social-icons';
+import { cn } from '@/lib/utils';
 
 const Footer = () => {
   return (
-    <footer className="relative w-full border-t border-gray-200/30 dark:border-gray-800/30 dark:bg-[#0f192d]/80 backdrop-blur-xl py-8">
+    <footer className="relative w-full border-t border-gray-200/30 py-8 backdrop-blur-xl dark:border-gray-800/30 dark:bg-[#0f192d]/80">
       {/* Grid Pattern */}
       {/* <div className="absolute inset-0 grid grid-cols-[1fr,auto,1fr] grid-rows-[1fr,auto,1fr] [&>div]:border-gray-200/30 dark:[&>div]:border-gray-800/30">
         <div className="border-b"></div>
@@ -33,8 +33,8 @@ const Footer = () => {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative px-4 py-2 text-sm font-medium transition-colors",
-                  "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
+                  'relative px-4 py-2 text-sm font-medium transition-colors',
+                  'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50'
                 )}
               >
                 {link.label}
@@ -52,10 +52,13 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="flex flex-col items-center gap-2 text-center">
-            <Typography className="flex flex-wrap items-center justify-center gap-1" variant="body3">
+            <Typography
+              className="flex flex-wrap items-center justify-center gap-1"
+              variant="body3"
+            >
               <Copyright className="h-4 w-4 text-gray-600 dark:text-gray-400" />
               <span className="text-gray-600 dark:text-gray-400">{new Date().getFullYear()}</span>
-              <span className="hidden sm:inline text-gray-600 dark:text-gray-400">|</span>
+              <span className="hidden text-gray-600 dark:text-gray-400 sm:inline">|</span>
               <span className="flex flex-wrap items-center justify-center gap-1">
                 <span className="text-gray-600 dark:text-gray-400">Designed and</span>
                 <Link

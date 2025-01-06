@@ -1,15 +1,15 @@
-'use client'
+'use client';
 
-import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import Image from 'next/image'
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Image from 'next/image';
 
 interface MarkdownRendererProps {
-  content: string
-  className?: string
+  content: string;
+  className?: string;
 }
 
 export function MarkdownRenderer({ content, className = '' }: MarkdownRendererProps) {
@@ -19,24 +19,19 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
       remarkPlugins={[remarkGfm]}
       components={{
         code({ node, inline, className, children, ...props }) {
-          const match = /language-(\w+)/.exec(className || '')
+          const match = /language-(\w+)/.exec(className || '');
           return !inline && match ? (
-            <SyntaxHighlighter
-              {...props}
-              style={vscDarkPlus}
-              language={match[1]}
-              PreTag="div"
-            >
+            <SyntaxHighlighter {...props} style={vscDarkPlus} language={match[1]} PreTag="div">
               {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>
           ) : (
             <code {...props} className={className}>
               {children}
             </code>
-          )
+          );
         },
         img({ src, alt }) {
-          if (!src) return null
+          if (!src) return null;
           return (
             <div className="relative my-8 aspect-video w-full overflow-hidden rounded-lg">
               <Image
@@ -47,7 +42,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-          )
+          );
         },
         // Add custom styling for other markdown elements
         h1: ({ children }) => <h1 className="mb-6 text-4xl font-bold">{children}</h1>,
@@ -71,5 +66,5 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
     >
       {content}
     </ReactMarkdown>
-  )
+  );
 }

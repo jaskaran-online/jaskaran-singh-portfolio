@@ -1,27 +1,27 @@
-import { useCallback, useState } from 'react'
-import { Input } from '@/components/ui/input'
-import { Search } from 'lucide-react'
-import { useDebouncedCallback } from 'use-debounce'
+import { useCallback, useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Search } from 'lucide-react';
+import { useDebouncedCallback } from 'use-debounce';
 
 type BlogSearchProps = {
-  onSearch: (query: string) => void
-}
+  onSearch: (query: string) => void;
+};
 
 export const BlogSearch = ({ onSearch }: BlogSearchProps) => {
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState('');
 
   const debouncedSearch = useDebouncedCallback((value: string) => {
-    onSearch(value)
-  }, 500)
+    onSearch(value);
+  }, 500);
 
   const handleSearch = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value
-      setSearchQuery(value)
-      debouncedSearch(value)
+      const value = e.target.value;
+      setSearchQuery(value);
+      debouncedSearch(value);
     },
     [debouncedSearch]
-  )
+  );
 
   return (
     <div className="relative">
@@ -35,5 +35,5 @@ export const BlogSearch = ({ onSearch }: BlogSearchProps) => {
         aria-label="Search articles"
       />
     </div>
-  )
-}
+  );
+};

@@ -28,24 +28,12 @@ export interface IconButtonProps
 
 const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   (
-    {
-      className,
-      size,
-      asChild = false,
-      showTooltip = false,
-      tooltipText = '',
-      children,
-      ...props
-    },
+    { className, size, asChild = false, showTooltip = false, tooltipText = '', children, ...props },
     ref
   ) => {
     return (
       <button
-        className={mergeClasses(
-          'relative',
-          iconButtonVariants({ size }),
-          className
-        )}
+        className={mergeClasses('relative', iconButtonVariants({ size }), className)}
         ref={ref}
         {...props}
       >
