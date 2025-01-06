@@ -6,6 +6,9 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "MyCreditBook - Credit Management App | Jaskaran Singh",
   description: "A mobile app for credit book management that allows users to track their credit history and manage their debts. Built with React Native, TypeScript, Laravel, and more.",
+  alternates: {
+    canonical: 'https://jaskaran.in/project/mycreditbook',
+  },
   openGraph: {
     title: "MyCreditBook - Credit Management App | Jaskaran Singh",
     description: "A mobile app for credit book management that allows users to track their credit history and manage their debts. Built with React Native, TypeScript, Laravel, and more.",
