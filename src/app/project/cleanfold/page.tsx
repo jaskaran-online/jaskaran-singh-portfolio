@@ -172,7 +172,7 @@ export default function Cleanfold() {
 
         <div className="flex flex-col gap-4">
           <h2 className="text-2xl font-bold">Modern Technology Stack & Architecture</h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-100">
             Our application is built using a modern tech stack that ensures high performance, scalability, and a seamless user experience. Below are the key technologies utilized in the development of the CleanFold app:
           </p>
           <div className="flex flex-wrap gap-6 mt-4 mb-12">
@@ -184,13 +184,13 @@ export default function Cleanfold() {
                 height={24}
               />
               <span className="font-semibold">React Native</span>
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-500 text-sm dark:text-gray-100">
                 A powerful framework for building native mobile applications using React. It allows for a smooth user interface and performance comparable to native apps.
               </p>
             </div>
             <div className="flex items-center gap-12">
-              <Image src={LogoExpo} alt="Expo Logo" width={140} height={24} />
-              <p className="text-gray-500 text-sm">
+              <Image src={LogoExpo} alt="Expo Logo" width={140} height={24} className="dark:invert" />
+              <p className="text-gray-500 text-sm dark:text-gray-100">
                 A framework and platform for universal React applications. Expo simplifies the development process by providing a set of tools and services for building, deploying, and iterating on mobile apps.
               </p>
             </div>
@@ -202,7 +202,7 @@ export default function Cleanfold() {
                 height={24}
               />
               <span className="font-semibold">Laravel</span>
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-500 text-sm dark:text-gray-100">
                 A robust PHP framework that provides an elegant syntax and powerful tools for building web applications. Laravel is used for the backend services of the CleanFold app, ensuring secure and efficient data handling.
               </p>
             </div>

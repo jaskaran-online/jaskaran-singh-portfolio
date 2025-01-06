@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, Phone, MapPin, Copy, ExternalLink, Type } from "lucide-react";
+import Image from "next/image";
 
 import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
@@ -142,16 +143,24 @@ const ContactSection = () => {
     <Container id="contact" className="relative overflow-hidden py-20">
       <FloatingIcons />
       {/* Dark theme background */}
-      <img
+      <Image
         src="https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"
         alt=""
         className="hidden dark:block absolute inset-0 w-full h-full object-cover opacity-80"
+        width={1920}
+        height={1080}
+        priority={false}
+        loading="lazy"
       />
       {/* Light theme background */}
-      <img
+      <Image
         src="https://tailwindui.com/plus/img/beams-home@95.jpg"
         alt=""
         className="block dark:hidden absolute inset-0 w-full h-full object-cover opacity-60"
+        width={1920}
+        height={1080}
+        priority={false}
+        loading="lazy"
       />
       <Squares
         speed={0.5}

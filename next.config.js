@@ -5,6 +5,7 @@ const nextConfig = {
         formats: ['image/avif', 'image/webp'],
         deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+        domains: ['tailwindcss.com', 'tailwindui.com', 'avatars.githubusercontent.com'],
         remotePatterns: [
             {
                 protocol: 'https',
@@ -15,7 +16,6 @@ const nextConfig = {
                 hostname: '**',
             }
         ],
-        domains: ['avatars.githubusercontent.com'],
     },
     compiler: {
         removeConsole: process.env.NODE_ENV === 'production',
@@ -29,7 +29,39 @@ const nextConfig = {
     },
     eslint: {
         ignoreDuringBuilds: true,
-    }
+    },
+    webpack: (config) => {
+
+        // Image optimization for other formats
+        config.module.rules.push({
+            test: /\.(png|jpe?g|gif|webp|avif)$/i,
+            use: [
+                {
+                    loader: 'image-webpack-loader',
+                    options: {
+                        mozjpeg: {
+                            progressive: true,
+                            quality: 65,
+                        },
+                        optipng: {
+                            enabled: true,
+                        },
+                        pngquant: {
+                            quality: [0.65, 0.90],
+                            speed: 4,
+                        },
+                        gifsicle: {
+                            interlaced: false,
+                        },
+                        webp: {
+                            quality: 75,
+                        },
+                    },
+                },
+            ],
+        });
+        return config;
+    },
 };
 
 module.exports = nextConfig;

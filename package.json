@@ -54,7 +54,6 @@
     "react-syntax-highlighter": "^15.6.1",
     "remark-gfm": "^4.0.0",
     "resend": "^4.0.1",
-    "sharp": "^0.32.6",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "3.3.2",
@@ -66,8 +65,11 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "image-webpack-loader": "^8.1.0",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.3.0"
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "sharp": "^0.32.6"
   },
   "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }
