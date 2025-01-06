@@ -50,7 +50,7 @@ const content = [
 
 export function CleanFoldContent() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-[#0f192d]">
 
 
       {/* App Screenshots Grid */}
@@ -85,8 +85,8 @@ export function CleanFoldContent() {
                 </motion.div>
               </div>
               <div className="text-center max-w-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 dark:text-white">{item.title}</h3>
+                <p className="text-gray-600 text-sm dark:text-white/80">{item.description}</p>
               </div>
             </motion.div>
           ))}
