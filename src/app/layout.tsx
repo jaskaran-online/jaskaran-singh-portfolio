@@ -8,6 +8,7 @@ import Header from '@/components/layout/header';
 import { Providers } from '@/lib/providers';
 import Footer from '@/components/layout/footer';
 import Image from 'next/image';
+import ScrollToTop from '@/components/scroll-to-top';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const poppins = Poppins({
@@ -130,7 +131,6 @@ export const metadata: Metadata = {
 const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  console.log(`${Header.length}`);
   return (
     <html lang="en" suppressHydrationWarning>
       {googleAnalyticsId ? (
@@ -221,28 +221,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body
         className={cn(
-          'min-h-screen bg-background font-inter antialiased',
-          'transition-colors duration-300',
+          'min-h-screen bg-background font-sans antialiased',
           inter.variable,
           poppins.variable
         )}
-        suppressHydrationWarning
       >
-        <Toaster richColors position="top-right" />
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Providers>
-            <div className="relative min-h-screen bg-background">
+            <div className="relative flex min-h-screen flex-col">
               <Header />
-              <AnalyticsWrapper />
-              <main className="relative flex min-h-screen w-full flex-col bg-background dark:bg-[#0f192d]">
-                {children}
-              </main>
+              {/* <AnimatedGridPattern /> */}
+              <ScrollProgress />
+              <div className="flex-1">{children}</div>
               <Footer />
+              <ScrollToTop />
             </div>
           </Providers>
-          <Toaster richColors position="top-right" />
+          <Toaster />
+          <AnalyticsWrapper />
+          <SpeedInsights />
         </ThemeProvider>
-        <SpeedInsights />
       </body>
     </html>
   );
