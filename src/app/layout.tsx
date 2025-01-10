@@ -10,6 +10,7 @@ import Footer from '@/components/layout/footer';
 import Image from 'next/image';
 import ScrollToTop from '@/components/scroll-to-top';
 
+
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
