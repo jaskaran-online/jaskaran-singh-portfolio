@@ -88,8 +88,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 }
 
 export async function generateStaticParams() {
-  const { posts } = await blogService.getPosts({ page: 1 });
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  try {
+    const { posts } = await blogService.getPosts({ page: 1 });
+    return posts.map((post) => ({
+      slug: post.slug,
+    }));
+  } catch (error) {
+    console.warn('Warning: Could not fetch posts for static params:', error);
+    return [];
+  }
 }
