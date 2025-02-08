@@ -382,13 +382,13 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         {/* Dark theme background */}
         <img
-          src="https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"
+          src="https://v3.tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"
           alt=""
           className="absolute inset-0 hidden h-full w-full object-cover opacity-80 dark:block"
         />
         {/* Light theme background */}
         <img
-          src="https://tailwindui.com/plus/img/beams-home@95.jpg"
+          src="https://v3.tailwindcss.com/_next/static/media/hero@75.b2469a49.jpg"
           alt=""
           className="absolute inset-0 block h-full w-full object-cover opacity-60 dark:hidden"
         />
