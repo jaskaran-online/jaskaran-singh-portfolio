@@ -1,33 +1,32 @@
 import { Github, Twitter, Figma } from 'lucide-react';
 
 // Icons
-import LogoJavascript from '/public/images/logos/icon-javascript.svg';
-import LogoTypescript from '/public/images/logos/icon-typescript.svg';
-import LogoReact from '/public/images/logos/icon-react.svg';
-import LogoNextjs from '/public/images/logos/icon-nextjs.svg';
-import LogoNodejs from '/public/images/logos/icon-nodejs.svg';
-import LogoMongoDB from '/public/images/logos/icon-mongodb.svg';
-import LogoTailwindcss from '/public/images/logos/icon-tailwindcss.svg';
-import LogoFigma from '/public/images/logos/icon-figma.svg';
-import LogoGit from '/public/images/logos/icon-git.svg';
+import LogoJavascript from '../../public/images/logos/icon-javascript.svg';
+import LogoTypescript from '../../public/images/logos/icon-typescript.svg';
+import LogoReact from '../../public/images/logos/icon-react.svg';
+import LogoNextjs from '../../public/images/logos/icon-nextjs.svg';
+import LogoNodejs from '../../public/images/logos/icon-nodejs.svg';
+import LogoTailwindcss from '../../public/images/logos/icon-tailwindcss.svg';
+import LogoFigma from '../../public/images/logos/icon-figma.svg';
+import LogoGit from '../../public/images/logos/icon-git.svg';
 
 // Logos
-import LogoLaravel from '/public/images/logos/laravel-svgrepo-com.svg';
-import LogoPhp from '/public/images/logos/php-svgrepo-com.svg';
-import LogoMySQL from '/public/images/logos/mysql-logo-svgrepo-com.svg';
-import LogoAWS from '/public/images/logos/aws-svgrepo-com.svg';
-import ReactNativeLogo from '/public/images/logos/reactjs-svgrepo-com.svg';
-import LogoCoreSolutions from '/public/images/core-solution-amritsar-website-development.png';
+import LogoLaravel from '../../public/images/logos/laravel-svgrepo-com.svg';
+import LogoPhp from '../../public/images/logos/php-svgrepo-com.svg';
+import LogoMySQL from '../../public/images/logos/mysql-logo-svgrepo-com.svg';
+import LogoAWS from '../../public/images/logos/aws-svgrepo-com.svg';
+import ReactNativeLogo from '../../public/images/logos/reactjs-svgrepo-com.svg';
+import LogoCoreSolutions from '../../public/images/core-solution-amritsar-website-development.png';
 
 // [INFO] Projects
-import PerfectAir from '/public/perfectair.jpeg';
-import GameHub from '/public/gamehub.jpeg';
-import iVALTLogo from '/public/images/logo-ivalt.png';
-import cleanfoldframs from '/public/CleanFold/cleanfoldframs.png';
-import MyCreditBook from '/public/myCreditBook/frame.png';
-import AvatarDummy from '/public/images/avatar-dummy.svg';
-import BikramjitAvatar from '/public/images/bikramjeetsingh.jpeg';
-import SandeepAvatar from '/public/images/sandeep.png';
+import PerfectAir from '../../public/perfectair.jpeg';
+import GameHub from '../../public/gamehub.jpeg';
+import iVALTLogo from '../../public/images/logo-ivalt.png';
+import cleanfoldframs from '../../public/CleanFold/cleanfoldframs.png';
+import MyCreditBook from '../../public/myCreditBook/frame.png';
+import AvatarDummy from '../../public/images/avatar-dummy.svg';
+import BikramjitAvatar from '../../public/images/bikramjeetsingh.jpeg';
+import SandeepAvatar from '../../public/images/sandeep.png';
 import { ExperienceDetails, ProjectDetails, TechDetails, TestimonialDetails } from '@/lib/types';
 
 export const EXTERNAL_LINKS = {
@@ -170,6 +169,7 @@ export const EXPERIENCES: ExperienceDetails[] = [
       'Brainstormed new ideas & gathered requirements for internal projects.',
       'Designed architecture of different projects (frontend + backend).',
       'Handled sprint planning & task distribution.',
+      'Worked with a variety of technologies, including React, Next.js, Typescript, Tailwindcss, Mui, PHP and others.',
     ],
   },
   {
@@ -179,7 +179,12 @@ export const EXPERIENCES: ExperienceDetails[] = [
     position: 'Full Stack Developer',
     startDate: new Date(2020, 0),
     endDate: new Date(2022, 5),
-    summary: ['Worked as a full stack developer (React / Laravel).'],
+    summary: [
+      'Worked as a full stack developer (React / Laravel).',
+      'Developed responsive and user-friendly interfaces using React.js and Tailwindcss.',
+      'Designed and implemented database schemas using Laravel and MySQL.',
+      'Collaborated with cross-functional teams to deliver high-quality software solutions.',
+    ],
   },
 ];
 

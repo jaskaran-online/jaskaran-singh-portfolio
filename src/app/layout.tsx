@@ -132,24 +132,33 @@ const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID;
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {googleAnalyticsId ? (
-        <head>
-          <Script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-          ></Script>
-          <Script id="google-anayltics-script">
-            {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', '${googleAnalyticsId}');
-          `}
-          </Script>
-        </head>
-      ) : null}
-      <head>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          inter.variable,
+          poppins.variable
+        )}
+      >
+        {/* Google Analytics */}
+        {googleAnalyticsId && (
+          <>
+            <Script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+            />
+            <Script id="google-anayltics-script">
+              {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', '${googleAnalyticsId}');
+            `}
+            </Script>
+          </>
+        )}
+
+        {/* Schema.org structured data */}
         <Script
           id="schema-person"
           type="application/ld+json"
@@ -217,14 +226,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-      </head>
-      <body
-        className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          inter.variable,
-          poppins.variable
-        )}
-      >
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

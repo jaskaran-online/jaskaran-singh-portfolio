@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import Image from 'next/image';
 import { blogService } from '@/lib/supabase/blog-service';
 import { generateBlogPostMetadata } from '@/components/blog/blog-seo';
-import { Analytics } from '@/lib/analytics';
+
 import { Comments } from './comments';
 import { MarkdownRenderer } from '@/components/markdown-renderer';
 
@@ -37,7 +37,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <Analytics />
       <article className="prose prose-lg mx-auto max-w-4xl px-4 py-8">
         {post.featured_image && (
           <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-lg">
@@ -71,7 +70,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {post.tags?.length > 0 && (
           <div className="mt-8 flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
+            {post.tags.map((tag: string) => (
               <span key={tag} className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
                 #{tag}
               </span>
