@@ -7,6 +7,8 @@ import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
 import AnimatedGridPattern from '../ui/animated-grid-pattern';
 import { BorderBeam } from '../ui/border-beam';
+import BG_DARK from '../../../public/images/hero/dark-bg.jpg';
+import BG_LIGHT from '../../../public/images/hero/light-bg.jpg';
 
 // Configuration object for easy content updates
 const HERO_CONFIG = {
@@ -328,7 +330,7 @@ const HeroSection = () => {
       className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[80vh] "
     >
       <div className="z-10">
-        <div className="flex flex-col flex-col-reverse gap-10 px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32">
+        <div className="flex flex-col gap-10 px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32">
           {/* Code Editor */}
           <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
             <CodeEditor />
@@ -381,14 +383,16 @@ const HeroSection = () => {
       {/* Background Images */}
       <div className="absolute inset-0 z-0">
         {/* Dark theme background */}
-        <img
-          src="https://v3.tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"
+        <Image
+          priority
+          src={BG_DARK}
           alt=""
           className="absolute inset-0 hidden h-full w-full object-cover opacity-80 dark:block"
         />
         {/* Light theme background */}
-        <img
-          src="https://v3.tailwindcss.com/_next/static/media/hero@75.b2469a49.jpg"
+        <Image
+          priority
+          src={BG_LIGHT}
           alt=""
           className="absolute inset-0 block h-full w-full object-cover opacity-60 dark:hidden"
         />

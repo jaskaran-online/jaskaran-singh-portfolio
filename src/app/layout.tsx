@@ -31,11 +31,9 @@ export const viewport: Viewport = {
 };
 
 import { cn } from '@/lib/utils';
-import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
 import ScrollProgress from '@/components/ui/scroll-progress';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from 'sonner';
-import { AnalyticsWrapper } from '@/components/Analytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -236,7 +234,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Providers>
             <div className="relative flex min-h-screen flex-col">
               <Header />
-              {/* <AnimatedGridPattern /> */}
               <ScrollProgress />
               <div className="flex-1">{children}</div>
               <Footer />
@@ -244,7 +241,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </Providers>
           <Toaster />
-          <AnalyticsWrapper />
           <SpeedInsights />
         </ThemeProvider>
       </body>

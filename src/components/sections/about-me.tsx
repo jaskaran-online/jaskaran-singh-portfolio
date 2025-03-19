@@ -97,7 +97,7 @@ const AboutMeSection = () => {
         {/* Stats Section */}
         <AnimatedSection direction="left" className="grid grid-cols-2 gap-4 sm:gap-8">
           {STATS.map((stat, index) => (
-            <AnimatedSection key={index} delay={index * 0.1} className="w-full">
+            <AnimatedSection key={index} delay={index * 0.1} className="w-full z-10">
               <StatCard {...stat} />
             </AnimatedSection>
           ))}

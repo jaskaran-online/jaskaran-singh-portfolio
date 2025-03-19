@@ -1,5 +1,6 @@
 import { Github, Twitter, Figma } from 'lucide-react';
 
+// Icons
 import LogoJavascript from '/public/images/logos/icon-javascript.svg';
 import LogoTypescript from '/public/images/logos/icon-typescript.svg';
 import LogoReact from '/public/images/logos/icon-react.svg';
@@ -10,14 +11,15 @@ import LogoTailwindcss from '/public/images/logos/icon-tailwindcss.svg';
 import LogoFigma from '/public/images/logos/icon-figma.svg';
 import LogoGit from '/public/images/logos/icon-git.svg';
 
+// Logos
 import LogoLaravel from '/public/images/logos/laravel-svgrepo-com.svg';
 import LogoPhp from '/public/images/logos/php-svgrepo-com.svg';
 import LogoMySQL from '/public/images/logos/mysql-logo-svgrepo-com.svg';
 import LogoAWS from '/public/images/logos/aws-svgrepo-com.svg';
 import ReactNativeLogo from '/public/images/logos/reactjs-svgrepo-com.svg';
-import LogoExpo from '/public/images/logos/expo-svgrepo-com.svg';
 import LogoCoreSolutions from '/public/images/core-solution-amritsar-website-development.png';
 
+// [INFO] Projects
 import PerfectAir from '/public/perfectair.jpeg';
 import GameHub from '/public/gamehub.jpeg';
 import iVALTLogo from '/public/images/logo-ivalt.png';
@@ -39,17 +41,17 @@ export const EXTERNAL_LINKS = {
 
 export const NAV_LINKS = [
   {
-    label: 'Skills',
-    href: '#skills',
-  },
-  {
     label: 'Services',
     href: '#services',
   },
-
+  
   {
     label: 'Projects',
     href: '#projects',
+  },
+  {
+    label: 'Skills',
+    href: '#skills',
   },
   {
     label: 'Testimonials',
