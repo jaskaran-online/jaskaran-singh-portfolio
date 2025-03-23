@@ -7,8 +7,8 @@ import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
 import AnimatedGridPattern from '../ui/animated-grid-pattern';
 import { BorderBeam } from '../ui/border-beam';
-import BG_DARK from '../../../public/images/hero/dark-bg.jpg';
-import BG_LIGHT from '../../../public/images/hero/light-bg.jpg';
+import BG_DARK from '@/public/images/hero/dark-bg.jpg';
+import BG_LIGHT from '@/public/images/hero/light-bg.jpg';
 
 // Configuration object for easy content updates
 const HERO_CONFIG = {

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, Phone, MapPin, Copy, ExternalLink, Type } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 import Typography from '@/components/general/typography';
@@ -10,8 +10,10 @@ import Container from '@/components/layout/container';
 import SparklesText from '@/components/ui/sparkles-text';
 import PulsatingButton from '../ui/pulsating-button';
 import { BorderBeam } from '../ui/border-beam';
-import Ripple from '../ui/ripple';
 import Squares from '../ui/squares';
+
+import BG_DARK from '@/public/images/hero/dark-bg.jpg';
+import BG_LIGHT from '@/public/images/hero/light-bg.jpg';
 
 const FloatingIcons = () => {
   return (
@@ -160,7 +162,7 @@ const ContactSection = () => {
       <FloatingIcons />
       {/* Dark theme background */}
       <Image
-        src="https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"
+        src={BG_DARK}
         alt=""
         className="absolute inset-0 hidden h-full w-full object-cover opacity-80 dark:block"
         width={1920}
@@ -170,7 +172,7 @@ const ContactSection = () => {
       />
       {/* Light theme background */}
       <Image
-        src="https://tailwindui.com/plus/img/beams-home@95.jpg"
+        src={BG_LIGHT}
         alt=""
         className="absolute inset-0 block h-full w-full object-cover opacity-60 dark:hidden"
         width={1920}
