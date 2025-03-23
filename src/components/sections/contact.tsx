@@ -12,8 +12,8 @@ import PulsatingButton from '../ui/pulsating-button';
 import { BorderBeam } from '../ui/border-beam';
 import Squares from '../ui/squares';
 
-import BG_DARK from '@/public/images/hero/dark-bg.jpg';
-import BG_LIGHT from '@/public/images/hero/light-bg.jpg';
+import BG_DARK from '../../../public/images/hero/dark-bg.jpg';
+import BG_LIGHT from '../../../public/images/hero/light-bg.jpg';
 
 const FloatingIcons = () => {
   return (
