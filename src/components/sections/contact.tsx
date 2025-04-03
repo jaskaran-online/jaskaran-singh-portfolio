@@ -12,15 +12,19 @@ import PulsatingButton from '../ui/pulsating-button';
 import { BorderBeam } from '../ui/border-beam';
 import Squares from '../ui/squares';
 
-import BG_DARK from '../../../public/images/hero/dark-bg.jpg';
-import BG_LIGHT from '../../../public/images/hero/light-bg.jpg';
+import BG_DARK from '@/assets/backgrounds/gradient.webp';
+// import BG_LIGHT from '@/assets/images/hero/light-bg.jpg';
+// import GRADIENT from '@/assets/backgrounds/gradient.webp';
+
+import GRADIENT from '@/assets/backgrounds/innovation_pattern_3.svg';
+// import GRADIENT from '@/assets/backgrounds/gradient-bottom.svg';
 
 const FloatingIcons = () => {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
       {/* Code bracket */}
       <motion.svg
-        className="absolute left-1/4 top-48 h-8 w-8 text-purple-500/40 dark:text-purple-400"
+        className="absolute left-1/3 top-48 h-8 w-8 text-purple-500/40 dark:text-purple-400"
         animate={{
           y: [0, -10, 0],
           rotate: [0, 5, 0],
@@ -45,7 +49,7 @@ const FloatingIcons = () => {
 
       {/* Terminal */}
       <motion.svg
-        className="absolute right-1/4 top-48 h-12 w-12 text-purple-500/80 dark:text-blue-400"
+        className="absolute right-1/4 top-48 h-12 w-12 text-purple-500/80 dark:text-blue-400 opacity-60"
         animate={{
           y: [0, 10, 0],
           x: [0, -5, 0],
@@ -164,7 +168,7 @@ const ContactSection = () => {
       <Image
         src={BG_DARK}
         alt=""
-        className="absolute inset-0 hidden h-full w-full object-cover opacity-80 dark:block"
+        className="absolute inset-0 hidden h-full w-full object-contain opacity-60 dark:block"
         width={1920}
         height={1080}
         priority={false}
@@ -172,15 +176,15 @@ const ContactSection = () => {
       />
       {/* Light theme background */}
       <Image
-        src={BG_LIGHT}
+        src={GRADIENT}
         alt=""
-        className="absolute inset-0 block h-full w-full object-cover opacity-60 dark:hidden"
+        className="absolute inset-0 block h-full w-full object-center opacity-70 dark:hidden"
         width={1920}
         height={1080}
         priority={false}
         loading="lazy"
       />
-      <Squares
+      {/* <Squares
         speed={0.5}
         direction="diagonal" // up, down, left, right, diagonal
         lightMode={{
@@ -204,7 +208,7 @@ const ContactSection = () => {
         borderWidth={0.4}
         squareSize={50}
         blur={4}
-      />
+      /> */}
       <div className="relative mb-12 text-center">
         <Typography variant="h2" className="mb-4">
           <SparklesText
@@ -226,7 +230,7 @@ const ContactSection = () => {
               variant="h3"
               className="mb-3 text-xl font-semibold text-slate-900 dark:text-white"
             >
-              Ready to Talk? Here's How to Reach Me
+              Ready to Talk?
             </Typography>
             <Typography variant="body2" className="text-slate-600 dark:text-slate-400">
               You can reach me through the following channels.

@@ -7,8 +7,8 @@ import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
 import AnimatedGridPattern from '../ui/animated-grid-pattern';
 import { BorderBeam } from '../ui/border-beam';
-import BG_DARK from '../../../public/images/hero/dark-bg.jpg';
-import BG_LIGHT from '../../../public/images/hero/light-bg.jpg';
+import BG_DARK from '@/assets/images/hero/dark-bg.jpg';
+import BG_LIGHT from '@/assets/images/hero/light-bg.jpg';
 
 // Configuration object for easy content updates
 const HERO_CONFIG = {
@@ -327,7 +327,7 @@ const HeroSection = () => {
   return (
     <Container
       id="hero"
-      className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[80vh] "
+      className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[90vh] "
     >
       <div className="z-10">
         <div className="flex flex-col gap-10 px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32">
@@ -401,13 +401,13 @@ const HeroSection = () => {
       {/* Animated Grid Pattern Overlay */}
       <AnimatedGridPattern
         numSquares={70}
-        maxOpacity={0.3}
+        maxOpacity={0.2}
         duration={0.8}
-        repeatDelay={0.5}
+        repeatDelay={0.8}
         className={cn(
           '[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]',
           'absolute inset-0 z-[1]',
-          'inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 text-[#1E90FF] dark:text-[#1E90FF]'
+          'inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 text-[#1e8fffaa] dark:text-[#1e8fff4a]'
         )}
       />
     </Container>
