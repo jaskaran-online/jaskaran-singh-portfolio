@@ -202,7 +202,7 @@ const CodeBlock = () => {
 };
 
 const TwitterCard = () => (
-  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white shadow-xs backdrop-blur-[14px] dark:border-[#462d6dab] dark:bg-[#0f192d]/90 lg:right-[-5%] lg:top-[85%]">
+  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white shadow-xs backdrop-blur-[14px] dark:border-[#462d6dab] dark:bg-[#0f192d]/90 lg:right-[-5%] lg:top-[85%] z-50">
     <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform">
       <header className="flex gap-4">
         <figure className="overflow-hidden rounded-full border-2 border-gray-400/50 dark:border-gray-600/50">
@@ -327,10 +327,10 @@ const HeroSection = () => {
   return (
     <Container
       id="hero"
-      className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[90vh] "
+      className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[90vh] pb-26"
     >
       <div className="z-10">
-        <div className="flex flex-col gap-10 px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32">
+        <div className="flex flex-col-reverse px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32 gap-12">
           {/* Code Editor */}
           <div className="flex items-center justify-center md:order-last md:grow md:justify-end">
             <CodeEditor />

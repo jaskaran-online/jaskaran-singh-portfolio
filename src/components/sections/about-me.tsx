@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, CheckCircle2, Clock, Rocket, Users, GraduationCap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock, Rocket, Users, GraduationCap, Check } from 'lucide-react';
 import Link from 'next/link';
 import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
@@ -124,7 +124,9 @@ const AboutMeSection = () => {
             {SKILLS.map((skill, index) => (
               <AnimatedSection key={index} delay={index * 0.1} direction="right">
                 <div className="flex gap-3">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-blue-500 sm:h-6 sm:w-6" />
+                  <div className="flex h-8 w-8 items-center justify-center bg-blue-500/20 rounded-full p-2">
+                    <Check className="h-4 w-4 shrink-0 text-blue-500 sm:h-6 sm:w-6" />
+                  </div>
                   <div>
                     <Typography className="text-sm font-semibold text-slate-900 dark:text-white sm:text-base">
                       {skill.title}

@@ -17,7 +17,7 @@ const TestimonialsSection = () => {
       <div className="mb-8 flex flex-col items-center gap-4 px-4 sm:mb-16">
         <Typography
           variant="h2"
-          className="mb-2 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl"
+          className="mb-2 text-xl md:text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl"
         >
           <SparklesText text="Client Success Stories & Impact" sparklesCount={4} />
         </Typography>

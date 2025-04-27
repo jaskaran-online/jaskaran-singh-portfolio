@@ -22,7 +22,7 @@ const SkillsSection = () => {
       </AnimatedSection>
 
       <motion.div
-        className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-6 md:gap-10 lg:grid-cols-8"
+        className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-6 md:gap-10 lg:grid-cols-8 p-6"
         variants={{
           hidden: { opacity: 0 },
           show: {
@@ -64,7 +64,7 @@ const SkillsSection = () => {
                 damping: 10,
               },
             }}
-            className="group relative flex flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white/5 p-6 backdrop-blur-xs transition-all duration-300 hover:border-gray-500/50 dark:border-gray-800 dark:hover:border-gray-500/50"
+            className="group relative flex flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white/5 p-6 backdrop-blur-xs transition-all duration-300 hover:border-gray-500/50 dark:border-gray-800 dark:hover:border-gray-500/50 border-dashed"
           >
             <div className="relative">
               <div className="absolute inset-0 transform rounded-full bg-linear-to-r from-gray-500/20 to-gray-500/20 opacity-0 transition-all duration-300 group-hover:scale-150 group-hover:opacity-100 group-hover:blur-xl" />
