@@ -9,7 +9,7 @@ import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
 import SparklesText from '@/components/ui/sparkles-text';
 import PulsatingButton from '../ui/pulsating-button';
-import { BorderBeam } from '../ui/border-beam';
+import { BorderBeam } from '@/components/magicui/border-beam';
 import Squares from '../ui/squares';
 
 import BG_DARK from '@/assets/backgrounds/gradient.webp';
@@ -333,13 +333,13 @@ const ContactSection = () => {
 
         <div>
           <motion.form
+
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="space-y-6 rounded-sm border border-slate-200 bg-white px-8 pb-8 pt-3 shadow-lg backdrop-blur-xs dark:border-slate-800 dark:bg-[#334155]/30 "
             onSubmit={handleSubmit}
           >
-            <BorderBeam />
             <div>
               <label
                 htmlFor="name"
@@ -407,6 +407,7 @@ const ContactSection = () => {
                 </>
               )}
             </PulsatingButton>
+            <BorderBeam  />
           </motion.form>
         </div>
       </div>

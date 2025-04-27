@@ -6,7 +6,7 @@ import SocialIcons from '@/components/data-display/social-icons';
 import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
 import AnimatedGridPattern from '../ui/animated-grid-pattern';
-import { BorderBeam } from '../ui/border-beam';
+import { BorderBeam } from '@/components/magicui/border-beam';
 import BG_DARK from '@/assets/images/hero/dark-bg.jpg';
 import BG_LIGHT from '@/assets/images/hero/light-bg.jpg';
 
@@ -164,40 +164,43 @@ const CodeBlock = () => {
   const { name, skills, hardWorker, problemSolver } = HERO_CONFIG.codeProfile;
 
   return (
-    <code className="code-one-dark">
-      <BorderBeam />
-      <div>
-        <span className="mr-2 text-[#e06c75]">{'const'}</span>
-        <span className="mr-2 dark:text-white">{'coder'}</span>
-        <span className="mr-2 text-[#e06c75]">{'='}</span>
-        <span className="text-[#e06c75]">{'{'}</span>
-      </div>
-      <div className="pl-4">
-        <span className="text-[#d19a66]">"name"</span>:{' '}
-        <span className="text-purple-500 dark:text-[#98c379]">"{name}"</span>,
-      </div>
-      <div className="pl-4">
-        <span className="text-[#d19a66]">"skills"</span>: <span className="text-[#e06c75]">[</span>
-        {skills.map((skill, index) => (
-          <span key={index}>
-            <span className="text-purple-500 dark:text-[#98c379]">"{skill}"</span>
-            {index < skills.length - 1 && ', '}
-          </span>
-        ))}
-        <span className="text-[#e06c75]">]</span>,
-      </div>
-      <div className="pl-4">
-        <span className="text-[#d19a66]">"hardWorker"</span>:{' '}
-        <span className="text-green-600 dark:text-[#56b6c2]">{hardWorker.toString()}</span>,
-      </div>
-      <div className="pl-4">
-        <span className="text-[#d19a66]">"problemSolver"</span>:{' '}
-        <span className="text-green-600 dark:text-[#56b6c2]">{problemSolver.toString()}</span>,
-      </div>
-      <div>
-        <span className="text-[#e06c75]">{'}'}</span>
-      </div>
-    </code>
+    <div>
+
+      <code className="code-one-dark">
+        <div>
+          <span className="mr-2 text-[#e06c75]">{'const'}</span>
+          <span className="mr-2 dark:text-white">{'coder'}</span>
+          <span className="mr-2 text-[#e06c75]">{'='}</span>
+          <span className="text-[#e06c75]">{'{'}</span>
+        </div>
+        <div className="pl-4">
+          <span className="text-[#d19a66]">"name"</span>:{' '}
+          <span className="text-purple-500 dark:text-[#98c379]">"{name}"</span>,
+        </div>
+        <div className="pl-4">
+          <span className="text-[#d19a66]">"skills"</span>: <span className="text-[#e06c75]">[</span>
+          {skills.map((skill, index) => (
+            <span key={index}>
+              <span className="text-purple-500 dark:text-[#98c379]">"{skill}"</span>
+              {index < skills.length - 1 && ', '}
+            </span>
+          ))}
+          <span className="text-[#e06c75]">]</span>,
+        </div>
+        <div className="pl-4">
+          <span className="text-[#d19a66]">"hardWorker"</span>:{' '}
+          <span className="text-green-600 dark:text-[#56b6c2]">{hardWorker.toString()}</span>,
+        </div>
+        <div className="pl-4">
+          <span className="text-[#d19a66]">"problemSolver"</span>:{' '}
+          <span className="text-green-600 dark:text-[#56b6c2]">{problemSolver.toString()}</span>,
+        </div>
+        <div>
+          <span className="text-[#e06c75]">{'}'}</span>
+        </div>
+      </code>
+      <BorderBeam size={100}/>
+    </div>
   );
 };
 
