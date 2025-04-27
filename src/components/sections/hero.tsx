@@ -280,7 +280,7 @@ const CodeEditor = () => (
       </div>
     </div>
 
-    <div className="from-blue-750 dark:from-blue-750 relative ml-4 select-none rounded-lg border bg-linear-to-r to-indigo-900 backdrop-blur-[3px] dark:bg-linear-to-r dark:to-indigo-900">
+    <div className="relative ml-4 select-none rounded-lg border backdrop-blur-[3px]">
       <div className="flex flex-row">
         <div className="h-[1px] w-full bg-linear-to-r from-transparent via-pink-500 to-violet-600"></div>
         <div className="h-[1px] w-full bg-linear-to-r from-violet-600 to-transparent"></div>
@@ -312,7 +312,7 @@ const HeaderSkills = () => (
         key={index}
         href={skill.url}
         target="_blank"
-        className="from-blue-750 bg-linear-to-r to-indigo-900 backdrop-blur-[4px]"
+        className="backdrop-blur-[4px]"
       >
         <li className="flex items-center gap-2 text-gray-200 dark:text-white">
           {skill.icon}
@@ -346,14 +346,14 @@ const HeroSection = () => {
                 </span>{' '}
                 <span className="inline-block animate-waving-hand">👋</span>
               </Typography>
-              <Typography className="from-blue-750 bg-linear-to-r to-indigo-900 backdrop-blur-[4px]">
+              <Typography className="from-blue-750 backdrop-blur-[4px]">
                 I'm a{' '}
                 <span className="text-blur-lg bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-xl font-bold text-transparent">
                   {HERO_CONFIG.title}
                 </span>{' '}
                 {HERO_CONFIG.description}
               </Typography>
-              <div className="border-1 border-gray-200">
+              <div className="">
                 <HeaderSkills />
               </div>
             </div>
