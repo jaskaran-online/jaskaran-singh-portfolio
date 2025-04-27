@@ -118,7 +118,7 @@ export default function Cleanfold() {
   return (
     <Container>
       {/* Hero Section */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50">
+      <div className="relative overflow-hidden rounded-2xl bg-linear-to-br from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="relative z-10 flex flex-col gap-8 px-6 py-16 md:px-12 lg:flex-row lg:items-center lg:py-20">
           <div className="flex flex-col gap-6 lg:w-1/2">
@@ -137,7 +137,7 @@ export default function Cleanfold() {
               </Badge>
             </div>
 
-            <h1 className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-6xl">
+            <h1 className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-6xl">
               CleanFold
             </h1>
             <p className="text-xl font-medium text-gray-700 dark:text-gray-300">
@@ -162,7 +162,7 @@ export default function Cleanfold() {
 
           <div className="relative lg:w-1/2">
             <div className="relative mx-auto max-w-md overflow-hidden rounded-[2rem] bg-gradient-to-brp-2 ">
-              <div className="absolute inset-0 bg-gradient-to-br  to-cyan-500/20 backdrop-blur-sm"></div>
+              <div className="absolute inset-0 bg-linear-to-br  to-cyan-500/20 backdrop-blur-xs"></div>
               <div className="relative overflow-hidden rounded-[1.8rem] ">
                 <Image
                   src={cleanfoldframs}
@@ -187,7 +187,7 @@ export default function Cleanfold() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <Card key={index} className="border-0 bg-gray-50 shadow-sm transition-all hover:shadow-md dark:bg-gray-900/50">
+            <Card key={index} className="border-0 bg-gray-50 shadow-xs transition-all hover:shadow-md dark:bg-gray-900/50">
               <CardHeader className="pb-2">
                 <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/50">
                   {feature.icon}
@@ -213,8 +213,8 @@ export default function Cleanfold() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {techStack.map((tech, index) => (
-            <Card key={index} className="overflow-hidden border-0 shadow-sm transition-all hover:shadow-md">
-              <div className="flex h-36 items-center justify-center bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50">
+            <Card key={index} className="overflow-hidden border-0 shadow-xs transition-all hover:shadow-md">
+              <div className="flex h-36 items-center justify-center bg-linear-to-r from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50">
                 <Image
                   src={tech.logo}
                   alt={`${tech.name} Logo`}
@@ -244,7 +244,7 @@ export default function Cleanfold() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <Card className="border-0 shadow-sm">
+          <Card className="border-0 shadow-xs">
             <CardHeader>
               <CardTitle>Project Overview</CardTitle>
             </CardHeader>
@@ -264,7 +264,7 @@ export default function Cleanfold() {
             </CardContent>
           </Card>
 
-          <Card className="border-0 shadow-sm">
+          <Card className="border-0 shadow-xs">
             <CardHeader>
               <CardTitle>Challenges & Solutions</CardTitle>
             </CardHeader>
@@ -303,7 +303,7 @@ export default function Cleanfold() {
       </div>
 
       {/* Call to Action */}
-      <div className="mt-16 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 p-8 text-center text-white shadow-lg">
+      <div className="mt-16 rounded-xl bg-linear-to-r from-blue-500 to-cyan-500 p-8 text-center text-white shadow-lg">
         <h2 className="mb-4 text-3xl font-bold">Interested in a Similar Solution?</h2>
         <p className="mb-6 text-blue-50">
           Let's discuss how we can create a custom mobile application tailored to your business needs.

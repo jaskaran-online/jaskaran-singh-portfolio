@@ -52,7 +52,7 @@ export default function AdminLoginPage() {
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-          <div className="space-y-4 rounded-md shadow-sm">
+          <div className="space-y-4 rounded-md shadow-xs">
             <div>
               <label
                 htmlFor="email"

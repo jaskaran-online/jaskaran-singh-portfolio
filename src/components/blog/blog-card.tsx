@@ -15,7 +15,7 @@ export const BlogCard = ({ post, className }: BlogCardProps) => {
   return (
     <article
       className={cn(
-        'group relative flex flex-col space-y-2 rounded-lg border bg-card p-4 shadow-sm transition-all hover:shadow-md',
+        'group relative flex flex-col space-y-2 rounded-lg border bg-card p-4 shadow-xs transition-all hover:shadow-md',
         className
       )}
     >

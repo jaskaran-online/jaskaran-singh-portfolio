@@ -70,15 +70,15 @@ const StatCard = ({ value, label, icon: Icon }: Stat) => {
       <div className="relative z-20 mx-auto flex h-full w-full flex-col items-center justify-center p-4 text-center sm:p-6">
         <div className="mb-3 transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
           <div className="relative">
-            <div className="absolute inset-0 transform rounded-full bg-blue-500/20 blur-sm transition-all duration-300 group-hover:scale-110 group-hover:blur-md" />
-            <div className="relative rounded-full bg-gradient-to-br from-blue-500 to-blue-600 p-3">
+            <div className="absolute inset-0 transform rounded-full bg-blue-500/20 blur-xs transition-all duration-300 group-hover:scale-110 group-hover:blur-md" />
+            <div className="relative rounded-full bg-linear-to-br from-blue-500 to-blue-600 p-3">
               <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
             </div>
           </div>
         </div>
         <Typography
           variant="h3"
-          className="mb-1 transform bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-3xl font-bold text-transparent transition-transform duration-300 group-hover:scale-110 sm:mb-2 sm:text-4xl"
+          className="mb-1 transform bg-linear-to-r from-blue-500 to-blue-600 bg-clip-text text-3xl font-bold text-transparent transition-transform duration-300 group-hover:scale-110 sm:mb-2 sm:text-4xl"
         >
           {value}
         </Typography>
@@ -124,7 +124,7 @@ const AboutMeSection = () => {
             {SKILLS.map((skill, index) => (
               <AnimatedSection key={index} delay={index * 0.1} direction="right">
                 <div className="flex gap-3">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-blue-500 sm:h-6 sm:w-6" />
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-blue-500 sm:h-6 sm:w-6" />
                   <div>
                     <Typography className="text-sm font-semibold text-slate-900 dark:text-white sm:text-base">
                       {skill.title}

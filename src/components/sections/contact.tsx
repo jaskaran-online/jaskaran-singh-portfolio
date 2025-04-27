@@ -239,20 +239,20 @@ const ContactSection = () => {
             <div className="space-y-6">
               {/* Email */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 text-purple-500 backdrop-blur-[4px] dark:from-purple-500/30 dark:to-pink-500/30">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-purple-500/20 to-pink-500/20 text-purple-500 backdrop-blur-[4px] dark:from-purple-500/30 dark:to-pink-500/30">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div className="flex-1">
                   <Typography
                     variant="body3"
-                    className="w-auto bg-gradient-to-r text-gray-600 backdrop-blur-[4px] dark:text-gray-400"
+                    className="w-auto bg-linear-to-r text-gray-600 backdrop-blur-[4px] dark:text-gray-400"
                   >
                     Email
                   </Typography>
                   <div className="flex items-center gap-2">
                     <Typography
                       variant="body2"
-                      className="w-auto bg-gradient-to-r font-medium   text-gray-900 backdrop-blur-[4px] dark:text-white"
+                      className="w-auto bg-linear-to-r font-medium   text-gray-900 backdrop-blur-[4px] dark:text-white"
                     >
                       {contactInfo.email}
                     </Typography>
@@ -262,19 +262,19 @@ const ContactSection = () => {
 
               {/* Phone */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/20 text-purple-500 backdrop-blur-[4px] dark:from-purple-500/30 dark:to-blue-500/30">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-purple-500/10 to-blue-500/20 text-purple-500 backdrop-blur-[4px] dark:from-purple-500/30 dark:to-blue-500/30">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
                   <Typography
                     variant="body3"
-                    className="w-auto bg-gradient-to-r  text-gray-600 backdrop-blur-[4px] dark:text-gray-400"
+                    className="w-auto bg-linear-to-r  text-gray-600 backdrop-blur-[4px] dark:text-gray-400"
                   >
                     Phone
                   </Typography>
                   <Typography
                     variant="body2"
-                    className="bg-gradient-to-r font-medium text-gray-900  backdrop-blur-[4px] dark:text-white"
+                    className="bg-linear-to-r font-medium text-gray-900  backdrop-blur-[4px] dark:text-white"
                   >
                     {contactInfo.phone}
                   </Typography>
@@ -283,19 +283,19 @@ const ContactSection = () => {
 
               {/* Location */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 text-pink-500 backdrop-blur-[4px] dark:from-pink-500/30 dark:to-rose-500/30">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-pink-500/20 to-rose-500/20 text-pink-500 backdrop-blur-[4px] dark:from-pink-500/30 dark:to-rose-500/30">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
                   <Typography
                     variant="body3"
-                    className="bg-gradient-to-r text-gray-600  backdrop-blur-[4px] dark:text-gray-400"
+                    className="bg-linear-to-r text-gray-600  backdrop-blur-[4px] dark:text-gray-400"
                   >
                     Location
                   </Typography>
                   <Typography
                     variant="body2"
-                    className="bg-gradient-to-r font-medium text-gray-900  backdrop-blur-[4px] dark:text-white"
+                    className="bg-linear-to-r font-medium text-gray-900  backdrop-blur-[4px] dark:text-white"
                   >
                     {contactInfo.location}
                   </Typography>
@@ -305,7 +305,7 @@ const ContactSection = () => {
             <div className="mt-8">
               <Typography
                 variant="body2"
-                className="bg-gradient-to-r text-gray-600  backdrop-blur-[4px] dark:text-gray-400"
+                className="bg-linear-to-r text-gray-600  backdrop-blur-[4px] dark:text-gray-400"
               >
                 You can also find me on these platforms!
               </Typography>
@@ -336,7 +336,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 rounded-sm border border-slate-200 bg-white px-8 pb-8 pt-3 shadow-lg backdrop-blur-sm dark:border-slate-800 dark:bg-[#334155]/30 "
+            className="space-y-6 rounded-sm border border-slate-200 bg-white px-8 pb-8 pt-3 shadow-lg backdrop-blur-xs dark:border-slate-800 dark:bg-[#334155]/30 "
             onSubmit={handleSubmit}
           >
             <BorderBeam />
@@ -354,7 +354,7 @@ const ContactSection = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
+                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
                 placeholder="Your name"
               />
             </div>
@@ -373,7 +373,7 @@ const ContactSection = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
+                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -392,7 +392,7 @@ const ContactSection = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
+                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
                 placeholder="Your message..."
               />
             </div>

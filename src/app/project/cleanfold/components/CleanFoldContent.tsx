@@ -81,7 +81,7 @@ export function CleanFoldContent() {
             onClick={() => setActiveView('grid')}
             className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${
               activeView === 'grid'
-                ? 'bg-white text-gray-900 shadow-sm dark:bg-gray-700 dark:text-white'
+                ? 'bg-white text-gray-900 shadow-xs dark:bg-gray-700 dark:text-white'
                 : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
             }`}
           >
@@ -91,7 +91,7 @@ export function CleanFoldContent() {
             onClick={() => setActiveView('carousel')}
             className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${
               activeView === 'carousel'
-                ? 'bg-white text-gray-900 shadow-sm dark:bg-gray-700 dark:text-white'
+                ? 'bg-white text-gray-900 shadow-xs dark:bg-gray-700 dark:text-white'
                 : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
             }`}
           >
@@ -113,8 +113,8 @@ export function CleanFoldContent() {
                 viewport={{ once: true }}
                 className="flex flex-col items-center"
               >
-                <div className="relative mb-6 aspect-[9/16] w-full max-w-xs overflow-hidden rounded-[2rem] p-2  border-[2px] border-gray-200 border-dashed">
-                  {/* <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5"></div> */}
+                <div className="relative mb-6 aspect-9/16 w-full max-w-xs overflow-hidden rounded-[2rem] p-2  border-[2px] border-gray-200 border-dashed">
+                  {/* <div className="absolute inset-0 z-0 bg-linear-to-br from-blue-500/5 to-cyan-500/5"></div> */}
                   {/* <div className="absolute left-1/2 top-3 h-6 w-24 -translate-x-1/2 rounded-full bg-black"></div> */}
                   <motion.div
                     whileHover={{ scale: 1.03 }}
@@ -161,7 +161,7 @@ export function CleanFoldContent() {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="absolute left-0 z-10 mr-4 rounded-full bg-white/80 backdrop-blur-sm dark:bg-gray-800/80"
+                  className="absolute left-0 z-10 mr-4 rounded-full bg-white/80 backdrop-blur-xs dark:bg-gray-800/80"
                   onClick={prevSlide}
                 >
                   <ChevronLeft className="h-5 w-5" />
@@ -174,9 +174,9 @@ export function CleanFoldContent() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="relative mb-6 aspect-[9/16] w-full max-w-xs overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-500/10 to-cyan-500/10 p-3 shadow-lg md:mb-0"
+                    className="relative mb-6 aspect-9/16 w-full max-w-xs overflow-hidden rounded-[2rem] bg-linear-to-br from-blue-500/10 to-cyan-500/10 p-3 shadow-lg md:mb-0"
                   >
-                    <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5"></div>
+                    <div className="absolute inset-0 z-0 bg-linear-to-br from-blue-500/5 to-cyan-500/5"></div>
                     <div className="absolute left-1/2 top-3 h-6 w-24 -translate-x-1/2 rounded-full bg-black"></div>
                     <div className="relative z-10 h-full overflow-hidden rounded-[1.7rem] border-[8px] border-white bg-white shadow-inner dark:border-gray-800 dark:bg-gray-800">
                       <div className="relative h-full w-full overflow-hidden">
@@ -224,7 +224,7 @@ export function CleanFoldContent() {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="absolute right-0 z-10 ml-4 rounded-full bg-white/80 backdrop-blur-sm dark:bg-gray-800/80"
+                  className="absolute right-0 z-10 ml-4 rounded-full bg-white/80 backdrop-blur-xs dark:bg-gray-800/80"
                   onClick={nextSlide}
                 >
                   <ChevronRight className="h-5 w-5" />
