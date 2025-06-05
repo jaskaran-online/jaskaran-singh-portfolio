@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
 import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
 import { Globe, Smartphone, Brain, CheckIcon, ArrowRight, GraduationCap } from 'lucide-react';
@@ -53,7 +52,7 @@ interface ServiceCardProps extends Service {}
 const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardProps) => {
   return (
     <MagicCard
-      className="h-full rounded-3xl border border-slate-200 bg-white/90 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-slate-300 dark:border-[#1a1f2e] dark:bg-[#0A101F]/80 dark:hover:border-[#1f2937]"
+      className="h-full rounded-3xl border border-slate-200 bg-white/60 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-slate-300 dark:border-[#1a1f2e] dark:bg-[#0A101F]/80 dark:hover:border-[#1f2937]"
       gradientSize={250}
       gradientColor="#0ea5e9"
       gradientOpacity={0.15}
@@ -79,18 +78,18 @@ const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardPr
           </motion.div>
         </div>
         <div className="flex flex-col gap-4">
-          <Typography variant="h3" className="text-lg font-semibold">
+          <Typography variant="h2" className="text-md mb-4 font-semibold md:text-2xl">
             {title}
           </Typography>
         </div>
-        <Typography className="mb-6 text-sm text-slate-600 dark:text-gray-400 sm:text-base">
+        <Typography className="mb-6 text-sm text-slate-600 sm:text-base dark:text-gray-400">
           {description}
         </Typography>
         <ul className="mt-auto space-y-2">
           {features.map((feature, index) => (
             <li
               key={index}
-              className="flex items-center text-sm text-slate-600 dark:text-gray-400 sm:text-base"
+              className="flex items-center text-sm text-slate-600 sm:text-base dark:text-gray-400"
             >
               <CheckIcon className="mr-2 h-5 w-5 shrink-0 text-blue-500" />
               <span>{feature}</span>
@@ -109,7 +108,7 @@ const ServicesSection = () => {
         <Typography variant="h2" className="mb-4">
           <SparklesText
             text="How I Can Help You Succeed"
-            className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl"
+            className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white"
             sparklesCount={4}
           />
         </Typography>
