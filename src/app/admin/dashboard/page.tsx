@@ -38,7 +38,7 @@ export default function AdminDashboard() {
         </button>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="rounded-lg bg-white p-6 shadow dark:bg-gray-800">
+        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
           <h2 className="mb-4 text-xl font-semibold">Quick Stats</h2>
           <p>Welcome to your admin dashboard!</p>
         </div>

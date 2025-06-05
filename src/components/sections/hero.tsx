@@ -6,9 +6,9 @@ import SocialIcons from '@/components/data-display/social-icons';
 import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
 import AnimatedGridPattern from '../ui/animated-grid-pattern';
-import { BorderBeam } from '../ui/border-beam';
-import BG_DARK from '../../../public/images/hero/dark-bg.jpg';
-import BG_LIGHT from '../../../public/images/hero/light-bg.jpg';
+import { BorderBeam } from '@/components/magicui/border-beam';
+import BG_DARK from '@/assets/images/hero/dark-bg.jpg';
+import BG_LIGHT from '@/assets/images/hero/light-bg.jpg';
 
 // Configuration object for easy content updates
 const HERO_CONFIG = {
@@ -164,45 +164,48 @@ const CodeBlock = () => {
   const { name, skills, hardWorker, problemSolver } = HERO_CONFIG.codeProfile;
 
   return (
-    <code className="code-one-dark">
-      <BorderBeam />
-      <div>
-        <span className="mr-2 text-[#e06c75]">{'const'}</span>
-        <span className="mr-2 dark:text-white">{'coder'}</span>
-        <span className="mr-2 text-[#e06c75]">{'='}</span>
-        <span className="text-[#e06c75]">{'{'}</span>
-      </div>
-      <div className="pl-4">
-        <span className="text-[#d19a66]">"name"</span>:{' '}
-        <span className="text-purple-500 dark:text-[#98c379]">"{name}"</span>,
-      </div>
-      <div className="pl-4">
-        <span className="text-[#d19a66]">"skills"</span>: <span className="text-[#e06c75]">[</span>
-        {skills.map((skill, index) => (
-          <span key={index}>
-            <span className="text-purple-500 dark:text-[#98c379]">"{skill}"</span>
-            {index < skills.length - 1 && ', '}
-          </span>
-        ))}
-        <span className="text-[#e06c75]">]</span>,
-      </div>
-      <div className="pl-4">
-        <span className="text-[#d19a66]">"hardWorker"</span>:{' '}
-        <span className="text-green-600 dark:text-[#56b6c2]">{hardWorker.toString()}</span>,
-      </div>
-      <div className="pl-4">
-        <span className="text-[#d19a66]">"problemSolver"</span>:{' '}
-        <span className="text-green-600 dark:text-[#56b6c2]">{problemSolver.toString()}</span>,
-      </div>
-      <div>
-        <span className="text-[#e06c75]">{'}'}</span>
-      </div>
-    </code>
+    <div>
+
+      <code className="code-one-dark">
+        <div>
+          <span className="mr-2 text-[#e06c75]">{'const'}</span>
+          <span className="mr-2 dark:text-white">{'coder'}</span>
+          <span className="mr-2 text-[#e06c75]">{'='}</span>
+          <span className="text-[#e06c75]">{'{'}</span>
+        </div>
+        <div className="pl-4">
+          <span className="text-[#d19a66]">"name"</span>:{' '}
+          <span className="text-purple-500 dark:text-[#98c379]">"{name}"</span>,
+        </div>
+        <div className="pl-4">
+          <span className="text-[#d19a66]">"skills"</span>: <span className="text-[#e06c75]">[</span>
+          {skills.map((skill, index) => (
+            <span key={index}>
+              <span className="text-purple-500 dark:text-[#98c379]">"{skill}"</span>
+              {index < skills.length - 1 && ', '}
+            </span>
+          ))}
+          <span className="text-[#e06c75]">]</span>,
+        </div>
+        <div className="pl-4">
+          <span className="text-[#d19a66]">"hardWorker"</span>:{' '}
+          <span className="text-green-600 dark:text-[#56b6c2]">{hardWorker.toString()}</span>,
+        </div>
+        <div className="pl-4">
+          <span className="text-[#d19a66]">"problemSolver"</span>:{' '}
+          <span className="text-green-600 dark:text-[#56b6c2]">{problemSolver.toString()}</span>,
+        </div>
+        <div>
+          <span className="text-[#e06c75]">{'}'}</span>
+        </div>
+      </code>
+      <BorderBeam size={100}/>
+    </div>
   );
 };
 
 const TwitterCard = () => (
-  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white shadow-sm backdrop-blur-[14px] dark:border-[#462d6dab] dark:bg-[#0f192d]/90 lg:right-[-5%] lg:top-[85%]">
+  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white shadow-xs backdrop-blur-[14px] dark:border-[#462d6dab] dark:bg-[#0f192d]/90 lg:right-[-5%] lg:top-[85%] z-50">
     <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform">
       <header className="flex gap-4">
         <figure className="overflow-hidden rounded-full border-2 border-gray-400/50 dark:border-gray-600/50">
@@ -263,27 +266,27 @@ const CodeEditor = () => (
       <div className="flex flex-wrap justify-end gap-1 lg:gap-4">
         <SkillBadge
           label="Programmer"
-          className="border-cyan-700/20 bg-cyan-100 text-cyan-900 hover:bg-cyan-200/90 dark:border-cyan-400/30 dark:bg-gradient-to-b dark:from-cyan-900/90 dark:to-cyan-900/90 dark:text-cyan-100"
+          className="border-cyan-700/20 bg-cyan-100 text-cyan-900 hover:bg-cyan-200/90 dark:border-cyan-400/30 dark:bg-linear-to-b dark:from-cyan-900/90 dark:to-cyan-900/90 dark:text-cyan-100"
         />
         <SkillBadge
           label="Problem Solver"
-          className="border-green-700/20 bg-green-100 text-green-900 hover:bg-green-200/90 dark:border-green-400/30 dark:bg-gradient-to-b dark:from-green-900/90 dark:to-green-900/90 dark:text-green-100"
+          className="border-green-700/20 bg-green-100 text-green-900 hover:bg-green-200/90 dark:border-green-400/30 dark:bg-linear-to-b dark:from-green-900/90 dark:to-green-900/90 dark:text-green-100"
         />
         <SkillBadge
           label="Hard Worker"
-          className="border-orange-700/20 bg-orange-100 text-orange-900 hover:bg-orange-200/90 dark:border-orange-400/30 dark:bg-gradient-to-b dark:from-orange-900/90 dark:to-orange-900/90 dark:text-orange-100"
+          className="border-orange-700/20 bg-orange-100 text-orange-900 hover:bg-orange-200/90 dark:border-orange-400/30 dark:bg-linear-to-b dark:from-orange-900/90 dark:to-orange-900/90 dark:text-orange-100"
         />
         <SkillBadge
           label="Web Developer"
-          className="border-pink-700/20 bg-pink-100 text-pink-900 hover:bg-pink-200/90 dark:border-pink-400/30 dark:bg-gradient-to-b dark:from-pink-900/90 dark:to-pink-900/90 dark:text-pink-100"
+          className="border-pink-700/20 bg-pink-100 text-pink-900 hover:bg-pink-200/90 dark:border-pink-400/30 dark:bg-linear-to-b dark:from-pink-900/90 dark:to-pink-900/90 dark:text-pink-100"
         />
       </div>
     </div>
 
-    <div className="from-blue-750 dark:from-blue-750 relative ml-4 select-none rounded-lg border bg-gradient-to-r to-indigo-900 backdrop-blur-[3px] dark:bg-gradient-to-r dark:to-indigo-900">
+    <div className="relative ml-4 select-none rounded-lg border backdrop-blur-[3px]">
       <div className="flex flex-row">
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-        <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
+        <div className="h-[1px] w-full bg-linear-to-r from-transparent via-pink-500 to-violet-600"></div>
+        <div className="h-[1px] w-full bg-linear-to-r from-violet-600 to-transparent"></div>
       </div>
       <div className="py-2">
         <header className="mb-2 flex items-center justify-between border-b border-b-gray-200 px-8 py-2 pb-3 dark:border-b-gray-700 ">
@@ -312,7 +315,7 @@ const HeaderSkills = () => (
         key={index}
         href={skill.url}
         target="_blank"
-        className="from-blue-750 bg-gradient-to-r to-indigo-900 backdrop-blur-[4px]"
+        className="backdrop-blur-[4px]"
       >
         <li className="flex items-center gap-2 text-gray-200 dark:text-white">
           {skill.icon}
@@ -327,33 +330,33 @@ const HeroSection = () => {
   return (
     <Container
       id="hero"
-      className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[80vh] "
+      className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[90vh] pb-26"
     >
       <div className="z-10">
-        <div className="flex flex-col gap-10 px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32">
+        <div className="flex flex-col-reverse px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32 gap-12">
           {/* Code Editor */}
-          <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
+          <div className="flex items-center justify-center md:order-last md:grow md:justify-end">
             <CodeEditor />
           </div>
 
           {/* Content */}
-          <div className="flex max-w-[550px]  flex-grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-8">
+          <div className="flex max-w-[550px]  grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-8">
             <div className="flex flex-col gap-2">
               <div className="text-xl font-medium">Hey there!, I'm -</div>
               <Typography variant="h1">
-                <span className="bg-blur-lg bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                <span className="bg-blur-lg bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
                   {HERO_CONFIG.name}
                 </span>{' '}
                 <span className="inline-block animate-waving-hand">👋</span>
               </Typography>
-              <Typography className="from-blue-750 bg-gradient-to-r to-indigo-900 backdrop-blur-[4px]">
+              <Typography className="from-blue-750 backdrop-blur-[4px]">
                 I'm a{' '}
-                <span className="text-blur-lg bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-xl font-bold text-transparent">
+                <span className="text-blur-lg bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-xl font-bold text-transparent">
                   {HERO_CONFIG.title}
                 </span>{' '}
                 {HERO_CONFIG.description}
               </Typography>
-              <div className="border-1 border-gray-200">
+              <div className="">
                 <HeaderSkills />
               </div>
             </div>
@@ -401,13 +404,13 @@ const HeroSection = () => {
       {/* Animated Grid Pattern Overlay */}
       <AnimatedGridPattern
         numSquares={70}
-        maxOpacity={0.3}
+        maxOpacity={0.2}
         duration={0.8}
-        repeatDelay={0.5}
+        repeatDelay={0.8}
         className={cn(
           '[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]',
-          'absolute inset-0 z-[1]',
-          'inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 text-[#1E90FF] dark:text-[#1E90FF]'
+          'absolute inset-0 z-1',
+          'inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 text-[#1e8fffaa] dark:text-[#1e8fff4a]'
         )}
       />
     </Container>

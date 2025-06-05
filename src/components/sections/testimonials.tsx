@@ -17,7 +17,7 @@ const TestimonialsSection = () => {
       <div className="mb-8 flex flex-col items-center gap-4 px-4 sm:mb-16">
         <Typography
           variant="h2"
-          className="mb-2 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl"
+          className="mb-2 text-xl md:text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl"
         >
           <SparklesText text="Client Success Stories & Impact" sparklesCount={4} />
         </Typography>
@@ -34,9 +34,9 @@ const TestimonialsSection = () => {
           {/* First row - scrolling right */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 hidden h-full w-[100px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent sm:w-[250px] lg:block" />
+            <div className="pointer-events-none absolute left-0 top-0 z-10 hidden h-full w-[100px] bg-linear-to-r from-gray-50 via-gray-50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent sm:w-[250px] lg:block" />
             {/* Right gradient overlay */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-[100px] bg-gradient-to-l from-gray-50 via-gray-50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent sm:w-[150px] lg:block" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-[100px] bg-linear-to-l from-gray-50 via-gray-50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent sm:w-[150px] lg:block" />
 
             <motion.div
               animate={{
@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
             >
               {/* Double the items to create seamless loop */}
               {[...firstRow, ...firstRow].map((testimonial, index) => (
-                <div key={index} className="w-[300px] flex-shrink-0 sm:w-[400px]">
+                <div key={index} className="w-[300px] shrink-0 sm:w-[400px]">
                   <TestimonialDetails {...testimonial} />
                 </div>
               ))}
@@ -64,9 +64,9 @@ const TestimonialsSection = () => {
           {/* Second row - scrolling left */}
           <div className="relative">
             {/* Left gradient overlay */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 hidden h-full w-[100px] bg-gradient-to-r from-gray-50 via-gray-50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent sm:w-[250px] lg:block" />
+            <div className="pointer-events-none absolute left-0 top-0 z-10 hidden h-full w-[100px] bg-linear-to-r from-gray-50 via-gray-50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent sm:w-[250px] lg:block" />
             {/* Right gradient overlay */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-[100px] bg-gradient-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent sm:w-[250px] lg:block" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-[100px] bg-linear-to-l from-gray-50/50 via-gray-50/50 to-transparent dark:from-[#0f192d] dark:via-[#0f192d] dark:to-transparent sm:w-[250px] lg:block" />
 
             <motion.div
               animate={{
@@ -84,7 +84,7 @@ const TestimonialsSection = () => {
             >
               {/* Double the items to create seamless loop */}
               {[...secondRow, ...secondRow].map((testimonial, index) => (
-                <div key={index} className="w-[300px] flex-shrink-0 sm:w-[400px]">
+                <div key={index} className="w-[300px] shrink-0 sm:w-[400px]">
                   <TestimonialDetails {...testimonial} />
                 </div>
               ))}

@@ -7,7 +7,6 @@ import './globals.css';
 import Header from '@/components/layout/header';
 import { Providers } from '@/lib/providers';
 import Footer from '@/components/layout/footer';
-import Image from 'next/image';
 import ScrollToTop from '@/components/scroll-to-top';
 
 
@@ -229,14 +228,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           <Providers>
             <div className="relative flex min-h-screen flex-col">
               <Header />
-              <ScrollProgress />
               <div className="flex-1">{children}</div>
               <Footer />
               <ScrollToTop />

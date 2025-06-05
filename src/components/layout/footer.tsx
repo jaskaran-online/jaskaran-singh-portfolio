@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className="relative w-full border-t border-gray-200/30 py-8 backdrop-blur-xl dark:border-gray-800/30 dark:bg-[#0f192d]/80">
       {/* Grid Pattern */}
-      {/* <div className="absolute inset-0 grid grid-cols-[1fr,auto,1fr] grid-rows-[1fr,auto,1fr] [&>div]:border-gray-200/30 dark:[&>div]:border-gray-800/30">
+      {/* <div className="absolute inset-0 grid grid-cols-[1fr_auto_1fr] grid-rows-[1fr_auto_1fr] [&>div]:border-gray-200/30 dark:[&>div]:border-gray-800/30">
         <div className="border-b"></div>
         <div className="border-b border-l border-r"></div>
         <div className="border-b"></div>

@@ -53,7 +53,7 @@ interface ServiceCardProps extends Service {}
 const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardProps) => {
   return (
     <MagicCard
-      className="h-full rounded-3xl border border-slate-200 bg-white/90 backdrop-blur transition-all duration-300 hover:scale-[1.02] hover:border-slate-300 dark:border-[#1a1f2e] dark:bg-[#0A101F]/80 dark:hover:border-[#1f2937]"
+      className="h-full rounded-3xl border border-slate-200 bg-white/90 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-slate-300 dark:border-[#1a1f2e] dark:bg-[#0A101F]/80 dark:hover:border-[#1f2937]"
       gradientSize={250}
       gradientColor="#0ea5e9"
       gradientOpacity={0.15}
@@ -61,7 +61,7 @@ const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardPr
       gradientTo="#06b6d4"
     >
       <div className="relative z-10 flex h-full flex-col p-6 sm:p-8">
-        <div className="mb-6 w-fit rounded-full bg-gradient-to-br from-blue-500 to-blue-600 p-3">
+        <div className="mb-6 w-fit rounded-full bg-linear-to-br from-blue-500 to-blue-600 p-3">
           <motion.div
             initial={{ scale: 1 }}
             animate={{
@@ -92,7 +92,7 @@ const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardPr
               key={index}
               className="flex items-center text-sm text-slate-600 dark:text-gray-400 sm:text-base"
             >
-              <CheckIcon className="mr-2 h-5 w-5 flex-shrink-0 text-blue-500" />
+              <CheckIcon className="mr-2 h-5 w-5 shrink-0 text-blue-500" />
               <span>{feature}</span>
             </li>
           ))}

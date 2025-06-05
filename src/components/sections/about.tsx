@@ -51,7 +51,7 @@ const SKILLS: Skill[] = [
 
 const AboutSection = () => {
   return (
-    <Container id="about" className="py-24">
+    <Container id="about" className="py-24 z-20">
       <div className="grid gap-16 md:grid-cols-2">
         {/* Stats Section */}
         <div className="grid grid-cols-2 gap-8">
@@ -83,7 +83,7 @@ const AboutSection = () => {
           <div className="space-y-4">
             {SKILLS.map((skill, index) => (
               <div key={index} className="flex gap-3">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-blue-500" />
+                <CheckCircle2 className="h-6 w-6 shrink-0 text-blue-500" />
                 <div>
                   <Typography className="font-semibold text-white">{skill.title}</Typography>
                   <Typography className="text-gray-400">{skill.description}</Typography>
