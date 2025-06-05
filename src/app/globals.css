@@ -63,12 +63,10 @@
   --animate-waving-hand: waving 2s linear 3;
   --animate-pulse: pulse var(--duration) ease-out infinite;
   --animate-border-beam: border-beam calc(var(--duration) * 1s) infinite linear;
-  --animate-background-position-spin: background-position-spin 3000ms infinite
-    alternate;
+  --animate-background-position-spin: background-position-spin 3000ms infinite alternate;
   --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
   --animate-shine: shine var(--duration) infinite linear;
-  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
-    infinite;
+  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s) infinite;
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -197,6 +195,9 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   *,
   ::after,
   ::before,
@@ -207,6 +208,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   :root {
     --spotlight-color: 59 130 246;
     /* blue-500 */
@@ -315,6 +319,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border;
   }

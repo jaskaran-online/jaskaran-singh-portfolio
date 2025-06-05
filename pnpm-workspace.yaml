@@ -1,0 +1,9 @@
+onlyBuiltDependencies:
+  - '@vercel/speed-insights'
+  - cwebp-bin
+  - gifsicle
+  - mozjpeg
+  - optipng-bin
+  - pngquant-bin
+  - sharp
+  - unrs-resolver

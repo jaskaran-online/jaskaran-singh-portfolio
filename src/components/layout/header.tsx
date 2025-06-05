@@ -79,7 +79,7 @@ const Header = () => {
   return (
     <header
       className={mergeClasses(
-        'sticky top-0 z-30 w-full border-b bg-background/80 shadow-md backdrop-blur-xl transition-colors duration-200 dark:bg-[#0f192d]/80',
+        'bg-background/80 sticky top-0 z-30 w-full border-b shadow-md backdrop-blur-xl transition-colors duration-200 dark:bg-[#0f192d]/80',
         scrolled ? 'border-border/40' : 'border-transparent'
       )}
     >
@@ -88,7 +88,7 @@ const Header = () => {
           <Link
             href="/"
             noCustomization
-            className="absolute right-4 top-5 drop-shadow-lg md:relative md:right-0 md:top-0 md:drop-shadow-none"
+            className="absolute top-5 right-4 drop-shadow-lg md:relative md:top-0 md:right-0 md:drop-shadow-none"
           >
             <Logo />
           </Link>
@@ -101,7 +101,7 @@ const Header = () => {
                 return (
                   <Link
                     key={index}
-                    href={`https://www.jaskaran.in/${link.href}`}
+                    href={`${typeof window !== 'undefined' && process.env.NODE_ENV === 'development' ? window.location.origin : 'https://www.jaskaran.in'}${link.href.startsWith('/') ? '' : '/'}${link.href}`}
                     className={mergeClasses(
                       'relative px-4 py-2 text-sm font-medium transition-colors',
                       isActive
@@ -123,7 +123,7 @@ const Header = () => {
                     )}
                     <span className="relative z-10">{link.label}</span>
                     {index < NAV_LINKS.length - 1 && (
-                      <div className="absolute right-0 top-1/2 h-4 w-[1px] -translate-y-1/2 bg-gray-200/50 dark:bg-gray-800/50" />
+                      <div className="absolute top-1/2 right-0 h-4 w-[1px] -translate-y-1/2 bg-gray-200/50 dark:bg-gray-800/50" />
                     )}
                   </Link>
                 );
@@ -160,7 +160,7 @@ const Header = () => {
                     return (
                       <li key={index}>
                         <Link
-                          href={link.href}
+                          href={`${typeof window !== 'undefined' && process.env.NODE_ENV === 'development' ? window.location.origin : 'https://www.jaskaran.in'}${link.href.startsWith('/') ? '' : '/'}${link.href}`}
                           className={mergeClasses(
                             'relative block rounded-md px-4 py-2 text-sm font-medium transition-colors',
                             isActive

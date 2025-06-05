@@ -23,11 +23,11 @@ const ProjectDetails = ({
   layoutType = 'default',
 }: ProjectDetailsProps) => {
   return (
-    <Card className="mx-auto flex w-full max-w-6xl flex-col bg-white dark:bg-[#1e293b] md:flex-row shadow-none border-dashed border-[1.8px] border-slate-200">
+    <Card className="mx-auto flex w-full max-w-6xl flex-col border-[1.8px] border-dashed border-slate-200 bg-white shadow-none md:flex-row dark:border-slate-600 dark:bg-[#1e293b]/40">
       {/* Image */}
       <div
         className={mergeClasses(
-          'flex items-center justify-center border-gray-100 bg-gray-50 p-8 dark:border-gray-800 dark:bg-[#334155] max-md:rounded-t-xl md:w-1/2 lg:p-12',
+          'flex items-center justify-center border-gray-100 bg-gray-50 p-8 max-md:rounded-t-xl md:w-1/2 lg:p-12 dark:border-gray-800 dark:bg-[#334155]/30',
           layoutType === 'default'
             ? 'md:rounded-l-xl md:border-r'
             : 'md:order-last md:rounded-r-xl md:border-l'
@@ -55,14 +55,12 @@ const ProjectDetails = ({
         </Typography>
         <Typography className="text-gray-700 dark:text-gray-300">{description}</Typography>
         <div className="flex flex-wrap gap-2">
-          {technologies?.map((technology, index) => (
-            <Tag key={index} label={technology} />
-          ))}
+          {technologies?.map((technology, index) => <Tag key={index} label={technology} />)}
         </div>
         <Link
           href={url || '/'}
           noCustomization
-          className="mt-2 flex items-center gap-2 self-start rounded-lg border bg-gray-50 p-1.5 px-4 py-2 hover:bg-gray-300 hover:bg-gray-50 dark:bg-[#334155] dark:hover:bg-[#334155] dark:hover:bg-gray-800 [&_svg]:stroke-gray-500 dark:[&_svg]:stroke-gray-400"
+          className="mt-2 flex items-center gap-2 self-start rounded-lg border bg-gray-50 p-1.5 px-4 py-2 hover:bg-gray-50 hover:bg-gray-300 dark:bg-[#334155]/50 dark:hover:bg-[#334155] dark:hover:bg-gray-800 [&_svg]:stroke-gray-500 dark:[&_svg]:stroke-gray-400"
           externalLink
         >
           View Project <ExternalLink />
