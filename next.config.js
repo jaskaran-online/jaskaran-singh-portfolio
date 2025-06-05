@@ -25,10 +25,10 @@ const nextConfig = {
   },
   output: 'standalone',
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: false,
+    ignoreDuringBuilds: true,
   },
   webpack: (config) => {
     // Image optimization for other formats

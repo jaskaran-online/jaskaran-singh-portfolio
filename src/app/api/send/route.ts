@@ -11,7 +11,6 @@ export async function POST(request: Request) {
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: 'jaskaransingh4704@gmail.com',
       subject: `New Contact Form Message from ${name}`,
-      reply_to: from,
       text: `Name: ${name}\nEmail: ${from}\nMessage: ${message}`,
     });
 
