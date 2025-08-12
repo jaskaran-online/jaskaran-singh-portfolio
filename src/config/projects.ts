@@ -1,5 +1,38 @@
 export const projects = [
   {
+    title: 'AceHaematology',
+    description:
+      'A comprehensive FRCPath haematology exam preparation platform with 1000+ practice questions, mock exams, and expert-crafted content designed by UK haematologists.',
+    image: '/images/project-acehaematology.svg',
+    tags: ['Next.js', 'TypeScript', 'Medical Education', 'Exam Preparation', 'React'],
+    demoUrl: 'https://www.acehaematology.com/',
+    githubUrl: 'https://github.com/jaskaranpr/acehaematology',
+    category: 'Web App',
+    featured: true,
+  },
+  {
+    title: 'HRSolx',
+    description:
+      'Smart hiring platform connecting HR professionals with verified skilled workers across manufacturing, automotive, construction, and logistics industries with AI-powered matching.',
+    image: '/images/project-hrsolx.svg',
+    tags: ['Next.js', 'TypeScript', 'AI/ML', 'HR Tech', 'Recruitment', 'React'],
+    demoUrl: 'https://www.hrsolx.com/',
+    githubUrl: 'https://github.com/jaskaranpr/hrsolx',
+    category: 'Web App',
+    featured: true,
+  },
+  {
+    title: 'HRSolx Mobile App',
+    description:
+      'Mobile application for skilled workers to create profiles, manage availability, and connect with employers through secure Aadhaar verification and real-time job matching.',
+    image: '/images/project-hrsolx-mobile.svg',
+    tags: ['React Native', 'TypeScript', 'Mobile App', 'HR Tech', 'Authentication', 'Real-time'],
+    demoUrl: 'https://play.google.com/store/apps/details?id=com.hrsolx.worker',
+    githubUrl: 'https://github.com/jaskaranpr/hrsolx-mobile',
+    category: 'Mobile App',
+    featured: true,
+  },
+  {
     title: 'E-commerce Platform',
     description: 'A full-featured e-commerce platform built with Next.js and Stripe integration.',
     image: '/projects/ecommerce.jpg',
@@ -31,7 +64,8 @@ export const projects = [
   },
   {
     title: 'Weather Dashboard',
-    description: 'A weather dashboard that shows current weather and forecasts for multiple cities.',
+    description:
+      'A weather dashboard that shows current weather and forecasts for multiple cities.',
     image: '/projects/weather.jpg',
     tags: ['React', 'OpenWeather API', 'ChartJS'],
     demoUrl: 'https://weather.jaskaran.in',
@@ -59,4 +93,4 @@ export const projects = [
     category: 'Web App',
     featured: false,
   },
-] as const;
+];

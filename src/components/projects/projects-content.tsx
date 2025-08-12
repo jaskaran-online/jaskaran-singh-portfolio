@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import ProjectCard from '@/components/projects/project-card';
 import ProjectFilter from '@/components/projects/project-filter';
-import {projects} from '@/config/projects';
+import { projects } from '@/config/projects';
 const container = {
-  hidden: { opacity: 0 }, 
+  hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
@@ -26,7 +26,7 @@ const ProjectsContent = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [showFeatured, setShowFeatured] = useState<boolean>(false);
 
-  const categories = ['All', ...new Set(projects?.map((project) => project.category))];
+  const categories = ['All', ...Array.from(new Set(projects?.map((project) => project.category)))];
 
   const filteredProjects = projects.filter((project) => {
     const categoryMatch = selectedCategory === 'All' || project.category === selectedCategory;
@@ -58,21 +58,13 @@ const ProjectsContent = () => {
       </motion.div>
 
       {filteredProjects.length === 0 && (
-        <motion.div
-          variants={item}
-          className="mt-8 text-center"
-        >
-          <p className="text-muted-foreground">
-            No projects found matching your criteria.
-          </p>
+        <motion.div variants={item} className="mt-8 text-center">
+          <p className="text-muted-foreground">No projects found matching your criteria.</p>
         </motion.div>
       )}
 
-      <motion.div
-        variants={item}
-        className="mt-12 text-center"
-      >
-        <p className="mb-4 text-muted-foreground">
+      <motion.div variants={item} className="mt-12 text-center">
+        <p className="text-muted-foreground mb-4">
           Interested in working together? Let's discuss your project!
         </p>
         <Link href="/contact">

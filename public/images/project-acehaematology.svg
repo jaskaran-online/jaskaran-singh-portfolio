@@ -1,0 +1,6 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#3B82F6"/>
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="white">AceHaematology</text>
+  <text x="400" y="320" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">FRCPath Exam Prep Platform</text>
+  <text x="400" y="360" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="white">Medical Education Platform</text>
+</svg>
