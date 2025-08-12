@@ -30,7 +30,7 @@ const OptimizedImage = ({
         alt={alt || ''}
         className={cn(
           'duration-700 ease-in-out',
-          isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'
+          isLoading ? 'scale-110 blur-2xl grayscale' : 'blur-0 scale-100 grayscale-0'
         )}
         onLoadingComplete={() => setIsLoading(false)}
         onError={() => setError(true)}

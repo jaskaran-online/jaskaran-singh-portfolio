@@ -35,11 +35,7 @@ const ProjectFilter = ({
         ))}
       </div>
       <div className="flex items-center gap-2">
-        <Switch
-          id="featured"
-          checked={showFeatured}
-          onCheckedChange={onFeaturedChange}
-        />
+        <Switch id="featured" checked={showFeatured} onCheckedChange={onFeaturedChange} />
         <Label htmlFor="featured" className="flex cursor-pointer items-center gap-1.5">
           <Star className="h-4 w-4" />
           Featured Only

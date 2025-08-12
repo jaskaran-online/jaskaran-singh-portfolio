@@ -49,7 +49,8 @@ export const metadata: Metadata = {
 const features = [
   {
     title: 'Real-time Order Tracking',
-    description: 'Monitor laundry orders in real-time with instant status updates and notifications.',
+    description:
+      'Monitor laundry orders in real-time with instant status updates and notifications.',
     icon: <CheckCircle className="h-5 w-5 text-emerald-500" />,
   },
   {
@@ -64,17 +65,20 @@ const features = [
   },
   {
     title: 'Dynamic Pricing',
-    description: 'Flexible pricing models with support for discounts, promotions, and loyalty programs.',
+    description:
+      'Flexible pricing models with support for discounts, promotions, and loyalty programs.',
     icon: <CheckCircle className="h-5 w-5 text-emerald-500" />,
   },
   {
     title: 'Offline Capability',
-    description: 'Continue working without internet connection with automatic sync when back online.',
+    description:
+      'Continue working without internet connection with automatic sync when back online.',
     icon: <CheckCircle className="h-5 w-5 text-emerald-500" />,
   },
   {
     title: 'Comprehensive Analytics',
-    description: 'Gain insights with detailed reports on sales, customer behavior, and operational efficiency.',
+    description:
+      'Gain insights with detailed reports on sales, customer behavior, and operational efficiency.',
     icon: <CheckCircle className="h-5 w-5 text-emerald-500" />,
   },
 ];
@@ -99,18 +103,21 @@ const techStack = [
   {
     name: 'React Native',
     logo: ReactNativeLogo,
-    description: 'A powerful framework for building native mobile applications using React. It allows for a smooth user interface and performance comparable to native apps.',
+    description:
+      'A powerful framework for building native mobile applications using React. It allows for a smooth user interface and performance comparable to native apps.',
   },
   {
     name: 'Expo',
     logo: LogoExpo,
-    description: 'A framework and platform for universal React applications. Expo simplifies the development process by providing a set of tools and services for building, deploying, and iterating on mobile apps.',
+    description:
+      'A framework and platform for universal React applications. Expo simplifies the development process by providing a set of tools and services for building, deploying, and iterating on mobile apps.',
     darkInvert: true,
   },
   {
     name: 'Laravel',
     logo: LogoLaravel,
-    description: 'A robust PHP framework that provides an elegant syntax and powerful tools for building web applications. Laravel is used for the backend services of the CleanFold app, ensuring secure and efficient data handling.',
+    description:
+      'A robust PHP framework that provides an elegant syntax and powerful tools for building web applications. Laravel is used for the backend services of the CleanFold app, ensuring secure and efficient data handling.',
   },
 ];
 
@@ -119,20 +126,32 @@ export default function Cleanfold() {
     <Container>
       {/* Hero Section */}
       <div className="relative overflow-hidden rounded-2xl bg-linear-to-br from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="bg-grid-pattern absolute inset-0 opacity-10"></div>
         <div className="relative z-10 flex flex-col gap-8 px-6 py-16 md:px-12 lg:flex-row lg:items-center lg:py-20">
           <div className="flex flex-col gap-6 lg:w-1/2">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary" className="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
+              <Badge
+                variant="secondary"
+                className="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300"
+              >
                 Mobile App
               </Badge>
-              <Badge variant="secondary" className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300">
+              <Badge
+                variant="secondary"
+                className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300"
+              >
                 React Native
               </Badge>
-              <Badge variant="secondary" className="bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300">
+              <Badge
+                variant="secondary"
+                className="bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300"
+              >
                 Android
               </Badge>
-              <Badge variant="secondary" className="bg-gray-900 text-white dark:bg-white dark:text-black">
+              <Badge
+                variant="secondary"
+                className="bg-gray-900 text-white dark:bg-white dark:text-black"
+              >
                 iOS
               </Badge>
             </div>
@@ -144,10 +163,10 @@ export default function Cleanfold() {
               Laundry Management Mobile App
             </p>
             <p className="text-muted-foreground">
-              A comprehensive mobile application tailored for a cleaning company, empowering employees
-              to easily access their assigned jobs, track progress in real-time, and manage their
-              daily tasks effectively. This tool enhances operational efficiency and ensures that all
-              job details are readily available at their fingertips.
+              A comprehensive mobile application tailored for a cleaning company, empowering
+              employees to easily access their assigned jobs, track progress in real-time, and
+              manage their daily tasks effectively. This tool enhances operational efficiency and
+              ensures that all job details are readily available at their fingertips.
             </p>
 
             {/* <div className="flex flex-wrap gap-4">
@@ -161,9 +180,9 @@ export default function Cleanfold() {
           </div>
 
           <div className="relative lg:w-1/2">
-            <div className="relative mx-auto max-w-md overflow-hidden rounded-[2rem] bg-gradient-to-brp-2 ">
-              <div className="absolute inset-0 bg-linear-to-br  to-cyan-500/20 backdrop-blur-xs"></div>
-              <div className="relative overflow-hidden rounded-[1.8rem] ">
+            <div className="bg-gradient-to-brp-2 relative mx-auto max-w-md overflow-hidden rounded-[2rem]">
+              <div className="absolute inset-0 bg-linear-to-br to-cyan-500/20 backdrop-blur-xs"></div>
+              <div className="relative overflow-hidden rounded-[1.8rem]">
                 <Image
                   src={cleanfoldframs}
                   alt="CleanFold Mobile App Interface Preview"
@@ -180,14 +199,18 @@ export default function Cleanfold() {
       <div className="mt-16">
         <div className="mb-10 text-center">
           <h2 className="mb-3 text-3xl font-bold">Key Features</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            CleanFold is packed with powerful features designed to streamline laundry operations and enhance productivity.
+          <p className="text-muted-foreground mx-auto max-w-2xl">
+            CleanFold is packed with powerful features designed to streamline laundry operations and
+            enhance productivity.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <Card key={index} className="border-0 bg-gray-50 shadow-xs transition-all hover:shadow-md dark:bg-gray-900/50">
+            <Card
+              key={index}
+              className="border-0 bg-gray-50 shadow-xs transition-all hover:shadow-md dark:bg-gray-900/50"
+            >
               <CardHeader className="pb-2">
                 <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/50">
                   {feature.icon}
@@ -206,28 +229,32 @@ export default function Cleanfold() {
       <div className="mt-16">
         <div className="mb-10 text-center">
           <h2 className="mb-3 text-3xl font-bold">Technology Stack</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            Built with modern technologies to ensure high performance, scalability, and a seamless user experience.
+          <p className="text-muted-foreground mx-auto max-w-2xl">
+            Built with modern technologies to ensure high performance, scalability, and a seamless
+            user experience.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {techStack.map((tech, index) => (
-            <Card key={index} className="overflow-hidden border-0 shadow-xs transition-all hover:shadow-md">
+            <Card
+              key={index}
+              className="overflow-hidden border-0 shadow-xs transition-all hover:shadow-md"
+            >
               <div className="flex h-36 items-center justify-center bg-linear-to-r from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50">
                 <Image
                   src={tech.logo}
                   alt={`${tech.name} Logo`}
                   width={100}
                   height={40}
-                  className={  tech.darkInvert ? "dark:invert" : ""}
+                  className={tech.darkInvert ? 'dark:invert' : ''}
                 />
               </div>
               <CardHeader className="pb-2">
                 <CardTitle>{tech.name}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">{tech.description}</p>
+                <p className="text-muted-foreground text-sm">{tech.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -238,7 +265,7 @@ export default function Cleanfold() {
       <div className="mt-16">
         <div className="mb-10 text-center">
           <h2 className="mb-3 text-3xl font-bold">Project Details</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <p className="text-muted-foreground mx-auto max-w-2xl">
             An inside look at the development process, challenges faced, and solutions implemented.
           </p>
         </div>
@@ -270,8 +297,10 @@ export default function Cleanfold() {
             </CardHeader>
             <CardContent>
               <div className="mb-4">
-                <h4 className="mb-2 font-medium text-gray-700 dark:text-gray-300">Key Challenges</h4>
-                <ul className="ml-5 list-disc space-y-1 text-muted-foreground">
+                <h4 className="mb-2 font-medium text-gray-700 dark:text-gray-300">
+                  Key Challenges
+                </h4>
+                <ul className="text-muted-foreground ml-5 list-disc space-y-1">
                   {projectDetails.challenges.map((challenge, index) => (
                     <li key={index}>{challenge}</li>
                   ))}
@@ -279,7 +308,7 @@ export default function Cleanfold() {
               </div>
               <div>
                 <h4 className="mb-2 font-medium text-gray-700 dark:text-gray-300">Our Solutions</h4>
-                <ul className="ml-5 list-disc space-y-1 text-muted-foreground">
+                <ul className="text-muted-foreground ml-5 list-disc space-y-1">
                   {projectDetails.solutions.map((solution, index) => (
                     <li key={index}>{solution}</li>
                   ))}
@@ -294,7 +323,7 @@ export default function Cleanfold() {
       <div className="mt-16">
         <div className="mb-10 text-center">
           <h2 className="mb-3 text-3xl font-bold">App Screens</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <p className="text-muted-foreground mx-auto max-w-2xl">
             Explore the intuitive interface and powerful features of the CleanFold mobile app.
           </p>
         </div>
@@ -306,7 +335,8 @@ export default function Cleanfold() {
       <div className="mt-16 rounded-xl bg-linear-to-r from-blue-500 to-cyan-500 p-8 text-center text-white shadow-lg">
         <h2 className="mb-4 text-3xl font-bold">Interested in a Similar Solution?</h2>
         <p className="mb-6 text-blue-50">
-          Let's discuss how we can create a custom mobile application tailored to your business needs.
+          Let's discuss how we can create a custom mobile application tailored to your business
+          needs.
         </p>
         <Button variant="secondary" size="lg" asChild>
           <Link href="/contact">

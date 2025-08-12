@@ -18,7 +18,7 @@ const TechDetails = ({ url, logo, darkModeLogo, label }: TechDetailsType) => {
         <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <Typography
             variant="body2"
-            className="whitespace-nowrap rounded bg-gray-800 px-2 py-1 text-white"
+            className="rounded bg-gray-800 px-2 py-1 whitespace-nowrap text-white"
           >
             {label}
           </Typography>

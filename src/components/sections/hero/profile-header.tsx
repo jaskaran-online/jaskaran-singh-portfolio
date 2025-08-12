@@ -14,11 +14,11 @@ const ProfileHeader = ({ name, title, location }: ProfileHeaderProps) => {
         <Typography variant="h1" className="text-4xl font-bold md:text-5xl">
           {name}
         </Typography>
-        <Typography variant="h2" className="text-xl text-muted-foreground md:text-2xl">
+        <Typography variant="h2" className="text-muted-foreground text-xl md:text-2xl">
           {title}
         </Typography>
       </div>
-      <div className="flex items-center gap-2 text-muted-foreground">
+      <div className="text-muted-foreground flex items-center gap-2">
         <MapPin className="h-4 w-4" />
         <Typography>{location}</Typography>
       </div>

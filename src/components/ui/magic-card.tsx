@@ -74,7 +74,7 @@ export function MagicCard({
   }, [gradientSize, mouseX, mouseY]);
 
   return (
-    <div ref={cardRef} className={cn('size-full group relative flex rounded-xl', className)}>
+    <div ref={cardRef} className={cn('group relative flex size-full rounded-xl', className)}>
       <div className="absolute inset-px z-10 rounded-xl bg-neutral-100 dark:bg-[#1e293b]" />
       <div className="relative z-30 mx-auto">{children}</div>
       <motion.div

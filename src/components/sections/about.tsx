@@ -51,7 +51,7 @@ const SKILLS: Skill[] = [
 
 const AboutSection = () => {
   return (
-    <Container id="about" className="py-24 z-20">
+    <Container id="about" className="z-20 py-24">
       <div className="grid gap-16 md:grid-cols-2">
         {/* Stats Section */}
         <div className="grid grid-cols-2 gap-8">

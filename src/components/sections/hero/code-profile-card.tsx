@@ -12,7 +12,7 @@ type CodeProfileCardProps = {
 
 const CodeProfileCard = ({ profile }: CodeProfileCardProps) => {
   return (
-    <div className="w-full rounded-xl border border-border bg-card p-4 font-mono">
+    <div className="border-border bg-card w-full rounded-xl border p-4 font-mono">
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
           <span className="text-blue-500">const</span>

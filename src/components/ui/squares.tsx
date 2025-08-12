@@ -222,7 +222,7 @@ const Squares: React.FC<SquareProps> = ({
 
   return (
     <div
-      className="absolute left-0 top-0 z-0 h-full w-full"
+      className="absolute top-0 left-0 z-0 h-full w-full"
       style={{ backdropFilter: blur ? `blur(${blur}px)` : undefined }}
     >
       <canvas ref={canvasRef} className="block h-full w-full border-none"></canvas>

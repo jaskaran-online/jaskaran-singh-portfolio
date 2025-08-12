@@ -113,7 +113,7 @@ export function CleanFoldContent() {
                 viewport={{ once: true }}
                 className="flex flex-col items-center"
               >
-                <div className="relative mb-6 aspect-9/16 w-full max-w-xs overflow-hidden rounded-[2rem] p-2  border-[2px] border-gray-200 border-dashed">
+                <div className="relative mb-6 aspect-9/16 w-full max-w-xs overflow-hidden rounded-[2rem] border-[2px] border-dashed border-gray-200 p-2">
                   {/* <div className="absolute inset-0 z-0 bg-linear-to-br from-blue-500/5 to-cyan-500/5"></div> */}
                   {/* <div className="absolute left-1/2 top-3 h-6 w-24 -translate-x-1/2 rounded-full bg-black"></div> */}
                   <motion.div
@@ -137,10 +137,16 @@ export function CleanFoldContent() {
                   <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="mb-4 text-sm text-gray-600 dark:text-white/80">{item.description}</p>
+                  <p className="mb-4 text-sm text-gray-600 dark:text-white/80">
+                    {item.description}
+                  </p>
                   <div className="flex flex-wrap justify-center gap-2">
                     {item.features.map((feature, idx) => (
-                      <Badge key={idx} variant="secondary" className="bg-blue-100/50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                      <Badge
+                        key={idx}
+                        variant="secondary"
+                        className="bg-blue-100/50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300"
+                      >
                         {feature}
                       </Badge>
                     ))}
@@ -177,7 +183,7 @@ export function CleanFoldContent() {
                     className="relative mb-6 aspect-9/16 w-full max-w-xs overflow-hidden rounded-[2rem] bg-linear-to-br from-blue-500/10 to-cyan-500/10 p-3 shadow-lg md:mb-0"
                   >
                     <div className="absolute inset-0 z-0 bg-linear-to-br from-blue-500/5 to-cyan-500/5"></div>
-                    <div className="absolute left-1/2 top-3 h-6 w-24 -translate-x-1/2 rounded-full bg-black"></div>
+                    <div className="absolute top-3 left-1/2 h-6 w-24 -translate-x-1/2 rounded-full bg-black"></div>
                     <div className="relative z-10 h-full overflow-hidden rounded-[1.7rem] border-[8px] border-white bg-white shadow-inner dark:border-gray-800 dark:bg-gray-800">
                       <div className="relative h-full w-full overflow-hidden">
                         <Image
@@ -206,14 +212,18 @@ export function CleanFoldContent() {
                       {content[currentSlide].description}
                     </p>
                     <div className="mb-4">
-                      <h4 className="mb-2 font-medium text-gray-700 dark:text-gray-300">Key Features:</h4>
+                      <h4 className="mb-2 font-medium text-gray-700 dark:text-gray-300">
+                        Key Features:
+                      </h4>
                       <ul className="space-y-2">
                         {content[currentSlide].features.map((feature, idx) => (
                           <li key={idx} className="flex items-center gap-2">
                             <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/50">
                               <div className="h-2 w-2 rounded-full bg-blue-500"></div>
                             </div>
-                            <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
+                            <span className="text-sm text-gray-600 dark:text-gray-300">
+                              {feature}
+                            </span>
                           </li>
                         ))}
                       </ul>

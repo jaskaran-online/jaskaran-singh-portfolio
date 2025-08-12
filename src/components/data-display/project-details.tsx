@@ -57,7 +57,9 @@ const ProjectDetails = ({
         </Typography>
         <Typography className="text-gray-700 dark:text-gray-300">{description}</Typography>
         <div className="flex flex-wrap gap-2">
-          {technologies?.map((technology, index) => <Tag key={index} label={technology} />)}
+          {technologies?.map((technology, index) => (
+            <Tag key={index} label={technology} />
+          ))}
         </div>
         <Link
           href={url || '/'}

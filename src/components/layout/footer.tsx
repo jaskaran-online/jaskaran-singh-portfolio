@@ -58,7 +58,7 @@ const Footer = () => {
             >
               <Copyright className="h-4 w-4 text-gray-600 dark:text-gray-400" />
               <span className="text-gray-600 dark:text-gray-400">{new Date().getFullYear()}</span>
-              <span className="hidden text-gray-600 dark:text-gray-400 sm:inline">|</span>
+              <span className="hidden text-gray-600 sm:inline dark:text-gray-400">|</span>
               <span className="flex flex-wrap items-center justify-center gap-1">
                 <span className="text-gray-600 dark:text-gray-400">Designed and</span>
                 <Link

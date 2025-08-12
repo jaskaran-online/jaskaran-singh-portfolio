@@ -15,11 +15,7 @@ const sizes = {
 const LoadingSpinner = ({ size = 'md', className }: LoadingSpinnerProps) => {
   return (
     <div
-      className={cn(
-        'flex items-center justify-center',
-        'text-muted-foreground',
-        className
-      )}
+      className={cn('flex items-center justify-center', 'text-muted-foreground', className)}
       role="status"
       aria-label="Loading"
     >

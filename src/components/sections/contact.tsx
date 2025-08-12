@@ -24,7 +24,7 @@ const FloatingIcons = () => {
     <div className="absolute inset-0 -z-10 overflow-hidden">
       {/* Code bracket */}
       <motion.svg
-        className="absolute left-1/3 top-48 h-8 w-8 text-purple-500/40 dark:text-purple-400"
+        className="absolute top-48 left-1/3 h-8 w-8 text-purple-500/40 dark:text-purple-400"
         animate={{
           y: [0, -10, 0],
           rotate: [0, 5, 0],
@@ -49,7 +49,7 @@ const FloatingIcons = () => {
 
       {/* Terminal */}
       <motion.svg
-        className="absolute right-1/4 top-48 h-12 w-12 text-purple-500/80 dark:text-blue-400 opacity-60"
+        className="absolute top-48 right-1/4 h-12 w-12 text-purple-500/80 opacity-60 dark:text-blue-400"
         animate={{
           y: [0, 10, 0],
           x: [0, -5, 0],
@@ -252,7 +252,7 @@ const ContactSection = () => {
                   <div className="flex items-center gap-2">
                     <Typography
                       variant="body2"
-                      className="w-auto bg-linear-to-r font-medium   text-gray-900 backdrop-blur-[4px] dark:text-white"
+                      className="w-auto bg-linear-to-r font-medium text-gray-900 backdrop-blur-[4px] dark:text-white"
                     >
                       {contactInfo.email}
                     </Typography>
@@ -268,13 +268,13 @@ const ContactSection = () => {
                 <div>
                   <Typography
                     variant="body3"
-                    className="w-auto bg-linear-to-r  text-gray-600 backdrop-blur-[4px] dark:text-gray-400"
+                    className="w-auto bg-linear-to-r text-gray-600 backdrop-blur-[4px] dark:text-gray-400"
                   >
                     Phone
                   </Typography>
                   <Typography
                     variant="body2"
-                    className="bg-linear-to-r font-medium text-gray-900  backdrop-blur-[4px] dark:text-white"
+                    className="bg-linear-to-r font-medium text-gray-900 backdrop-blur-[4px] dark:text-white"
                   >
                     {contactInfo.phone}
                   </Typography>
@@ -289,13 +289,13 @@ const ContactSection = () => {
                 <div>
                   <Typography
                     variant="body3"
-                    className="bg-linear-to-r text-gray-600  backdrop-blur-[4px] dark:text-gray-400"
+                    className="bg-linear-to-r text-gray-600 backdrop-blur-[4px] dark:text-gray-400"
                   >
                     Location
                   </Typography>
                   <Typography
                     variant="body2"
-                    className="bg-linear-to-r font-medium text-gray-900  backdrop-blur-[4px] dark:text-white"
+                    className="bg-linear-to-r font-medium text-gray-900 backdrop-blur-[4px] dark:text-white"
                   >
                     {contactInfo.location}
                   </Typography>
@@ -305,7 +305,7 @@ const ContactSection = () => {
             <div className="mt-8">
               <Typography
                 variant="body2"
-                className="bg-linear-to-r text-gray-600  backdrop-blur-[4px] dark:text-gray-400"
+                className="bg-linear-to-r text-gray-600 backdrop-blur-[4px] dark:text-gray-400"
               >
                 You can also find me on these platforms!
               </Typography>
@@ -333,11 +333,10 @@ const ContactSection = () => {
 
         <div>
           <motion.form
-
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 rounded-sm border border-slate-200 bg-white px-8 pb-8 pt-3 shadow-lg backdrop-blur-xs dark:border-slate-800 dark:bg-[#334155]/30 "
+            className="space-y-6 rounded-sm border border-slate-200 bg-white px-8 pt-3 pb-8 shadow-lg backdrop-blur-xs dark:border-slate-800 dark:bg-[#334155]/30"
             onSubmit={handleSubmit}
           >
             <div>
@@ -354,7 +353,7 @@ const ContactSection = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
+                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-xs ring-1 ring-slate-200 ring-inset placeholder:text-slate-400 focus:ring-2 focus:ring-blue-500 focus:ring-inset dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
                 placeholder="Your name"
               />
             </div>
@@ -373,7 +372,7 @@ const ContactSection = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
+                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-xs ring-1 ring-slate-200 ring-inset placeholder:text-slate-400 focus:ring-2 focus:ring-blue-500 focus:ring-inset dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -392,7 +391,7 @@ const ContactSection = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
+                className="mt-1 block w-full rounded-lg bg-transparent px-4 py-2 text-slate-900 shadow-xs ring-1 ring-slate-200 ring-inset placeholder:text-slate-400 focus:ring-2 focus:ring-blue-500 focus:ring-inset dark:border-[0.5px] dark:border-cyan-500/20 dark:text-white dark:placeholder-slate-500 dark:ring-slate-800 dark:focus:ring-blue-400"
                 placeholder="Your message..."
               />
             </div>
@@ -407,7 +406,7 @@ const ContactSection = () => {
                 </>
               )}
             </PulsatingButton>
-            <BorderBeam  />
+            <BorderBeam />
           </motion.form>
         </div>
       </div>

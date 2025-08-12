@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -118,7 +118,7 @@ const ContactForm = () => {
               <FormControl>
                 <Textarea
                   placeholder="Tell me about your project..."
-                  className="min-h-[150px] bg-background"
+                  className="bg-background min-h-[150px]"
                   {...field}
                   disabled={isSubmitting}
                 />
@@ -128,12 +128,7 @@ const ContactForm = () => {
           )}
         />
 
-        <Button
-          type="submit"
-          className="w-full"
-          disabled={isSubmitting}
-          size="lg"
-        >
+        <Button type="submit" className="w-full" disabled={isSubmitting} size="lg">
           {isSubmitting ? (
             <span className="flex items-center gap-2">
               <LoadingSpinner size="sm" />
@@ -145,7 +140,7 @@ const ContactForm = () => {
         </Button>
 
         {!isSubmitting && (
-          <p className="text-center text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-center text-sm">
             I'll get back to you as soon as possible.
           </p>
         )}

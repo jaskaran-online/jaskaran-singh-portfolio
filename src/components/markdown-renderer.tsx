@@ -46,8 +46,8 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
         },
         // Add custom styling for other markdown elements
         h1: ({ children }) => <h1 className="mb-6 text-4xl font-bold">{children}</h1>,
-        h2: ({ children }) => <h2 className="mb-4 mt-8 text-3xl font-bold">{children}</h2>,
-        h3: ({ children }) => <h3 className="mb-3 mt-6 text-2xl font-bold">{children}</h3>,
+        h2: ({ children }) => <h2 className="mt-8 mb-4 text-3xl font-bold">{children}</h2>,
+        h3: ({ children }) => <h3 className="mt-6 mb-3 text-2xl font-bold">{children}</h3>,
         p: ({ children }) => <p className="mb-4 leading-relaxed">{children}</p>,
         ul: ({ children }) => <ul className="mb-4 list-disc pl-6">{children}</ul>,
         ol: ({ children }) => <ol className="mb-4 list-decimal pl-6">{children}</ol>,

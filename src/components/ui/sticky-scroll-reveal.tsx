@@ -78,7 +78,7 @@ export const StickyScroll = ({
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mb-12 mt-12 text-center text-5xl font-bold"
+        className="mt-12 mb-12 text-center text-5xl font-bold"
       >
         App Screen Views
       </motion.h2>

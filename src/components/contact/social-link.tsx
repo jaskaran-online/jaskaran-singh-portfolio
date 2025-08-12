@@ -2,12 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface SocialLinkProps {
   name: string;
@@ -21,12 +16,7 @@ const SocialLink = ({ name, url, icon: Icon, username }: SocialLinkProps) => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button
-            variant="outline"
-            size="icon"
-            className="h-12 w-12 rounded-lg"
-            asChild
-          >
+          <Button variant="outline" size="icon" className="h-12 w-12 rounded-lg" asChild>
             <a
               href={url}
               target="_blank"
@@ -40,7 +30,7 @@ const SocialLink = ({ name, url, icon: Icon, username }: SocialLinkProps) => {
         <TooltipContent side="bottom">
           <div className="text-center">
             <p className="font-medium">{name}</p>
-            <p className="text-xs text-muted-foreground">{username}</p>
+            <p className="text-muted-foreground text-xs">{username}</p>
           </div>
         </TooltipContent>
       </Tooltip>

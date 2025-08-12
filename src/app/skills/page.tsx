@@ -59,7 +59,7 @@ const SkillCard = ({ name, level }: { name: string; level: number }) => (
   <div className="mb-4">
     <div className="mb-2 flex items-center justify-between">
       <span className="font-medium">{name}</span>
-      <span className="text-sm text-muted-foreground">{level}%</span>
+      <span className="text-muted-foreground text-sm">{level}%</span>
     </div>
     <Progress value={level} className="h-2" />
   </div>
@@ -143,19 +143,19 @@ const SkillsPage = () => {
         <div className="grid gap-4 md:grid-cols-2">
           <div className="rounded-lg border p-4">
             <h4 className="font-medium">AWS Certified Developer</h4>
-            <p className="text-sm text-muted-foreground">Amazon Web Services</p>
+            <p className="text-muted-foreground text-sm">Amazon Web Services</p>
           </div>
           <div className="rounded-lg border p-4">
             <h4 className="font-medium">Professional Scrum Master</h4>
-            <p className="text-sm text-muted-foreground">Scrum.org</p>
+            <p className="text-muted-foreground text-sm">Scrum.org</p>
           </div>
           <div className="rounded-lg border p-4">
             <h4 className="font-medium">React Developer Certification</h4>
-            <p className="text-sm text-muted-foreground">Meta (formerly Facebook)</p>
+            <p className="text-muted-foreground text-sm">Meta (formerly Facebook)</p>
           </div>
           <div className="rounded-lg border p-4">
             <h4 className="font-medium">Google Analytics Certification</h4>
-            <p className="text-sm text-muted-foreground">Google</p>
+            <p className="text-muted-foreground text-sm">Google</p>
           </div>
         </div>
       </Card>

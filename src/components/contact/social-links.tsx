@@ -2,12 +2,7 @@
 
 import { Github, Linkedin, Twitter, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const socialLinks = [
   {
@@ -43,12 +38,7 @@ export function SocialLinks() {
         <TooltipProvider key={link.name}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                asChild
-                className="h-9 w-9"
-              >
+              <Button variant="outline" size="icon" asChild className="h-9 w-9">
                 <a
                   href={link.url}
                   target="_blank"

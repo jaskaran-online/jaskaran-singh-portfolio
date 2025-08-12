@@ -68,7 +68,7 @@ const StatCard = ({ value, label, icon: Icon }: Stat) => {
       gradientTo="#06b6d4"
     >
       <div className="relative z-20 mx-auto flex h-full w-full flex-col items-center justify-center p-4 text-center sm:p-6">
-        <div className="mb-3 transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+        <div className="mb-3 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
           <div className="relative">
             <div className="absolute inset-0 transform rounded-full bg-blue-500/20 blur-xs transition-all duration-300 group-hover:scale-110 group-hover:blur-md" />
             <div className="relative rounded-full bg-linear-to-br from-blue-500 to-blue-600 p-3">
@@ -82,7 +82,7 @@ const StatCard = ({ value, label, icon: Icon }: Stat) => {
         >
           {value}
         </Typography>
-        <Typography className="transform text-sm text-gray-600 transition-all duration-300 group-hover:text-blue-500 dark:text-gray-400 sm:text-base">
+        <Typography className="transform text-sm text-gray-600 transition-all duration-300 group-hover:text-blue-500 sm:text-base dark:text-gray-400">
           {label}
         </Typography>
       </div>
@@ -97,7 +97,7 @@ const AboutMeSection = () => {
         {/* Stats Section */}
         <AnimatedSection direction="left" className="grid grid-cols-2 gap-4 sm:gap-8">
           {STATS.map((stat, index) => (
-            <AnimatedSection key={index} delay={index * 0.1} className="w-full z-10">
+            <AnimatedSection key={index} delay={index * 0.1} className="z-10 w-full">
               <StatCard {...stat} />
             </AnimatedSection>
           ))}
@@ -108,12 +108,12 @@ const AboutMeSection = () => {
           <Typography variant="h2" className="mb-4">
             <SparklesText
               text="How I Help Businesses Grow"
-              className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl"
+              className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white"
               sparklesCount={4}
             />
           </Typography>
 
-          <Typography className="text-sm text-gray-600 dark:text-gray-400 sm:text-base">
+          <Typography className="text-sm text-gray-600 sm:text-base dark:text-gray-400">
             I'm Jaskaran, a passionate Full Stack Developer specializing in building robust and
             scalable web applications. I focus on creating end-to-end solutions using modern
             technologies like Next.js, Laravel, and React Native, while also implementing
@@ -124,14 +124,14 @@ const AboutMeSection = () => {
             {SKILLS.map((skill, index) => (
               <AnimatedSection key={index} delay={index * 0.1} direction="right">
                 <div className="flex gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center bg-blue-500/20 rounded-full p-2">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/20 p-2">
                     <Check className="h-4 w-4 shrink-0 text-blue-500 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <Typography className="text-sm font-semibold text-slate-900 dark:text-white sm:text-base">
+                    <Typography className="text-sm font-semibold text-slate-900 sm:text-base dark:text-white">
                       {skill.title}
                     </Typography>
-                    <Typography className="text-sm text-gray-600 dark:text-gray-400 sm:text-base">
+                    <Typography className="text-sm text-gray-600 sm:text-base dark:text-gray-400">
                       {skill.description}
                     </Typography>
                   </div>
@@ -142,25 +142,25 @@ const AboutMeSection = () => {
 
           <AnimatedSection delay={0.3} direction="right">
             <div className="space-y-2">
-              <Typography className="text-sm text-gray-600 dark:text-gray-400 sm:text-base">
+              <Typography className="text-sm text-gray-600 sm:text-base dark:text-gray-400">
                 Quick bits about me:
               </Typography>
               <ul className="list-inside list-disc space-y-1">
                 <Typography
                   component="li"
-                  className="text-sm text-gray-600 dark:text-gray-400 sm:text-base"
+                  className="text-sm text-gray-600 sm:text-base dark:text-gray-400"
                 >
                   Bachelor of Computer Applications
                 </Typography>
                 <Typography
                   component="li"
-                  className="text-sm text-gray-600 dark:text-gray-400 sm:text-base"
+                  className="text-sm text-gray-600 sm:text-base dark:text-gray-400"
                 >
                   Full time Developer
                 </Typography>
                 <Typography
                   component="li"
-                  className="text-sm text-gray-600 dark:text-gray-400 sm:text-base"
+                  className="text-sm text-gray-600 sm:text-base dark:text-gray-400"
                 >
                   Avid learner and problem solver
                 </Typography>

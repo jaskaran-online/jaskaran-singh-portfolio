@@ -8,12 +8,7 @@ interface SectionHeaderProps {
   align?: 'left' | 'center' | 'right';
 }
 
-const SectionHeader = ({
-  title,
-  description,
-  className,
-  align = 'left',
-}: SectionHeaderProps) => {
+const SectionHeader = ({ title, description, className, align = 'left' }: SectionHeaderProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -28,9 +23,7 @@ const SectionHeader = ({
       )}
     >
       <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
-      {description && (
-        <p className="mt-2 text-lg text-muted-foreground">{description}</p>
-      )}
+      {description && <p className="text-muted-foreground mt-2 text-lg">{description}</p>}
     </motion.div>
   );
 };

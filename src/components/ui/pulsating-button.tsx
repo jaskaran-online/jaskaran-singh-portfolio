@@ -24,7 +24,7 @@ const PulsatingButton = ({
     <motion.button
       whileHover={{ scale: disabled ? 1 : 1.02 }}
       whileTap={{ scale: disabled ? 1 : 0.98 }}
-      className={`group relative overflow-hidden rounded-lg ${bgColor} hover:bg-primary-600 focus:ring-primary-500/20 dark:hover:bg-primary-400 px-8 py-3 text-sm font-medium text-white transition-all focus:outline-hidden focus:ring-2 disabled:cursor-not-allowed disabled:opacity-70 ${className}`}
+      className={`group relative overflow-hidden rounded-lg ${bgColor} hover:bg-primary-600 focus:ring-primary-500/20 dark:hover:bg-primary-400 px-8 py-3 text-sm font-medium text-white transition-all focus:ring-2 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-70 ${className}`}
       disabled={disabled}
       {...props}
     >

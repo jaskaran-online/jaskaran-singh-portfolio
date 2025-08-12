@@ -20,7 +20,7 @@ const SkillsShowcase = ({ skills }: SkillsShowcaseProps) => {
           href={skill.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 transition-colors hover:bg-accent"
+          className="border-border bg-card hover:bg-accent flex items-center gap-2 rounded-lg border px-4 py-2 transition-colors"
           tabIndex={0}
           aria-label={`View ${skill.name} documentation`}
         >

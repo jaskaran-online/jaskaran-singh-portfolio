@@ -9,7 +9,6 @@ import { Providers } from '@/lib/providers';
 import Footer from '@/components/layout/footer';
 import ScrollToTop from '@/components/scroll-to-top';
 
-
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -133,7 +132,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          'bg-background min-h-screen font-sans antialiased',
           inter.variable,
           poppins.variable
         )}

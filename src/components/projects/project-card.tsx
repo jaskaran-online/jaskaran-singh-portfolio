@@ -13,12 +13,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface ProjectCardProps {
   project: {
@@ -36,11 +31,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card className="group relative overflow-hidden">
       {project.featured && (
-        <div className="absolute right-4 top-4 z-10">
+        <div className="absolute top-4 right-4 z-10">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="rounded-full bg-primary/10 p-2 text-primary">
+                <div className="bg-primary/10 text-primary rounded-full p-2">
                   <Star className="h-4 w-4" />
                 </div>
               </TooltipTrigger>
