@@ -19,7 +19,7 @@ const HERO_CONFIG = {
   availability: 'Available for new projects',
   codeProfile: {
     name: 'Jaskaran Singh',
-    skills: ['ReactJS', 'NextJS', 'ReactNative', 'PHP', 'Laravel'],
+    skills: ['NextJS', 'React Native', 'Laravel', 'Git', 'Docker', 'AWS'],
     hardWorker: true,
     problemSolver: true,
     traits: ['Hard Worker', 'Problem Solver'],
@@ -165,7 +165,6 @@ const CodeBlock = () => {
 
   return (
     <div>
-
       <code className="code-one-dark">
         <div>
           <span className="mr-2 text-[#e06c75]">{'const'}</span>
@@ -178,7 +177,8 @@ const CodeBlock = () => {
           <span className="text-purple-500 dark:text-[#98c379]">"{name}"</span>,
         </div>
         <div className="pl-4">
-          <span className="text-[#d19a66]">"skills"</span>: <span className="text-[#e06c75]">[</span>
+          <span className="text-[#d19a66]">"skills"</span>:{' '}
+          <span className="text-[#e06c75]">[</span>
           {skills.map((skill, index) => (
             <span key={index}>
               <span className="text-purple-500 dark:text-[#98c379]">"{skill}"</span>
@@ -199,13 +199,13 @@ const CodeBlock = () => {
           <span className="text-[#e06c75]">{'}'}</span>
         </div>
       </code>
-      <BorderBeam size={100}/>
+      <BorderBeam size={100} />
     </div>
   );
 };
 
 const TwitterCard = () => (
-  <div className="animate-float absolute right-[3%] top-[88%] rounded-sm border border-gray-300/40 bg-white shadow-xs backdrop-blur-[14px] dark:border-[#462d6dab] dark:bg-[#0f192d]/90 lg:right-[-5%] lg:top-[85%] z-50">
+  <div className="animate-float absolute top-[88%] right-[3%] z-50 rounded-sm border border-gray-300/40 bg-white shadow-xs backdrop-blur-[14px] lg:top-[85%] lg:right-[-5%] dark:border-[#462d6dab] dark:bg-[#0f192d]/90">
     <section className="spacing-2 max-w-xs rounded-lg p-4 will-change-transform">
       <header className="flex gap-4">
         <figure className="overflow-hidden rounded-full border-2 border-gray-400/50 dark:border-gray-600/50">
@@ -252,7 +252,7 @@ const TwitterCard = () => (
 const SkillBadge = ({ label, className }: { label: string; className: string }) => (
   <span
     className={cn(
-      'heroText inline-flex cursor-pointer select-none items-center whitespace-nowrap rounded-md border-2 px-2.5 py-0.5 text-[13px] font-medium transition-all',
+      'heroText inline-flex cursor-pointer items-center rounded-md border-2 px-2.5 py-0.5 text-[13px] font-medium whitespace-nowrap transition-all select-none',
       className
     )}
   >
@@ -283,19 +283,19 @@ const CodeEditor = () => (
       </div>
     </div>
 
-    <div className="relative ml-4 select-none rounded-lg border backdrop-blur-[3px]">
+    <div className="relative ml-4 rounded-lg border backdrop-blur-[3px] select-none">
       <div className="flex flex-row">
         <div className="h-[1px] w-full bg-linear-to-r from-transparent via-pink-500 to-violet-600"></div>
         <div className="h-[1px] w-full bg-linear-to-r from-violet-600 to-transparent"></div>
       </div>
       <div className="py-2">
-        <header className="mb-2 flex items-center justify-between border-b border-b-gray-200 px-8 py-2 pb-3 dark:border-b-gray-700 ">
+        <header className="mb-2 flex items-center justify-between border-b border-b-gray-200 px-8 py-2 pb-3 dark:border-b-gray-700">
           <div className="flex flex-row space-x-2">
             <div className="h-3 w-3 cursor-pointer rounded-full bg-red-400 hover:bg-red-500"></div>
             <div className="h-3 w-3 cursor-pointer rounded-full bg-orange-400 hover:bg-orange-500"></div>
             <div className="h-3 w-3 cursor-pointer rounded-full bg-green-400 hover:bg-green-500"></div>
           </div>
-          <div className="select-none text-center text-[13px] leading-none tracking-wide dark:text-gray-400">
+          <div className="text-center text-[13px] leading-none tracking-wide select-none dark:text-gray-400">
             page.tsx
           </div>
         </header>
@@ -311,12 +311,7 @@ const CodeEditor = () => (
 const HeaderSkills = () => (
   <ul className="sm:scrollbar-none mt-2 flex flex-wrap items-center justify-start gap-3 overflow-x-auto px-4 pb-2 text-[15px] font-medium">
     {HERO_CONFIG.skills.map((skill, index) => (
-      <Link
-        key={index}
-        href={skill.url}
-        target="_blank"
-        className="backdrop-blur-[4px]"
-      >
+      <Link key={index} href={skill.url} target="_blank" className="backdrop-blur-[4px]">
         <li className="flex items-center gap-2 text-gray-200 dark:text-white">
           {skill.icon}
           <span className="text-[#000000] dark:text-[#ffffff]">{skill.name}</span>
@@ -330,24 +325,24 @@ const HeroSection = () => {
   return (
     <Container
       id="hero"
-      className="relative flex w-full items-center justify-center overflow-hidden rounded-lg lg:h-[90vh] pb-26"
+      className="relative flex w-full items-center justify-center overflow-hidden rounded-lg pb-26 lg:h-[90vh]"
     >
       <div className="z-10">
-        <div className="flex flex-col-reverse px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32 gap-12">
+        <div className="flex flex-col-reverse gap-12 px-6 pb-10 md:gap-32 lg:flex-row lg:gap-32">
           {/* Code Editor */}
           <div className="flex items-center justify-center md:order-last md:grow md:justify-end">
             <CodeEditor />
           </div>
 
           {/* Content */}
-          <div className="flex max-w-[550px]  grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-8">
+          <div className="flex max-w-[550px] grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-8">
             <div className="flex flex-col gap-2">
               <div className="text-xl font-medium">Hey there!, I'm -</div>
               <Typography variant="h1">
                 <span className="bg-blur-lg bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
                   {HERO_CONFIG.name}
                 </span>{' '}
-                <span className="inline-block animate-waving-hand">👋</span>
+                <span className="animate-waving-hand inline-block">👋</span>
               </Typography>
               <Typography className="from-blue-750 backdrop-blur-[4px]">
                 I'm a{' '}
