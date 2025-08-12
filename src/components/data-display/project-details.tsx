@@ -37,6 +37,8 @@ const ProjectDetails = ({
           <Image
             src={previewImage}
             alt={`${name} - Project Preview - Built by Jaskaran Singh`}
+            width={600}
+            height={400}
             className="rounded-xl transition-transform duration-500 md:hover:scale-105"
             style={{ objectFit: 'cover' }}
           />

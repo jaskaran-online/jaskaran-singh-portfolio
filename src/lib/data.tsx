@@ -43,7 +43,7 @@ export const NAV_LINKS = [
     label: 'Services',
     href: '#services',
   },
-  
+
   {
     label: 'Projects',
     href: '#projects',
@@ -189,6 +189,56 @@ export const EXPERIENCES: ExperienceDetails[] = [
 ];
 
 export const PROJECTS: ProjectDetails[] = [
+  {
+    name: 'AceHaematology',
+    description:
+      'A comprehensive FRCPath haematology exam preparation platform with 1000+ practice questions, mock exams, and expert-crafted content designed by UK haematologists.',
+    url: 'https://www.acehaematology.com/',
+    projectDetails: 'https://www.acehaematology.com/',
+    previewImage: '/images/project-acehaematology.svg',
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'React',
+      'Medical Education',
+      'Exam Preparation',
+      'AI/ML',
+    ],
+  },
+  {
+    name: 'HRSolx',
+    description:
+      'Smart hiring platform connecting HR professionals with verified skilled workers across manufacturing, automotive, construction, and logistics industries with AI-powered matching.',
+    url: 'https://www.hrsolx.com/',
+    projectDetails: 'https://www.hrsolx.com/',
+    previewImage: '/images/project-hrsolx.svg',
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'React',
+      'AI/ML',
+      'HR Tech',
+      'Recruitment',
+      'Real-time',
+    ],
+  },
+  {
+    name: 'HRSolx Mobile App',
+    description:
+      'Mobile application for skilled workers to create profiles, manage availability, and connect with employers through secure Aadhaar verification and real-time job matching.',
+    url: 'https://play.google.com/store/apps/details?id=com.hrsolx.worker',
+    projectDetails: 'https://play.google.com/store/apps/details?id=com.hrsolx.worker',
+    previewImage: '/images/project-hrsolx-mobile.svg',
+    technologies: [
+      'React Native',
+      'TypeScript',
+      'Mobile App',
+      'HR Tech',
+      'Authentication',
+      'Real-time',
+      'Aadhaar Verification',
+    ],
+  },
   {
     name: 'Cleanfold iOS and Android Mobile App',
     description:

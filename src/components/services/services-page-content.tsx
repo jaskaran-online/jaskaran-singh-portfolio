@@ -51,7 +51,7 @@ const services = [
     description: 'Efficient data management systems.',
     icon: Database,
     features: ['Database design', 'Data migration', 'Performance tuning', 'Backup solutions'],
-    technologies: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma'],
+    technologies: ['PostgreSQL', 'MongoDB', 'Redis'],
   },
   {
     title: 'DevOps Services',
